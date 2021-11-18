@@ -1,0 +1,34 @@
+.checked {
+    color: orange !important;
+}
+
+.fa-star {
+    color: #DDDDDD;
+}
+.for-change{
+    margin-top: 5%;
+    padding-left: 30%;
+    padding-right: 30%;
+    margin-left: 6%;
+}
+.star{
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 10%;
+}
+#for-reply{
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    box-shadow: none;
+}
+#add-reply{
+    padding-left: 3%;
+    padding-top: 1%;
+}
+#delete-reply{
+    padding: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
