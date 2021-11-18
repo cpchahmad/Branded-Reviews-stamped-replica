@@ -6,7 +6,7 @@ $counter = 0;
 @if(count($review->medias) > 0)
 @foreach($review->medias as $key => $media)
 @if($counter <= 7)
-<div class="item">
+<div class="item" style="width: 100%;">
     <div class="slide-image">
         <img src="{{asset('review-images'.'/'.$media->review_media)}}" alt="">
     </div>
