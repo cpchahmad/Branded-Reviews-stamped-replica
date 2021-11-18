@@ -162,7 +162,6 @@ class ReviewController extends Controller
         $currentUserInfo = Location::get($ip);
         $review->customer_location = $currentUserInfo->countryName;
         $review->save();
-        dd($review);
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $destinationPath = 'review-images/';
