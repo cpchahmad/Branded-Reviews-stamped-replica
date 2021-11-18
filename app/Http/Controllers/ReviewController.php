@@ -272,6 +272,9 @@ class ReviewController extends Controller
         $images = view('append.images')->with([
             'reviews' => $review_images,
         ])->render();
+        $popups = view('append.popups')->with([
+            'reviews' => $review_images,
+        ])->render();
         if ($status == 'fake'){
             $count_reviews = $review_status->total_reviews;
             $over_all_rating = $review_status->rating;
@@ -355,5 +358,6 @@ class ReviewController extends Controller
             'dislikes'=>$review->dislikes,
         ]);
     }
+
 
 }
