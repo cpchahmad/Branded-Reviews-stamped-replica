@@ -432,7 +432,7 @@
                     <div class="card border-light border-0 text-indigo shadow-sm">
                         <div class="card-body bg-white">
                                 <h6>Product</h6>
-{{--                            <p>{{$product_title->title}}</p>--}}
+                            <p>@if(isset($product_title->title)){{$product_title->title}}@endif</p>
 
                             <span class="d-flex">5 <span class="fa fa-star star checked"></span>
                                 <div class="progress mt-2 mr-2 bg-danger" style="width: 50%; background-color: #f4f6f8 !important;">
