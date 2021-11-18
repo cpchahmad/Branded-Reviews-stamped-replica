@@ -20,7 +20,7 @@
                 <div class="review_1_header">
                     <div class="user_pic">
                         <div class="user_pic_inner">
-                            <h3>
+                            <h3 style="color: white;">
                                 {{$acronym}}
                             </h3>
                         </div>
@@ -143,7 +143,7 @@
                     <div class="review_1_header">
                         <div class="user_pic">
                             <div class="user_pic_inner">
-                                <h3>
+                                <h3 style="color: white;">
                                     {{$acronym}}
                                 </h3>
                             </div>
