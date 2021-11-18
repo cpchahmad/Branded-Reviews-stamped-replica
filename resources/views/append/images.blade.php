@@ -15,42 +15,42 @@
         @endif
     @endforeach
     @else
-        <a href="#" title="My Watch" class="btn-view">
+        <a href="#" title="My Watch" class="">
             <div>
                 <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
             </div>
         </a>
-        <a href="#" title="My Watch" class="btn-view">
+        <a href="#" title="My Watch" class="">
             <div>
                 <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
             </div>
         </a>
-        <a href="#" title="My Watch" class="btn-view">
+        <a href="#" title="My Watch" class="">
             <div>
                 <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
             </div>
         </a>
-        <a href="#" title="My Watch" class="btn-view">
+        <a href="#" title="My Watch" class="">
             <div>
                 <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
             </div>
         </a>
-        <a href="#" title="My Watch" class="btn-view">
+        <a href="#" title="My Watch" class="">
             <div>
                 <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
             </div>
         </a>
-        <a href="#" title="My Watch" class="btn-view">
+        <a href="#" title="My Watch" class="">
             <div>
                 <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
             </div>
         </a>
-        <a href="#" title="My Watch" class="btn-view">
+        <a href="#" title="My Watch" class="">
             <div>
                 <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
             </div>
         </a>
-        <a href="#" title="My Watch" class="btn-view">
+        <a href="#" title="My Watch" class="">
             <div>
                 <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
             </div>
@@ -58,42 +58,42 @@
     @endif
 @endforeach
 @else
-    <a href="#" title="My Watch" class="btn-view">
+    <a href="#" title="My Watch" class="">
         <div>
             <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
         </div>
     </a>
-    <a href="#" title="My Watch" class="btn-view">
+    <a href="#" title="My Watch" class="">
         <div>
             <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
         </div>
     </a>
-    <a href="#" title="My Watch" class="btn-view">
+    <a href="#" title="My Watch" class="">
         <div>
             <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
         </div>
     </a>
-    <a href="#" title="My Watch" class="btn-view">
+    <a href="#" title="My Watch" class="">
         <div>
             <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
         </div>
     </a>
-    <a href="#" title="My Watch" class="btn-view">
+    <a href="#" title="My Watch" class="">
         <div>
             <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
         </div>
     </a>
-    <a href="#" title="My Watch" class="btn-view">
+    <a href="#" title="My Watch" class="">
         <div>
             <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
         </div>
     </a>
-    <a href="#" title="My Watch" class="btn-view">
+    <a href="#" title="My Watch" class="">
         <div>
             <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
         </div>
     </a>
-    <a href="#" title="My Watch" class="btn-view">
+    <a href="#" title="My Watch" class="">
         <div>
             <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
         </div>
