@@ -275,6 +275,7 @@ class ReviewController extends Controller
         $popups = view('append.popups')->with([
             'reviews' => $review_images,
         ])->render();
+        dd($popups);
         if ($status == 'fake'){
             $count_reviews = $review_status->total_reviews;
             $over_all_rating = $review_status->rating;
