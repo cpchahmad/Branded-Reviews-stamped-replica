@@ -158,10 +158,11 @@ class ReviewController extends Controller
         }
         $review->review_title = $request->review_title;
         $review->experience = $request->experience;
-//            $ip = $request->ip(); //Dynamic IP address get
-//        $currentUserInfo = Location::get($ip);
-//        $review->customer_location = $currentUserInfo->countryName;
+        $ip = $request->ip();
+        $currentUserInfo = Location::get($ip);
+        $review->customer_location = $currentUserInfo->countryName;
         $review->save();
+        dd($review);
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $destinationPath = 'review-images/';
