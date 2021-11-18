@@ -188,7 +188,6 @@
                 <div class="card border-light border-0 text-indigo shadow-sm">
                     <div class="card-header bg-white">
                         <div style="display: flex;justify-content: space-between;"><h6>Customer overview</h6><img src="{{asset('shirt.jpg')}}" style="border-radius: 50%;" width="40px" height="40px"></div>
-                        <br>
                         <span>{{$question->name}}</span>
                         <br>
                         <span>United States</span>

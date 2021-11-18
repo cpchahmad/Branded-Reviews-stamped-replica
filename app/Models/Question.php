@@ -12,5 +12,9 @@ class Question extends Model
     {
         return $this->hasOne(QuestionReply::class, 'question_id', 'id');
     }
+    public function stats()
+    {
+        return $this->hasone(QuestionStat::class, 'question_id', 'id');
+    }
 
 }

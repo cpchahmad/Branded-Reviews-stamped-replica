@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Question;
 use App\Models\QuestionReply;
+use App\Models\QuestionStat;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -130,5 +131,58 @@ class QuestionController extends Controller
             return view('pages.new-question')->with([
                 'product_id'=>$id,
             ]);
+    }
+    public function UpdateQuestionLikes(Request $request){
+        $shop = User::where('name',$request->shop_name)->first();
+        $question_stat = QuestionStat::where('question_id',$request->question_id)->where('ip_address',$request->ip())->first();
+        $status = 'no';
+        if ($question_stat == null){
+            $question_stat = new QuestionStat();
+            $status = 'yes';
+        }
+        $question_stat->question_id = $request->question_id;
+        $question_stat->like = 1;
+        $question_stat->dislike = 0;
+        $question_stat->ip_address= $request->ip();
+        $question_stat->save();
+        $question = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('id',$request->question_id)->first();
+        if($status == 'yes'){
+            $question->likes += 1;
+        }else{
+            $question->likes += 1;
+            $question->dislikes -= 1;
+        }
+        $question->save();
+        return response([
+            'likes'=>$question->likes,
+            'dislikes'=>$question->dislikes,
+        ]);
+    }
+    public function UpdateQuestionDisLikes(Request $request){
+        $shop = User::where('name',$request->shop_name)->first();
+        $question_stat = QuestionStat::where('question_id',$request->question_id)->where('ip_address',$request->ip())->first();
+        $status = 'no';
+        if ($question_stat == null){
+            $question_stat = new QuestionStat();
+            $status = 'yes';
+        }
+        $question_stat->question_id = $request->question_id;
+        $question_stat->dislike = 1;
+        $question_stat->like = 0;
+        $question_stat->ip_address= $request->ip();
+        $question_stat->save();
+
+        $question = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('id',$request->question_id)->first();
+        if ($status == 'yes'){
+            $question->dislikes += 1;
+        }else{
+            $question->dislikes += 1;
+            $question->likes -= 1;
+        }
+        $question->save();
+        return response([
+            'likes'=>$question->likes,
+            'dislikes'=>$question->dislikes,
+        ]);
     }
 }

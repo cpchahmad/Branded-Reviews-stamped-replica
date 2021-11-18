@@ -46,16 +46,14 @@
             </p>
         </div>
         <div class="like_dislike">
-            <p>
-                Was this helpful?
-                <span>
-                        <a href="">
-                          <i class="fas fa-thumbs-up"></i> <span>0</span>
-                        </a>
-                        <a href="">
-                          <i class="fas fa-thumbs-down"></i> <span>0</span>
-                        </a>
-                      </span>
+            <p>Was this helpful?<span>
+                            <a href="javascript:void(0)">
+                              <i @if(isset($question->stats) && $question->stats->like == 1) class="fas fa-thumbs-up blue-color q-like" @else class="fas fa-thumbs-up   q-like" @endif></i> <span class="like-q" data-value="{{$question->id}}">{{$question->likes}}</span>
+                            </a>
+                            <a href="javascript:void(0)">
+                              <i @if(isset($question->stats) && $question->stats->dislike == 1) class="fas fa-thumbs-down blue-color q-dislike" @else  class="fas fa-thumbs-down q-dislike" @endif></i> <span class="dislike-q" data-value="{{$question->id}}">{{$question->dislikes}}</span>
+                            </a>
+                          </span>
             </p>
         </div>
     </div>

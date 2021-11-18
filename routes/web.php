@@ -66,7 +66,12 @@ Route::group(['middleware' => ['verify.shopify']], function () {
     //Questions append
     Route::get('get-questions',  [App\Http\Controllers\QuestionController::class, 'AppendQuestions'])->name('get.questions');
 
-    //likes
+    //Review likes
     Route::get('update-likes',  [App\Http\Controllers\ReviewController::class, 'UpdateLikes'])->name('update.likes');
-    //Dislikes
+    //Review Dislikes
     Route::get('update-dislikes',  [App\Http\Controllers\ReviewController::class, 'UpdateDisLikes'])->name('update.dislikes');
+
+    // Question likes
+    Route::get('update-question-likes',  [App\Http\Controllers\QuestionController::class, 'UpdateQuestionLikes'])->name('update.question.likes');
+    //Question Dislikes
+    Route::get('update-question-dislikes',  [App\Http\Controllers\QuestionController::class, 'UpdateQuestionDisLikes'])->name('update.question.dislikes');
