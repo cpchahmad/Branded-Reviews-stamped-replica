@@ -177,7 +177,7 @@
                         <thead class="border-0">
                         <tr>
                             <th>Title</th>
-                            <th>Description</th>
+                            <th style="width: 33%;">Description</th>
                             <th>Customer</th>
                             <th>Rating</th>
                             <th>Status</th>
