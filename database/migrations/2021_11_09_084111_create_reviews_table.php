@@ -21,7 +21,7 @@ class CreateReviewsTable extends Migration
             $table->string('email')->nullable();
             $table->string('review_rating')->nullable();
             $table->string('review_title')->nullable();
-            $table->string('experience')->nullable();
+            $table->text('experience')->nullable();
             $table->string('customer_location')->nullable();
             $table->bigInteger('likes')->default(0);
             $table->bigInteger('dislikes')->default(0);

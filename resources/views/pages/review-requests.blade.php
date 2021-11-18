@@ -190,10 +190,10 @@
                         <tbody>
                         @foreach($reviews as $index => $review)
                         <tr>
-                            <td class="" style="width: 8%;" ><a href="#">{{$review->review_title}}</a></td>
-                            <td class="">{{$review->experience}}</td>
-                            <td class="">{{$review->name}}</td>
-                            <td class="">
+                            <td class="" style="width: 8%;vertical-align: middle;" ><a href="#">{{$review->review_title}}</a></td>
+                            <td class="" style="vertical-align: middle">{{$review->experience}}</td>
+                            <td class="" style="vertical-align: middle">{{$review->name}}</td>
+                            <td class="" style="vertical-align: middle">
                                 <div style="overflow:hidden;">
                                 <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size:large;">★★★★★</span>
                                 </div>
@@ -213,7 +213,7 @@
                                         ">{{$review->status}}</div></td>
                             <td class="text-center alignment" style="vertical-align: middle;"><a href="{{route('review.feature',$review->id)}}">@if($review->feature == 'featured')<span class="fa fa-star checked"></span> @else <span class="fa fa-star"></span> @endif</a></td>
                             <td class="alignment" style="vertical-align: middle;">{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->diffForHumans()}}</td>
-                            <td class=""><a href="{{route('review.view',$review->id)}}" class="btn btn-sm btn-primary" type="button">view</a></td>
+                            <td class="" style="vertical-align: middle"><a href="{{route('review.view',$review->id)}}" class="btn btn-sm btn-primary" type="button">view</a></td>
                         </tr>
                         @endforeach
                         </tbody>
