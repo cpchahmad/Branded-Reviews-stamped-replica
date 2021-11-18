@@ -20,6 +20,8 @@ class CreateQuestionsTable extends Migration
             $table->string('name')->nullable();
             $table->string('email')->nullable();
             $table->string('question')->nullable();
+            $table->bigInteger('likes')->default(0);
+            $table->bigInteger('dislikes')->default(0);
             $table->string('status')->default('unpublish');
             $table->string('verify_status')->default('verify');
             $table->string('real_fake')->default('real');
