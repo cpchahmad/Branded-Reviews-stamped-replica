@@ -423,7 +423,7 @@
                         <br>
                         <span>{{$review->name}}</span>
                         <br>
-                        <span>United States</span>
+                        <span>{{$review->customer_location}}</span>
                         <br>
                         <span>{{$review->email}}</span>
                     </div>

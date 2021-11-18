@@ -29,7 +29,7 @@
                         <h3>{{ucwords($review->name)}}<span>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                         <p>
                             <i class="fas fa-flag-usa"></i>
-                            United States
+                            {{$review->customer_location}}
                         </p>
                         <div>
                             @if($review->review_rating == null)
@@ -152,7 +152,7 @@
                             <h3>{{ucwords($review->name)}}<span>@if($review->verify_status == 'veified') Verified Buyer @endif</span></h3>
                             <p>
                                 <i class="fas fa-flag-usa"></i>
-                                United States
+                                {{$review->customer_location}}
                             </p>
                             <div>
                                 @if($review->review_rating == null)
