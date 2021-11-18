@@ -158,9 +158,13 @@ class ReviewController extends Controller
         }
         $review->review_title = $request->review_title;
         $review->experience = $request->experience;
-        $ip = $request->ip();
-        $currentUserInfo = Location::get($ip);
-        $review->customer_location = $currentUserInfo->countryName;
+        if ($request->has('review_status')){
+            $review->customer_location = $request->customer_location;
+        }else{
+            $ip = $request->ip();
+            $currentUserInfo = Location::get($ip);
+            $review->customer_location = $currentUserInfo->countryName;
+        }
         $review->save();
 
         if ($request->hasFile('image')) {

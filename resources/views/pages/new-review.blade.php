@@ -53,11 +53,17 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label for="#">Enter Location</label>
+                                <input placeholder="Enter location" name="customer_location" type="text" required class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label for="#">Review Image</label>
                                 <input name="image" type="file" class="form-control">
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label for="#">Experience</label>
                                 <textarea class="form-control" name="experience" id="" cols="30" rows="2" placeholder="your experience"></textarea>
