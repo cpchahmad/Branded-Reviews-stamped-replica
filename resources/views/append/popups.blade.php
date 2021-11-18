@@ -1,3 +1,4 @@
+<div class="owl-carousel owl-theme">
 @php
 $counter = 0;
 @endphp
@@ -85,6 +86,7 @@ $counter = 0;
 @php $counter += 1; @endphp
 @endif
 @endforeach
+</div>
 @else
 <a href="javascript:void(0)" title="My Watch" class="">
     <div>
