@@ -82,7 +82,7 @@
                 <div class="review_footer">
                     <div class="share_review">
                         <p>
-                            <a id="share_towards" href="#">
+                            <a id="share_towards" href="https://www.facebook.com/?stype=lo&jlou=AfcPTiQRv1Wo4k47anLwqj-iJwUj9bEVeIpPA12-XC8gnj50TXByIWw_htoR-EdBlsqkk5rpNEXxbMF0fjYif6kWNs0Da1LmuIzvgHU3U-GcKA&smuh=57747&lh=Ac-SjWQmmH4NcB0oCZs">
                                 <i class="fas fa-share-square"></i>
                                 Share
                             </a>
