@@ -76,5 +76,3 @@ Route::group(['middleware' => ['verify.shopify']], function () {
     //Question Dislikes
     Route::get('update-question-dislikes',  [App\Http\Controllers\QuestionController::class, 'UpdateQuestionDisLikes'])->name('update.question.dislikes');
 
-    //popups
-    Route::get('get-popups',  [App\Http\Controllers\ReviewController::class, 'GetPopups'])->name('get.popups');
