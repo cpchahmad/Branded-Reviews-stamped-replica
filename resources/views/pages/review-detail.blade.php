@@ -302,6 +302,7 @@
                                                             @endphp
                                                            <input placeholder="Enter Date" required name="created_at" value="{{isset($review->created_at)?$review_date:null}}" type="date" class="form-control">
                                                        </div>
+
                                                        <div class="form-group text-left">
                                                            <label for="#">Enter Review Description</label>
                                                            <textarea placeholder="Enter Review description" required name="experience" class="form-control">{{$review->experience}}</textarea>
