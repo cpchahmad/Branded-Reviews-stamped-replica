@@ -402,19 +402,26 @@
                                 </div>
                             </div>
                         </div>
+                        <form action="{{route('update.photos')}}" method="POST" enctype="multipart/form-data">
+                            @sessionToken
                         <div class="row mt-2">
+                                <input type="hidden" value="{{$review->id}}" name="review_id">
                             @foreach($review->medias as $media)
                                 <div class="col-md-4 mt-1 parent-div">
                                     <div class=" imagecontainer">
                                         <img id="add-image" src="{{asset('review-images'.'/'.$media->review_media)}}" alt="" />
+                                        <input type="hidden" value="{{$media->id}}" name="photo_id[]">
                                         <div class="button"><a class="delete-item" href="#"><i class="fas fa-trash-alt"></i></a></div>
                                     </div>
                                 </div>
                             @endforeach
+                            <div class="col-md-12 text-right">
+                                <button type="submit" class="btn btn-secondary">update</button>
+                            </div>
                         </div>
+                        </form>
                     </div>
                 </div>
-
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="card border-light border-0 text-indigo shadow-sm">

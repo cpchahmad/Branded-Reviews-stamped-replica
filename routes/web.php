@@ -37,6 +37,7 @@ Route::group(['middleware' => ['verify.shopify']], function () {
     Route::get('review-delete/{id}', [App\Http\Controllers\ReviewController::class, 'ReviewDelete'])->name('review.delete');
     Route::post('add-photo', [App\Http\Controllers\ReviewController::class, 'ReviewAddPhoto'])->name('add.photo');
     Route::get('add-review/{id}', [App\Http\Controllers\ReviewController::class, 'AddNewReview'])->name('add.review');
+    Route::post('update.photos', [App\Http\Controllers\ReviewController::class, 'UpdatePhotos'])->name('update.photos');
 
     //Questions
     Route::get('question-request', [App\Http\Controllers\QuestionController::class, 'QuestionRequest'])->name('question.request');
