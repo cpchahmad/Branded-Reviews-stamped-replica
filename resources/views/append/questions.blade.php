@@ -75,5 +75,5 @@
 </div>
     @endforeach
 @else
-    <p>This Product has No Questions yet!</p>
+    <p>This Product has No Publish Questions yet!</p>
 @endif

@@ -299,6 +299,7 @@ class ReviewController extends Controller
             $total_two_star = $review_status->two_star;
             $total_one_star = $review_status->one_star;
         }
+
         return response([
             'reviews'=>$reviews,
             'total_reviews'=>$count_reviews,
@@ -311,6 +312,7 @@ class ReviewController extends Controller
             'one_star'=>$total_one_star,
             'review_images'=>$images,
             'popups'=>$popups,
+            'status'=>$status,
         ]);
     }
     public function AddNewReview($id){
