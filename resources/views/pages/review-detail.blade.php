@@ -296,11 +296,7 @@
                                                        </div>
                                                        <div class="form-group text-left">
                                                            <label for="#">Review Date</label>
-                                                           @php
-                                                               $review_date = date_create($review->created_at);
-                                                                $review_date = date_format($review_date,'m / d / Y');
-                                                            @endphp
-                                                           <input placeholder="Enter Date" required name="created_at" value="{{isset($review->created_at)?$review_date:null}}" type="date" class="form-control">
+                                                           <input placeholder="Enter Date" required name="created_at" value="{{ $review->created_at->format('Y-m-d') }}" type="date" class="form-control">
                                                        </div>
 
                                                        <div class="form-group text-left">
