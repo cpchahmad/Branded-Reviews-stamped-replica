@@ -14,8 +14,7 @@ class ProductController extends Controller
 {
     public function Products(){
         $shop = Auth::user();
-        $products = Product::where('shop_id',$shop->id)->paginate(2);
-        dd($products);
+        $products = Product::where('shop_id',$shop->id)->paginate(10);
         return view('pages.products')->with([
             'products'=>$products,
         ]);

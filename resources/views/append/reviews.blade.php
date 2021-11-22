@@ -153,6 +153,9 @@
                 @endif
             </div>
         @endforeach
+        <div class="pagination">
+            {{ $reviews_featured->links("pagination::bootstrap-4") }}
+        </div>
     @endif
         @if (count($reviews_publish) > 0)
             @foreach($reviews_publish as $review)
@@ -307,6 +310,9 @@
                     @endif
                 </div>
             @endforeach
+            <div class="pagination">
+                {{ $reviews_publish->links("pagination::bootstrap-4") }}
+            </div>
         @endif
         @if (count($reviews_featured) == 0 && count($reviews_publish) == 0)
             <p>This Product has No Publish Reviews yet!</p>
