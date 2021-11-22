@@ -34,7 +34,7 @@
                 <li class="{{ request()->is('products') ? 'active' : '' }}"><a href="{{route('products')}}"><span class="oi oi-puzzle-piece"></span></span>Products</a></li>
                 <li class="{{ request()->is('review-request') ? 'active' : '' }}"><a href="{{route('review.request')}}"><span class="oi oi-dashboard"></span>Reviews</a></li>
                 <li class="{{ request()->is('question-request') ? 'active' : '' }}"><a href="{{route('question.request')}}"><span class="oi oi-pie-chart"></span>Questions</a></li>
-                <li class="{{ request()->is('settings') ? 'active' : '' }}"><a href="charts.html"><span class="oi oi-pie-chart"></span>Settings</a></li>
+                <li class="{{ request()->is('settings') ? 'active' : '' }}"><a href="{{route('settings')}}"><span class="oi oi-pie-chart"></span>Settings</a></li>
             </ul>
         </div>
             @yield('content')

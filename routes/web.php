@@ -50,6 +50,10 @@ Route::group(['middleware' => ['verify.shopify']], function () {
     Route::get('question-delete/{id}', [App\Http\Controllers\QuestionController::class, 'QuestionDelete'])->name('question.delete');
     Route::get('add-question/{id}', [App\Http\Controllers\QuestionController::class, 'AddNewQuestion'])->name('add.question');
 
+    // Settings
+    Route::get('settings', [App\Http\Controllers\AdminController::class, 'ThemeSettings'])->name('settings');
+    Route::post('setting-save', [App\Http\Controllers\AdminController::class, 'SettingSave'])->name('setting.save');
+
 });
 
     //Review Submit
@@ -76,4 +80,7 @@ Route::group(['middleware' => ['verify.shopify']], function () {
     Route::get('update-question-likes',  [App\Http\Controllers\QuestionController::class, 'UpdateQuestionLikes'])->name('update.question.likes');
     //Question Dislikes
     Route::get('update-question-dislikes',  [App\Http\Controllers\QuestionController::class, 'UpdateQuestionDisLikes'])->name('update.question.dislikes');
+    // Setting
+    Route::get('get-setting',  [App\Http\Controllers\AdminController::class, 'GetSetting'])->name('get.setting');
+
 

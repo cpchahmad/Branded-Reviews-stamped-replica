@@ -16,16 +16,18 @@
                             $acronym = strtoupper($acronym);
                         }
             @endphp
+
+
             <div class="review_2">
                 <div class="review_1_header">
-                    <div class="user_pic">
-                        <div class="user_pic_inner">
-                            <h3 style="color: white;">
+                    <div class="user_pic" id="user_pic">
+                        <div class="user_pic_inner" id="user_pic_inner">
+                            <h3>
                                 {{$acronym}}
                             </h3>
                         </div>
                     </div>
-                    <div class="user_info">
+                    <div class="user_info" id="user_info">
                         <h3>{{ucwords($review->name)}}<span>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                         <p>
                             <i class="fas fa-flag-usa"></i>
@@ -72,7 +74,23 @@
                         </div>
                     </div>
                     <div class="review_date">
-                        <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+
+                        @if($loop->index == 0)
+
+                            @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
+                                <p> {{now()->subDays(1)->format('d/m/y')}} </p>
+                            @else
+                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                            @endif
+                        @elseif($loop->index == 1)
+                            @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
+                                <p> {{now()->subDays(1)->format('d/m/y')}} </p>
+                            @else
+                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                            @endif
+                        @else
+                            <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                        @endif
                     </div>
                 </div>
                 <div class="review_content">
@@ -102,13 +120,28 @@
                     </div>
                 </div>
                 @if($review->review_reply != null)
-                <div class="review_reply">
+                <div class="review_reply" id="review_reply">
                     <div class="replier_info">
-                        <div class="replier_name">
+                        <div class="replier_name" id="replier_name">
                             <h4>{{$review->review_reply->store_name}}</h4>
                         </div>
                         <div class="replier_date">
-                            <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->review_reply->created_at)->format('d/m/y')}}</p>
+                            @if($loop->index == 0)
+
+                                @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
+                                    <p> {{now()->subDays(2)->format('d/m/y')}} </p>
+                                @else
+                                    <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                @endif
+                            @elseif($loop->index == 1)
+                                @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
+                                    <p> {{now()->subDays(2)->format('d/m/y')}} </p>
+                                @else
+                                    <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                @endif
+                            @else
+                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                            @endif
                         </div>
                     </div>
                     <div class="replied_text">
@@ -141,14 +174,14 @@
                 @endphp
                 <div class="review_2">
                     <div class="review_1_header">
-                        <div class="user_pic">
-                            <div class="user_pic_inner">
-                                <h3 style="color: white;">
+                        <div class="user_pic" id="user_pic">
+                            <div class="user_pic_inner" id="user_pic_inner">
+                                <h3>
                                     {{$acronym}}
                                 </h3>
                             </div>
                         </div>
-                        <div class="user_info">
+                        <div class="user_info" id="user_info">
                             <h3>{{ucwords($review->name)}}<span>@if($review->verify_status == 'veified') Verified Buyer @endif</span></h3>
                             <p>
                                 <i class="fas fa-flag-usa"></i>
@@ -195,7 +228,22 @@
                             </div>
                         </div>
                         <div class="review_date">
-                            <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                            @if($loop->index == 0)
+
+                                @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
+                                    <p> {{now()->subDays(2)->format('d/m/y')}} </p>
+                                @else
+                                    <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                @endif
+                            @elseif($loop->index == 1)
+                                @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
+                                    <p> {{now()->subDays(2)->format('d/m/y')}} </p>
+                                @else
+                                    <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                @endif
+                            @else
+                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                            @endif
                         </div>
                     </div>
                     <div class="review_content">
@@ -225,13 +273,29 @@
                         </div>
                     </div>
                     @if($review->review_reply != null)
-                        <div class="review_reply">
+                        <div class="review_reply" id="review_reply">
                             <div class="replier_info">
-                                <div class="replier_name">
+                                <div class="replier_name" id="replier_name">
                                     <h4>{{$review->review_reply->store_name}}</h4>
                                 </div>
                                 <div class="replier_date">
-                                    <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->review_reply->created_at)->format('d/m/y')}}</p>
+                                    @if($loop->index == 0)
+
+                                        @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
+                                            <p> {{now()->subDays(1)->format('d/m/y')}} </p>
+                                        @else
+                                            <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                        @endif
+                                    @elseif($loop->index == 1)
+                                        @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
+                                            <p> {{now()->subDays(1)->format('d/m/y')}} </p>
+                                        @else
+                                            <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                        @endif
+                                    @else
+                                        <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                    @endif
+
                                 </div>
                             </div>
                             <div class="replied_text">

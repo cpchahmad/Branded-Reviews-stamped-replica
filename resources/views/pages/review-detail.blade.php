@@ -422,7 +422,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="card border-light border-0 text-indigo shadow-sm">
                     <div class="card-header bg-white">
-                        <div style="display: flex;justify-content: space-between;"><h6>Customer overview</h6><img src="{{asset('shirt.jpg')}}" style="border-radius: 50%;" width="40px" height="40px"></div>
+                        <div style="display: flex;justify-content: space-between;"><h6>Customer overview</h6><img src="{{asset('empty1.jpg')}}" style="border-radius: 50%;" width="40px" height="40px"></div>
                         <span>{{$review->name}}</span>
                         <br>
                         <span>{{$review->customer_location}}</span>
