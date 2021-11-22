@@ -21,7 +21,6 @@ class ReviewController extends Controller
     public function ReviewRequest(){
         $shop = Auth::user();
         $webhooks = $shop->api()->rest('GET', '/admin/webhooks.json');
-        dd($webhooks);
         $reviews = Review::where('shop_id',$shop->id)->latest()->paginate(10);
         return view('pages.review-requests')->with([
             'reviews'=>$reviews,
