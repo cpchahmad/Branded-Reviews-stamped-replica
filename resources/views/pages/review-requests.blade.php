@@ -131,6 +131,14 @@
         .stars-98:after { width: 98%; }
         .stars-99:after { width: 99%; }
         .stars-100:after { width: 100%; }
+
+         .daterangepicker .right{
+             color: inherit !important;
+         }
+        .daterangepicker {
+            width: 341px !important;
+        }
+
     </style>
 
     <div class="col-lg-10 col-md-10 pl-4 pt-3 pr-4">
@@ -140,32 +148,30 @@
             </div>
             <div class="col-md-12 mt-2">
                 <div class="form-group">
-                    <form action="" method="GET">
-                        @sessionToken
                         <div class="input-group">
-                            <button type="submit" class="btn btn-primary mr-1 pl-4 pr-4">Filter</button>
-                            <button type="button" class="btn btn-secondary mr-1 pl-4 pr-4">Clear</button>
-                            <select class="form-control bg-white mr-1" name="filter" id="country">
-                                <option selected disabled>Date</option>
-                            </select>
+                            <button type="button" class="btn btn-primary filter_by_date mr-1 pl-4 pr-4" data-url="{{route('reviews.filter')}}">Filter</button>
+                            <button type="button" class="btn btn-secondary clear_filter_data mr-1 pl-4 pr-4">Clear</button>
+                            <div id="reportrange" style="background: #fff; cursor: pointer; padding: 0px 4px; border: 1px solid #ccc;">
+                                <i class="fa fa-calendar"></i>&nbsp;
+                                <span>@if(isset($date_range)) {{$date_range}} @endif</span> <i class="fa fa-caret-down"></i>
+                            </div>
                             <select class="form-control bg-white mr-1" name="reviews" id="reviews">
-                                <option selected disabled>Reviews</option>
-                                <option value="5">5 Star</option>
-                                <option value="4">4 Star</option>
-                                <option value="3">3 Star</option>
-                                <option value="2">2 Star</option>
-                                <option value="1">1 Star</option>
+                                <option selected disabled value="reviews">Reviews</option>
+                                <option  @if(isset($review_stars) && $review_stars== 5) selected @endif value="5">5 Star</option>
+                                <option @if(isset($review_stars) && $review_stars== 4) selected @endif value="4">4 Star</option>
+                                <option @if(isset($review_stars) && $review_stars== 3) selected @endif value="3">3 Star</option>
+                                <option @if(isset($review_stars) && $review_stars== 2) selected @endif value="2">2 Star</option>
+                                <option @if(isset($review_stars) && $review_stars== 1) selected @endif value="1">1 Star</option>
                             </select>
                             <select class="form-control bg-white mr-1" name="review_status" id="review_status">
-                                <option selected disabled>Status</option>
-                                <option value="paid">Publish</option>
-                                <option value="pending">Pending</option>
-                                <option value="archive">Archive</option>
-                                <option value="featured">Featured</option>
+                                <option selected disabled value="status">Status</option>
+                                <option @if(isset($review_status) && $review_status== 'publish') selected @endif value="publish">Publish</option>
+                                <option @if(isset($review_status) && $review_status== 'pending') selected @endif value="pending">Pending</option>
+                                <option @if(isset($review_status) && $review_status== 'archive') selected @endif value="archive">Archive</option>
+                                <option @if(isset($review_status) && $review_status== 'featured') selected @endif value="featured">Featured</option>
                             </select>
-                            <input placeholder="Email / Title / Desc" type="text" name="review_desc" class="form-control">
+                            <input placeholder="Email / Title / Desc" type="text" id="email_title_desc" @if (isset($email_title_desc)) value="{{$email_title_desc}}" @endif name="email_title_desc" class="form-control">
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -177,7 +183,7 @@
                         <thead class="border-0">
                         <tr>
                             <th>Title</th>
-                            <th style="width: 33%;">Description</th>
+                            <th style="width: 25%;">Description</th>
                             <th>Customer</th>
                             <th>Rating</th>
                             <th>Status</th>
@@ -229,4 +235,48 @@
         </div>
     </div>
 
+@endsection
+@section('scripts')
+<script>
+    if($('body').find('#reportrange').length > 0){
+        var start = moment().subtract(29, 'days');
+        var end = moment();
+
+        function cb(start, end) {
+            $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        }
+        if($('#reportrange span').text() === ''){
+            $('#reportrange span').html('Select Date Range');
+        }
+
+
+        $('#reportrange').daterangepicker({
+            startDate: start,
+            endDate: end,
+            ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            }
+        }, cb);
+
+    }
+    $('body').on('click','.filter_by_date', function() {
+        let daterange_string = $('#reportrange').find('span').text();
+        var selected_review_value = $("#reviews option:selected").val();
+        var selected_review_status_name = $("#review_status option:selected").val() ;
+        var email_title_desc = $("#email_title_desc").val();
+        window.location.href = $(this).data('url')+'?date-range='+daterange_string+'&review_stars='+selected_review_value+'&review_status='+selected_review_status_name+'&email_title_desc='+email_title_desc;
+
+    });
+
+    $('body').on('click','.clear_filter_data', function() {
+
+        window.location.href = '/review-request';
+
+    });
+</script>
 @endsection

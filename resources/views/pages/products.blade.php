@@ -16,19 +16,12 @@
             </div>
             <div class="col-md-12 mt-2">
                 <div class="form-group">
-                    <form action="" method="GET">
+                    <form action="{{route('products.filter')}}" method="GET">
                         @sessionToken
                         <div class="input-group">
                             <button type="submit" class="btn btn-primary mr-1 pl-4 pr-4">Filter</button>
-                            <select class="form-control bg-white" name="filter" id="country">
-                                <option selected disabled>Search</option>
-                                <option value="paid">Paid</option>
-                                <option value="partially paid">Partially paid</option>
-                                <option value="pending">Payment pending</option>
-                                <option value="refunded">Refunded</option>
-                                <option value="partially refunded">Partially refunded</option>
-                                <option value="unpaid">Unpaid</option>
-                            </select>
+                            <button type="button" class="btn btn-secondary clear_filter_data mr-1 pl-4 pr-4">Clear</button>
+                            <input placeholder="Enter product title" type="text" @if (isset($product_filter)) value="{{$product_filter}}" @endif name="products_filter" id="question_email" class="form-control">
                         </div>
                     </form>
                 </div>
@@ -84,4 +77,11 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+    <script>
+        $('body').on('click','.clear_filter_data', function() {
+            window.location.href = '/products';
+        });
+    </script>
 @endsection

@@ -104,6 +104,16 @@ class ProductController extends Controller
         }
         return Redirect::tokenRedirect('products', ['notice' => 'Setting Saved Successfully']);
     }
-
-
+    public function ProductsFilter(Request $request){
+        $shop = Auth::user();
+        $products = Product::where('shop_id',$shop->id)->newQuery();
+        if ($request->filled('products_filter')){
+                $products = $products->where('title', 'LIKE', '%' . $request->input('products_filter') . '%')->newQuery();
+        }
+        $products = $products->paginate(10);
+        return view('pages.products')->with([
+            'products'=>$products,
+            'product_filter'=>$request->input('products_filter'),
+        ]);
+    }
 }

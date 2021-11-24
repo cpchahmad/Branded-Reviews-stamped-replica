@@ -12,6 +12,7 @@ use App\Models\User;
 use App\Models\ReviewReply;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Stevebauman\Location\Facades\Location;
@@ -20,7 +21,6 @@ class ReviewController extends Controller
 {
     public function ReviewRequest(){
         $shop = Auth::user();
-        $webhooks = $shop->api()->rest('GET', '/admin/webhooks.json');
         $reviews = Review::where('shop_id',$shop->id)->latest()->paginate(10);
         return view('pages.review-requests')->with([
             'reviews'=>$reviews,
@@ -216,14 +216,16 @@ class ReviewController extends Controller
     public function UpdatePhotos(Request $request){
         $photos = ReviewMedia::where('review_id',$request->review_id)->get();
         $photo_ids = [];
-        foreach ($photos as $photo){
-            foreach ($request->photo_id as $id){
-                if ($photo->id != $id){
-                    array_push($photo_ids,$photo->id);
+        if ($request->photo_id != null) {
+            foreach ($photos as $photo) {
+                foreach ($request->photo_id as $id) {
+                    if ($photo->id != $id) {
+                        array_push($photo_ids, $photo->id);
+                    }
                 }
             }
+            $photos_update = ReviewMedia::whereIn('id', $photo_ids)->delete();
         }
-        $photos_update = ReviewMedia::whereIn('id', $photo_ids)->delete();
         return Redirect::tokenRedirect('review.request', ['notice' => 'Photos updated Successfully']);
     }
 
@@ -262,16 +264,18 @@ class ReviewController extends Controller
             }
         }
 
-        $reviews_featured = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->paginate(2);
-        $reviews_publish  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->paginate(2);
+        $reviews_featured = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->get();
+        $reviews_publish  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->get();
+        $reviews_pagi_fea = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->paginate(2);
+        $reviews_pagi_pub  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->paginate(2);
         $total_five_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',5)->count();
         $total_four_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',4)->count();
         $total_three_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',3)->count();
         $total_two_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',2)->count();
         $total_one_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',1)->count();
         $reviews = view('append.reviews')->with([
-            'reviews_featured' => $reviews_featured,
-            'reviews_publish' => $reviews_publish
+            'reviews_featured' => $reviews_pagi_fea,
+            'reviews_publish' => $reviews_pagi_pub
         ])->render();
         $count_reviews = count($reviews_featured) + count($reviews_publish);
         $count_rating =  $reviews_featured->sum('review_rating') + $reviews_publish->sum('review_rating');
@@ -302,6 +306,7 @@ class ReviewController extends Controller
         }
 
         return response([
+            'paginate'=>json_decode(json_encode($reviews_pagi_pub)),
             'reviews'=>$reviews,
             'total_reviews'=>$count_reviews,
             'total_rating'=>$over_all_rating,
@@ -375,6 +380,86 @@ class ReviewController extends Controller
             'dislikes'=>$review->dislikes,
         ]);
     }
+    public function FilterReviews(Request $request){
+        $shop = User::where('name',$request->shop_name)->first();
+        if ($request->filter_value == 'most_recent' ) {
+            $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->latest()->paginate(2);
+            $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->latest()->paginate(2);
+            $reviews = view('append.reviews')->with([
+                'reviews_featured' => $reviews_pagi_fea,
+                'reviews_publish' => $reviews_pagi_pub
+            ])->render();
+        }
+        if ($request->filter_value == 'heighest_rating' ) {
+            $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->orderBy('review_rating','desc')->paginate(10);
+            $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->orderBy('review_rating','desc')->paginate(10);
+            $reviews = view('append.reviews')->with([
+                'reviews_featured' => $reviews_pagi_fea,
+                'reviews_publish' => $reviews_pagi_pub
+            ])->render();
+        }
+        if ($request->filter_value == 'lowest_rating' ) {
+            $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->orderBy('review_rating','asc')->paginate(10);
+            $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->orderBy('review_rating','asc')->paginate(10);
+            $reviews = view('append.reviews')->with([
+                'reviews_featured' => $reviews_pagi_fea,
+                'reviews_publish' => $reviews_pagi_pub
+            ])->render();
+        }
+        if ($request->filter_value == 'most_helpful' ) {
+            $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->orderBy('likes','desc')->paginate(10);
+            $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->orderBy('likes','desc')->paginate(10);
+            $reviews = view('append.reviews')->with([
+                'reviews_featured' => $reviews_pagi_fea,
+                'reviews_publish' => $reviews_pagi_pub
+            ])->render();
+        }
 
+        if ($reviews != null){
+            return response([
+                'paginate'=>json_decode(json_encode($reviews_pagi_pub)),
+                'reviews'=>$reviews,
+            ]);
+        }else{
+            return response([
+                'reviews'=>'no reviews',
+            ]);
+        }
 
+    }
+    public function ReviewsFilter(Request $request){
+        $shop = Auth::user();
+        $reviews = Review::where('shop_id',$shop->id)->newQuery();
+        if ($request->filled('date-range')){
+            if ($request->input('date-range') != 'Select Date Range') {
+                $date_range = explode('-', $request->input('date-range'));
+                $start_date = $date_range[0];
+                $end_date = $date_range[1];
+                $comparing_start_date = Carbon::parse($start_date)->format('Y-m-d') . ' 00:00:00';
+                $comparing_end_date = Carbon::parse($end_date)->format('Y-m-d') . ' 23:59:59';
+                $reviews = $reviews->whereBetween('created_at', [$comparing_start_date, $comparing_end_date])->newQuery();
+            }
+        }
+        if ($request->filled('review_status')){
+            if ($request->input('review_status') != 'status') {
+                $reviews = $reviews->where('status', $request->input('review_status'))->newQuery();
+            }
+        }
+        if ($request->filled('email_title_desc')){
+                $reviews = $reviews->where('review_title', 'LIKE', '%' . $request->input('email_title_desc') . '%')->orWhere('name','LIKE', '%' . $request->input('email_title_desc') . '%')->orWhere('experience','LIKE', '%' . $request->input('email_title_desc') . '%')->newQuery();
+        }
+        if ($request->filled('review_stars')){
+            if ($request->input('review_stars') != 'reviews') {
+                $reviews = $reviews->where('review_rating', $request->input('review_stars'))->newQuery();
+            }
+        }
+        $reviews = $reviews->paginate(10);
+        return view('pages.review-requests')->with([
+            'reviews'=>$reviews,
+            'date_range' => $request->input('date-range'),
+            'review_stars'=>$request->input('review_stars'),
+            'review_status'=>$request->input('review_status'),
+            'email_title_desc'=>$request->input('email_title_desc'),
+        ]);
+    }
 }

@@ -15,46 +15,11 @@
         @endif
     @endforeach
     @else
-        <a href="javascript:void(0)" title="My Watch" class="">
-            <div>
-                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
-            </div>
-        </a>
-        <a href="javascript:void(0)" title="My Watch" class="">
-            <div>
-                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
-            </div>
-        </a>
-        <a href="javascript:void(0)" title="My Watch" class="">
-            <div>
-                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
-            </div>
-        </a>
-        <a href="javascript:void(0)" title="My Watch" class="">
-            <div>
-                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
-            </div>
-        </a>
-        <a href="javascript:void(0)" title="My Watch" class="">
-            <div>
-                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
-            </div>
-        </a>
-        <a href="javascript:void(0)" title="My Watch" class="">
-            <div>
-                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
-            </div>
-        </a>
-        <a href="javascript:void(0)" title="My Watch" class="">
-            <div>
-                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
-            </div>
-        </a>
-        <a href="javascript:void(0)" title="My Watch" class="">
-            <div>
-                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">
-            </div>
-        </a>
+{{--        <a href="javascript:void(0)" title="My Watch" class="">--}}
+{{--            <div>--}}
+{{--                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">--}}
+{{--            </div>--}}
+{{--        </a>--}}
     @endif
 @endforeach
 @else

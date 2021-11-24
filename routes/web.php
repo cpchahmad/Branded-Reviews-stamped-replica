@@ -22,6 +22,7 @@ Route::group(['middleware' => ['verify.shopify']], function () {
     Route::get('product-detail/{id}', [App\Http\Controllers\ProductController::class, 'ProductDetail'])->name('product.detail');
     Route::get('sync-products', [App\Http\Controllers\ProductController::class, 'ShopifyProducts'])->name('sync.products');
     Route::post('fake-stats', [App\Http\Controllers\ProductController::class, 'FakeStats'])->name('fake.stats');
+    Route::get('products-filter', [App\Http\Controllers\ProductController::class, 'ProductsFilter'])->name('products.filter');
 
     // Reviews
     Route::get('review-request', [App\Http\Controllers\ReviewController::class, 'ReviewRequest'])->name('review.request');
@@ -38,6 +39,7 @@ Route::group(['middleware' => ['verify.shopify']], function () {
     Route::post('add-photo', [App\Http\Controllers\ReviewController::class, 'ReviewAddPhoto'])->name('add.photo');
     Route::get('add-review/{id}', [App\Http\Controllers\ReviewController::class, 'AddNewReview'])->name('add.review');
     Route::post('update.photos', [App\Http\Controllers\ReviewController::class, 'UpdatePhotos'])->name('update.photos');
+    Route::get('reviews-filter', [App\Http\Controllers\ReviewController::class, 'ReviewsFilter'])->name('reviews.filter');
 
     //Questions
     Route::get('question-request', [App\Http\Controllers\QuestionController::class, 'QuestionRequest'])->name('question.request');
@@ -49,6 +51,7 @@ Route::group(['middleware' => ['verify.shopify']], function () {
     Route::get('verify-question/{id}', [App\Http\Controllers\QuestionController::class, 'QuestionVerify'])->name('verify.question');
     Route::get('question-delete/{id}', [App\Http\Controllers\QuestionController::class, 'QuestionDelete'])->name('question.delete');
     Route::get('add-question/{id}', [App\Http\Controllers\QuestionController::class, 'AddNewQuestion'])->name('add.question');
+    Route::get('question-filter', [App\Http\Controllers\QuestionController::class, 'QuestionFilter'])->name('question.filter');
 
     // Settings
     Route::get('settings', [App\Http\Controllers\AdminController::class, 'ThemeSettings'])->name('settings');
@@ -82,5 +85,8 @@ Route::group(['middleware' => ['verify.shopify']], function () {
     Route::get('update-question-dislikes',  [App\Http\Controllers\QuestionController::class, 'UpdateQuestionDisLikes'])->name('update.question.dislikes');
     // Setting
     Route::get('get-setting',  [App\Http\Controllers\AdminController::class, 'GetSetting'])->name('get.setting');
+    // Filter Reviews
+    Route::get('filter-reviews',  [App\Http\Controllers\ReviewController::class, 'FilterReviews'])->name('filter.reviews');
+
 
 

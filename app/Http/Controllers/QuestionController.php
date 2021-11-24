@@ -8,6 +8,7 @@ use App\Models\QuestionStat;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
@@ -118,11 +119,13 @@ class QuestionController extends Controller
     public function AppendQuestions(Request $request){
         $shop = User::where('name',$request->shop_name)->first();
         $questions_publish  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->get();
+        $questions_pagination  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->paginate(1);
         $total_question = count($questions_publish);
         $questions = view('append.questions')->with([
-            'questions_publish' => $questions_publish,
+            'questions_publish' => $questions_pagination,
         ])->render();
         return response([
+            'paginate'=>json_decode(json_encode($questions_pagination)),
             'questions'=>$questions,
             'total_question'=>$total_question,
         ]);
@@ -183,6 +186,38 @@ class QuestionController extends Controller
         return response([
             'likes'=>$question->likes,
             'dislikes'=>$question->dislikes,
+        ]);
+    }
+    public function QuestionFilter(Request $request){
+        $shop = Auth::user();
+        $questions = Question::where('shop_id',$shop->id)->newQuery();
+        if ($request->filled('date-range')){
+            if ($request->input('date-range') != 'Select Date Range') {
+                $date_range = explode('-', $request->input('date-range'));
+                $start_date = $date_range[0];
+                $end_date = $date_range[1];
+                $comparing_start_date = Carbon::parse($start_date)->format('Y-m-d') . ' 00:00:00';
+                $comparing_end_date = Carbon::parse($end_date)->format('Y-m-d') . ' 23:59:59';
+                $questions = $questions->whereBetween('created_at', [$comparing_start_date, $comparing_end_date])->newQuery();
+            }
+        }
+
+        if ($request->filled('question_status')){
+            if ($request->input('question_status') != 'status') {
+                $questions = $questions->where('status', $request->input('question_status'))->newQuery();
+            }
+        }
+
+        if ($request->filled('question_email')){
+            $questions = $questions->where('email',$request->input('question_email'))->newQuery();
+        }
+
+        $questions = $questions->paginate(10);
+        return view('pages.questions')->with([
+            'questions'=>$questions,
+            'date_range' => $request->input('date-range'),
+            'question_status'=>$request->input('question_status'),
+            'question_email'=>$request->input('question_email'),
         ]);
     }
 }
