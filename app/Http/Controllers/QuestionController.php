@@ -220,4 +220,21 @@ class QuestionController extends Controller
             'question_email'=>$request->input('question_email'),
         ]);
     }
+    public function FilterQuestions(Request $request){
+        $shop = User::where('name',$request->shop_name)->first();
+        $questions_pagination  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('name', 'LIKE', '%' . $request->input('search_data') . '%')->orWhere('email', 'LIKE', '%' . $request->input('search_data') . '%')->orWhere('question', 'LIKE', '%' . $request->input('search_data') . '%')->latest()->get();
+        $questions = view('append.questions')->with([
+            'questions_publish' => $questions_pagination,
+        ])->render();
+
+        if ($questions_pagination != null){
+            return response([
+                'questions'=>$questions,
+            ]);
+        }else{
+            return response([
+                'questions'=>'no questions',
+            ]);
+        }
+    }
 }

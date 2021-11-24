@@ -88,5 +88,8 @@ Route::group(['middleware' => ['verify.shopify']], function () {
     // Filter Reviews
     Route::get('filter-reviews',  [App\Http\Controllers\ReviewController::class, 'FilterReviews'])->name('filter.reviews');
 
+    //Filter Questions
+    Route::get('filter-questions',  [App\Http\Controllers\QuestionController::class, 'FilterQuestions'])->name('filter.questions');
+
 
 
