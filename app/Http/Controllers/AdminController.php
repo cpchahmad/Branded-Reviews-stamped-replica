@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Review;
 use App\Models\ThemeSetting;
 use App\Models\User;
@@ -80,11 +81,8 @@ class AdminController extends Controller
     }
     public function ShareFacebook(Request $request){
         $review = Review::where('id',$request->review_id)->first();
-        $template = view('append.share-facebook')->with([
-            'review'=>$review,
-        ])->render();
-        return response([
-            'success'=>$template,
-        ]);
+        $product = Product::where('shopify_id',$review->product_id)->first();
+        $shop = User::where('id',$review->shop_id)->first();
+        return \redirect('https://'.$shop->name.'/products/'.$product->title);
     }
 }
