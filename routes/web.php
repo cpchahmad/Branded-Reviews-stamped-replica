@@ -64,7 +64,8 @@ Route::group(['middleware' => ['verify.shopify']], function () {
 
     //Question Submit
     Route::post('question-submit', [App\Http\Controllers\QuestionController::class, 'QuestionSubmit'])->name('question.submit');
-
+    // html append
+    Route::get('get-data', [App\Http\Controllers\AdminController::class, 'HtmlAppend'])->name('get.data');
     //Customer Location
     Route::get('customer-location',  [App\Http\Controllers\ReviewController::class, 'CustomerLocation'])->name('customer.location');
 

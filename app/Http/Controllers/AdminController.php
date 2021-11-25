@@ -71,4 +71,10 @@ class AdminController extends Controller
             ]);
         }
     }
+    public function HtmlAppend(Request $request){
+        $html = view('append.html')->render();
+        return response([
+            'html'=>$html,
+        ]);
+    }
 }
