@@ -85,7 +85,7 @@ class AdminController extends Controller
         $product = Product::where('shopify_id',$review->product_id)->first();
         $shop = User::where('id',$review->shop_id)->first();
         $title = Str::lower($product->title);
-        $title = str_replace('-', ' ', $title);
+        $title = str_replace('', '-', $title);
         return \redirect('https://'.$shop->name.'/products/'.$title);
     }
 }
