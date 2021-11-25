@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
@@ -83,6 +84,8 @@ class AdminController extends Controller
         $review = Review::where('id',$request->review_id)->first();
         $product = Product::where('shopify_id',$review->product_id)->first();
         $shop = User::where('id',$review->shop_id)->first();
-        return \redirect('https://'.$shop->name.'/products/'.$product->title);
+        $title = Str::lower($product->title);
+        $title = str_replace('-', ' ', $title);
+        return \redirect('https://'.$shop->name.'/products/'.$title);
     }
 }
