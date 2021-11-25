@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Review;
 use App\Models\ThemeSetting;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -75,6 +76,15 @@ class AdminController extends Controller
         $html = view('append.html')->render();
         return response([
             'html'=>$html,
+        ]);
+    }
+    public function ShareFacebook(Request $request){
+        $review = Review::where('id',$request->review_id)->first();
+        $template = view('append.share-facebook')->with([
+            'review'=>$review,
+        ])->render();
+        return response([
+            'success'=>$template,
         ]);
     }
 }
