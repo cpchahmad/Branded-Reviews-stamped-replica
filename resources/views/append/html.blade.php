@@ -111,7 +111,7 @@
                     </div>
                 </div>
             </div>
-            <div class="image_popups_list quick-view-controller" style="display: block;" id="review_images">
+            <div class="image_popups_list quick-view-controller" style="display: flex;" id="review_images">
 
 
             </div>
