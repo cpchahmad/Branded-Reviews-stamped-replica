@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Question;
 use App\Models\Review;
 use App\Models\ThemeSetting;
 use App\Models\User;
@@ -84,6 +85,12 @@ class AdminController extends Controller
         $review = Review::where('id',$request->review_id)->first();
         $product = Product::where('shopify_id',$review->product_id)->first();
         $shop = User::where('id',$review->shop_id)->first();
+        return \redirect('https://'.$shop->name.'/products/'.$product->handle);
+    }
+    public function ShareFacebookQ(Request $request){
+        $question = Question::where('id',$request->question_id)->first();
+        $product = Product::where('shopify_id',$question->product_id)->first();
+        $shop = User::where('id',$question->shop_id)->first();
         return \redirect('https://'.$shop->name.'/products/'.$product->handle);
     }
 }

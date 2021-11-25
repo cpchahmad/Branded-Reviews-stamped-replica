@@ -94,6 +94,7 @@ Route::group(['middleware' => ['verify.shopify']], function () {
 
     // Share facebook
     Route::get('on-facebook',  [App\Http\Controllers\AdminController::class, 'ShareFacebook'])->name('on-facebook');
+    Route::get('on-facebook-q',  [App\Http\Controllers\AdminController::class, 'ShareFacebookQ'])->name('on-facebook-q');
 
 
 
