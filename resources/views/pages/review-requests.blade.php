@@ -228,7 +228,6 @@
                         <p>No Reviews Found Yet</p>
                     @endif
                     <div class="pagination">
-{{--                        {{ $reviews->appends(['review_status' => 'publish'])->links("pagination::bootstrap-4") }}--}}
                         {{ $reviews->appends(\Illuminate\Support\Facades\Request::except('page'))->links("pagination::bootstrap-4") }}
                     </div>
                 </div>
