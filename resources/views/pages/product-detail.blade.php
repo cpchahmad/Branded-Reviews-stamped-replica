@@ -286,6 +286,9 @@
                     $('#review-form').css('display','none');
                 }
             });
+            if ($('.fake_review').is(':checked')){
+                $('#review-form').css('display','block');
+            }
         });
     </script>
 @endsection
