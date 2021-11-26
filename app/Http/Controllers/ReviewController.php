@@ -448,9 +448,6 @@ class ReviewController extends Controller
 
         if ($request->filled('review_status')){
             if ($request->input('review_status') != 'status') {
-                if ($request->input('review_status') == 'publish'){
-                $reviews = $reviews->where('status', $request->input('review_status'))->newQuery();
-                }
                 if ($request->input('review_status') == 'pending'){
                     $reviews = $reviews->where('pending_status', $request->input('review_status'))->newQuery();
                 }
@@ -459,6 +456,9 @@ class ReviewController extends Controller
                 }
                 if ($request->input('review_status') == 'featured'){
                     $reviews = $reviews->where('feature', $request->input('review_status'))->newQuery();
+                }
+                if ($request->input('review_status') == 'publish'){
+                    $reviews = $reviews->where('status', $request->input('review_status'))->newQuery();
                 }
             }
         }
