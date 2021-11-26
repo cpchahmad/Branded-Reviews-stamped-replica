@@ -470,7 +470,7 @@ class ReviewController extends Controller
                 $reviews = $reviews->where('review_rating', $request->input('review_stars'))->newQuery();
             }
         }
-        $reviews = $reviews->paginate(10);
+        $reviews = $reviews->paginate(20);
         return view('pages.review-requests')->with([
             'reviews'=>$reviews,
             'date_range' => $request->input('date-range'),
