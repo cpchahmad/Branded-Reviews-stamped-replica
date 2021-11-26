@@ -319,6 +319,7 @@
                             <br>
                             <span>{{$review->experience}}</span>
                                 <div class="text-right mt-4">
+                                    @dd($review)
                                     <span class="ng-binding"><i class="fas fa-thumbs-up"></i>{{$review->likes}}<span class="m-l-xs m-r-xs">/</span> <i class="fas fa-thumbs-down"></i> {{$review->dislikes}}</span>
                                 </div>
                         </div>
