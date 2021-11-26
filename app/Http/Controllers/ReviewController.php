@@ -281,6 +281,7 @@ class ReviewController extends Controller
             'reviews_publish' => $reviews_pagi_pub
         ])->render();
         $count_reviews = count($reviews_featured) + count($reviews_publish);
+        $real_reviews = $count_reviews;
         $count_rating =  $reviews_featured->sum('review_rating') + $reviews_publish->sum('review_rating');
         if ($count_reviews != 0){
         $over_all_rating = $count_rating / $count_reviews;
@@ -321,6 +322,7 @@ class ReviewController extends Controller
             'one_star'=>$total_one_star,
             'review_images'=>$images,
             'popups'=>$popups,
+            'real_reviews'=>$real_reviews,
             'status'=>$status,
         ]);
     }
