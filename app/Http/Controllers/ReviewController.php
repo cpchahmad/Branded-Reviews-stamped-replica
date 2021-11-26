@@ -471,6 +471,7 @@ class ReviewController extends Controller
 //            }
 //        }
         $reviews = $reviews->paginate(10);
+        dd($reviews);
         return view('pages.review-requests')->with([
             'reviews'=>$reviews,
             'date_range' => $request->input('date-range'),
