@@ -194,7 +194,7 @@ class ReviewController extends Controller
         $review = Review::where('id',$request->review_id)->first();
         $review->review_rating = $request->review_rating;
         $review->review_title = $request->review_title;
-        $review->likes = $request->dislikes;
+        $review->likes = $request->likes;
         $review->dislikes = $request->dislikes;
         $review->customer_location = $request->customer_location;
         $review->experience = $request->experience;
