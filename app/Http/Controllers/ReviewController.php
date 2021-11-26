@@ -449,27 +449,27 @@ class ReviewController extends Controller
         if ($request->filled('review_status')){
             if ($request->input('review_status') != 'status') {
                 if ($request->input('review_status') == 'publish'){
-                    $reviews = Review::where('shop_id',$shop->id)->where('status', $request->input('review_status'))->newQuery();
+                    $reviews = $reviews->where('status', $request->input('review_status'))->newQuery();
                 }
-//                if ($request->input('review_status') == 'pending'){
-//                    $reviews = $reviews->where('pending_status', $request->input('review_status'))->newQuery();
-//                }
-//                if ($request->input('review_status') == 'archive'){
-//                    $reviews = $reviews->where('archive_status', $request->input('review_status'))->newQuery();
-//                }
-//                if ($request->input('review_status') == 'featured'){
-//                    $reviews = $reviews->where('feature', $request->input('review_status'))->newQuery();
-//                }
+                if ($request->input('review_status') == 'pending'){
+                    $reviews = $reviews->where('pending_status', $request->input('review_status'))->newQuery();
+                }
+                if ($request->input('review_status') == 'archive'){
+                    $reviews = $reviews->where('archive_status', $request->input('review_status'))->newQuery();
+                }
+                if ($request->input('review_status') == 'featured'){
+                    $reviews = $reviews->where('feature', $request->input('review_status'))->newQuery();
+                }
             }
         }
-//        if ($request->filled('email_title_desc')){
-//                $reviews = $reviews->where('review_title', 'LIKE', '%' . $request->input('email_title_desc') . '%')->orWhere('name','LIKE', '%' . $request->input('email_title_desc') . '%')->orWhere('experience','LIKE', '%' . $request->input('email_title_desc') . '%')->newQuery();
-//        }
-//        if ($request->filled('review_stars')){
-//            if ($request->input('review_stars') != 'reviews') {
-//                $reviews = $reviews->where('review_rating', $request->input('review_stars'))->newQuery();
-//            }
-//        }
+        if ($request->filled('email_title_desc')){
+                $reviews = $reviews->where('review_title', 'LIKE', '%' . $request->input('email_title_desc') . '%')->orWhere('name','LIKE', '%' . $request->input('email_title_desc') . '%')->orWhere('experience','LIKE', '%' . $request->input('email_title_desc') . '%')->newQuery();
+        }
+        if ($request->filled('review_stars')){
+            if ($request->input('review_stars') != 'reviews') {
+                $reviews = $reviews->where('review_rating', $request->input('review_stars'))->newQuery();
+            }
+        }
         $reviews = $reviews->paginate(10);
         return view('pages.review-requests')->with([
             'reviews'=>$reviews,
