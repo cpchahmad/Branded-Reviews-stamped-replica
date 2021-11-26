@@ -121,7 +121,7 @@ class QuestionController extends Controller
     public function AppendQuestions(Request $request){
         $shop = User::where('name',$request->shop_name)->first();
         $questions_publish  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->get();
-        $questions_pagination  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->paginate(1);
+        $questions_pagination  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->paginate(5);
         $total_question = count($questions_publish);
         $questions = view('append.questions')->with([
             'questions_publish' => $questions_pagination,
@@ -214,7 +214,7 @@ class QuestionController extends Controller
             $questions = $questions->where('email',$request->input('question_email'))->newQuery();
         }
 
-        $questions = $questions->paginate(10);
+        $questions = $questions->get();
         return view('pages.questions')->with([
             'questions'=>$questions,
             'date_range' => $request->input('date-range'),

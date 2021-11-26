@@ -269,8 +269,8 @@ class ReviewController extends Controller
 
         $reviews_featured = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->get();
         $reviews_publish  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->get();
-        $reviews_pagi_fea = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->paginate(1);
-        $reviews_pagi_pub  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->paginate(1);
+        $reviews_pagi_fea = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->paginate(5);
+        $reviews_pagi_pub  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->paginate(5);
         $total_five_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',5)->count();
         $total_four_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',4)->count();
         $total_three_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',3)->count();
@@ -458,7 +458,7 @@ class ReviewController extends Controller
                 $reviews = $reviews->where('review_rating', $request->input('review_stars'))->newQuery();
             }
         }
-        $reviews = $reviews->paginate(10);
+        $reviews = $reviews->get();
         return view('pages.review-requests')->with([
             'reviews'=>$reviews,
             'date_range' => $request->input('date-range'),
