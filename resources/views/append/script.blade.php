@@ -324,7 +324,6 @@ $.ajax({
 url: base_url+"get-questions?product_id="+id+"&shop_name="+name,
 type: 'GET',
 success: function(data) {
-console.log('ok');
 $("#user_questions").html(data.questions);
 $("#total_questions").empty();
 $("#total_questions").text(data.total_question);
@@ -577,7 +576,6 @@ $.ajax({
 url: base_url+"filter-reviews?product_id="+id+"&shop_name="+name+"&filter_value="+valueSelected,
 type: 'GET',
 success: function(data) {
-console.log('ok');
 if(data.reviews != 'no reviews'){
 $('#user_reviews').html(data.reviews);
 }else{
@@ -767,7 +765,6 @@ $.ajax({
 url: base_url+"filter-questions?product_id="+id+"&shop_name="+name+"&search_data="+search_data,
 type: 'GET',
 success: function(data) {
-console.log('ok');
 if(data.questions != 'no questions'){
 $('#user_questions').html(data.questions);
 }else{
