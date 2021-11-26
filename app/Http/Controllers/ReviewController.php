@@ -445,10 +445,10 @@ class ReviewController extends Controller
                 $reviews = $reviews->whereBetween('created_at', [$comparing_start_date, $comparing_end_date])->newQuery();
             }
         }
-        dd($request->all());
+
         if ($request->filled('review_status')){
             if ($request->input('review_status') != 'status') {
-                $reviews = $reviews->where('status', $request->input('review_status'))->newQuery();
+                $reviews = $reviews->where('feature', $request->input('review_status'))->newQuery();
             }
         }
         if ($request->filled('email_title_desc')){
