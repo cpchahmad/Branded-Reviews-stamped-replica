@@ -84,7 +84,7 @@
                         <p>No Questions Found Yet</p>
                     @endif
                     <div class="pagination">
-                        {{ $questions->links("pagination::bootstrap-4") }}
+                        {{ $questions->appends(\Illuminate\Support\Facades\Request::except('page'))->links("pagination::bootstrap-4") }}
                     </div>
                 </div>
             </div>

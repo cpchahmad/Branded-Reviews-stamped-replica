@@ -71,7 +71,7 @@
                         <p>No Products Found</p>
                     @endif
                             <div class="pagination">
-                                {{ $products->links("pagination::bootstrap-4") }}
+                                {{ $products->appends(\Illuminate\Support\Facades\Request::except('page'))->links("pagination::bootstrap-4") }}
                             </div>
                 </div>
             </div>
