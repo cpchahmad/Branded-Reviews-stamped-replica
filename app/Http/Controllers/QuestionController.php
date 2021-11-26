@@ -214,7 +214,7 @@ class QuestionController extends Controller
             $questions = $questions->where('email',$request->input('question_email'))->newQuery();
         }
 
-        $questions = $questions->get();
+        $questions = $questions->paginate(10);
         return view('pages.questions')->with([
             'questions'=>$questions,
             'date_range' => $request->input('date-range'),
