@@ -23,12 +23,14 @@ class ProductController extends Controller
     public function ProductDetail($id){
         $shop = Auth::user();
         $product = Product::where('shopify_id',$id)->first();
+        $product_status = FakeReview::where('product_id',$id)->first();
         $reviews = Review::where('shop_id',$shop->id)->where('product_id',$product->shopify_id)->paginate(10);
         $reviews_setting = FakeReview::where('product_id',$id)->first();
         return view('pages.product-detail')->with([
             'product'=>$product,
             'reviews'=>$reviews,
             'setting'=>$reviews_setting,
+            'product_status'=>$product_status,
         ]);
     }
     public function ShopifyProducts($next = null)

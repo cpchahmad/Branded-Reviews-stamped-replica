@@ -211,11 +211,11 @@
                                 <div class="row" style="padding: 3%;">
                                     <div class="col-md-6">
                                         <div class="form-check">
-                                            <input class="form-check-input real_review" type="radio"  name="review_status" id="gridRadios1" value="real" checked="">
+                                            <input class="form-check-input real_review" type="radio"  name="review_status" id="gridRadios1" value="real" @if(isset($product_status)) {{ ($product_status->status=="real")? "checked" : "" }} @endif>
                                             <label class="form-check-label" for="gridRadios1">
                                                 Real Reviews
                                             </label>
-                                            <input class="form-check-input fake_review" type="radio" name="review_status" id="gridRadios2" value="fake">
+                                            <input class="form-check-input fake_review" type="radio" name="review_status" id="gridRadios2" value="fake" @if(isset($product_status)) {{ ($product_status->status=="fake")? "checked" : "" }} @endif>
                                             <label class="form-check-label ml-5" for="gridRadios2">
                                                 Fake Reviews
                                             </label>
