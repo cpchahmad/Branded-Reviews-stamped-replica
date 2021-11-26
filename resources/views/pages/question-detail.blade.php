@@ -112,7 +112,7 @@
                                                         </div>
                                                         <div class="form-group text-left">
                                                             <label for="#">Enter Likes Value</label>
-                                                            <input placeholder="Enter Likes Value" name="like" value="{{$question->likes}}" type="number" min="0" class="form-control">
+                                                            <input placeholder="Enter Likes Value" name="likes" value="{{$question->likes}}" type="number" min="0" class="form-control">
                                                         </div>
                                                         <div class="form-group text-left">
                                                             <label for="#">Enter Dis likes Value</label>
