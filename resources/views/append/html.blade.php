@@ -143,8 +143,8 @@
                     <p style="font-weight: bold;font-size: xx-large; line-height:0px;margin-bottom:5%;">Thank you for submitting a review!</p>
                     <p style="font-weight: bolder;line-height:0px;">Your input is very much appreciated. Share it with your friends so they can enjoy it too!</p>
                     <div class="stamped-share-links" style="margin-top:4%;">
-                        <a class="facebook" href="https://www.facebook.com/dialog/feed?app_id=222664514734026&amp;display=popup&amp;link=https%3A%2F%2Fstamped.io%2Ffacebookpost%3Fcaption%3D%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%85%20Nice%2520Color%26name%3D%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%85%20Nice%2520Color%26description%3DAmazing%2520%26link%3Dhttps%253A%252F%252Fmancini-watches.com%252Fproducts%252Fkings-sapphire%26picture%3D%252F%252Fcdn.shopify.com%252Fs%252Ffiles%252F1%252F0531%252F8246%252F4174%252Fproducts%252FUnbenannt-2_large.jpg%253Fv%253D1626966277&amp;name=Nice%20Color&amp;redirect_uri=https://stamped.io/shares?productId=7214111785134" target="_blank"><span><i class="stamped-fa stamped-fa-facebook"></i>Facebook</span></a>
-                        <a class="twitter" href="https://twitter.com/intent/tweet?text=★★★★★ Amazing &amp;url=https%3A%2F%2Fmancini-watches.com%2Fproducts%2Fkings-sapphire" target="_blank"><span><i class="stamped-fa stamped-fa-twitter"></i>Twitter</span></a>
+                        <a class="facebook" id="facebook_share" href="" target="_blank"><span><i class="stamped-fa stamped-fa-facebook"></i>Facebook</span></a>
+                        <a class="twitter" id="twitter_share" href="" target="_blank"><span><i class="stamped-fa stamped-fa-twitter"></i>Twitter</span></a>
                     </div>
                 </div>
                 <div class="stamped-empty-state" style="display:none;"><div>Be the first to review this item</div></div>

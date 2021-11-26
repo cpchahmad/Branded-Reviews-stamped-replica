@@ -93,8 +93,11 @@ Route::group(['middleware' => ['verify.shopify']], function () {
     Route::get('filter-questions',  [App\Http\Controllers\QuestionController::class, 'FilterQuestions'])->name('filter.questions');
 
     // Share facebook
-    Route::get('on-facebook',  [App\Http\Controllers\AdminController::class, 'ShareFacebook'])->name('on-facebook');
-    Route::get('on-facebook-q',  [App\Http\Controllers\AdminController::class, 'ShareFacebookQ'])->name('on-facebook-q');
+    Route::get('on-facebook',  [App\Http\Controllers\AdminController::class, 'ShareFacebook'])->name('on.facebook');
+    Route::get('on-facebook-q',  [App\Http\Controllers\AdminController::class, 'ShareFacebookQ'])->name('on.facebook.q');
+    // Share twitter
+    Route::get('on-twitter',  [App\Http\Controllers\AdminController::class, 'ShareTwitter'])->name('on.twitter');
+
 
 
 

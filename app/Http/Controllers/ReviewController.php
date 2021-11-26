@@ -167,7 +167,8 @@ class ReviewController extends Controller
             $review->customer_location = $currentUserInfo->countryName;
         }
         $review->save();
-
+        $facebook_share_link = 'https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook?review_id='.$review->id.'&display=popup';
+        $twitter_share_link = 'https://twitter.com/intent/tweet?url=https://phpstack-176572-2275881.cloudwaysapps.com/on-twitter?review_id='.$review->id;
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $destinationPath = 'review-images/';
@@ -183,6 +184,8 @@ class ReviewController extends Controller
         }else{
             return response([
                 'success'=>'submited',
+                'facebook_link'=>$facebook_share_link,
+                'twitter_link'=>$twitter_share_link,
             ]);
         }
 

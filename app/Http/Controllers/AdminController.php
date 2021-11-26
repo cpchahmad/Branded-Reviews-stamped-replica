@@ -93,4 +93,11 @@ class AdminController extends Controller
         $shop = User::where('id',$question->shop_id)->first();
         return \redirect('https://'.$shop->name.'/products/'.$product->handle);
     }
+    public function ShareTwitter(Request $request){
+        $review = Review::where('id',$request->review_id)->first();
+        $product = Product::where('shopify_id',$review->product_id)->first();
+        $shop = User::where('id',$review->shop_id)->first();
+        return \redirect('https://'.$shop->name.'/products/'.$product->handle);
+    }
+
 }
