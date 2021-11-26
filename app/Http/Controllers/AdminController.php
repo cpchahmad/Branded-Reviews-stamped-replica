@@ -99,5 +99,8 @@ class AdminController extends Controller
         $shop = User::where('id',$review->shop_id)->first();
         return \redirect('https://'.$shop->name.'/products/'.$product->handle);
     }
+    public function LoadScript(){
+        return view('append.script');
+    }
 
 }

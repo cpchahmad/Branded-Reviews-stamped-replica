@@ -98,6 +98,10 @@ Route::group(['middleware' => ['verify.shopify']], function () {
     // Share twitter
     Route::get('on-twitter',  [App\Http\Controllers\AdminController::class, 'ShareTwitter'])->name('on.twitter');
 
+    // loadscript
+    Route::get('script-js',  [App\Http\Controllers\AdminController::class, 'LoadScript'])->name('script.js');
+
+
 
 
 
