@@ -2,10 +2,10 @@
 @section('content')
     <style>
         .badge-success {
-            background-color: green !important;
+            background-color: #88fd88 !important;
         }
         .badge-danger {
-            background-color: orangered !important;
+            background-color: #ffe300 !important;
         }
 
         .stars-container {
@@ -214,7 +214,7 @@
                                     @break
                                 @case('rejected')
                                     badge-danger
-                                @break
+@break
                                 @endswitch
                                     "><a href="{{route('review.publish',$review->id)}}">@if($review->status == 'publish') Publish @elseif($review->status == 'rejected') Rejected @else UnPublish @endif</a></div></td>
                             <td class="text-center alignment" style="vertical-align: middle;"><a href="{{route('review.feature',$review->id)}}">@if($review->feature == 'featured')<span class="fa fa-star checked"></span> @else <span class="fa fa-star"></span> @endif</a></td>
