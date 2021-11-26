@@ -449,7 +449,7 @@ class ReviewController extends Controller
         if ($request->filled('review_status')){
             if ($request->input('review_status') != 'status') {
                 if ($request->input('review_status') == 'publish'){
-                    $reviews = $reviews->where('status', $request->input('review_status'));//->newQuery();
+                    $reviews = Review::where('shop_id',$shop->id)->where('status', $request->input('review_status'))->newQuery();
                 }
 //                if ($request->input('review_status') == 'pending'){
 //                    $reviews = $reviews->where('pending_status', $request->input('review_status'))->newQuery();
