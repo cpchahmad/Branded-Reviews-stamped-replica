@@ -228,7 +228,8 @@
                         <p>No Reviews Found Yet</p>
                     @endif
                     <div class="pagination">
-                        {{ $reviews->links("pagination::bootstrap-4") }}
+                        {{ $reviews->appends(['review_status' => 'publish'])->links("pagination::bootstrap-4") }}
+{{--                        {{ $reviews->links("pagination::bootstrap-4") }}--}}
                     </div>
                 </div>
             </div>
