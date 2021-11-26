@@ -86,6 +86,8 @@ class QuestionController extends Controller
         $shop = Auth::user();
         $question_reply->name = $request->name;
         $question_reply->email = $request->email;
+        $question_reply->likes = $request->likes;
+        $question_reply->dislikes = $request->dislikes;
         $question_reply->question = $request->question;
         $question_reply->save();
         return Redirect::tokenRedirect('question.request', ['notice' => 'Question Updated Successfully']);
