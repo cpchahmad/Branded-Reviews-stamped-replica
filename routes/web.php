@@ -26,15 +26,15 @@ Route::group(['middleware' => ['verify.shopify']], function () {
 
     // Reviews
     Route::get('review-request', [App\Http\Controllers\ReviewController::class, 'ReviewRequest'])->name('review.request');
-    Route::get('review.view/{id}', [App\Http\Controllers\ReviewController::class, 'ReviewDetail'])->name('review.view');
+    Route::get('review-view/{id}', [App\Http\Controllers\ReviewController::class, 'ReviewDetail'])->name('review.view');
     Route::get('review-feature/{id}', [App\Http\Controllers\ReviewController::class, 'ReviewFeature'])->name('review.feature');
     Route::post('review-update', [App\Http\Controllers\ReviewController::class, 'ReviewUpdate'])->name('review.update');
     Route::post('review-reply', [App\Http\Controllers\ReviewController::class, 'ReviewReply'])->name('review.reply');
     Route::get('verify-review/{id}', [App\Http\Controllers\ReviewController::class, 'ReviewVerify'])->name('verify.review');
     Route::get('reply-delete/{id}', [App\Http\Controllers\ReviewController::class, 'ReplyDelete'])->name('reply.delete');
-    Route::get('review.pending/{id}', [App\Http\Controllers\ReviewController::class, 'ReviewPending'])->name('review.pending');
-    Route::get('review.publish/{id}', [App\Http\Controllers\ReviewController::class, 'ReviewPublish'])->name('review.publish');
-    Route::get('review.archive/{id}', [App\Http\Controllers\ReviewController::class, 'ReviewArvhive'])->name('review.archive');
+    Route::get('review-pending/{id}', [App\Http\Controllers\ReviewController::class, 'ReviewPending'])->name('review.pending');
+    Route::get('review-publish/{id}', [App\Http\Controllers\ReviewController::class, 'ReviewPublish'])->name('review.publish');
+    Route::get('review-archive/{id}', [App\Http\Controllers\ReviewController::class, 'ReviewArvhive'])->name('review.archive');
     Route::get('review-delete/{id}', [App\Http\Controllers\ReviewController::class, 'ReviewDelete'])->name('review.delete');
     Route::post('add-photo', [App\Http\Controllers\ReviewController::class, 'ReviewAddPhoto'])->name('add.photo');
     Route::get('add-review/{id}', [App\Http\Controllers\ReviewController::class, 'AddNewReview'])->name('add.review');

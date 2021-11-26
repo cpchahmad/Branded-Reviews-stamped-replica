@@ -205,18 +205,18 @@
                                 </div>
                             </td>
                             <td class="alignment" style="vertical-align: middle;"><div class="badge badge-pill
-                            @switch($review->status)
+                             @switch($review->status)
                                 @case('publish')
                                     badge-success
                                 @break
                                 @case('unpublish')
                                     badge-danger
                                     @break
-                                    @case('rejected')
-                                        badge-danger
-                                            @break
+                                @case('rejected')
+                                    badge-danger
+                                @break
                                 @endswitch
-                                        ">{{$review->status}}</div></td>
+                                    "><a href="{{route('review.publish',$review->id)}}">@if($review->status == 'publish') Publish @elseif($review->status == 'rejected') Rejected @else UnPublish @endif</a></div></td>
                             <td class="text-center alignment" style="vertical-align: middle;"><a href="{{route('review.feature',$review->id)}}">@if($review->feature == 'featured')<span class="fa fa-star checked"></span> @else <span class="fa fa-star"></span> @endif</a></td>
                             <td class="alignment" style="vertical-align: middle;">{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->diffForHumans()}}</td>
                             <td class="" style="vertical-align: middle"><a href="{{route('review.view',$review->id)}}" class="btn btn-sm btn-primary" type="button">view</a></td>
