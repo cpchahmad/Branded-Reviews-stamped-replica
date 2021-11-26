@@ -112,11 +112,11 @@
                                                         </div>
                                                         <div class="form-group text-left">
                                                             <label for="#">Enter Likes Value</label>
-                                                            <input placeholder="Enter Likes Value" name="like" type="number" min="0" class="form-control">
+                                                            <input placeholder="Enter Likes Value" name="like" value="{{$question->likes}}" type="number" min="0" class="form-control">
                                                         </div>
                                                         <div class="form-group text-left">
                                                             <label for="#">Enter Dis likes Value</label>
-                                                            <input placeholder="Enter Dis Likes Value" name="dislikes" type="number" min="0" class="form-control">
+                                                            <input placeholder="Enter Dis Likes Value" name="dislikes" value="{{$question->dislikes}}" type="number" min="0" class="form-control">
                                                         </div>
                                                         <div class="form-group text-left">
                                                             <label for="#">Enter Question</label>
@@ -136,7 +136,7 @@
                             <br>
                             <span>{{$question->question}}</span>
                             <div class="text-right mt-4">
-                                <span class="ng-binding"><i class="fas fa-thumbs-up"></i> 0 <span class="m-l-xs m-r-xs">/</span> <i class="fas fa-thumbs-down"></i> 0</span>
+                                <span class="ng-binding"><i class="fas fa-thumbs-up"></i> {{$question->likes}} <span class="m-l-xs m-r-xs">/</span> <i class="fas fa-thumbs-down"></i> {{$question->dislikes}}</span>
                             </div>
                         </div>
                     </div>
