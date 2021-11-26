@@ -463,7 +463,7 @@ class ReviewController extends Controller
             }
         }
         if ($request->filled('email_title_desc')){
-                $reviews = $reviews->where('review_title', 'LIKE', '%' . $request->input('email_title_desc') . '%')->orWhere('name','LIKE', '%' . $request->input('email_title_desc') . '%')->orWhere('experience','LIKE', '%' . $request->input('email_title_desc') . '%')->newQuery();
+                $reviews = $reviews->where('review_title', 'LIKE', '%' . $request->input('email_title_desc') . '%')->orWhere('email','LIKE', '%' . $request->input('email_title_desc') . '%')->orWhere('experience','LIKE', '%' . $request->input('email_title_desc') . '%')->newQuery();
         }
         if ($request->filled('review_stars')){
             if ($request->input('review_stars') != 'reviews') {
