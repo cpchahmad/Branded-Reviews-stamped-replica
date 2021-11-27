@@ -367,7 +367,7 @@ var previous_url = data.paginate['links'][0]['url'] + '&shop_name=' + name + '&p
 var next_url = data.paginate['links'][total - 1]['url'] + '&shop_name=' + name + '&product_id=' + id;
 
 //              $('#next').attr('data-page',next_url);
-$("#user_reviews").html(data.reviews);
+$("#br_reviews_widget_wrapper").html(data.html);
 
 }
 
@@ -440,7 +440,7 @@ if (data.paginate['links'][total - 1]['url'] == null) {
 var next_url = '';
 }
 //              $('#next_question').attr('data-page',next_url);
-$("#user_questions").html(data.questions);
+$("#br_reviews_widget_wrapper").html(data.html);
 }
 });
 });
