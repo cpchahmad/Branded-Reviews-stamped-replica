@@ -827,7 +827,7 @@
         margin-top: 20px;
     }
 </style>
-<div id="main-body" style="display:none;">
+<div id="main-body">
     <div class="tt_logix_reviews">
         <div class="tt_logix_reviews_inner">
             <div class="tt_logix_reviews_r_no">

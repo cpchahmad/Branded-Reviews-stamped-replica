@@ -43,7 +43,7 @@ url: base_url + "get-data?product_id=" + id + "&shop_name=" + name,
 type: 'GET',
 success: function(data) {
 $('#br_reviews_widget_wrapper').html(data.html);
-$('#main-body').css('display', 'block');
+
 $('.stamped-pagination').empty();
 var total = $(data.paginate['links']).length;
 var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
@@ -189,7 +189,7 @@ $(function() {
 //                     url: base_url + "get-reviews?product_id=" + id + "&shop_name=" + name,
 //                     type: 'GET',
 //                     success: function(data) {
-//                         $('#main-body').css('display', 'block');
+//
 //                         $("#user_reviews").html(data.reviews);
 //                         //             if (data.status == 'real'){
 //                         $('#total_reviews').empty();
@@ -650,7 +650,7 @@ $.ajax({
 url: base_url + "get-data?product_id=" + id + "&shop_name=" + name,
 type: 'GET',
 success: function(data) {
-$('#main-body').css('display', 'block');
+
 $('#br_reviews_widget_wrapper').html(data.html);
 $('.stamped-pagination').empty();
 var total = $(data.paginate['links']).length;
@@ -744,7 +744,7 @@ $.ajax({
 url: base_url + "get-data?product_id=" + id + "&shop_name=" + name,
 type: 'GET',
 success: function(data) {
-$('#main-body').css('display', 'block');
+
 $('#br_reviews_widget_wrapper').html(data.html);
 $('.stamped-pagination').empty();
 var total = $(data.paginate['links']).length;
