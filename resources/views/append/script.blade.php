@@ -1,7 +1,7 @@
 (function() {
 var shopdomain = Shopify.shop;
-var base_url = 'https://phpstack-176572-2275881.cloudwaysapps.com/';
-//   var base_url = 'https://stamped.test/';
+// var base_url = 'https://phpstack-176572-2275881.cloudwaysapps.com/';
+    var base_url = 'https://stamped.test/';
 var id = meta.product.id;
 var name = Shopify.shop;
 

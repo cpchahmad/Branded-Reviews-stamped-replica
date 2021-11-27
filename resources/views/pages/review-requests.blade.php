@@ -170,6 +170,14 @@
                                 <option @if(isset($review_status) && $review_status== 'archive') selected @endif value="archive">Archive</option>
                                 <option @if(isset($review_status) && $review_status== 'featured') selected @endif value="featured">Featured</option>
                             </select>
+
+                            <select class="form-control bg-white mr-1" name="product_reviews" id="product_reviews">
+                                <option selected disabled value="product">Select Product</option>
+                                <option @if(isset($review_status) && $review_status== 'publish') selected @endif value="publish">Publish</option>
+                                <option @if(isset($review_status) && $review_status== 'pending') selected @endif value="pending">Pending</option>
+                                <option @if(isset($review_status) && $review_status== 'archive') selected @endif value="archive">Archive</option>
+                                <option @if(isset($review_status) && $review_status== 'featured') selected @endif value="featured">Featured</option>
+                            </select>
                             <input placeholder="Email / Title / Desc" type="text" id="email_title_desc" @if (isset($email_title_desc)) value="{{$email_title_desc}}" @endif name="email_title_desc" class="form-control">
                         </div>
                 </div>

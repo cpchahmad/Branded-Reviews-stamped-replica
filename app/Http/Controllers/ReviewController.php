@@ -21,6 +21,7 @@ class ReviewController extends Controller
 {
     public function ReviewRequest(){
         $shop = Auth::user();
+        dd($shop);
         $reviews = Review::where('shop_id',$shop->id)->latest()->paginate(10);
         return view('pages.review-requests')->with([
             'reviews'=>$reviews,

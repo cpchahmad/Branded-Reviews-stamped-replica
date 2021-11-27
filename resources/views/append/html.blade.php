@@ -990,8 +990,8 @@
             <!-- reviews_tab_content -->
             <div id="reviews_tab_content" class="reviews_tab_content tabs">
                 <div class="write_a_review">
-                    <!--               <form id="review" action="https://stamped.test/review-submit" method="POST"> -->
-                    <form id="review" action="https://phpstack-176572-2275881.cloudwaysapps.com/review-submit" method="POST">
+                       <form id="review" action="https://stamped.test/review-submit" method="POST">
+{{--                    <form id="review" action="https://phpstack-176572-2275881.cloudwaysapps.com/review-submit" method="POST">--}}
                         <label for="name">Name</label>
                         <input type="text" id="name" required name="name" placeholder="Your name..">
 
@@ -1053,8 +1053,8 @@
             <div id="questions_tab_content" class="questions_tab_content tabs">
 
                 <div class="ask_a_question">
-                    <!--               <form id="question" action="https://stamped.test/question-submit" method="POST"> -->
-                    <form id="question" action="https://phpstack-176572-2275881.cloudwaysapps.com/question-submit" method="POST">
+                     <form id="question" action="https://stamped.test/question-submit" method="POST">
+{{--                    <form id="question" action="https://phpstack-176572-2275881.cloudwaysapps.com/question-submit" method="POST">--}}
                         <label for="name">Name</label>
                         <input type="text" id="name" required name="name" placeholder="Your name..">
 
