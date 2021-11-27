@@ -232,9 +232,9 @@ $('.stamped-pagination').append("<li class='page'><a href='javascript:void(0)' d
 
 });
 $('.page').removeClass('active');
-if (!thiss.parent().hasClass("previous") && !thiss.parent().hasClass("next")) {
+//                      if (!thiss.parent().hasClass("previous") && !thiss.parent().hasClass("next")) {
 thiss.parent().addClass('active');
-}
+//                       }
 $('.stamped-question').empty();
 var total = $(data.paginate_q['links']).length;
 
