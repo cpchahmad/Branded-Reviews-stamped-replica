@@ -187,9 +187,7 @@ $(function() {
 
 $(document).on("click", ".paginate_link", function(e) {
 $('.page').removeClass('active');
-if (!$(this).parent().hasClass("previous") && !$(this).parent().hasClass("next")) {
-$(this).parent().addClass('active');
-}
+
 
 var for_url = $(this).data('page');
 
@@ -233,7 +231,10 @@ $('.stamped-pagination').append("<li class='page'><a href='javascript:void(0)' d
 }
 
 });
-
+$('.page').removeClass('active');
+if (!$(this).parent().hasClass("previous") && !$(this).parent().hasClass("next")) {
+$(this).parent().addClass('active');
+}
 $('.stamped-question').empty();
 var total = $(data.paginate_q['links']).length;
 
@@ -730,6 +731,3 @@ console.log('Some thing went Wrong!');
 };
 ppTyInitialise();
 })();
-
-
-
