@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FakeReview;
 use App\Models\Product;
 use App\Models\Question;
 use App\Models\Review;
@@ -76,10 +77,83 @@ class AdminController extends Controller
         }
     }
     public function HtmlAppend(Request $request){
-        $html = view('append.html')->render();
+        $shop = User::where('name',$request->shop_name)->first();
+        $status = 'real';
+        $review_status = FakeReview::where('shop_id',$shop->id)->where('product_id',$request->product_id)->first();
+        if ($review_status !=null){
+            if ($review_status->status == 'fake'){
+                $status = 'fake';
+            }
+        }
+
+        $reviews_featured = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->get();
+        $reviews_publish  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->get();
+        $reviews_pagi_fea = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->paginate(5);
+        $reviews_pagi_pub  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->paginate(5);
+        $total_five_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',5)->count();
+        $total_four_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',4)->count();
+        $total_three_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',3)->count();
+        $total_two_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',2)->count();
+        $total_one_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',1)->count();
+
+        $count_reviews = count($reviews_featured) + count($reviews_publish);
+        $real_reviews = $count_reviews;
+        $count_rating =  $reviews_featured->sum('review_rating') + $reviews_publish->sum('review_rating');
+        if ($count_reviews != 0){
+            $over_all_rating = $count_rating / $count_reviews;
+            $over_all_rating = number_format($over_all_rating,1);
+        }else{
+            $over_all_rating = 0 ;
+        }
+        $rating_value = intval(round($over_all_rating));
+        $review_images = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->get();
+        $images = view('append.images')->with([
+            'reviews_images' => $review_images,
+        ])->render();
+        $popups = view('append.popups')->with([
+            'reviews_popups' => $review_images,
+        ])->render();
+        if ($status == 'fake'){
+            $count_reviews = $review_status->total_reviews;
+            $over_all_rating = $review_status->rating;
+            $rating_value = $review_status->rating;
+            $rating_value = intval(round($rating_value));
+            $total_five_star  = $review_status->five_star;
+            $total_four_star = $review_status->four_star;
+            $total_three_star = $review_status->three_star;
+            $total_two_star = $review_status->two_star;
+            $total_one_star = $review_status->one_star;
+        }
+        $questions_publish  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->get();
+        $questions_pagination  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->paginate(5);
+        $total_question = count($questions_publish);
+
+        $html = view('append.html')->with([
+            'reviews_featured' => $reviews_pagi_fea,
+            'reviews_publish' => $reviews_pagi_pub,
+            'total_reviews'=>$count_reviews,
+            'total_rating'=>$over_all_rating,
+            'review_value'=>$rating_value,
+            'five_star'=>$total_five_star,
+            'four_star'=>$total_four_star,
+            'three_star'=>$total_three_star,
+            'two_star'=>$total_two_star,
+            'one_star'=>$total_one_star,
+            'review_images'=>$images,
+            'popups'=>$popups,
+            'real_reviews'=>$real_reviews,
+            'status'=>$status,
+            'reviews_images' => $review_images,
+            'reviews_popups'=>$review_images,
+            'questions_publish' => $questions_pagination,
+            'total_question'=>$total_question,
+        ])->render();
         return response([
             'html'=>$html,
+            'paginate_q'=>json_decode(json_encode($questions_pagination)),
+            'paginate'=>json_decode(json_encode($reviews_pagi_pub)),
         ]);
+
     }
     public function ShareFacebook(Request $request){
         $review = Review::where('id',$request->review_id)->first();

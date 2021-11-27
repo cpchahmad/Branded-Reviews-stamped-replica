@@ -36,6 +36,14 @@
                                 <option  @if(isset($question_status) && $question_status== 'unpublish') selected @endif value="unpublish">Unpublish</option>
                                 <option  @if(isset($question_status) && $question_status== 'rejected') selected @endif value="rejected">Rejected</option>
                             </select>
+                            <select class="form-control bg-white mr-1" name="product_reviews" id="product_reviews">
+                                <option selected disabled value="product">Products</option>
+                                @if(count($products) > 0 )
+                                    @foreach($products as $product)
+                                        <option @if(isset($product_value) && $product->shopify_id == $product_value) selected @endif value="{{$product->shopify_id}}">{{$product->title}}</option>
+                                    @endforeach
+                                @endif
+                            </select>
                             <input placeholder="Enter Email" type="text" @if (isset($question_email)) value="{{$question_email}}" @endif name="question_email" id="question_email" class="form-control">
                         </div>
                 </div>
@@ -122,8 +130,9 @@
         $('body').on('click','.filter_by_date', function() {
             let daterange_string = $('#reportrange').find('span').text();
             var selected_status_value = $("#question_status option:selected").val();
+            var product = $("#product_reviews option:selected").val() ;
             var question_email = $("#question_email").val();
-            window.location.href = $(this).data('url')+'?date-range='+daterange_string+'&question_status='+selected_status_value+'&question_email='+question_email;
+            window.location.href = $(this).data('url')+'?date-range='+daterange_string+'&question_status='+selected_status_value+'&product='+product+'&question_email='+question_email;
 
         });
 

@@ -832,16 +832,53 @@
         <div class="tt_logix_reviews_inner">
             <div class="tt_logix_reviews_r_no">
                 <h1>
-                    <span id="total_rating">4.7</span>
+                    <span id="total_rating">{{$total_rating}}</span>
                     <span id="rating_stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+                         @if ($review_value == 0)
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+
+                            @elseif ($review_value == 1)
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star "></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+
+                            @elseif ($review_value == 2)
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+
+                            @elseif ($review_value == 3)
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+
+                            @elseif ($review_value == 4)
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star"></i>
+
+                            @elseif ($review_value == 5)
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked"></i>
+                        @endif
           </span>
                 </h1>
-                <p>Based on <span id="base_reviews">66</span> Reviews</p>
+                <p>Based on <span id="base_reviews">{{$total_reviews}}</span> Reviews</p>
             </div>
             <div class="review_progress">
                 <div class="review_progress_1">
@@ -856,11 +893,11 @@
                     </div>
                     <div class="middle">
                         <div class="bar-container">
-                            <div class="bar-5 progress-bar"></div>
+                            <div class="bar-5 progress-bar" @if($total_reviews != 0) style="width: {{($five_star/$total_reviews)*100}}%" @else style="width: 0" @endif></div>
                         </div>
                     </div>
                     <div class="side left">
-                        <div id="five_star">&ensp;(60)</div>
+                        <div id="five_star">&ensp;({{$five_star}})</div>
                     </div>
                 </div>
                 <div class="review_progress_1">
@@ -875,11 +912,11 @@
                     </div>
                     <div class="middle">
                         <div class="bar-container">
-                            <div class="bar-4 progress-bar"></div>
+                            <div class="bar-4 progress-bar" @if($total_reviews != 0) style="width: {{($four_star/$total_reviews)*100}}%" @else style="width: 0" @endif></div>
                         </div>
                     </div>
                     <div class="side left">
-                        <div id="four_star">&ensp;(60)</div>
+                        <div id="four_star">&ensp;({{$four_star}})</div>
                     </div>
                 </div>
                 <div class="review_progress_1">
@@ -894,11 +931,11 @@
                     </div>
                     <div class="middle">
                         <div class="bar-container">
-                            <div class="bar-3 progress-bar"></div>
+                            <div class="bar-3 progress-bar" @if($total_reviews != 0) style="width: {{($three_star/$total_reviews)*100}}%" @else style="width: 0" @endif></div>
                         </div>
                     </div>
                     <div class="side left">
-                        <div id="three_star">&ensp;(60)</div>
+                        <div id="three_star">&ensp;({{$three_star}})</div>
                     </div>
                 </div>
                 <div class="review_progress_1">
@@ -913,11 +950,11 @@
                     </div>
                     <div class="middle">
                         <div class="bar-container">
-                            <div class="bar-2 progress-bar"></div>
+                            <div class="bar-2 progress-bar" @if($total_reviews != 0) style="width: {{($two_star/$total_reviews)*100}}%" @else style="width: 0" @endif></div>
                         </div>
                     </div>
                     <div class="side left">
-                        <div id="two_star">&ensp;(60)</div>
+                        <div id="two_star">&ensp;({{$four_star}})</div>
                     </div>
                 </div>
                 <div class="review_progress_1">
@@ -932,16 +969,42 @@
                     </div>
                     <div class="middle">
                         <div class="bar-container">
-                            <div class="bar-1 progress-bar"></div>
+                            <div class="bar-1 progress-bar" @if($total_reviews != 0) style="width: {{($one_star/$total_reviews)*100}}%" @else style="width: 0" @endif></div>
                         </div>
                     </div>
                     <div class="side left">
-                        <div id="one_star">&ensp;(60)</div>
+                        <div id="one_star">&ensp;({{$one_star}})</div>
                     </div>
                 </div>
             </div>
             <div class="image_popups_list quick-view-controller" style="display: flex;" id="review_images">
+                @php
+                    $counter = 0;
+                @endphp
+                @if(count($reviews_images) > 0)
+                    @foreach($reviews_images as $review)
+                        @if(count($review->medias) > 0)
+                            @foreach($review->medias as $key => $media)
+                                @if($counter <= 7)
+                                    <a href="javascript:void(0)" title="My Watch" class="btn-view">
+                                        <div>
+                                            <img src="{{asset('review-images'.'/'.$media->review_media)}}" width="70"  height="55" alt="Picture">
+                                        </div>
+                                    </a>
+                                    @php $counter += 1; @endphp
+                                @endif
+                            @endforeach
+                        @else
+                            {{--        <a href="javascript:void(0)" title="My Watch" class="">--}}
+                            {{--            <div>--}}
+                            {{--                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">--}}
+                            {{--            </div>--}}
+                            {{--        </a>--}}
+                        @endif
+                    @endforeach
+                @else
 
+                @endif
 
             </div>
             <div class="question_review_buttons">
@@ -956,13 +1019,13 @@
                 <div class="reviews_tab active_tab">
                     <a id="reviews" href="#reviews_tab_content">
                         Reviews
-                        <span id="total_reviews">66</span>
+                        <span id="total_reviews">@if($status == 'real'){{$review_value}} @endif @if($status == 'fake' && $review_value != 0){{$review_value}} @endif @if($status == 'fake' && $review_value == 0) 0 @endif</span>
                     </a>
                 </div>
                 <div class="questions_tab">
                     <a id="questions" href="#questions_tab_content">
                         Questions
-                        <span id="total_questions">5</span>
+                        <span id="total_questions">{{$total_question}}</span>
                     </a>
                 </div>
             </div>
@@ -1028,7 +1091,7 @@
                     <div class="question_review_buttons" style="padding:0px;">
                         <button id="clear_review_filter" style="float:left; display:none;"><i class="fas fa-times"></i> Clear Filter</button>
                     </div>
-                    <select name="sort_review" id="sort_review">
+                    <select name="sort_review" @if($review_value == 0) style="display: none" @endif id="sort_review">
                         <option value="sort" selected disabled>Sort</option>
                         <!--            <option value="saab">With Photos</option> -->
                         <option value="most_recent">Most Recent</option>
@@ -1038,6 +1101,320 @@
                     </select>
                 </div>
                 <div class="user_reviews" id="user_reviews">
+
+                    @if (count($reviews_featured) > 0)
+                        @foreach($reviews_featured as $review)
+                            @php
+                                $words = preg_split("/[\s,_-]+/",$review->name);
+                                    $words= json_encode($words);
+                                       $words_count =  str_word_count($words);
+                                        $acronym = "";
+                                        $words = json_decode($words);
+                                    if ($words_count > 1){
+                                        $string = $words;
+                                        $acronym = $string[0][0].$string[1][0];
+                                        $acronym = strtoupper($acronym);
+                                    }else{
+                                        $string = $words;
+                                        $acronym = $string[0][0];
+                                        $acronym = strtoupper($acronym);
+                                    }
+                            @endphp
+
+
+                            <div class="review_2">
+                                <div class="review_1_header">
+                                    <div class="user_pic" id="user_pic">
+                                        <div class="user_pic_inner" id="user_pic_inner">
+                                            <h3>
+                                                {{$acronym}}
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="user_info" id="user_info">
+                                        <h3>{{ucwords($review->name)}}<span>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
+                                        <p>
+                                            <i class="fas fa-flag-usa"></i>
+                                            {{$review->customer_location}}
+                                        </p>
+                                        <div>
+                                            @if($review->review_rating == null)
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                            @elseif($review->review_rating == 1)
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                            @elseif($review->review_rating == 2)
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                            @elseif($review->review_rating == 3)
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                            @elseif($review->review_rating == 4)
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star "></span>
+                                            @elseif($review->review_rating == 5)
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="review_date">
+
+                                        @if($loop->index == 0)
+
+                                            @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
+                                                <p> {{now()->subDays(1)->format('d/m/y')}} </p>
+                                            @else
+                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                            @endif
+                                        @elseif($loop->index == 1)
+                                            @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
+                                                <p> {{now()->subDays(1)->format('d/m/y')}} </p>
+                                            @else
+                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                            @endif
+                                        @else
+                                            <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="review_content">
+                                    <span>{{$review->review_title}}</span>
+                                    <p>{{$review->experience}}</p>
+                                </div>
+                                <div class="review_footer">
+                                    <div class="share_review">
+                                        <p>
+                                            <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook?review_id={{$review->id}}&display=popup" target="_blank">
+                                                <i class="fas fa-share-square"></i>
+                                                Share
+                                            </a>
+                                            <span class="share_to">&ensp; | &ensp;<a href="www.facebook.com">Facebook</a>&ensp; . &ensp;<a href="www.twitter.com">Twitter</a> </span>
+                                        </p>
+                                    </div>
+                                    <div class="like_dislike">
+                                        <p>Was this helpful?<span>
+                            <a href="javascript:void(0)">
+                              <i @if(isset($review->stats) && $review->stats->like == 1) class="fas fa-thumbs-up blue-color for-like" @else class="fas fa-thumbs-up   for-like" @endif></i> <span class="like" data-value="{{$review->id}}">{{$review->likes}}</span>
+                            </a>
+                            <a href="javascript:void(0)">
+                              <i @if(isset($review->stats) && $review->stats->dislike == 1) class="fas fa-thumbs-down blue-color for-dislike" @else  class="fas fa-thumbs-down for-dislike" @endif></i> <span class="dislike" data-value="{{$review->id}}">{{$review->dislikes}}</span>
+                            </a>
+                          </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                @if($review->review_reply != null)
+                                    <div class="review_reply" id="review_reply">
+                                        <div class="replier_info">
+                                            <div class="replier_name" id="replier_name">
+                                                <h4>{{$review->review_reply->store_name}}</h4>
+                                            </div>
+                                            <div class="replier_date">
+                                                @if($loop->index == 0)
+
+                                                    @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
+                                                        <p> {{now()->subDays(2)->format('d/m/y')}} </p>
+                                                    @else
+                                                        <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                                    @endif
+                                                @elseif($loop->index == 1)
+                                                    @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
+                                                        <p> {{now()->subDays(2)->format('d/m/y')}} </p>
+                                                    @else
+                                                        <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                                    @endif
+                                                @else
+                                                    <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="replied_text">
+                                            <p>
+                                                {{$review->review_reply->message}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                @endif
+                            </div>
+                        @endforeach
+                    @endif
+                    @if (count($reviews_publish) > 0)
+                        @foreach($reviews_publish as $review)
+                            @php
+                                $words = preg_split("/[\s,_-]+/",$review->name);
+                                    $words= json_encode($words);
+                                       $words_count =  str_word_count($words);
+                                        $acronym = "";
+                                        $words = json_decode($words);
+                                    if ($words_count > 1){
+                                        $string = $words;
+                                        $acronym = $string[0][0].$string[1][0];
+                                        $acronym = strtoupper($acronym);
+                                    }else{
+                                        $string = $words;
+                                        $acronym = $string[0][0];
+                                        $acronym = strtoupper($acronym);
+                                    }
+                            @endphp
+                            <div class="review_2">
+                                <div class="review_1_header">
+                                    <div class="user_pic" id="user_pic">
+                                        <div class="user_pic_inner" id="user_pic_inner">
+                                            <h3>
+                                                {{$acronym}}
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="user_info" id="user_info">
+                                        <h3>{{ucwords($review->name)}}<span>@if($review->verify_status == 'veified') Verified Buyer @endif</span></h3>
+                                        <p>
+                                            <i class="fas fa-flag-usa"></i>
+                                            {{$review->customer_location}}
+                                        </p>
+                                        <div>
+                                            @if($review->review_rating == null)
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                            @elseif($review->review_rating == 1)
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                            @elseif($review->review_rating == 2)
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                            @elseif($review->review_rating == 3)
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                            @elseif($review->review_rating == 4)
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star "></span>
+                                            @elseif($review->review_rating == 5)
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="review_date">
+                                        @if($loop->index == 0)
+
+                                            @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
+                                                <p> {{now()->subDays(2)->format('d/m/y')}} </p>
+                                            @else
+                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                            @endif
+                                        @elseif($loop->index == 1)
+                                            @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
+                                                <p> {{now()->subDays(2)->format('d/m/y')}} </p>
+                                            @else
+                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                            @endif
+                                        @else
+                                            <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="review_content">
+                                    <span>{{$review->review_title}}</span>
+                                    <p>{{$review->experience}}</p>
+                                </div>
+                                <div class="review_footer">
+                                    <div class="share_review">
+                                        <p>
+                                            <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook?review_id={{$review->id}}&display=popup" target="_blank">
+                                                <i class="fas fa-share-square"></i>
+                                                Share
+                                            </a>
+                                            <span class="share_to">&ensp; | &ensp;<a href="www.facebook.com">Facebook</a>&ensp; . &ensp;<a href="www.twitter.com">Twitter</a> </span>
+                                        </p>
+                                    </div>
+                                    <div class="like_dislike">
+                                        <p>Was this helpful?<span>
+                            <a href="javascript:void(0)">
+                              <i @if(isset($review->stats) && $review->stats->like == 1) class="fas fa-thumbs-up blue-color for-like" @else class="fas fa-thumbs-up   for-like" @endif></i> <span class="like" data-value="{{$review->id}}">{{$review->likes}}</span>
+                            </a>
+                            <a href="javascript:void(0)">
+                              <i @if(isset($review->stats) && $review->stats->dislike == 1) class="fas fa-thumbs-down blue-color for-dislike" @else  class="fas fa-thumbs-down for-dislike" @endif></i> <span class="dislike" data-value="{{$review->id}}">{{$review->dislikes}}</span>
+                            </a>
+                          </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                @if($review->review_reply != null)
+                                    <div class="review_reply" id="review_reply">
+                                        <div class="replier_info">
+                                            <div class="replier_name" id="replier_name">
+                                                <h4>{{$review->review_reply->store_name}}</h4>
+                                            </div>
+                                            <div class="replier_date">
+                                                @if($loop->index == 0)
+
+                                                    @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
+                                                        <p> {{now()->subDays(1)->format('d/m/y')}} </p>
+                                                    @else
+                                                        <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                                    @endif
+                                                @elseif($loop->index == 1)
+                                                    @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
+                                                        <p> {{now()->subDays(1)->format('d/m/y')}} </p>
+                                                    @else
+                                                        <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                                    @endif
+                                                @else
+                                                    <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                                @endif
+
+                                            </div>
+                                        </div>
+                                        <div class="replied_text">
+                                            <p>
+                                                {{$review->review_reply->message}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                @endif
+                            </div>
+                        @endforeach
+                    @endif
+                    @if (count($reviews_featured) == 0 && count($reviews_publish) == 0)
+                        <p>This Product has No Publish Reviews yet!</p>
+                    @endif
 
                 </div>
                 <div id="review_pagination">
@@ -1070,7 +1447,7 @@
                     </form>
                 </div>
 
-                <div class="dropdown_review" id="search_question">
+                <div class="dropdown_review" @if($total_question == 0) style="display: none;" @endif id="search_question">
                     <div class="search_input">
                         <i class="fas fa-search"></i>
                         <input type="search" id="question_search" placeholder="Search Questions">
@@ -1091,6 +1468,114 @@
                 </div>
                 <div class="user_reviews" id="user_questions">
 
+                    @if (count($questions_publish) > 0)
+                        @foreach($questions_publish as $question)
+                            @php
+                                $words = preg_split("/[\s,_-]+/",$question->name);
+                                    $words= json_encode($words);
+                                       $words_count =  str_word_count($words);
+                                        $acronym = "";
+                                        $words = json_decode($words);
+                                    if ($words_count > 1){
+                                        $string = $words;
+                                        $acronym = $string[0][0].$string[1][0];
+                                        $acronym = strtoupper($acronym);
+                                    }else{
+                                        $string = $words;
+                                        $acronym = $string[0][0];
+                                        $acronym = strtoupper($acronym);
+                                    }
+                            @endphp
+                            <div class="review_1">
+                                <div class="review_1_header">
+                                    <div class="user_pic" id="user_pic">
+                                        <div class="user_pic_inner" id="user_pic_inner">
+                                            <h3>
+                                                {{$acronym}}
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="user_info" id="user_info">
+                                        <h3>{{ucfirst($question->name)}}</h3>
+                                    </div>
+                                    <div class="review_date">
+
+                                        @if($loop->index == 0)
+                                            @if((new DateTime($question->created_at))->diff(new DateTime())->format('%d') > 10)
+                                                <p> {{now()->subDays(2)->format('d/m/y')}} </p>
+                                            @else
+                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($question->created_at)->format('d/m/y')}}</p>
+                                            @endif
+                                        @elseif($loop->index == 1)
+                                            @if((new DateTime($question->created_at))->diff(new DateTime())->format('%d') > 10)
+                                                <p> {{now()->subDays(2)->format('d/m/y')}} </p>
+                                            @else
+                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($question->created_at)->format('d/m/y')}}</p>
+                                            @endif
+                                        @else
+                                            <p>{{\Illuminate\Support\Carbon::createFromTimeString($question->created_at)->format('d/m/y')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="review_content">
+                                    <p>{{$question->question}}</p>
+                                </div>
+                                <div class="review_footer">
+                                    <div class="share_review">
+                                        <p>
+                                            <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook-q?question_id={{$question->id}}&display=popup" target="_blank">
+                                                <i class="fas fa-share-square"></i>
+                                                Share
+                                            </a>
+                                            <span class="share_to">&ensp; | &ensp;<a href="www.facebook.com">Facebook</a>&ensp; . &ensp;<a href="www.twitter.com">Twitter</a> </span>
+                                        </p>
+                                    </div>
+                                    <div class="like_dislike">
+                                        <p>Was this helpful?<span>
+                            <a href="javascript:void(0)">
+                              <i @if(isset($question->stats) && $question->stats->like == 1) class="fas fa-thumbs-up blue-color q-like" @else class="fas fa-thumbs-up   q-like" @endif></i> <span class="like-q" data-value="{{$question->id}}">{{$question->likes}}</span>
+                            </a>
+                            <a href="javascript:void(0)">
+                              <i @if(isset($question->stats) && $question->stats->dislike == 1) class="fas fa-thumbs-down blue-color q-dislike" @else  class="fas fa-thumbs-down q-dislike" @endif></i> <span class="dislike-q" data-value="{{$question->id}}">{{$question->dislikes}}</span>
+                            </a>
+                          </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                @if($question->question_reply != null)
+                                    <div class="review_reply" id="review_reply">
+                                        <div class="replier_info">
+                                            <div class="replier_name" id="replier_name">
+                                                <h4>{{ucwords($question->question_reply->store_name)}}</h4>
+                                            </div>
+                                            <div class="replier_date">
+                                                @if($loop->index == 0)
+                                                    @if((new DateTime($question->created_at))->diff(new DateTime())->format('%d') > 10)
+                                                        <p> {{now()->subDays(1)->format('d/m/y')}} </p>
+                                                    @else
+                                                        <p>{{\Illuminate\Support\Carbon::createFromTimeString($question->created_at)->format('d/m/y')}}</p>
+                                                    @endif
+                                                @elseif($loop->index == 1)
+                                                    @if((new DateTime($question->created_at))->diff(new DateTime())->format('%d') > 10)
+                                                        <p> {{now()->subDays(1)->format('d/m/y')}} </p>
+                                                    @else
+                                                        <p>{{\Illuminate\Support\Carbon::createFromTimeString($question->created_at)->format('d/m/y')}}</p>
+                                                    @endif
+                                                @else
+                                                    <p>{{\Illuminate\Support\Carbon::createFromTimeString($question->created_at)->format('d/m/y')}}</p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="replied_text">
+                                            <p>{{$question->question_reply->message}}</p>
+                                        </div>
+                                    </div>
+                                @endif
+                            </div>
+                        @endforeach
+                    @else
+                        <p>This Product has No Publish Questions yet!</p>
+                    @endif
                 </div>
                 <div id="question_pagination">
                     <ul aria-label="Reviews Pagination" role="navigation" class="stamped-question stamped-reviews-ul">
@@ -1104,16 +1589,156 @@
     </div>
 
     <!-- popup start -->
-    <!--     <div class="popup_overlay">
-<div id="quick-view-pop-up">
-<div class="quick-view-close">
-<i class="fas fa-times"></i>
-</div>
-<div id="popup-items">
+{{--  <div class="popup_overlay">--}}
+{{--<div id="quick-view-pop-up">--}}
+{{--<div class="quick-view-close">--}}
+{{--<i class="fas fa-times"></i>--}}
+{{--</div>--}}
+{{--<div id="popup-items">--}}
+{{--    <div class="owl-carousel owl-theme">--}}
+{{--        @php--}}
+{{--            $counter = 0;--}}
+{{--        @endphp--}}
+{{--        @if(count($reviews_popups) > 0)--}}
+{{--            @foreach($reviews_popups as $review)--}}
+{{--                @if(count($review->medias) > 0)--}}
+{{--                    @foreach($review->medias as $key => $media)--}}
+{{--                        @if($counter <= 7)--}}
+{{--                            <div class="item" style="width: 100%;">--}}
+{{--                                <div class="slide-image">--}}
+{{--                                    <img src="{{asset('review-images'.'/'.$media->review_media)}}" alt="">--}}
+{{--                                </div>--}}
 
-</div>
+{{--                                <div class="image-content">--}}
+{{--                                    <div class="detail">--}}
+{{--                                        <div class="product-details">--}}
+{{--                                            <h3 class="product-name">{{$review->name}} @if($review->verify_status == 'verified')Verified Buyer @endif</h3>--}}
+{{--                                            <div class="ratings">--}}
+{{--                                                @if($review->review_rating == null)--}}
+{{--                                                    <span class="fa fa-star "></span>--}}
+{{--                                                    <span class="fa fa-star "></span>--}}
+{{--                                                    <span class="fa fa-star "></span>--}}
+{{--                                                    <span class="fa fa-star "></span>--}}
+{{--                                                    <span class="fa fa-star "></span>--}}
+{{--                                                @elseif($review->review_rating == 1)--}}
+{{--                                                    <span class="fa fa-star checked"></span>--}}
+{{--                                                    <span class="fa fa-star "></span>--}}
+{{--                                                    <span class="fa fa-star "></span>--}}
+{{--                                                    <span class="fa fa-star "></span>--}}
+{{--                                                    <span class="fa fa-star "></span>--}}
+{{--                                                @elseif($review->review_rating == 2)--}}
+{{--                                                    <span class="fa fa-star checked"></span>--}}
+{{--                                                    <span class="fa fa-star checked"></span>--}}
+{{--                                                    <span class="fa fa-star "></span>--}}
+{{--                                                    <span class="fa fa-star "></span>--}}
+{{--                                                    <span class="fa fa-star "></span>--}}
+{{--                                                @elseif($review->review_rating == 3)--}}
+{{--                                                    <span class="fa fa-star checked"></span>--}}
+{{--                                                    <span class="fa fa-star checked"></span>--}}
+{{--                                                    <span class="fa fa-star checked"></span>--}}
+{{--                                                    <span class="fa fa-star "></span>--}}
+{{--                                                    <span class="fa fa-star "></span>--}}
+{{--                                                @elseif($review->review_rating == 4)--}}
+{{--                                                    <span class="fa fa-star checked"></span>--}}
+{{--                                                    <span class="fa fa-star checked"></span>--}}
+{{--                                                    <span class="fa fa-star checked"></span>--}}
+{{--                                                    <span class="fa fa-star checked"></span>--}}
+{{--                                                    <span class="fa fa-star "></span>--}}
+{{--                                                @elseif($review->review_rating == 5)--}}
+{{--                                                    <span class="fa fa-star checked"></span>--}}
+{{--                                                    <span class="fa fa-star checked"></span>--}}
+{{--                                                    <span class="fa fa-star checked"></span>--}}
+{{--                                                    <span class="fa fa-star checked"></span>--}}
+{{--                                                    <span class="fa fa-star checked"></span>--}}
+{{--                                                @endif--}}
+{{--                                            </div>--}}
+{{--                                            <div class="review_date">--}}
+{{--                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->diffForHumans()}}</p>--}}
+{{--                                            </div>--}}
+{{--                                            <h3>{{$review->review_title}}</h3>--}}
+{{--                                            <p>{{$review->experience}}</p>--}}
+{{--                                            <hr>--}}
+{{--                                            @if($review->review_reply != null)--}}
+{{--                                                <h4>Reply:</h4>--}}
+{{--                                                <p>{{$review->review_reply->message}}</p>--}}
+{{--                                                <div class="like_dislike">--}}
+{{--                                                    <p>--}}
+{{--                        <span>--}}
+{{--                          <a href="">--}}
+{{--                            <i class="fas fa-thumbs-up"></i> <span>{{$review->likes}}</span>--}}
+{{--                          </a>--}}
+{{--                          <a href="">--}}
+{{--                            <i class="fas fa-thumbs-down"></i> <span>{{$review->dislikes}}</span>--}}
+{{--                          </a>--}}
+{{--                        </span>--}}
+{{--                                                    </p>--}}
+{{--                                                </div>--}}
+{{--                                                <hr>--}}
+{{--                                                <img src="{{asset('review-images'.'/'.$media->review_media)}}" alt="" width="75px" height="100px">--}}
+{{--                                            @endif--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @php $counter += 1; @endphp--}}
+{{--                        @endif--}}
+{{--                    @endforeach--}}
+{{--    </div>--}}
+{{--    @else--}}
+{{--        <a href="javascript:void(0)" title="My Watch" class="">--}}
+{{--            <div>--}}
+{{--                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">--}}
+{{--            </div>--}}
+{{--        </a>--}}
+{{--        <a href="javascript:void(0)" title="My Watch" class="">--}}
+{{--            <div>--}}
+{{--                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">--}}
+{{--            </div>--}}
+{{--        </a>--}}
+{{--        <a href="javascript:void(0)" title="My Watch" class="">--}}
+{{--            <div>--}}
+{{--                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">--}}
+{{--            </div>--}}
+{{--        </a>--}}
+{{--    @endif--}}
+{{--    @endforeach--}}
+{{--    @else--}}
+{{--        <a href="javascript:void(0)" title="My Watch" class="">--}}
+{{--            <div>--}}
+{{--                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">--}}
+{{--            </div>--}}
+{{--        </a>--}}
+{{--        <a href="javascript:void(0)" title="My Watch" class="">--}}
+{{--            <div>--}}
+{{--                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">--}}
+{{--            </div>--}}
+{{--        </a>--}}
+{{--    @endif--}}
+{{--    <script>--}}
+{{--        $('.owl-carousel').owlCarousel({--}}
+{{--            loop:true,--}}
+{{--            margin:10,--}}
+{{--            nav:true,--}}
+{{--            responsive:{--}}
+{{--                0:{--}}
+{{--                    items:1--}}
+{{--                },--}}
+{{--                600:{--}}
+{{--                    items:1--}}
+{{--                },--}}
+{{--                1000:{--}}
+{{--                    items:1--}}
+{{--                }--}}
+{{--            }--}}
+{{--        })--}}
+{{--        $( ".owl-prev").html('<i class="fas fa-chevron-left"></i>');--}}
+{{--        $( ".owl-next").html('<i class="fas fa-chevron-right"></i>');--}}
+{{--    </script>--}}
+{{--</div>--}}
 
-</div>
-</div> -->
+{{--</div>--}}
+{{--</div>--}}
     <!-- popup end -->
 </div>
+
+

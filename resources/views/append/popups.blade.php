@@ -2,8 +2,8 @@
 @php
 $counter = 0;
 @endphp
-@if(count($reviews) > 0)
-@foreach($reviews as $review)
+@if(count($reviews_popups) > 0)
+@foreach($reviews_popups as $review)
 @if(count($review->medias) > 0)
 @foreach($review->medias as $key => $media)
 @if($counter <= 7)

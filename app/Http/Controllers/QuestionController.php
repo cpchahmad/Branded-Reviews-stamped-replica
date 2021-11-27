@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Question;
 use App\Models\QuestionReply;
 use App\Models\QuestionStat;
@@ -37,9 +38,11 @@ class QuestionController extends Controller
     }
     public function QuestionRequest(){
         $shop = Auth::user();
+        $products = Product::where('shop_id',$shop->id)->get();
         $questions = Question::where('shop_id',$shop->id)->latest()->paginate(10);
         return view('pages.questions')->with([
             'questions'=>$questions,
+            'products'=>$products,
         ]);
     }
     public function QuestionPublish($id){
@@ -118,20 +121,20 @@ class QuestionController extends Controller
         $review->save();
         return Redirect::tokenRedirect('question.request', ['notice' => 'Question Rejected  Successfully']);
     }
-    public function AppendQuestions(Request $request){
-        $shop = User::where('name',$request->shop_name)->first();
-        $questions_publish  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->get();
-        $questions_pagination  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->paginate(5);
-        $total_question = count($questions_publish);
-        $questions = view('append.questions')->with([
-            'questions_publish' => $questions_pagination,
-        ])->render();
-        return response([
-            'paginate'=>json_decode(json_encode($questions_pagination)),
-            'questions'=>$questions,
-            'total_question'=>$total_question,
-        ]);
-    }
+//    public function AppendQuestions(Request $request){
+//        $shop = User::where('name',$request->shop_name)->first();
+//        $questions_publish  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->get();
+//        $questions_pagination  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->paginate(5);
+//        $total_question = count($questions_publish);
+//        $questions = view('append.questions')->with([
+//            'questions_publish' => $questions_pagination,
+//        ])->render();
+//        return response([
+//            'paginate'=>json_decode(json_encode($questions_pagination)),
+//            'questions'=>$questions,
+//            'total_question'=>$total_question,
+//        ]);
+//    }
     public function AddNewQuestion($id){
             return view('pages.new-question')->with([
                 'product_id'=>$id,
@@ -192,6 +195,7 @@ class QuestionController extends Controller
     }
     public function QuestionFilter(Request $request){
         $shop = Auth::user();
+        $products = Product::where('shop_id',$shop->id)->get();
         $questions = Question::where('shop_id',$shop->id)->newQuery();
         if ($request->filled('date-range')){
             if ($request->input('date-range') != 'Select Date Range') {
@@ -209,7 +213,11 @@ class QuestionController extends Controller
                 $questions = $questions->where('status', $request->input('question_status'))->newQuery();
             }
         }
-
+        if ($request->filled('product')){
+            if ($request->input('product') != 'product') {
+                $questions = $questions->where('product_id', $request->input('product'))->newQuery();
+            }
+        }
         if ($request->filled('question_email')){
             $questions = $questions->where('email',$request->input('question_email'))->newQuery();
         }
@@ -219,7 +227,9 @@ class QuestionController extends Controller
             'questions'=>$questions,
             'date_range' => $request->input('date-range'),
             'question_status'=>$request->input('question_status'),
+            'product_value'=>$request->input('product'),
             'question_email'=>$request->input('question_email'),
+            'products'=>$products,
         ]);
     }
     public function FilterQuestions(Request $request){

@@ -172,13 +172,15 @@
                             </select>
 
                             <select class="form-control bg-white mr-1" name="product_reviews" id="product_reviews">
-                                <option selected disabled value="product">Select Product</option>
-                                <option @if(isset($review_status) && $review_status== 'publish') selected @endif value="publish">Publish</option>
-                                <option @if(isset($review_status) && $review_status== 'pending') selected @endif value="pending">Pending</option>
-                                <option @if(isset($review_status) && $review_status== 'archive') selected @endif value="archive">Archive</option>
-                                <option @if(isset($review_status) && $review_status== 'featured') selected @endif value="featured">Featured</option>
+                                <option selected disabled value="product">Products</option>
+                                @if(count($products) > 0 )
+                                @foreach($products as $product)
+                                <option @if(isset($product_value) && $product->shopify_id == $product_value) selected @endif value="{{$product->shopify_id}}">{{$product->title}}</option>
+                                @endforeach
+                                @endif
                             </select>
-                            <input placeholder="Email / Title / Desc" type="text" id="email_title_desc" @if (isset($email_title_desc)) value="{{$email_title_desc}}" @endif name="email_title_desc" class="form-control">
+
+                            <input placeholder="Email/Title/Desc" type="text" id="email_title_desc" @if (isset($email_title_desc)) value="{{$email_title_desc}}" @endif name="email_title_desc" class="form-control">
                         </div>
                 </div>
             </div>
@@ -276,8 +278,10 @@
         let daterange_string = $('#reportrange').find('span').text();
         var selected_review_value = $("#reviews option:selected").val();
         var selected_review_status_name = $("#review_status option:selected").val() ;
+        var product = $("#product_reviews option:selected").val() ;
         var email_title_desc = $("#email_title_desc").val();
-        window.location.href = $(this).data('url')+'?date-range='+daterange_string+'&review_stars='+selected_review_value+'&review_status='+selected_review_status_name+'&email_title_desc='+email_title_desc;
+
+        window.location.href = $(this).data('url')+'?date-range='+daterange_string+'&review_stars='+selected_review_value+'&review_status='+selected_review_status_name+'&product='+product+'&email_title_desc='+email_title_desc;
 
     });
 

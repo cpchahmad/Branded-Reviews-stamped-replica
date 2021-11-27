@@ -21,10 +21,11 @@ class ReviewController extends Controller
 {
     public function ReviewRequest(){
         $shop = Auth::user();
-        dd($shop);
+        $products = Product::where('shop_id',$shop->id)->get();
         $reviews = Review::where('shop_id',$shop->id)->latest()->paginate(10);
         return view('pages.review-requests')->with([
             'reviews'=>$reviews,
+            'products'=>$products,
         ]);
     }
     public function ReviewDetail($id){
@@ -258,75 +259,75 @@ class ReviewController extends Controller
         $review->save();
         return Redirect::tokenRedirect('review.request', ['notice' => 'Review Rejected  Successfully']);
     }
-    public function AppendReviews(Request $request){
-        $shop = User::where('name',$request->shop_name)->first();
-        $status = 'real';
-        $review_status = FakeReview::where('shop_id',$shop->id)->where('product_id',$request->product_id)->first();
-        if ($review_status !=null){
-            if ($review_status->status == 'fake'){
-                $status = 'fake';
-            }
-        }
-
-        $reviews_featured = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->get();
-        $reviews_publish  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->get();
-        $reviews_pagi_fea = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->paginate(5);
-        $reviews_pagi_pub  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->paginate(5);
-        $total_five_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',5)->count();
-        $total_four_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',4)->count();
-        $total_three_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',3)->count();
-        $total_two_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',2)->count();
-        $total_one_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',1)->count();
-        $reviews = view('append.reviews')->with([
-            'reviews_featured' => $reviews_pagi_fea,
-            'reviews_publish' => $reviews_pagi_pub
-        ])->render();
-        $count_reviews = count($reviews_featured) + count($reviews_publish);
-        $real_reviews = $count_reviews;
-        $count_rating =  $reviews_featured->sum('review_rating') + $reviews_publish->sum('review_rating');
-        if ($count_reviews != 0){
-        $over_all_rating = $count_rating / $count_reviews;
-        $over_all_rating = number_format($over_all_rating,1);
-        }else{
-            $over_all_rating = 0 ;
-        }
-        $rating_value = intval(round($over_all_rating));
-        $review_images = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->get();
-        $images = view('append.images')->with([
-            'reviews' => $review_images,
-        ])->render();
-        $popups = view('append.popups')->with([
-            'reviews' => $review_images,
-        ])->render();
-        if ($status == 'fake'){
-            $count_reviews = $review_status->total_reviews;
-            $over_all_rating = $review_status->rating;
-            $rating_value = $review_status->rating;
-            $rating_value = intval(round($rating_value));
-            $total_five_star  = $review_status->five_star;
-            $total_four_star = $review_status->four_star;
-            $total_three_star = $review_status->three_star;
-            $total_two_star = $review_status->two_star;
-            $total_one_star = $review_status->one_star;
-        }
-
-        return response([
-            'paginate'=>json_decode(json_encode($reviews_pagi_pub)),
-            'reviews'=>$reviews,
-            'total_reviews'=>$count_reviews,
-            'total_rating'=>$over_all_rating,
-            'review_value'=>$rating_value,
-            'five_star'=>$total_five_star,
-            'four_star'=>$total_four_star,
-            'three_star'=>$total_three_star,
-            'two_star'=>$total_two_star,
-            'one_star'=>$total_one_star,
-            'review_images'=>$images,
-            'popups'=>$popups,
-            'real_reviews'=>$real_reviews,
-            'status'=>$status,
-        ]);
-    }
+//    public function AppendReviews(Request $request){
+//        $shop = User::where('name',$request->shop_name)->first();
+//        $status = 'real';
+//        $review_status = FakeReview::where('shop_id',$shop->id)->where('product_id',$request->product_id)->first();
+//        if ($review_status !=null){
+//            if ($review_status->status == 'fake'){
+//                $status = 'fake';
+//            }
+//        }
+//
+//        $reviews_featured = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->get();
+//        $reviews_publish  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->get();
+//        $reviews_pagi_fea = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->paginate(5);
+//        $reviews_pagi_pub  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->paginate(5);
+//        $total_five_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',5)->count();
+//        $total_four_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',4)->count();
+//        $total_three_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',3)->count();
+//        $total_two_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',2)->count();
+//        $total_one_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',1)->count();
+//        $reviews = view('append.reviews')->with([
+//            'reviews_featured' => $reviews_pagi_fea,
+//            'reviews_publish' => $reviews_pagi_pub
+//        ])->render();
+//        $count_reviews = count($reviews_featured) + count($reviews_publish);
+//        $real_reviews = $count_reviews;
+//        $count_rating =  $reviews_featured->sum('review_rating') + $reviews_publish->sum('review_rating');
+//        if ($count_reviews != 0){
+//        $over_all_rating = $count_rating / $count_reviews;
+//        $over_all_rating = number_format($over_all_rating,1);
+//        }else{
+//            $over_all_rating = 0 ;
+//        }
+//        $rating_value = intval(round($over_all_rating));
+//        $review_images = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->get();
+//        $images = view('append.images')->with([
+//            'reviews' => $review_images,
+//        ])->render();
+//        $popups = view('append.popups')->with([
+//            'reviews' => $review_images,
+//        ])->render();
+//        if ($status == 'fake'){
+//            $count_reviews = $review_status->total_reviews;
+//            $over_all_rating = $review_status->rating;
+//            $rating_value = $review_status->rating;
+//            $rating_value = intval(round($rating_value));
+//            $total_five_star  = $review_status->five_star;
+//            $total_four_star = $review_status->four_star;
+//            $total_three_star = $review_status->three_star;
+//            $total_two_star = $review_status->two_star;
+//            $total_one_star = $review_status->one_star;
+//        }
+//
+//        return response([
+//            'paginate'=>json_decode(json_encode($reviews_pagi_pub)),
+//            'reviews'=>$reviews,
+//            'total_reviews'=>$count_reviews,
+//            'total_rating'=>$over_all_rating,
+//            'review_value'=>$rating_value,
+//            'five_star'=>$total_five_star,
+//            'four_star'=>$total_four_star,
+//            'three_star'=>$total_three_star,
+//            'two_star'=>$total_two_star,
+//            'one_star'=>$total_one_star,
+//            'review_images'=>$images,
+//            'popups'=>$popups,
+//            'real_reviews'=>$real_reviews,
+//            'status'=>$status,
+//        ]);
+//    }
     public function AddNewReview($id){
         return view('pages.new-review')->with([
             'product_id'=>$id,
@@ -435,6 +436,7 @@ class ReviewController extends Controller
     }
     public function ReviewsFilter(Request $request){
         $shop = Auth::user();
+        $products = Product::where('shop_id',$shop->id)->get();
         $reviews = Review::where('shop_id',$shop->id)->newQuery();
         if ($request->filled('date-range')){
             if ($request->input('date-range') != 'Select Date Range') {
@@ -463,6 +465,12 @@ class ReviewController extends Controller
                 }
             }
         }
+        if ($request->filled('product')){
+            if ($request->input('product') != 'product') {
+                $reviews = $reviews->where('product_id', $request->input('product'))->newQuery();
+            }
+        }
+
         if ($request->filled('email_title_desc')){
                 $reviews = $reviews->where('review_title', 'LIKE', '%' . $request->input('email_title_desc') . '%')->orWhere('email','LIKE', '%' . $request->input('email_title_desc') . '%')->orWhere('experience','LIKE', '%' . $request->input('email_title_desc') . '%')->newQuery();
         }
@@ -477,7 +485,9 @@ class ReviewController extends Controller
             'date_range' => $request->input('date-range'),
             'review_stars'=>$request->input('review_stars'),
             'review_status'=>$request->input('review_status'),
+            'product_value'=>$request->input('product'),
             'email_title_desc'=>$request->input('email_title_desc'),
+            'products'=>$products,
         ]);
     }
 }
