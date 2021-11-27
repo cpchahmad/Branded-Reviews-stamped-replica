@@ -205,7 +205,7 @@ var next_url = data.paginate['links'][total - 1]['url'] + '&shop_name=' + name +
 
 //              $('#next').attr('data-page',next_url);
 $("#br_reviews_widget_wrapper").html(data.html);
-
+console.log(data.html);
 $(document).find('.stamped-pagination').empty();
 var total = $(data.paginate['links']).length;
 var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
