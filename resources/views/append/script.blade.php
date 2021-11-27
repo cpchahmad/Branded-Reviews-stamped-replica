@@ -42,7 +42,64 @@ $.ajax({
 url: base_url + "get-data?product_id=" + id + "&shop_name=" + name,
 type: 'GET',
 success: function(data) {
+$('#main-body').css('display', 'block');
 $('#br_reviews_widget_wrapper').html(data.html);
+$('.stamped-pagination').empty();
+var total = $(data.paginate['links']).length;
+var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
+$(data.paginate['links']).each(function(index) {
+//                    if (index === 0) {
+//                        $('.stamped-pagination').append("<li class='previous'><a href='javascript:void(0)' id='previous' data-page='' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
+//                   	}
+if (index != 0) {
+if (index != total - 1) {
+if (total != 3) {
+var url_link = data.paginate['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
+if (index == 1) {
+$('.stamped-pagination').append("<li class='page active'><a href='javascript:void(0)' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
+} else {
+$('.stamped-pagination').append("<li class='page'><a href='javascript:void(0)' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
+}
+}
+}
+//           			 if (index === total - 1) {
+
+//                      $('.stamped-pagination').append("<li class='next'><a href='javascript:void(0)' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
+
+//                   	}
+
+}
+
+});
+
+$('.stamped-question').empty();
+var total = $(data.paginate_q['links']).length;
+
+var next_url = data.paginate_q['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
+$(data.paginate_q['links']).each(function(index) {
+//                    if (index === 0) {
+//                        $('.stamped-question').append("<li class='previous'><a href='javascript:void(0)' id='previous_question' data-page='' class='question_link' aria-label='Previous page'>&lt;</a></li>");
+//                   	}
+if (index != 0) {
+if (index != total - 1) {
+if (total != 3) {
+var url_link = data.paginate_q['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
+if (index == 1) {
+$('.stamped-question').append("<li class='question_page active'><a href='javascript:void(0)' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
+} else {
+$('.stamped-question').append("<li class='question_page'><a href='javascript:void(0)' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
+}
+}
+}
+//           			 if (index === total - 1) {
+
+//                      $('.stamped-question').append("<li class='next'><a href='javascript:void(0)' id='next_question' data-page='"+next_url+"' class='question_link' aria-label='Next page'>&gt;</a></li>");
+
+//                   	}
+}
+
+});
+
 }
 
 });
@@ -128,168 +185,168 @@ $('#review_rating').val(rating);
 
 $(function() {
 
-//                 $.ajax({
-//                     url: base_url + "get-reviews?product_id=" + id + "&shop_name=" + name,
-//                     type: 'GET',
-//                     success: function(data) {
-//                         $('#main-body').css('display', 'block');
-//                         $("#user_reviews").html(data.reviews);
-//                         //             if (data.status == 'real'){
-//                         $('#total_reviews').empty();
-//                         $('#total_reviews').text(data.total_reviews);
-//                         if (data.total_reviews == 0) {
-//                             $('#sort_review').css('display', 'none');
-//                         }
-//                         if (data.status == 'fake' && data.real_reviews != 0) {
-//                             $('#total_reviews').empty();
-//                             $('#total_reviews').text(data.real_reviews);
-//                         }
-//                         //             }
-//                         if (data.status == 'fake' && data.real_reviews == 0) {
-//                             $('#total_reviews').empty();
-//                             $('#total_reviews').text(0);
-//                             $('#sort_review').css('display', 'none');
-//                         }
-//                         $('#base_reviews').empty();
-//                         $('#base_reviews').text(data.total_reviews);
-//                         $('#total_rating').empty();
-//                         $('#total_rating').text(data.total_rating);
-//                         if (data.review_value == 0) {
-//                             $('#rating_stars').empty();
-//                             $('#rating_stars').append(
-//                                 '<i class="fas fa-star"></i>',
-//                                 '<i class="fas fa-star"></i>',
-//                                 '<i class="fas fa-star"></i>',
-//                                 '<i class="fas fa-star"></i>',
-//                                 '<i class="fas fa-star"></i>',
-//                             );
-//                         } else if (data.review_value == 1) {
-//                             $('#rating_stars').empty();
-//                             $('#rating_stars').append(
-//                                 '<i class="fas fa-star checked"></i>',
-//                                 '<i class="fas fa-star"></i>',
-//                                 '<i class="fas fa-star"></i>',
-//                                 '<i class="fas fa-star"></i>',
-//                                 '<i class="fas fa-star"></i>',
-//                             );
-//                         } else if (data.review_value == 2) {
-//                             $('#rating_stars').empty();
-//                             $('#rating_stars').append(
-//                                 '<i class="fas fa-star checked"></i>',
-//                                 '<i class="fas fa-star checked"></i>',
-//                                 '<i class="fas fa-star"></i>',
-//                                 '<i class="fas fa-star"></i>',
-//                                 '<i class="fas fa-star"></i>',
-//                             );
-//                         } else if (data.review_value == 3) {
-//                             $('#rating_stars').empty();
-//                             $('#rating_stars').append(
-//                                 '<i class="fas fa-star checked"></i>',
-//                                 '<i class="fas fa-star checked"></i>',
-//                                 '<i class="fas fa-star checked"></i>',
-//                                 '<i class="fas fa-star"></i>',
-//                                 '<i class="fas fa-star"></i>',
-//                             );
-//                         } else if (data.review_value == 4) {
-//                             $('#rating_stars').empty();
-//                             $('#rating_stars').append(
-//                                 '<i class="fas fa-star checked"></i>',
-//                                 '<i class="fas fa-star checked"></i>',
-//                                 '<i class="fas fa-star checked"></i>',
-//                                 '<i class="fas fa-star checked"></i>',
-//                                 '<i class="fas fa-star"></i>',
-//                             );
-//                         } else if (data.review_value == 5) {
-//                             $('#rating_stars').empty();
-//                             $('#rating_stars').append(
-//                                 '<i class="fas fa-star checked"></i>',
-//                                 '<i class="fas fa-star checked"></i>',
-//                                 '<i class="fas fa-star checked"></i>',
-//                                 '<i class="fas fa-star checked"></i>',
-//                                 '<i class="fas fa-star checked"></i>',
-//                             );
-//                         }
-//                         $("#five_star").empty();
-//                         $("#five_star").append('&ensp;' + '(' + data.five_star + ')');
-//                         if (data.total_reviews != 0) {
-//                             var percentage_five = (data.five_star / data.total_reviews) * 100;
-//                         } else {
-//                             var percentage_five = 0;
-//                         }
+$.ajax({
+url: base_url + "get-reviews?product_id=" + id + "&shop_name=" + name,
+type: 'GET',
+success: function(data) {
+$('#main-body').css('display', 'block');
+$("#user_reviews").html(data.reviews);
+//             if (data.status == 'real'){
+$('#total_reviews').empty();
+$('#total_reviews').text(data.total_reviews);
+if (data.total_reviews == 0) {
+$('#sort_review').css('display', 'none');
+}
+if (data.status == 'fake' && data.real_reviews != 0) {
+$('#total_reviews').empty();
+$('#total_reviews').text(data.real_reviews);
+}
+//             }
+if (data.status == 'fake' && data.real_reviews == 0) {
+$('#total_reviews').empty();
+$('#total_reviews').text(0);
+$('#sort_review').css('display', 'none');
+}
+$('#base_reviews').empty();
+$('#base_reviews').text(data.total_reviews);
+$('#total_rating').empty();
+$('#total_rating').text(data.total_rating);
+if (data.review_value == 0) {
+$('#rating_stars').empty();
+$('#rating_stars').append(
+'<i class="fas fa-star"></i>',
+'<i class="fas fa-star"></i>',
+'<i class="fas fa-star"></i>',
+'<i class="fas fa-star"></i>',
+'<i class="fas fa-star"></i>',
+);
+} else if (data.review_value == 1) {
+$('#rating_stars').empty();
+$('#rating_stars').append(
+'<i class="fas fa-star checked"></i>',
+'<i class="fas fa-star"></i>',
+'<i class="fas fa-star"></i>',
+'<i class="fas fa-star"></i>',
+'<i class="fas fa-star"></i>',
+);
+} else if (data.review_value == 2) {
+$('#rating_stars').empty();
+$('#rating_stars').append(
+'<i class="fas fa-star checked"></i>',
+'<i class="fas fa-star checked"></i>',
+'<i class="fas fa-star"></i>',
+'<i class="fas fa-star"></i>',
+'<i class="fas fa-star"></i>',
+);
+} else if (data.review_value == 3) {
+$('#rating_stars').empty();
+$('#rating_stars').append(
+'<i class="fas fa-star checked"></i>',
+'<i class="fas fa-star checked"></i>',
+'<i class="fas fa-star checked"></i>',
+'<i class="fas fa-star"></i>',
+'<i class="fas fa-star"></i>',
+);
+} else if (data.review_value == 4) {
+$('#rating_stars').empty();
+$('#rating_stars').append(
+'<i class="fas fa-star checked"></i>',
+'<i class="fas fa-star checked"></i>',
+'<i class="fas fa-star checked"></i>',
+'<i class="fas fa-star checked"></i>',
+'<i class="fas fa-star"></i>',
+);
+} else if (data.review_value == 5) {
+$('#rating_stars').empty();
+$('#rating_stars').append(
+'<i class="fas fa-star checked"></i>',
+'<i class="fas fa-star checked"></i>',
+'<i class="fas fa-star checked"></i>',
+'<i class="fas fa-star checked"></i>',
+'<i class="fas fa-star checked"></i>',
+);
+}
+$("#five_star").empty();
+$("#five_star").append('&ensp;' + '(' + data.five_star + ')');
+if (data.total_reviews != 0) {
+var percentage_five = (data.five_star / data.total_reviews) * 100;
+} else {
+var percentage_five = 0;
+}
 
-//                         $('.bar-5').css('width', percentage_five + '%');
-//                         $("#four_star").empty();
-//                         $("#four_star").append('&ensp;' + '(' + data.four_star + ')');
+$('.bar-5').css('width', percentage_five + '%');
+$("#four_star").empty();
+$("#four_star").append('&ensp;' + '(' + data.four_star + ')');
 
-//                         if (data.total_reviews != 0) {
-//                             var percentage_four = (data.four_star / data.total_reviews) * 100;
-//                         } else {
-//                             var percentage_four = 0;
-//                         }
-//                         $('.bar-4').css('width', percentage_four + '%');
-//                         $("#three_star").empty();
-//                         $("#three_star").append('&ensp;' + '(' + data.three_star + ')');
+if (data.total_reviews != 0) {
+var percentage_four = (data.four_star / data.total_reviews) * 100;
+} else {
+var percentage_four = 0;
+}
+$('.bar-4').css('width', percentage_four + '%');
+$("#three_star").empty();
+$("#three_star").append('&ensp;' + '(' + data.three_star + ')');
 
-//                         if (data.total_reviews != 0) {
-//                             var percentage_three = (data.three_star / data.total_reviews) * 100;
-//                         } else {
-//                             var percentage_three = 0;
-//                         }
-//                         $('.bar-3').css('width', percentage_three + '%');
-//                         $("#two_star").empty();
-//                         $("#two_star").append('&ensp;' + '(' + data.two_star + ')');
+if (data.total_reviews != 0) {
+var percentage_three = (data.three_star / data.total_reviews) * 100;
+} else {
+var percentage_three = 0;
+}
+$('.bar-3').css('width', percentage_three + '%');
+$("#two_star").empty();
+$("#two_star").append('&ensp;' + '(' + data.two_star + ')');
 
-//                         if (data.total_reviews != 0) {
-//                             var percentage_two = (data.two_star / data.total_reviews) * 100;
-//                         } else {
-//                             var percentage_two = 0;
-//                         }
-//                         $('.bar-2').css('width', percentage_two + '%');
-//                         $("#one_star").empty();
-//                         $("#one_star").append('&ensp;' + '(' + data.one_star + ')');
+if (data.total_reviews != 0) {
+var percentage_two = (data.two_star / data.total_reviews) * 100;
+} else {
+var percentage_two = 0;
+}
+$('.bar-2').css('width', percentage_two + '%');
+$("#one_star").empty();
+$("#one_star").append('&ensp;' + '(' + data.one_star + ')');
 
-//                         if (data.total_reviews != 0) {
-//                               var percentage_one = (data.one_star / data.total_reviews) * 100;
-//                         } else {
-//                             var percentage_one = 0;
-//                         }
-//                         $('.bar-1').css('width', percentage_one + '%');
+if (data.total_reviews != 0) {
+var percentage_one = (data.one_star / data.total_reviews) * 100;
+} else {
+var percentage_one = 0;
+}
+$('.bar-1').css('width', percentage_one + '%');
 
-//                         $('#review_images').empty();
-//                         $('#review_images').append(data.review_images);
+$('#review_images').empty();
+$('#review_images').append(data.review_images);
 
-//                         //                 $('#popup-items').empty();
-//                         //                 $('#popup-items').append(data.popups);
-//                         $('.stamped-pagination').empty();
-//                         var total = $(data.paginate['links']).length;
-//                         var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
-//                         $(data.paginate['links']).each(function(index) {
-//                             //                    if (index === 0) {
-//                             //                        $('.stamped-pagination').append("<li class='previous'><a href='javascript:void(0)' id='previous' data-page='' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
-//                             //                   	}
-//                             if (index != 0) {
-//                                 if (index != total - 1) {
-//                                     if (total != 3) {
-//                                         var url_link = data.paginate['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
-//                                         if (index == 1) {
-//                                             $('.stamped-pagination').append("<li class='page active'><a href='javascript:void(0)' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
-//                                         } else {
-//                                             $('.stamped-pagination').append("<li class='page'><a href='javascript:void(0)' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
-//                                         }
-//                                     }
-//                                 }
-//                                 //           			 if (index === total - 1) {
+//                 $('#popup-items').empty();
+//                 $('#popup-items').append(data.popups);
+$('.stamped-pagination').empty();
+var total = $(data.paginate['links']).length;
+var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
+$(data.paginate['links']).each(function(index) {
+//                    if (index === 0) {
+//                        $('.stamped-pagination').append("<li class='previous'><a href='javascript:void(0)' id='previous' data-page='' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
+//                   	}
+if (index != 0) {
+if (index != total - 1) {
+if (total != 3) {
+var url_link = data.paginate['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
+if (index == 1) {
+$('.stamped-pagination').append("<li class='page active'><a href='javascript:void(0)' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
+} else {
+$('.stamped-pagination').append("<li class='page'><a href='javascript:void(0)' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
+}
+}
+}
+//           			 if (index === total - 1) {
 
-//                                 //                      $('.stamped-pagination').append("<li class='next'><a href='javascript:void(0)' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
+//                      $('.stamped-pagination').append("<li class='next'><a href='javascript:void(0)' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
 
-//                                 //                   	}
+//                   	}
 
-//                             }
+}
 
-//                         });
+});
 
-//                     }
-//                 });
+}
+});
 
 $(document).on("click", ".paginate_link", function(e) {
 $('.page').removeClass('active');
@@ -593,134 +650,134 @@ $.ajax({
 url: base_url + "get-reviews?product_id=" + id + "&shop_name=" + name,
 type: 'GET',
 success: function(data) {
-$('#main-body').css('display', 'block');
-$("#user_reviews").html(data.reviews);
-//             if (data.status == 'real'){
-$('#total_reviews').empty();
-$('#total_reviews').text(data.total_reviews);
-if (data.total_reviews == 0) {
-$('#sort_review').css('display', 'none');
-}
-if (data.status == 'fake' && data.real_reviews != 0) {
-$('#total_reviews').empty();
-$('#total_reviews').text(data.real_reviews);
-}
-//             }
-if (data.status == 'fake' && data.real_reviews == 0) {
-$('#total_reviews').empty();
-$('#total_reviews').text(0);
-$('#sort_review').css('display', 'none');
-}
-$('#base_reviews').empty();
-$('#base_reviews').text(data.total_reviews);
-$('#total_rating').empty();
-$('#total_rating').text(data.total_rating);
-if (data.review_value == 0) {
-$('#rating_stars').empty();
-$('#rating_stars').append(
-'<i class="fas fa-star"></i>',
-'<i class="fas fa-star"></i>',
-'<i class="fas fa-star"></i>',
-'<i class="fas fa-star"></i>',
-'<i class="fas fa-star"></i>',
-);
-} else if (data.review_value == 1) {
-$('#rating_stars').empty();
-$('#rating_stars').append(
-'<i class="fas fa-star checked"></i>',
-'<i class="fas fa-star"></i>',
-'<i class="fas fa-star"></i>',
-'<i class="fas fa-star"></i>',
-'<i class="fas fa-star"></i>',
-);
-} else if (data.review_value == 2) {
-$('#rating_stars').empty();
-$('#rating_stars').append(
-'<i class="fas fa-star checked"></i>',
-'<i class="fas fa-star checked"></i>',
-'<i class="fas fa-star"></i>',
-'<i class="fas fa-star"></i>',
-'<i class="fas fa-star"></i>',
-);
-} else if (data.review_value == 3) {
-$('#rating_stars').empty();
-$('#rating_stars').append(
-'<i class="fas fa-star checked"></i>',
-'<i class="fas fa-star checked"></i>',
-'<i class="fas fa-star checked"></i>',
-'<i class="fas fa-star"></i>',
-'<i class="fas fa-star"></i>',
-);
-} else if (data.review_value == 4) {
-$('#rating_stars').empty();
-$('#rating_stars').append(
-'<i class="fas fa-star checked"></i>',
-'<i class="fas fa-star checked"></i>',
-'<i class="fas fa-star checked"></i>',
-'<i class="fas fa-star checked"></i>',
-'<i class="fas fa-star"></i>',
-);
-} else if (data.review_value == 5) {
-$('#rating_stars').empty();
-$('#rating_stars').append(
-'<i class="fas fa-star checked"></i>',
-'<i class="fas fa-star checked"></i>',
-'<i class="fas fa-star checked"></i>',
-'<i class="fas fa-star checked"></i>',
-'<i class="fas fa-star checked"></i>',
-);
-}
-$("#five_star").empty();
-$("#five_star").append('&ensp;' + '(' + data.five_star + ')');
-if (data.total_reviews != 0) {
-var percentage_five = (data.five_star / data.total_reviews) * 100;
-} else {
-var percentage_five = 0;
-}
+//                             $('#main-body').css('display', 'block');
+//                             $("#user_reviews").html(data.reviews);
+//                             //             if (data.status == 'real'){
+//                             $('#total_reviews').empty();
+//                             $('#total_reviews').text(data.total_reviews);
+//                             if (data.total_reviews == 0) {
+//                                 $('#sort_review').css('display', 'none');
+//                             }
+//                             if (data.status == 'fake' && data.real_reviews != 0) {
+//                                 $('#total_reviews').empty();
+//                                 $('#total_reviews').text(data.real_reviews);
+//                             }
+//                             //             }
+//                             if (data.status == 'fake' && data.real_reviews == 0) {
+//                                 $('#total_reviews').empty();
+//                                 $('#total_reviews').text(0);
+//                                 $('#sort_review').css('display', 'none');
+//                             }
+//                             $('#base_reviews').empty();
+//                             $('#base_reviews').text(data.total_reviews);
+//                             $('#total_rating').empty();
+//                             $('#total_rating').text(data.total_rating);
+//                             if (data.review_value == 0) {
+//                                 $('#rating_stars').empty();
+//                                 $('#rating_stars').append(
+//                                     '<i class="fas fa-star"></i>',
+//                                     '<i class="fas fa-star"></i>',
+//                                     '<i class="fas fa-star"></i>',
+//                                     '<i class="fas fa-star"></i>',
+//                                     '<i class="fas fa-star"></i>',
+//                                 );
+//                             } else if (data.review_value == 1) {
+//                                 $('#rating_stars').empty();
+//                                 $('#rating_stars').append(
+//                                     '<i class="fas fa-star checked"></i>',
+//                                     '<i class="fas fa-star"></i>',
+//                                     '<i class="fas fa-star"></i>',
+//                                     '<i class="fas fa-star"></i>',
+//                                     '<i class="fas fa-star"></i>',
+//                                 );
+//                             } else if (data.review_value == 2) {
+//                                 $('#rating_stars').empty();
+//                                 $('#rating_stars').append(
+//                                     '<i class="fas fa-star checked"></i>',
+//                                     '<i class="fas fa-star checked"></i>',
+//                                     '<i class="fas fa-star"></i>',
+//                                     '<i class="fas fa-star"></i>',
+//                                     '<i class="fas fa-star"></i>',
+//                                 );
+//                             } else if (data.review_value == 3) {
+//                                 $('#rating_stars').empty();
+//                                 $('#rating_stars').append(
+//                                     '<i class="fas fa-star checked"></i>',
+//                                     '<i class="fas fa-star checked"></i>',
+//                                     '<i class="fas fa-star checked"></i>',
+//                                     '<i class="fas fa-star"></i>',
+//                                     '<i class="fas fa-star"></i>',
+//                                 );
+//                             } else if (data.review_value == 4) {
+//                                 $('#rating_stars').empty();
+//                                 $('#rating_stars').append(
+//                                     '<i class="fas fa-star checked"></i>',
+//                                     '<i class="fas fa-star checked"></i>',
+//                                     '<i class="fas fa-star checked"></i>',
+//                                     '<i class="fas fa-star checked"></i>',
+//                                     '<i class="fas fa-star"></i>',
+//                                 );
+//                             } else if (data.review_value == 5) {
+//                                 $('#rating_stars').empty();
+//                                 $('#rating_stars').append(
+//                                     '<i class="fas fa-star checked"></i>',
+//                                     '<i class="fas fa-star checked"></i>',
+//                                     '<i class="fas fa-star checked"></i>',
+//                                     '<i class="fas fa-star checked"></i>',
+//                                     '<i class="fas fa-star checked"></i>',
+//                                 );
+//                             }
+//                             $("#five_star").empty();
+//                             $("#five_star").append('&ensp;' + '(' + data.five_star + ')');
+//                             if (data.total_reviews != 0) {
+//                                 var percentage_five = (data.five_star / data.total_reviews) * 100;
+//                             } else {
+//                                 var percentage_five = 0;
+//                             }
 
-$('.bar-5').css('width', percentage_five + '%');
-$("#four_star").empty();
-$("#four_star").append('&ensp;' + '(' + data.four_star + ')');
+//                             $('.bar-5').css('width', percentage_five + '%');
+//                             $("#four_star").empty();
+//                             $("#four_star").append('&ensp;' + '(' + data.four_star + ')');
 
-if (data.total_reviews != 0) {
-var percentage_four = (data.four_star / data.total_reviews) * 100;
-} else {
-var percentage_four = 0;
-}
-$('.bar-4').css('width', percentage_four + '%');
-$("#three_star").empty();
-$("#three_star").append('&ensp;' + '(' + data.three_star + ')');
+//                             if (data.total_reviews != 0) {
+//                                 var percentage_four = (data.four_star / data.total_reviews) * 100;
+//                             } else {
+//                                 var percentage_four = 0;
+//                             }
+//                             $('.bar-4').css('width', percentage_four + '%');
+//                             $("#three_star").empty();
+//                             $("#three_star").append('&ensp;' + '(' + data.three_star + ')');
 
-if (data.total_reviews != 0) {
-var percentage_three = (data.three_star / data.total_reviews) * 100;
-} else {
-var percentage_three = 0;
-}
-$('.bar-3').css('width', percentage_three + '%');
-$("#two_star").empty();
-$("#two_star").append('&ensp;' + '(' + data.two_star + ')');
+//                             if (data.total_reviews != 0) {
+//                                 var percentage_three = (data.three_star / data.total_reviews) * 100;
+//                             } else {
+//                                 var percentage_three = 0;
+//                             }
+//                             $('.bar-3').css('width', percentage_three + '%');
+//                             $("#two_star").empty();
+//                             $("#two_star").append('&ensp;' + '(' + data.two_star + ')');
 
-if (data.total_reviews != 0) {
-var percentage_two = (data.two_star / data.total_reviews) * 100;
-} else {
-var percentage_two = 0;
-}
-$('.bar-2').css('width', percentage_two + '%');
-$("#one_star").empty();
-$("#one_star").append('&ensp;' + '(' + data.one_star + ')');
+//                             if (data.total_reviews != 0) {
+//                                 var percentage_two = (data.two_star / data.total_reviews) * 100;
+//                             } else {
+//                                 var percentage_two = 0;
+//                             }
+//                             $('.bar-2').css('width', percentage_two + '%');
+//                             $("#one_star").empty();
+//                             $("#one_star").append('&ensp;' + '(' + data.one_star + ')');
 
-if (data.total_reviews != 0) {
-var percentage_one = (data.one_star / data.total_reviews) * 100;
-} else {
-var percentage_one = 0;
-}
-$('.bar-1').css('width', percentage_one + '%');
+//                             if (data.total_reviews != 0) {
+//                                 var percentage_one = (data.one_star / data.total_reviews) * 100;
+//                             } else {
+//                                 var percentage_one = 0;
+//                             }
+//                             $('.bar-1').css('width', percentage_one + '%');
 
-$('#review_images').empty();
-$('#review_images').append(data.review_images);
+//                             $('#review_images').empty();
+//                             $('#review_images').append(data.review_images);
 
-//                 $('#popup-items').empty();
-//                 $('#popup-items').append(data.popups);
+//                             //                 $('#popup-items').empty();
+//                             //                 $('#popup-items').append(data.popups);
 $('.stamped-pagination').empty();
 var total = $(data.paginate['links']).length;
 var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
@@ -784,12 +841,12 @@ $.ajax({
 url: base_url + "get-questions?product_id=" + id + "&shop_name=" + name,
 type: 'GET',
 success: function(data) {
-$("#user_questions").html(data.questions);
-$("#total_questions").empty();
-$("#total_questions").text(data.total_question);
-if (data.total_question == 0) {
-$('#search_question').css('display', 'none');
-}
+//                             $("#user_questions").html(data.questions);
+//                             $("#total_questions").empty();
+//                             $("#total_questions").text(data.total_question);
+//                             if (data.total_question == 0) {
+//                                 $('#search_question').css('display', 'none');
+//                             }
 
 $('.stamped-question').empty();
 var total = $(data.paginate['links']).length;
