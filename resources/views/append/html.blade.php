@@ -1019,7 +1019,7 @@
                 <div class="reviews_tab active_tab">
                     <a id="reviews" href="#reviews_tab_content">
                         Reviews
-                        <span id="total_reviews">@if($status == 'real'){{$review_value}} @endif @if($status == 'fake' && $review_value != 0){{$review_value}} @endif @if($status == 'fake' && $review_value == 0) 0 @endif</span>
+                        <span id="total_reviews">@if($status == 'real'){{$real_reviews}} @endif @if($status == 'fake' && $real_reviews != 0){{$real_reviews}} @endif @if($status == 'fake' && $real_reviews == 0) 0 @endif</span>
                     </a>
                 </div>
                 <div class="questions_tab">
@@ -1091,7 +1091,7 @@
                     <div class="question_review_buttons" style="padding:0px;">
                         <button id="clear_review_filter" style="float:left; display:none;"><i class="fas fa-times"></i> Clear Filter</button>
                     </div>
-                    <select name="sort_review" @if($review_value == 0) style="display: none" @endif id="sort_review">
+                    <select name="sort_review" @if($real_reviews == 0) style="display: none" @endif id="sort_review">
                         <option value="sort" selected disabled>Sort</option>
                         <!--            <option value="saab">With Photos</option> -->
                         <option value="most_recent">Most Recent</option>
@@ -1419,9 +1419,8 @@
                 </div>
                 <div id="review_pagination">
                     <ul aria-label="Reviews Pagination" role="navigation" class="stamped-pagination stamped-reviews-ul">
-                        <li class="page active"><a href="#" data-page="1" class="paginate_link" aria-label="Page 1">1</a></li>
-                        <li class="page"><a href="#" data-page="2" aria-label="Page 2" tabindex="">2</a></li>
-                        <li class="page"><a href="#" data-page="3" onclick="StampedFn.pageReviews('3', '', this); return false;" aria-label="Page 3" tabindex="">3</a></li>
+
+                    </ul>
                 </div>
             </div>
 
