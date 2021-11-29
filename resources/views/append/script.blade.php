@@ -32,10 +32,7 @@ ppTyApp(__jQuery);
 } else {
 ppTyApp(jQuery);
 }
-ppTyLoadScript('https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js', function() {
-__jQuery = jQuery.noConflict(true);
-ppTyApp(__jQuery);
-});
+ppTyLoadScript('https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js', function() {console.log(1);});
 };
 
 var ppTyApp = function($) {
