@@ -33,6 +33,15 @@ ppTyApp(__jQuery);
 ppTyApp(jQuery);
 }
 };
+ppTyLoadScript('https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js', function() {
+__jQuery = jQuery.noConflict(true);
+ppTyApp(__jQuery);
+});
+ppTyLoadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js', function() {
+__jQuery = jQuery.noConflict(true);
+ppTyApp(__jQuery);
+});
+};
 var ppTyApp = function($) {
 if (meta.product != null) {
 if ($('#br_reviews_widget_wrapper').length == 0) {
