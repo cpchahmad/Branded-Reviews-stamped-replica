@@ -118,7 +118,7 @@ $('.container').css('display','block');
 event.preventDefault();
 
 var target = $(this).data('target');
-$('#' + target).toggleClass('hide');
+//         $('#' + target).toggleClass('hide');
 
 });
 $(document).on('click', '.for-overlay', function() {
