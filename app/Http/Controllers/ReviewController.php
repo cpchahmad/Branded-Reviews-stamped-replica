@@ -491,6 +491,14 @@ class ReviewController extends Controller
         ]);
     }
     public function GetPopup(Request $request){
-        dd($request->all());
+        $image = ReviewMedia::where('id',$request->image_id)->first();
+        $review = Review::where('id',$image->review_id)->first();
+        $popup = view('append.popup')->with([
+            'popup'=>$review,
+            'image'=>$image,
+        ])->render();
+        return response([
+            'popup'=>$popup,
+        ]);
     }
 }

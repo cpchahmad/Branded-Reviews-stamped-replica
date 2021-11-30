@@ -580,7 +580,7 @@
             right: 8%;
         }
     }
-    .owl-carousel{
+    .gallery-cell{
         position: relative;
     }
     .owl-nav .owl-prev{
@@ -605,64 +605,77 @@
         color: #ffffff;
         margin: 8px 14px;
     }
-    .owl-carousel .item{
-        display: inline-block;
+     .item{
+        display: flex;
         padding: 5px;
+        font-size: medium;
+         height: 550px;
     }
-    .owl-carousel .item .slide-image{
+    .item .slide-image{
         display: inline-block;
         max-width: 50%;
         vertical-align: middle;
     }
-    .owl-carousel .item .slide-image img{
+    .item .slide-image img{
         max-width: 375px;
-        height: auto;
+        height: 440px;
     }
-    .owl-carousel .item .image-content{
+    .item .image-content{
         display: inline-block;
         vertical-align: middle;
         padding: 0 10px;
         max-width: 49%;
         width:100%;
     }
-    .owl-carousel .item .image-content div,
-    .owl-carousel .item .image-content p,
-    .owl-carousel .item .image-content h3,
-    .owl-carousel .item .image-content h4
+     .item .image-content div,
+    .item .image-content p,
+    .item .image-content h3,
+    . .item .image-content h4
     {
-        margin: 2px 0 0 0;
+        margin: 12px 0 0 0;
     }
     @media (max-width:767px) {
-        .owl-carousel .item .slide-image{
+        .item .slide-image{
             max-width: 100%;
         }
-        .owl-carousel .item .image-content{
+         .item .image-content{
             max-width: 100%;
         }
     }
-    .owl-carousel .item .image-content .fa-star{
+     .item .image-content .fa-star{
         color: rgb(255, 210, 0);
     }
-    .owl-carousel .item .image-content .product-details{
+     .item .image-content .product-details{
         display: block;
     }
-    .owl-carousel .item .image-content .product-details .ratings{
-        display: inline-block;
-        width: 48%;
+     .item .image-content .product-details .ratings{
+        display: flex;
+        width: 40%;
     }
-    .owl-carousel .item .image-content .product-details .review_date{
+    .star-main{
+        display: flex;
+        justify-content: space-between;
+    }
+     .item .image-content .product-details .review_date{
         display: inline-block;
         width: 48%;
         text-align: right;
     }
-    .owl-carousel .item .image-content .product-details .like_dislike{
+    .item .image-content .product-details .like_dislike{
         display: inline-block;
         text-align: right;
-        width: 98%;
+        width: 23%;
+        float: right;
     }
-    .owl-carousel .item .image-content .product-details .like_dislike a{
+    hr{
+        height: 3px;
+        margin: 12px;
+    }
+     .item .image-content .product-details .like_dislike a{
         text-decoration: none;
         color: black;
+        height: 100% !important;
+        font-size: smaller;
     }
     .quick-view-close{
         position: absolute;
@@ -679,9 +692,9 @@
         /* margin: 10px; */
         color: #ffffff;
     }
-    .owl-carousel .item .image-content img{
+     .item .image-content img{
         max-width: 100px;
-        height: auto;
+        height: 100%;
     }
 
     .stamped-messages .stamped-thank-you {
@@ -986,7 +999,7 @@
                         @if(count($review->medias) > 0)
                             @foreach($review->medias as $key => $media)
                                 @if($counter <= 7)
-                                    <a href="javascript:void(0)" title="My Watch" class="btn-view">
+                                    <a href="javascript:void(0)" title="My Watch" data-value="{{$media->id}}" data-target="myPopup" class="btn-view">
                                         <div>
                                             <img src="{{asset('review-images'.'/'.$media->review_media)}}" width="70"  height="55" alt="Picture">
                                         </div>
@@ -1594,7 +1607,7 @@
 {{--<i class="fas fa-times"></i>--}}
 {{--</div>--}}
 {{--<div id="popup-items">--}}
-{{--    <div class="owl-carousel owl-theme">--}}
+{{--    <div class="gallery-cell owl-theme">--}}
 {{--        @php--}}
 {{--            $counter = 0;--}}
 {{--        @endphp--}}
@@ -1684,21 +1697,7 @@
 {{--                    @endforeach--}}
 {{--    </div>--}}
 {{--    @else--}}
-{{--        <a href="javascript:void(0)" title="My Watch" class="">--}}
-{{--            <div>--}}
-{{--                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">--}}
-{{--            </div>--}}
-{{--        </a>--}}
-{{--        <a href="javascript:void(0)" title="My Watch" class="">--}}
-{{--            <div>--}}
-{{--                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">--}}
-{{--            </div>--}}
-{{--        </a>--}}
-{{--        <a href="javascript:void(0)" title="My Watch" class="">--}}
-{{--            <div>--}}
-{{--                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">--}}
-{{--            </div>--}}
-{{--        </a>--}}
+
 {{--    @endif--}}
 {{--    @endforeach--}}
 {{--    @else--}}
@@ -1714,7 +1713,7 @@
 {{--        </a>--}}
 {{--    @endif--}}
 {{--    <script>--}}
-{{--        $('.owl-carousel').owlCarousel({--}}
+{{--        $('.gallery-cell').owlCarousel({--}}
 {{--            loop:true,--}}
 {{--            margin:10,--}}
 {{--            nav:true,--}}
@@ -1738,6 +1737,308 @@
 {{--</div>--}}
 {{--</div>--}}
     <!-- popup end -->
+</div>
+
+<style>
+
+    * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body { font-family: sans-serif; }
+
+    .gallery {
+        background: #EEE;
+    }
+
+    .gallery-cell {
+        width: 100%;
+        height: 500px;
+        margin-right: 10px;
+        background: white;
+        counter-increment: gallery-cell;
+    }
+
+    /* cell number */
+    .gallery-cell:before {
+        display: block;
+        text-align: center;
+        /*content: counter(gallery-cell);*/
+        line-height: 200px;
+        font-size: 80px;
+        color: white;
+    }
+
+    .hide {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50%) scale(0.8) !important;
+        -moz-transform: translateX(-50%) translateY(-50%) scale(0.8) !important;
+        -o-transform: translateX(-50%) translateY(-50%) scale(0.8) !important;
+        -webkit-transform: translateX(-50%) translateY(-50%) scale(0.8) !important;
+    }
+
+    .close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 51px;
+        height: 51px;
+        font-size: 0;
+        cursor: pointer;
+    }
+
+    .close:before, .close:after {
+        content: '';
+        position: absolute;
+        background: #767676;
+        -moz-border-radius: 1px;
+        -webkit-border-radius: 1px;
+        -o-border-radius: 1px;
+        border-radius: 1px;
+        left: 14px;
+        right: 14px;
+        top: 30px;
+        height: 3px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        transition: all 100ms ease-in;
+        -moz-transition: all 100ms ease-in;
+        -webkit-transition: all 100ms ease-in;
+        -o-transition: all 100ms ease-in;
+    }
+
+    .close:after {
+        -moz-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    .popup {
+        position: absolute;
+        top: 49%;
+        left: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -o-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        background: white;
+        -moz-border-radius: 5px;
+        -o-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        width: 800px;
+        height: 580px;
+        position: fixed;
+        box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.09), 0px 11px 12px 7px rgba(0, 0, 0, 0.02);
+        -moz-transition: all 120ms;
+        -webkit-transition: all 120ms;
+        -o-transition: all 120ms;
+        transition: all 120ms;
+        z-index: 99;
+        padding: 1%;
+        color: #5E5E5E;
+    }
+
+    @media screen and (max-width: 1000px) {
+        .popup {
+            width: 80%;
+        }
+    }
+
+    .popup-header {
+        text-transform: uppercase;
+        font-size: 18px;
+    }
+
+    .popup-body {
+        padding: 25px 0;
+    }
+
+    .button {
+        padding: 10px 15px;
+        border: 1px solid #F5F5F5;
+        text-transform: uppercase;
+        box-shadow: 1px 2px 3px #F5F5F5;
+        color: #5E5E5E;
+        cursor: pointer;
+        transition: all 120ms ease-in;
+        outline:none;
+    }
+
+    .button:hover {
+        box-shadow: 1px 3px 5px #E9E9E9;
+        transform: translateY(-1px);
+    }
+
+    .button:active, .button:visited {
+        transform: translateY(1px);
+        outline:none;
+        box-shadow: 1px 2px 3px #F5F5F5;
+    }
+    .flickity-viewport{
+        height: 500px !important;
+    }
+
+    .btn-close {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        background: blue;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 150ms;
+    }
+    .flickity-prev-next-button.next {
+        right: -42px !important;
+        background-color: blue !important;
+        color: white !important;
+    }
+    .flickity-prev-next-button.previous {
+        left: -42px !important;
+        background-color: blue !important;
+        color: white !important;
+    }
+    .flickity-button:hover{
+        background-color: blue;
+    }
+    .btn-close .icon-cross {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: none;
+        position: relative;
+        width: 18px;
+        height: 40px;
+    }
+    .btn-close .icon-cross:before, .btn-close .icon-cross:after {
+        content: "";
+        position: absolute;
+        top: 17px;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: #fff;
+        border-radius: 6px;
+    }
+    .btn-close .icon-cross:before {
+        transform: rotate(45deg);
+    }
+    .btn-close .icon-cross:after {
+        transform: rotate(-45deg);
+    }
+    .btn-close .icon-cross span {
+        display: block;
+    }
+    /*.btn-close:hover, .btn-close:focus {*/
+    /*    transform: rotateZ(90deg);*/
+    /*    background: #0052cc;*/
+    /*}*/
+
+    .cross-stand-alone {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: none;
+        position: relative;
+        width: 40px;
+        height: 40px;
+    }
+    .cross-stand-alone:before, .cross-stand-alone:after {
+        content: "";
+        position: absolute;
+        top: 18px;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: #000;
+        border-radius: 4px;
+    }
+    .cross-stand-alone:before {
+        transform: rotate(45deg);
+    }
+    .cross-stand-alone:after {
+        transform: rotate(-45deg);
+    }
+    .cross-stand-alone span {
+        display: block;
+    }
+
+    .cross-1px {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: none;
+        position: relative;
+        width: 80px;
+        height: 80px;
+    }
+    .cross-1px:before, .cross-1px:after {
+        content: "";
+        position: absolute;
+        top: 39.5px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: #000;
+        border-radius: 1px;
+    }
+    .cross-1px:before {
+        transform: rotate(45deg);
+    }
+    .cross-1px:after {
+        transform: rotate(-45deg);
+    }
+    .cross-1px span {
+        display: block;
+    }
+
+    .visually-hidden {
+        position: absolute !important;
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0 !important;
+        border: 0 !important;
+        height: 1px !important;
+        width: 1px !important;
+        overflow: hidden;
+    }
+    .
+
+</style>
+
+<div class="container">
+        <div id="myPopup" class="popup hide">
+            <div class="item" id="item">
+
+            </div>
+            <div style="position: absolute; top: -5px; right: -40px;">
+                <button type="button" class="btn-close btn-view" data-target="myPopup">
+                    <span class="icon-cross"></span>
+                    <span class="visually-hidden">Close</span>
+                </button>
+            </div>
+            <div style="position: absolute;  bottom: 280px; left: -40px;">
+                <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">
+                    <span class="far fa-chevron-left"></span>
+                    <span class="visually-hidden">Close</span>
+                </button>
+            </div>
+            <div style="position: absolute;  bottom: 280px; right: -40px;">
+                <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">
+                    <span class="far fa-chevron-right"></span>
+                </button>
+            </div>
+        </div>
 </div>
 
 

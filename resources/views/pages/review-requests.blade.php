@@ -2,7 +2,7 @@
 @section('content')
     <style>
         .badge-success {
-            background-color: #88fd88 !important;
+            background-color: #5cb85c !important;
         }
         .badge-danger {
             background-color: #ffe300 !important;
@@ -141,7 +141,7 @@
 
     </style>
 
-    <div class="col-lg-10 col-md-10 pl-4 pt-3 pr-4">
+    <div class="col-lg-12 col-md-12 pl-4 pt-3 pr-4">
         <div class="row">
             <div class="col-6">
                 <h3>Reviews</h3>
@@ -226,7 +226,7 @@
                                     badge-danger
 @break
                                 @endswitch
-                                    "><a href="{{route('review.publish',$review->id)}}">@if($review->status == 'publish') Publish @elseif($review->status == 'rejected') Rejected @else UnPublish @endif</a></div></td>
+                                    "><a href="{{route('review.publish',$review->id)}}" style="color: white;">@if($review->status == 'publish') Publish @elseif($review->status == 'rejected') Rejected @else UnPublish @endif</a></div></td>
                             <td class="text-center alignment" style="vertical-align: middle;"><a href="{{route('review.feature',$review->id)}}">@if($review->feature == 'featured')<span class="fa fa-star checked"></span> @else <span class="fa fa-star"></span> @endif</a></td>
                             <td class="alignment" style="vertical-align: middle;">{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->diffForHumans()}}</td>
                             <td class="" style="vertical-align: middle"><a href="{{route('review.view',$review->id)}}" class="btn btn-sm btn-primary" type="button">view</a></td>
@@ -240,10 +240,13 @@
                     <div class="pagination">
                         {{ $reviews->appends(\Illuminate\Support\Facades\Request::except('page'))->links("pagination::bootstrap-4") }}
                     </div>
-                </div>
+
             </div>
         </div>
     </div>
+
+
+
 
 @endsection
 @section('scripts')
