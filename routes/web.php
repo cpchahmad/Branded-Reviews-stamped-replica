@@ -97,6 +97,8 @@ Route::group(['middleware' => ['verify.shopify']], function () {
     Route::get('on-facebook-q',  [App\Http\Controllers\AdminController::class, 'ShareFacebookQ'])->name('on.facebook.q');
     // Share twitter
     Route::get('on-twitter',  [App\Http\Controllers\AdminController::class, 'ShareTwitter'])->name('on.twitter');
+    // popup
+Route::get('get-popup',  [App\Http\Controllers\ReviewController::class, 'GetPopup'])->name('get.popup');
 
     // loadscript
     Route::get('script-js',  [App\Http\Controllers\AdminController::class, 'LoadScript'])->name('script.js');

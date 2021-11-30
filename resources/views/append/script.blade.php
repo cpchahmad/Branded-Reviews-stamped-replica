@@ -32,9 +32,7 @@ ppTyApp(__jQuery);
 } else {
 ppTyApp(jQuery);
 }
-
 };
-
 var ppTyApp = function($) {
 if (meta.product != null) {
 if ($('#br_reviews_widget_wrapper').length == 0) {
@@ -107,13 +105,23 @@ $('.stamped-question').append("<li class='question_page'><a href='javascript:voi
 });
 
 $(document).on("click", ".btn-view", function() {
-//                 $('#quick-view-pop-up').fadeToggle();
-//                 $('.popup_overlay').fadeToggle();
+var image_id = $(this).data('value');
+$.ajax({
+url: base_url + "get-popup?image_id=" + id,
+type: 'GET',
+success: function(data) {
 console.log('ok');
-event.preventDefault();
 
-var target = $(this).data('target');
-$('#' + target).toggleClass('hide');
+
+}
+
+});
+
+//         event.preventDefault();
+
+//         var target = $(this).data('target');
+//         $('#' + target).toggleClass('hide');
+
 });
 
 //             $(document).on('click', '.toggle', function(event) {

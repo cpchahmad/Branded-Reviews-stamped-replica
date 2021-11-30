@@ -490,4 +490,7 @@ class ReviewController extends Controller
             'products'=>$products,
         ]);
     }
+    public function GetPopup(Request $request){
+        dd($request->all());
+    }
 }
