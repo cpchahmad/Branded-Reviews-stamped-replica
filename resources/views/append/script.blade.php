@@ -114,7 +114,7 @@ $('#item').html(data.popup);
 }
 
 });
-
+$('.container').css('display','block');
 event.preventDefault();
 
 var target = $(this).data('target');
