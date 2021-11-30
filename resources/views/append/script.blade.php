@@ -120,11 +120,11 @@ event.preventDefault();
 var target = $(this).data('target');
 $('#' + target).toggleClass('hide');
 
-
-if ($('#myPopup').hasClass('hide')){
-$('.container').css('display','none !important');
-}
 });
+$(document).on('click', '.for-overlay', function(event) {
+$('.container').css('display','none !important');
+});
+
 
 
 
