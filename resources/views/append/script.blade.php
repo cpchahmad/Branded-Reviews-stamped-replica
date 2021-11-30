@@ -120,10 +120,11 @@ event.preventDefault();
 var target = $(this).data('target');
 $('#' + target).toggleClass('hide');
 
-});
 if ($('#myPopup').hasClass('hide')){
-$('.container').css('display','none');
+$('.container').css('display','none !important');
 }
+});
+
 
 
 //             $(document).on('click', '.toggle', function(event) {
