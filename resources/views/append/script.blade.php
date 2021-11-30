@@ -121,9 +121,10 @@ var target = $(this).data('target');
 $('#' + target).toggleClass('hide');
 
 });
-$(document).on('click', '.for-overlay', function(event) {
-event.preventDefault();
+$(document).on('click', '.for-overlay', function() {
+
 console.log('ok');
+$('#myPopup').css('display','none !important');
 $('.container').css('display','none !important');
 });
 
