@@ -110,8 +110,6 @@ $.ajax({
 url: base_url + "get-popup?image_id=" + image_id,
 type: 'GET',
 success: function(data) {
-console.log('ok');
-$('#item').empty();
 $('#item').html(data.popup);
 }
 
