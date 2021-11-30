@@ -494,7 +494,7 @@ class ReviewController extends Controller
         $image = ReviewMedia::where('id',$request->image_id)->first();
         $review = Review::where('id',$image->review_id)->first();
         $popup = view('append.popup')->with([
-            'popup'=>$review,
+            'review'=>$review,
             'image'=>$image,
         ])->render();
         return response([
