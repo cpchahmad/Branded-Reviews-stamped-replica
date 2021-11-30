@@ -124,8 +124,8 @@ $('#' + target).toggleClass('hide');
 $(document).on('click', '.for-overlay', function() {
 
 console.log('ok');
-$('#myPopup').css('display','none !important');
-$('.container').css('display','none !important');
+$('#myPopup').css('display','none');
+$('.container').css('display','none');
 });
 
 
