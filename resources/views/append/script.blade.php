@@ -107,7 +107,7 @@ $('.stamped-question').append("<li class='question_page'><a href='javascript:voi
 $(document).on("click", ".btn-view", function() {
 var image_id = $(this).data('value');
 $.ajax({
-url: base_url + "get-popup?image_id=" + id,
+url: base_url + "get-popup?image_id=" + image_id,
 type: 'GET',
 success: function(data) {
 console.log('ok');
