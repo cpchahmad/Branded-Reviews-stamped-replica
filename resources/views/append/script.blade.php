@@ -117,10 +117,10 @@ $('#item').html(data.popup);
 $('.container').css('display','block');
 event.preventDefault();
 
-//         var target = $(this).data('target');
-//         $('#' + target).toggleClass('hide');
+var target = $(this).data('target');
+$('#' + target).toggleClass('hide');
 
-//             });
+});
 $(document).on('click', '.for-overlay', function() {
 
 console.log('ok');
