@@ -122,6 +122,7 @@ $('#' + target).toggleClass('hide');
 
 });
 $(document).on('click', '.for-overlay', function(event) {
+event.preventDefault();
 console.log('ok');
 $('.container').css('display','none !important');
 });
