@@ -25,19 +25,9 @@
 </head>
 
 <body>
-
+@include('layouts.navbar')
 <div class="container-fluid h-100 p-0">
     <div style="min-height: 100%" class="flex-row d-flex">
-        <div class="polished-sidebar bg-light col-12 col-md-2 col-lg-2 p-0 collapse d-md-inline" id="sidebar-nav">
-            <ul class="polished-sidebar-menu ml-0 pt-4 p-0 d-md-block">
-                <input class="border-dark form-control d-block d-md-none mb-4" type="text" placeholder="Search" aria-label="Search" />
-                <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{route('home')}}"><span class="oi oi-home"></span>Dashboard</a></li>
-                <li class="{{ request()->is('products') ? 'active' : '' }}"><a href="{{route('products')}}"><span class="oi oi-puzzle-piece"></span></span>Products</a></li>
-                <li class="{{ request()->is('review-request') ? 'active' : '' }}"><a href="{{route('review.request')}}"><span class="oi oi-dashboard"></span>Reviews</a></li>
-                <li class="{{ request()->is('question-request') ? 'active' : '' }}"><a href="{{route('question.request')}}"><span class="oi oi-pie-chart"></span>Questions</a></li>
-                <li class="{{ request()->is('settings') ? 'active' : '' }}"><a href="{{route('settings')}}"><span class="oi oi-pie-chart"></span>Settings</a></li>
-            </ul>
-        </div>
             @yield('content')
     </div>
 </div>

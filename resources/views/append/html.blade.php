@@ -618,7 +618,8 @@
     }
     .item .slide-image img{
         max-width: 375px;
-        height: 440px;
+        /*height: 440px;*/
+        height: auto;
     }
     .item .image-content{
         display: inline-block;
@@ -649,8 +650,9 @@
         display: block;
     }
      .item .image-content .product-details .ratings{
-        display: flex;
-        width: 40%;
+        /*display: flex;*/
+        /*width: 40%;*/
+         margin-top: 3%;
     }
     .star-main{
         display: flex;
@@ -2012,32 +2014,44 @@
         width: 1px !important;
         overflow: hidden;
     }
-    .
+    .container{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        display: none;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 2;
+        cursor: pointer;
+    }
 
 </style>
 
 <div class="container">
-        <div id="myPopup" class="popup hide">
+        <div id="myPopup" class="popup">
             <div class="item" id="item">
 
             </div>
-            <div style="position: absolute; top: -5px; right: -40px;">
-                <button type="button" class="btn-close btn-view" data-target="myPopup">
+            <div style="position: absolute; top: 0; right: 0;">
+                <button type="button" class="btn-close for-overlay">
                     <span class="icon-cross"></span>
                     <span class="visually-hidden">Close</span>
                 </button>
             </div>
-            <div style="position: absolute;  bottom: 280px; left: -40px;">
-                <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">
-                    <span class="far fa-chevron-left"></span>
-                    <span class="visually-hidden">Close</span>
-                </button>
-            </div>
-            <div style="position: absolute;  bottom: 280px; right: -40px;">
-                <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">
-                    <span class="far fa-chevron-right"></span>
-                </button>
-            </div>
+{{--            <div style="position: absolute;  bottom: 280px; left: 0;">--}}
+{{--                <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">--}}
+{{--                    <span class="far fa-chevron-left"></span>--}}
+{{--                    <span class="visually-hidden">Close</span>--}}
+{{--                </button>--}}
+{{--            </div>--}}
+{{--            <div style="position: absolute;  bottom: 280px; right: 0;">--}}
+{{--                <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">--}}
+{{--                    <span class="far fa-chevron-right"></span>--}}
+{{--                </button>--}}
+{{--            </div>--}}
         </div>
 </div>
 

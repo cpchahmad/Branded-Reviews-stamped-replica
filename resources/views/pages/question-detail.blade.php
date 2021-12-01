@@ -61,7 +61,7 @@
             border-radius: 50%;
         }
     </style>
-    <div class="col-lg-10 col-md-10">
+    <div class="col-lg-12 col-md-12">
         <div class="row pt-4 ml-0 mr-0">
             <div class="col-md-12 card card-border-radius mb-2 pt-4 pb-1">
                 <div class="d-flex align-items-center" style="justify-content: space-between;">

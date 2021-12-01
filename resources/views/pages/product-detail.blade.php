@@ -132,7 +132,7 @@
         .stars-99:after { width: 99%; }
         .stars-100:after { width: 100%; }
     </style>
-    <div class="col-lg-10 col-md-10 pl-4 pt-3 pr-4">
+    <div class="col-lg-12 col-md-12 pl-4 pt-3 pr-4">
         <div class="row">
             <div class="col-6">
                 <h3>Product Reviews Detail</h3>

@@ -2,7 +2,7 @@
 @section('content')
     <style>
         .badge-success {
-            background-color: #88fd88 !important;
+            background-color: #5cb85c !important;
         }
         .badge-danger {
             background-color: #ffe300 !important;
@@ -15,8 +15,40 @@
         }
 
     </style>
+    <style>
+        /* external css: flickity.css */
 
-    <div class="col-lg-10 col-md-10 pl-4 pt-3 pr-4">
+        * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body { font-family: sans-serif; }
+
+        .gallery {
+            background: #EEE;
+        }
+
+        .gallery-cell {
+            width: 66%;
+            height: 400px;
+            margin-right: 10px;
+            background: #8C8;
+            counter-increment: gallery-cell;
+        }
+
+        /* cell number */
+        .gallery-cell:before {
+            display: block;
+            text-align: center;
+            /*content: counter(gallery-cell);*/
+            line-height: 200px;
+            font-size: 80px;
+            color: white;
+        }
+    </style>
+
+    <div class="col-lg-12 col-md-12 pl-4 pt-3 pr-4">
         <div class="row">
             <div class="col-6">
                 <h3>Questions</h3>
@@ -82,7 +114,7 @@
                                             badge-danger
 @break
                                         @endswitch
-                                            "><a href="{{route('question.publish',$question->id)}}">@if($question->status == 'publish') Publish @elseif($question->status == 'rejected') Rejected @else UnPublish @endif</a></div></td>
+                                            "><a href="{{route('question.publish',$question->id)}}" style="color: white;">@if($question->status == 'publish') Publish @elseif($question->status == 'rejected') Rejected @else UnPublish @endif</a></div></td>
                                     <td class=""><a href="{{route('question.view',$question->id)}}" class="btn btn-sm btn-primary" type="button">view</a></td>
                                 </tr>
                             @endforeach

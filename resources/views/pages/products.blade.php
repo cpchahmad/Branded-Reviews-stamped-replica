@@ -6,7 +6,7 @@
         }
 
     </style>
-    <div class="col-lg-10 col-md-10 pl-4 pt-3 pr-4">
+    <div class="col-lg-12 col-md-12 pl-4 pt-3 pr-4">
         <div class="row">
             <div class="col-6">
                 <h3>Products</h3>
@@ -61,7 +61,7 @@
                                     <td class="alignment"><button class="btn btn-secondary">{{number_format($product_rating,1)}}</button></td>
                                     <td class="alignment text-center">{{count($product->product_reviews)}}</td>
                                     <td class="alignment">@if($product_last_review != 'No'){{\Illuminate\Support\Carbon::createFromTimeString($product_last_review->created_at)->isoFormat('MMM DD YYYY')}} @else No Reviews Yet! @endif</td>
-                                    <td class="alignment text-center"><a href="{{route('add.question',$product->shopify_id)}}" class="btn btn-sm btn-success" type="button">Question</a><a href="{{route('add.review',$product->shopify_id)}}" class="btn btn-sm btn-success" type="button">Review</a></td>
+                                    <td class="alignment text-center"><a href="{{route('add.question',$product->shopify_id)}}" class="btn btn-sm btn-primary" type="button">Question</a><a href="{{route('add.review',$product->shopify_id)}}" style="margin-left: 1%;" class="btn btn-sm btn-primary" type="button">Review</a></td>
                                     <td class="alignment text-right"><a href="{{route('product.detail',$product->shopify_id)}}" class="btn btn-sm btn-primary" type="button">view</a></td>
                                 </tr>
                             @endforeach
