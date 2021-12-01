@@ -209,13 +209,13 @@
     }
 
     .active_tab{
-       @if(isset($display))
-        background-color: {{$display->tabs_background}};
-        border-bottom: 3px solid {{$display->tabs_border_bottom}};
-        @else
+{{--       @if(isset($display))--}}
+{{--        background-color: {{$display->tabs_background}};--}}
+{{--        border-bottom: 3px solid {{$display->tabs_border_bottom}};--}}
+{{--        @else--}}
          background-color: rgb(238, 238, 238);
          border-bottom: 3px rgb(0, 94, 158) solid;
-        @endif
+{{--        @endif--}}
 
     }
     .active_tab a{
@@ -223,13 +223,13 @@
         font-weight: 600;
     }
     .active_tab a span{
-        @if(isset($display))
-        background-color: {{$display->tabs_counter_background}};
-        padding: 4px;
-        @else
+{{--        @if(isset($display))--}}
+{{--        background-color: {{$display->tabs_counter_background}};--}}
+{{--        padding: 4px;--}}
+{{--        @else--}}
         background-color: #f8f9fa;
         padding: 4px;
-        @endif
+{{--        @endif--}}
     }
 
     .reviews_tab_content{
