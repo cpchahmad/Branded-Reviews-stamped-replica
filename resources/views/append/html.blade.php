@@ -1,43 +1,5 @@
 <style>
     @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
-    @import url(https://fonts.googleapis.com/css?family=Bungee);
-    @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
-    @import url(https://fonts.googleapis.com/css?family=Passion+One);
-    @import url(https://fonts.googleapis.com/css?family=Lobster);
-    @import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
-    @import url(https://fonts.googleapis.com/css?family=Pacifico);
-    @import url(https://fonts.googleapis.com/css?family=Amatic+SC);
-    @import url(https://fonts.googleapis.com/css?family=Dancing+Script);
-    @import url(https://fonts.googleapis.com/css?family=Sigmar+One);
-    @import url(https://fonts.googleapis.com/css?family=Bangers);
-    @import url(https://fonts.googleapis.com/css?family=Chewy);
-    @import url(https://fonts.googleapis.com/css?family=Cherry+Swash);
-    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-    @import url(https://fonts.googleapis.com/css?family=Roboto);
-    @import url(https://fonts.googleapis.com/css?family=Lato);
-    @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
-    @import url(https://fonts.googleapis.com/css?family=Raleway);
-    @import url(https://fonts.googleapis.com/css?family=Ubuntu);
-    @import url(https://fonts.googleapis.com/css?family=Droid+Sans);
-    @import url(https://fonts.googleapis.com/css?family=Arimo);
-    @import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow);
-    @import url(https://fonts.googleapis.com/css?family=Noto+Sans);
-    @import url(https://fonts.googleapis.com/css?family=Slabo);
-    @import url(https://fonts.googleapis.com/css?family=Lora);
-    @import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
-    @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
-    @import url(https://fonts.googleapis.com/css?family=PT+Serif);
-    @import url(https://fonts.googleapis.com/css?family=Bitter);
-    @import url(https://fonts.googleapis.com/css?family=Playfair+Display);
-    @import url(https://fonts.googleapis.com/css?family=Arvo);
-    @import url(https://fonts.googleapis.com/css?family=Noto+Serif);
-    @import url(https://fonts.googleapis.com/css?family=Libre+Baskerville);
-    @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
-    @import url(https://fonts.googleapis.com/css?family=Inconsolata);
-    @import url(https://fonts.googleapis.com/css?family=VT323);
-    @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
-    @import url(https://fonts.googleapis.com/css?family=Cutive+Mono);
-
     .progress-bar{
         display:block !important;
     }
@@ -91,7 +53,6 @@
     #total_rating{
         font-size: 35px !important;
     }
-
 
     .review_progress{
         width: 25%;
@@ -246,17 +207,29 @@
         font-weight: 500;
         font-size: 18px;
     }
+
     .active_tab{
-        border-bottom: 3px rgb(0, 94, 158) solid;
-        background-color: rgb(238, 238, 238);
+       @if(isset($display))
+        background-color: {{$display->tabs_background}};
+        border-bottom: 3px solid {{$display->tabs_border_bottom}};
+        @else
+         background-color: rgb(238, 238, 238);
+         border-bottom: 3px rgb(0, 94, 158) solid;
+        @endif
+
     }
     .active_tab a{
         color: rgb(0, 94, 158);
         font-weight: 600;
     }
     .active_tab a span{
+        @if(isset($display))
+        background-color: {{$display->tabs_counter_background}};
+        padding: 4px;
+        @else
         background-color: #f8f9fa;
         padding: 4px;
+        @endif
     }
 
     .reviews_tab_content{
@@ -1063,10 +1036,10 @@
         <!-- tabs -->
         <div class="customer_reviews">
             <div class="tabs_view">
-                <div class="reviews_tab active_tab" @if(isset($display)) style="border-bottom: 3px solid {{$display->tabs_border_bottom}};background-color: {{$display->tabs_background}} !important;" @endif>
+                <div class="reviews_tab active_tab" >
                     <a id="reviews" href="#reviews_tab_content">
                         Reviews
-                        <span id="total_reviews" @if(isset($display)) style="background-color: {{$display->tabs_counter_background}} !important;" @endif>@if($status == 'real'){{$real_reviews}} @endif @if($status == 'fake' && $real_reviews != 0){{$real_reviews}} @endif @if($status == 'fake' && $real_reviews == 0) 0 @endif</span>
+                        <span id="total_reviews">@if($status == 'real'){{$real_reviews}} @endif @if($status == 'fake' && $real_reviews != 0){{$real_reviews}} @endif @if($status == 'fake' && $real_reviews == 0) 0 @endif</span>
                     </a>
                 </div>
                 <div class="questions_tab">
