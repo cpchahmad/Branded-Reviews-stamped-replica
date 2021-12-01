@@ -1,5 +1,42 @@
 <style>
     @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
+    @import url(https://fonts.googleapis.com/css?family=Bungee);
+    @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+    @import url(https://fonts.googleapis.com/css?family=Passion+One);
+    @import url(https://fonts.googleapis.com/css?family=Lobster);
+    @import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
+    @import url(https://fonts.googleapis.com/css?family=Pacifico);
+    @import url(https://fonts.googleapis.com/css?family=Amatic+SC);
+    @import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+    @import url(https://fonts.googleapis.com/css?family=Sigmar+One);
+    @import url(https://fonts.googleapis.com/css?family=Bangers);
+    @import url(https://fonts.googleapis.com/css?family=Chewy);
+    @import url(https://fonts.googleapis.com/css?family=Cherry+Swash);
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+    @import url(https://fonts.googleapis.com/css?family=Roboto);
+    @import url(https://fonts.googleapis.com/css?family=Lato);
+    @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+    @import url(https://fonts.googleapis.com/css?family=Raleway);
+    @import url(https://fonts.googleapis.com/css?family=Ubuntu);
+    @import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+    @import url(https://fonts.googleapis.com/css?family=Arimo);
+    @import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow);
+    @import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+    @import url(https://fonts.googleapis.com/css?family=Slabo);
+    @import url(https://fonts.googleapis.com/css?family=Lora);
+    @import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
+    @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+    @import url(https://fonts.googleapis.com/css?family=PT+Serif);
+    @import url(https://fonts.googleapis.com/css?family=Bitter);
+    @import url(https://fonts.googleapis.com/css?family=Playfair+Display);
+    @import url(https://fonts.googleapis.com/css?family=Arvo);
+    @import url(https://fonts.googleapis.com/css?family=Noto+Serif);
+    @import url(https://fonts.googleapis.com/css?family=Libre+Baskerville);
+    @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
+    @import url(https://fonts.googleapis.com/css?family=Inconsolata);
+    @import url(https://fonts.googleapis.com/css?family=VT323);
+    @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+    @import url(https://fonts.googleapis.com/css?family=Cutive+Mono);
 
     .progress-bar{
         display:block !important;
@@ -146,7 +183,12 @@
         margin: 6px 0 6px 6px;
         cursor: pointer;
         float: right;
-        background-color: #ffffff;
+        @if(isset($display))
+        color : {{$display->button_text}};
+        background-color:{{$display->button_bg}};
+        @else
+        background-color :#ffffff;
+        @endif
         border: 1px solid #ccd6e0;
         box-shadow: 2px 3px 5px 0 #8888886b;
     }
@@ -732,7 +774,7 @@
         color:black;
     }
     .blue-color{
-        color:blue;
+        color:black;
     }
     .user_pic_inner h3{
         color:white;
@@ -1058,8 +1100,8 @@
             <!-- reviews_tab_content -->
             <div id="reviews_tab_content" class="reviews_tab_content tabs">
                 <div class="write_a_review">
-                       <form id="review" action="https://stamped.test/review-submit" method="POST">
-{{--                    <form id="review" action="https://phpstack-176572-2275881.cloudwaysapps.com/review-submit" method="POST">--}}
+{{--                       <form id="review" action="https://stamped.test/review-submit" method="POST">--}}
+                    <form id="review" action="https://phpstack-176572-2275881.cloudwaysapps.com/review-submit" method="POST">
                         <label for="name">Name</label>
                         <input type="text" id="name" required name="name" placeholder="Your name..">
 
@@ -1434,8 +1476,8 @@
             <div id="questions_tab_content" class="questions_tab_content tabs">
 
                 <div class="ask_a_question">
-                     <form id="question" action="https://stamped.test/question-submit" method="POST">
-{{--                    <form id="question" action="https://phpstack-176572-2275881.cloudwaysapps.com/question-submit" method="POST">--}}
+{{--                     <form id="question" action="https://stamped.test/question-submit" method="POST">--}}
+                    <form id="question" action="https://phpstack-176572-2275881.cloudwaysapps.com/question-submit" method="POST">
                         <label for="name">Name</label>
                         <input type="text" id="name" required name="name" placeholder="Your name..">
 

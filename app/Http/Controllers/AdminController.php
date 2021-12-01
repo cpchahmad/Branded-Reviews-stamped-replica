@@ -44,6 +44,9 @@ class AdminController extends Controller
             $shopsetting->circle_background = $request->circle_bg;
             $shopsetting->circle_text = $request->circle_text;
             $shopsetting->reply_border = $request->reply_border;
+            $shopsetting->font_family = $request->font_family;
+            $shopsetting->button_text = $request->button_text;
+            $shopsetting->button_bg = $request->button_bg;
             $shopsetting->save();
         return Redirect::tokenRedirect('settings', ['notice' => 'Settings Saved Successfully']);
     }

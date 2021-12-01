@@ -55,7 +55,7 @@ Route::group(['middleware' => ['verify.shopify']], function () {
 
     // Settings
     Route::get('settings', [App\Http\Controllers\AdminController::class, 'ThemeSettings'])->name('settings');
-    Route::post('setting-save', [App\Http\Controllers\AdminController::class, 'SettingSave'])->name('setting.save');
+    Route::any('setting-save', [App\Http\Controllers\AdminController::class, 'SettingSave'])->name('setting.save');
 
 });
 
