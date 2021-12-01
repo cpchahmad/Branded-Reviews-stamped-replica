@@ -85,7 +85,6 @@
                                     <input placeholder="select filled star color" @if(isset($setting->reply_border)) value="{{$setting->reply_border}}" @endif name="reply_border" type="color" class="form-control">
                                 </div>
                             </div>
-
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="#">Select Font Family</label>
