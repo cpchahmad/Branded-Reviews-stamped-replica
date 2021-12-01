@@ -19,6 +19,7 @@
                                     <input  name="shop_name" value="{{ Auth::user()->name }}" type="hidden" class="form-control">
                                 </div>
                             </div>
+
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="#">Filled Star color</label>
