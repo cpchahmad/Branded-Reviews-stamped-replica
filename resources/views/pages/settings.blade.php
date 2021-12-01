@@ -3,7 +3,7 @@
     <div class="col-lg-12 col-md-12 pl-4 pt-3 pr-4">
         <div class="row">
             <div class="col-6">
-                <h3>Theme Settings</h3>
+                <h3>Display Settings</h3>
             </div>
         </div>
         <div class="row">
@@ -77,6 +77,24 @@
                                 <div class="form-group">
                                     <label for="#">Circle Text color</label>
                                     <input placeholder="select filled star color" @if(isset($setting->circle_text)) value="{{$setting->circle_text}}" @endif name="circle_text" type="color" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="#">Reply Border color</label>
+                                    <input placeholder="select filled star color" @if(isset($setting->reply_border)) value="{{$setting->reply_border}}" @endif name="reply_border" type="color" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="#">Reply Border color</label>
+                                    <input placeholder="select filled star color" @if(isset($setting->reply_border)) value="{{$setting->reply_border}}" @endif name="reply_border" type="color" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="#">Reply Border color</label>
+                                    <input placeholder="select filled star color" @if(isset($setting->reply_border)) value="{{$setting->reply_border}}" @endif name="reply_border" type="color" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-4">
