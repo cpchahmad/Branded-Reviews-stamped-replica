@@ -105,22 +105,22 @@ $('.stamped-question').append("<li class='question_page'><a href='javascript:voi
 });
 
 $(document).on("click", ".btn-view", function() {
-//                 $('#quick-view-pop-up').fadeToggle();
-//                 $('.popup_overlay').fadeToggle();
+var image_id = $(this).data('value');
+$.ajax({
+url: base_url + "get-popup?image_id=" + image_id,
+type: 'GET',
+success: function(data) {
+$('#item').html(data.popup);
+}
 
+});
+$('.container').css('display', 'block');
 event.preventDefault();
 
 var target = $(this).data('target');
-$('#' + target).toggleClass('hide');
-});
-
-//             $(document).on('click', '.toggle', function(event) {
-//         console.log('ok');
-//         event.preventDefault();
-
-//         var target = $(this).data('target');
 //         $('#' + target).toggleClass('hide');
-//     });
+
+});
 
 $(document).on("click", ".quick-view-close", function() {
 $('#quick-view-pop-up').fadeOut();
@@ -318,7 +318,7 @@ type: 'GET',
 success: function(data) {
 if (data.setting != 'NoSetting') {
 console.log(data.setting['bar_filled']);
-$("head").append('<style> .tt_logix_reviews_r_no .fa-star{ color: ' + data.setting['unfilled_stars'] + ' } #rating_stars .checked{ color: ' + data.setting['stars'] + ' } .user_info .fa-star{color:' + data.setting['unfilled_stars'] + '} #user_info .checked{color:' + data.setting['stars'] + '} #main-body{color:' + data.setting['text'] + '} #user_pic{background-color:' + data.setting['circle_background'] + '} #user_pic_inner h3{color:' + data.setting['circle_text'] + '} #review_reply{border-left:5px solid' + data.setting['reply_border'] + '} #user_info h3{color:' + data.setting['text'] + '} #user_info h3 span{color:' + data.setting['circle_background'] + '} #replier_name h4{color:' + data.setting['text'] + '} .review_progress_1 .side .fa-star{color:' + data.setting['filled_stars'] + "!important"+ '} .bar-container{background-color:' + data.setting['bar_unfilled'] + "!important"+ '} .bar-5{background-color:' + data.setting['bar_filled'] + "!important"+'} .bar-4{background-color:' + data.setting['bar_filled'] + "!important"+'} .bar-3{background-color:' + data.setting['bar_filled'] + "!important"+ '} .bar-2{background-color:' + data.setting['bar_filled'] + "!important"+ '} .bar-1{background-color:' + data.setting['bar_filled'] + "!important"+ '}</style>');
+$("head").append('<style> .tt_logix_reviews_r_no .fa-star{ color: ' + data.setting['unfilled_stars'] + "!important" + ' } #rating_stars .checked{ color: ' + data.setting['stars'] + "!important" + ' } .user_info .fa-star{color:' + data.setting['unfilled_stars'] + "!important" + '} #user_info .checked{color:' + data.setting['stars'] + "!important" + '} #main-body{color:' + data.setting['text'] + "!important" + '} #user_pic{background-color:' + data.setting['circle_background'] + "!important" + '} #user_pic_inner h3{color:' + data.setting['circle_text'] + "!important" + '} #review_reply{border-left:5px solid' + data.setting['reply_border'] + "!important" + '} #user_info h3{color:' + data.setting['text'] + "!important" + '} #user_info h3 span{color:' + data.setting['circle_background'] + "!important" + '} #replier_name h4{color:' + data.setting['text'] + "!important" + '} .review_progress_1 .side .fa-star{color:' + data.setting['filled_stars'] + "!important" + '} .bar-container{background-color:' + data.setting['bar_unfilled'] + "!important" + '} .bar-5{background-color:' + data.setting['bar_filled'] + "!important" + '} .bar-4{background-color:' + data.setting['bar_filled'] + "!important" + '} .bar-3{background-color:' + data.setting['bar_filled'] + "!important" + '} .bar-2{background-color:' + data.setting['bar_filled'] + "!important" + '} .bar-1{background-color:' + data.setting['bar_filled'] + "!important" + '}</style>');
 
 //               $('.tt_logix_reviews_r_no .fa-star').css('color',data.setting['unfilled_stars']);
 //                $('.tt_logix_reviews_r_no .checked').css('color',data.setting['stars']);

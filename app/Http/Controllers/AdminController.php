@@ -127,7 +127,7 @@ class AdminController extends Controller
         $questions_publish  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->get();
         $questions_pagination  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->paginate(5);
         $total_question = count($questions_publish);
-
+        $display_setting = ThemeSetting::where('shop_id',$shop->id)->first();
         $html = view('append.html')->with([
             'reviews_featured' => $reviews_pagi_fea,
             'reviews_publish' => $reviews_pagi_pub,
@@ -147,6 +147,7 @@ class AdminController extends Controller
             'reviews_popups'=>$review_images,
             'questions_publish' => $questions_pagination,
             'total_question'=>$total_question,
+            'display'=>$display_setting,
         ])->render();
         return response([
             'html'=>$html,
