@@ -121,6 +121,10 @@ var target = $(this).data('target');
 //         $('#' + target).toggleClass('hide');
 
 });
+$(document).on("click", ".for-overlay", function() {
+$('.container').css('display','none');
+
+});
 
 $(document).on("click", ".quick-view-close", function() {
 $('#quick-view-pop-up').fadeOut();
