@@ -898,13 +898,11 @@
             <div class="review_progress">
                 <div class="review_progress_1">
                     <div class="side">
-                        <div>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
-                        </div>
                     </div>
                     <div class="middle">
                         <div class="bar-container">
@@ -917,13 +915,11 @@
                 </div>
                 <div class="review_progress_1">
                     <div class="side">
-                        <div>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="far fa-star"></span>
-                        </div>
                     </div>
                     <div class="middle">
                         <div class="bar-container">
@@ -936,13 +932,11 @@
                 </div>
                 <div class="review_progress_1">
                     <div class="side">
-                        <div>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="far fa-star"></span>
                             <span class="far fa-star"></span>
-                        </div>
                     </div>
                     <div class="middle">
                         <div class="bar-container">
@@ -955,13 +949,11 @@
                 </div>
                 <div class="review_progress_1">
                     <div class="side">
-                        <div>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="far fa-star"></span>
                             <span class="far fa-star"></span>
                             <span class="far fa-star"></span>
-                        </div>
                     </div>
                     <div class="middle">
                         <div class="bar-container">
@@ -969,18 +961,16 @@
                         </div>
                     </div>
                     <div class="side left">
-                        <div id="two_star">&ensp;({{$four_star}})</div>
+                        <div id="two_star">&ensp;({{$two_star}})</div>
                     </div>
                 </div>
                 <div class="review_progress_1">
                     <div class="side">
-                        <div>
                             <span class="fa fa-star"></span>
                             <span class="far fa-star"></span>
                             <span class="far fa-star"></span>
                             <span class="far fa-star"></span>
                             <span class="far fa-star"></span>
-                        </div>
                     </div>
                     <div class="middle">
                         <div class="bar-container">
