@@ -32,6 +32,7 @@
                                     <input placeholder="select unfilled star color" @if(isset($setting->unfilled_stars)) value="{{$setting->unfilled_stars}}" @endif name="unfilled_star" type="color" class="form-control">
                                 </div>
                             </div>
+
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="#">Bar Filled color</label>
