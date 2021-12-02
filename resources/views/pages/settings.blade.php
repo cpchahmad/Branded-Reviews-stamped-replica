@@ -96,43 +96,9 @@
                                     <label for="#">Select Font Family</label>
                                 <select class="form-control bg-white" name="font_family" id="">
                                     <option selected disabled value="reviews">Select</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Bungee') selected @endif value="Bungee">Bungee</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Indie Flower') selected @endif value="Indie Flower">Indie Flower</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Passion One') selected @endif value="Passion One">Passion One</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Lobster') selected @endif value="Lobster">Lobster</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Shadows Into Light') selected @endif value="Shadows Into Light">Shadows Into Light</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Pacifico') selected @endif value="Pacifico">Pacifico</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Amatic SC') selected @endif value="Amatic SC">Amatic SC</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Dancing Script') selected @endif value="Dancing Script">Dancing Script</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Sigmar One') selected @endif value="Sigmar One">Sigmar One</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Bangers') selected @endif value="Bangers">Bangers</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Chewy') selected @endif value="Chewy">Chewy</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Cherry Swash') selected @endif value="Cherry Swash">Cherry Swash</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Open Sans') selected @endif value="Open Sans">Open Sans</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Roboto') selected @endif value="Roboto">Roboto</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Lato') selected @endif value="Lato">Lato</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Source Sans Pro') selected @endif value="Source Sans Pro">Source Sans Pro</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Raleway') selected @endif value="Raleway">Raleway</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Ubuntu') selected @endif value="Ubuntu">Ubuntu</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Droid Sans') selected @endif value="Droid Sans">Droid Sans</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Arimo') selected @endif value="Arimo">Arimo</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'PT Sans Narrow') selected @endif value="PT Sans Narrow">PT Sans Narrow</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Noto Sans') selected @endif value="Noto Sans">Noto Sans</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Slabo') selected @endif value="Slabo">Slabo</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Lora') selected @endif value="Lora">Lora</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Roboto Slab') selected @endif value="Roboto Slab">Roboto Slab</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Droid Serif') selected @endif value="Droid Serif">Droid Serif</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'PT Serif') selected @endif value="PT Serif">PT Serif</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Bitter') selected @endif value="Bitter">Bitter</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Playfair Display') selected @endif value="Playfair Display">Playfair Display</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Arvo') selected @endif value="Arvo">Arvo</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Noto Serif') selected @endif value="Noto Serif">Noto Serif</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Libre Baskerville') selected @endif value="Libre Baskerville">Libre Baskerville</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Source Code Pro') selected @endif value="Source Code Pro">Source Code Pro</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Inconsolata') selected @endif value="Inconsolata">Inconsolata</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'VT323') selected @endif value="VT323">VT323</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Anonymous Pro') selected @endif value="Anonymous Pro">Anonymous Pro</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Cutive Mono') selected @endif value="Cutive Mono">Cutive Mono</option>
+                                    @foreach($fonts as $font)
+                                    <option @if(isset($setting->font_family) && $setting->font_family == $font->title) selected @endif value="{{$font->title}}">{{$font->name}}</option>
+                                    @endforeach
                                 </select>
                                 </div>
                             </div>
