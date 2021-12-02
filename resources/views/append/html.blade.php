@@ -1262,18 +1262,18 @@
                                         @if($loop->index == 0)
 
                                             @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
-                                                <p> {{now()->subDays(1)->format('d/m/y')}} </p>
+                                                <p> {{now()->subDays(1)->format('m/d/y')}} </p>
                                             @else
-                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('m/d/y')}}</p>
                                             @endif
                                         @elseif($loop->index == 1)
                                             @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
-                                                <p> {{now()->subDays(1)->format('d/m/y')}} </p>
+                                                <p> {{now()->subDays(1)->format('m/d/y')}} </p>
                                             @else
-                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('m/d/y')}}</p>
                                             @endif
                                         @else
-                                            <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                            <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('m/d/y')}}</p>
                                         @endif
                                     </div>
                                 </div>
@@ -1415,18 +1415,18 @@
                                         @if($loop->index == 0)
 
                                             @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
-                                                <p> {{now()->subDays(2)->format('d/m/y')}} </p>
+                                                <p> {{now()->subDays(2)->format('m/d/y')}} </p>
                                             @else
-                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('m/d/y')}}</p>
                                             @endif
                                         @elseif($loop->index == 1)
                                             @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
-                                                <p> {{now()->subDays(2)->format('d/m/y')}} </p>
+                                                <p> {{now()->subDays(2)->format('m/d/y')}} </p>
                                             @else
-                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('m/d/y')}}</p>
                                             @endif
                                         @else
-                                            <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('d/m/y')}}</p>
+                                            <p>{{\Illuminate\Support\Carbon::createFromTimeString($review->created_at)->format('m/d/y')}}</p>
                                         @endif
                                     </div>
                                 </div>
@@ -1581,18 +1581,18 @@
 
                                         @if($loop->index == 0)
                                             @if((new DateTime($question->created_at))->diff(new DateTime())->format('%d') > 10)
-                                                <p> {{now()->subDays(2)->format('d/m/y')}} </p>
+                                                <p> {{now()->subDays(2)->format('m/d/y')}} </p>
                                             @else
-                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($question->created_at)->format('d/m/y')}}</p>
+                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($question->created_at)->format('m/d/y')}}</p>
                                             @endif
                                         @elseif($loop->index == 1)
                                             @if((new DateTime($question->created_at))->diff(new DateTime())->format('%d') > 10)
-                                                <p> {{now()->subDays(2)->format('d/m/y')}} </p>
+                                                <p> {{now()->subDays(2)->format('m/d/y')}} </p>
                                             @else
-                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($question->created_at)->format('d/m/y')}}</p>
+                                                <p>{{\Illuminate\Support\Carbon::createFromTimeString($question->created_at)->format('m/d/y')}}</p>
                                             @endif
                                         @else
-                                            <p>{{\Illuminate\Support\Carbon::createFromTimeString($question->created_at)->format('d/m/y')}}</p>
+                                            <p>{{\Illuminate\Support\Carbon::createFromTimeString($question->created_at)->format('m/d/y')}}</p>
                                         @endif
                                     </div>
                                 </div>
