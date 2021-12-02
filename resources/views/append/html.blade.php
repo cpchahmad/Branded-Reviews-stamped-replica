@@ -188,6 +188,9 @@
             padding-right: 2px;
             padding-left: 2px;
         }
+        .question_review_buttons button{
+            width: 90%;
+        }
     }
     .question_review_buttons{
         padding: 22px 0;
