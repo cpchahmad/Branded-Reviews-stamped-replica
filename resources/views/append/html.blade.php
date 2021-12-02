@@ -270,8 +270,10 @@
     .questions_tab a span, .reviews_tab a span{
         @if(isset($display))
         background-color: {{$display->tabs_counter_background}};
+        padding: 4px;
         @else
        background-color: #f8f9fa;
+        padding: 4px;
         @endif
 
     }
