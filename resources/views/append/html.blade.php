@@ -192,6 +192,12 @@
             width: 90%;
             float: none;
         }
+        #review_images a{
+            pointer-events: none;
+        }
+        .tt_logix_reviews{
+            padding: 10px 12px;
+        }
     }
     .question_review_buttons{
         padding: 22px 0;
