@@ -100,6 +100,15 @@
         margin-top:10px;
         width: 100%;
     }
+    .side:first-child{
+        margin-top: 0px;
+    }
+    .middle:first-child{
+        margin-top: 0px;
+    }
+    .left:first-child{
+        margin-top: 0px;
+    }
 
     .left{
         margin-top:19px !important;
