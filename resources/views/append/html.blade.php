@@ -24,7 +24,9 @@
     .progress-bar{
         display:block !important;
     }
-
+    #main-body h3{
+        font-weight: bold;
+    }
     .tt_logix_reviews{
         max-width: 1160px;
         margin: 0 auto;
