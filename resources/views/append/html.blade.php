@@ -103,22 +103,21 @@
     .side:first-child{
         margin-top: 0px;
     }
-    .middle:first-child{
-        margin-top: 0px;
-    }
-    .left:first-child{
-        margin-top: 0px;
-    }
 
     .left{
         margin-top:17px !important;
         width:50% !important;
     }
+    .left:first-child{
+        margin-top: 0px;
+    }
     .middle {
         margin-top:10px;
         width: 100%;
     }
-
+    .middle:first-child{
+        margin-top: 0px;
+    }
     /* Place text to the right */
 
     /* The bar container */
