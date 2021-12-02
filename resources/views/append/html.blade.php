@@ -59,6 +59,7 @@
         font-size: 38px;
         margin-bottom: 0px;
         margin-top: 0px;
+        line-height: 22px;
     }
     .tt_logix_reviews_r_no .checked{
         color: rgb(255, 210, 0);
