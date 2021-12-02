@@ -35,6 +35,14 @@
     }
     .tt_logix_reviews p{
         line-height: 18px;
+        @if($display)
+        font-family:{{$display->font_family}};
+        font-width: 100;
+        @else
+        font-family:'Open Sans',sans-serif;
+        font-weight: 100;
+
+        @endif
     }
     .tt_logix_reviews_inner{
         display: flex;
