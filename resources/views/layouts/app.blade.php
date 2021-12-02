@@ -9,11 +9,13 @@
 {{--    <link rel="preconnect" href="https://fonts.googleapis.com">--}}
 {{--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>--}}
 {{--    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Roboto:ital,wght@0,300;1,900&display=swap" rel="stylesheet">--}}
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine&Abril Fatface">
+{{--    <link--}}
+{{--        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amatic+SC&family=Bangers&family=Caveat&family=Courgette&family=Indie+Flower&family=Kaushan+Script&family=Lobster&family=Lobster+Two&family=Montserrat:wght@100&family=Open+Sans:wght@300&family=Orbitron&family=Pacifico&family=Patrick+Hand&family=Rajdhani:wght@300&family=Raleway:wght@100&family=Righteous&family=Roboto:wght@100&family=Sacramento&family=Satisfy&display=swap"--}}
+{{--        rel="stylesheet">--}}
     <style>
         body {
-            font-family: 'Tangerine', serif;
+            font-family: 'Abril Fatface', serif;
             font-size: 48px;
         }
     </style>
