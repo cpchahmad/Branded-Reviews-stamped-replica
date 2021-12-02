@@ -7,7 +7,7 @@
     @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
 
     @if(isset($display))
-    body{
+    #main-body{
         font-family: {{$display->title}} !important;
     }
     @endif
