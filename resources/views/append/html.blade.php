@@ -12,6 +12,7 @@
     }
     #main-body h3{
         font-family: {{$display->font_family}} !important;
+        font-weight: bold;
     }
     #main-body button {
         font-family: {{$display->font_family}} !important;
@@ -322,6 +323,7 @@
     .user_pic .user_pic_inner h3{
         margin: 0;
         padding: 0;
+        font-weight: bold;
     }
     .user_info{
         width: 50%;
