@@ -1,3 +1,6 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
 @extends('layouts.app')
 @section('content')
     <div class="col-lg-12 col-md-12 pl-4 pt-3 pr-4">
@@ -91,7 +94,7 @@
                                     <label for="#">Select Font Family</label>
                                 <select class="form-control bg-white" name="font_family" id="">
                                     <option selected disabled value="reviews">Select</option>
-                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Bungee') selected @endif value="Bungee">Bungee</option>
+                                    <option style="font-family: 'Roboto', sans-serif;" @if(isset($setting->font_family) && $setting->font_family == 'Bungee') selected @endif value="Bungee">Bungee</option>
                                     <option @if(isset($setting->font_family) && $setting->font_family == 'Indie Flower') selected @endif value="Indie Flower">Indie Flower</option>
                                     <option @if(isset($setting->font_family) && $setting->font_family == 'Passion One') selected @endif value="Passion One">Passion One</option>
                                     <option @if(isset($setting->font_family) && $setting->font_family == 'Lobster') selected @endif value="Lobster">Lobster</option>
