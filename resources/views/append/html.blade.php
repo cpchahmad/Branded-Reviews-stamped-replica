@@ -26,6 +26,7 @@
     }
     #main-body h3{
         font-weight: bold;
+        margin-bottom: 1px;
     }
     .tt_logix_reviews{
         max-width: 1160px;
@@ -1605,7 +1606,7 @@
                                 <div class="review_content question_content">
                                     <p>{{$question->question}}</p>
                                 </div>
-                                <div class="review_footer">
+                                <div class="review_footer" style="text-align: right;">
 {{--                                    <div class="share_review">--}}
 {{--                                        <p>--}}
 {{--                                            <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook-q?question_id={{$question->id}}&display=popup" target="_blank">--}}
