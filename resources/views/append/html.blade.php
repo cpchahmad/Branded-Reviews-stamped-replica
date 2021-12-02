@@ -106,7 +106,7 @@
         margin-top:10px;
         width: 100%;
     }
-    .first, .second,.third{
+    .first, .second{
         margin-top: 0px;
     }
     .left{
@@ -135,7 +135,7 @@
     .bar-1 {width: 9%; height: 15px; background-color: #005e9e;}
 
     .image_popups_list{
-        padding:15px 0 0 15px;
+        padding:3px 0 0 15px;
         width: 30%;
         display: flex;
         flex-wrap: wrap;
@@ -954,7 +954,7 @@
                             <div class="bar-5 progress-bar" @if($total_reviews != 0) style="width: {{($five_star/$total_reviews)*100}}%" @else style="width: 0" @endif></div>
                         </div>
                     </div>
-                    <div class="side left third">
+                    <div class="side left" style="margin-top: 10%;">
                         <div id="five_star">&ensp;({{$five_star}})</div>
                     </div>
                 </div>
