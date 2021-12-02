@@ -264,7 +264,7 @@
 {{--        @endif--}}
     }
 
-    .questions_tab a span,reviews_tab a span{
+    .questions_tab a span, .reviews_tab a span{
         background-color: #f8f9fa;
     }
     .reviews_tab_content{
