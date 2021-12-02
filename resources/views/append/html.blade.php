@@ -16,6 +16,9 @@
     #main-body button {
         font-family: {{$display->font_family}} !important;
     }
+    #main-body select {
+        font-family: {{$display->font_family}} !important;
+    }
     @endif
     .progress-bar{
         display:block !important;
