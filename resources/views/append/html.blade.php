@@ -183,6 +183,12 @@
         padding: 22px 0;
         width: 25%;
     }
+    .question_content{
+        padding: 2px 2px !important;
+    }
+    .question_content p{
+        margin-top: 0px;
+    }
     .question_review_buttons button{
         padding: 10px;
         margin: 6px 0 6px 6px;
@@ -1596,7 +1602,7 @@
                                         @endif
                                     </div>
                                 </div>
-                                <div class="review_content">
+                                <div class="review_content question_content">
                                     <p>{{$question->question}}</p>
                                 </div>
                                 <div class="review_footer">
