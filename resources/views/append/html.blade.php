@@ -47,7 +47,7 @@
     }
     .tt_logix_reviews_r_no{
         border-right: 1px #cecece solid;
-        width: 20%;
+        width: 18%;
     }
     @media (max-width:767px) {
         .tt_logix_reviews_r_no{
@@ -78,8 +78,8 @@
     }
 
     .review_progress{
-        width: 25%;
-        padding: 5px 8px;
+        width: 27%;
+        padding: 5px 20px;
         border-right: 1px #cecece solid;
     }
     @media (max-width:767px) {
