@@ -1612,28 +1612,6 @@
                                 <div class="review_content question_content">
                                     <p>{{$question->question}}</p>
                                 </div>
-                                <div class="review_footer" style="text-align: right; padding-bottom: 0%;">
-{{--                                    <div class="share_review">--}}
-{{--                                        <p>--}}
-{{--                                            <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook-q?question_id={{$question->id}}&display=popup" target="_blank">--}}
-{{--                                                <i class="fas fa-share-square"></i>--}}
-{{--                                                Share--}}
-{{--                                            </a>--}}
-{{--                                            <span class="share_to">&ensp; | &ensp;<a href="www.facebook.com">Facebook</a>&ensp; . &ensp;<a href="www.twitter.com">Twitter</a> </span>--}}
-{{--                                        </p>--}}
-{{--                                    </div>--}}
-                                    <div class="like_dislike">
-                                        <p style="font-weight: bold;">Was this helpful?<span>
-                            <a href="javascript:void(0)">
-                              <i @if(isset($question->stats) && $question->stats->like == 1) class="fas fa-thumbs-up blue-color q-like" @else class="fas fa-thumbs-up   q-like" @endif></i> <span class="like-q" data-value="{{$question->id}}">{{$question->likes}}</span>
-                            </a>
-                            <a href="javascript:void(0)">
-                              <i @if(isset($question->stats) && $question->stats->dislike == 1) class="fas fa-thumbs-down blue-color q-dislike" @else  class="fas fa-thumbs-down q-dislike" @endif></i> <span class="dislike-q" data-value="{{$question->id}}">{{$question->dislikes}}</span>
-                            </a>
-                          </span>
-                                        </p>
-                                    </div>
-                                </div>
                                 @if($question->question_reply != null)
                                     <div class="review_reply" id="review_reply">
                                         <div class="replier_info">
@@ -1663,6 +1641,28 @@
                                         </div>
                                     </div>
                                 @endif
+                                <div class="review_footer" style="text-align: right; padding-bottom: 0%;">
+                                    {{--                                    <div class="share_review">--}}
+                                    {{--                                        <p>--}}
+                                    {{--                                            <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook-q?question_id={{$question->id}}&display=popup" target="_blank">--}}
+                                    {{--                                                <i class="fas fa-share-square"></i>--}}
+                                    {{--                                                Share--}}
+                                    {{--                                            </a>--}}
+                                    {{--                                            <span class="share_to">&ensp; | &ensp;<a href="www.facebook.com">Facebook</a>&ensp; . &ensp;<a href="www.twitter.com">Twitter</a> </span>--}}
+                                    {{--                                        </p>--}}
+                                    {{--                                    </div>--}}
+                                    <div class="like_dislike">
+                                        <p style="font-weight: bold;">Was this helpful?<span>
+                            <a href="javascript:void(0)">
+                              <i @if(isset($question->stats) && $question->stats->like == 1) class="fas fa-thumbs-up blue-color q-like" @else class="fas fa-thumbs-up   q-like" @endif></i> <span class="like-q" data-value="{{$question->id}}">{{$question->likes}}</span>
+                            </a>
+                            <a href="javascript:void(0)">
+                              <i @if(isset($question->stats) && $question->stats->dislike == 1) class="fas fa-thumbs-down blue-color q-dislike" @else  class="fas fa-thumbs-down q-dislike" @endif></i> <span class="dislike-q" data-value="{{$question->id}}">{{$question->dislikes}}</span>
+                            </a>
+                          </span>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         @endforeach
                     @else
