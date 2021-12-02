@@ -954,7 +954,7 @@
                             <div class="bar-5 progress-bar" @if($total_reviews != 0) style="width: {{($five_star/$total_reviews)*100}}%" @else style="width: 0" @endif></div>
                         </div>
                     </div>
-                    <div class="side left" style="margin-top: 10%;">
+                    <div class="side left" style="margin-top: 8px;">
                         <div id="five_star">&ensp;({{$five_star}})</div>
                     </div>
                 </div>
