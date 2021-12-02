@@ -172,7 +172,7 @@
         }
     }
     .question_review_buttons{
-        padding: 30px 0;
+        padding: 22px 0;
         width: 25%;
     }
     .question_review_buttons button{
@@ -379,6 +379,7 @@
     .review_footer{
         display: inline-block;
         width: 100%;
+        padding-bottom: 2%;
     }
     .review_footer .share_review{
         display: inline-block;
