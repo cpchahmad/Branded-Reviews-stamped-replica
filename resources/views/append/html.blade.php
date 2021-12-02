@@ -107,13 +107,13 @@
         width: 100%;
     }
 
-    .review_progress_1:nth-child(1){
+    .review_progress:nth-child(1):nth-child(1){
         margin-top: 0px;
     }
-    .review_progress_1:nth-child(2){
+    .review_progress:nth-child(1):nth-child(2){
         margin-top: 0px;
     }
-    .review_progress_1:nth-child(2){
+    .review_progress:nth-child(1):nth-child(3){
         margin-top: 0px;
     }
     .left{
