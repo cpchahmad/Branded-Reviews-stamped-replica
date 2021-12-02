@@ -1,14 +1,10 @@
 @extends('layouts.app')
 @section('content')
     <head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amatic+SC&family=Bangers&family=Caveat&family=Courgette&family=Indie+Flower&family=Kaushan+Script&family=Lobster&family=Lobster+Two&family=Montserrat:wght@100&family=Open+Sans:wght@300&family=Orbitron&family=Pacifico&family=Patrick+Hand&family=Rajdhani:wght@300&family=Raleway:wght@100&family=Righteous&family=Roboto:wght@100&family=Sacramento&family=Satisfy&display=swap"
+            rel="stylesheet">
     </head>
-    <style>
-        body {
-            font-family: 'Abril Fatface', serif;
-            font-size: 48px;
-        }
-    </style>
     <div class="col-lg-12 col-md-12 pl-4 pt-3 pr-4">
         <div class="row">
             <div class="col-6">
@@ -100,7 +96,7 @@
                                     <label for="#">Select Font Family</label>
                                 <select class="form-control bg-white" name="font_family" id="">
                                     <option selected disabled value="reviews">Select</option>
-                                    <option style="font-family: 'Abril Fatface' !important" @if(isset($setting->font_family) && $setting->font_family == 'Bungee') selected @endif value="Bungee">Bungee</option>
+                                    <option @if(isset($setting->font_family) && $setting->font_family == 'Bungee') selected @endif value="Bungee">Bungee</option>
                                     <option @if(isset($setting->font_family) && $setting->font_family == 'Indie Flower') selected @endif value="Indie Flower">Indie Flower</option>
                                     <option @if(isset($setting->font_family) && $setting->font_family == 'Passion One') selected @endif value="Passion One">Passion One</option>
                                     <option @if(isset($setting->font_family) && $setting->font_family == 'Lobster') selected @endif value="Lobster">Lobster</option>
