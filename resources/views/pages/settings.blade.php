@@ -1,8 +1,3 @@
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Roboto:ital,wght@0,300;1,900&display=swap" rel="stylesheet">
-</head>
 @extends('layouts.app')
 @section('content')
     <div class="col-lg-12 col-md-12 pl-4 pt-3 pr-4">
