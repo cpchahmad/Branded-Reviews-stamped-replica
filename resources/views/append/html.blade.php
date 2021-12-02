@@ -65,7 +65,7 @@
     }
     .tt_logix_reviews_r_no span{
         margin: 0 auto;
-        font-size: 24px;
+        font-size: 18px;
     }
 
     .tt_logix_reviews_r_no #base_reviews{
@@ -73,7 +73,7 @@
         font-size: 18px !important;
     }
     #total_rating{
-        font-size: larger !important;
+        font-size: inherit !important;
         font-weight: bold;
         vertical-align: middle;
     }
