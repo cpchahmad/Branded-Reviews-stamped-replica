@@ -181,6 +181,13 @@
         .image_popups_list{
             width: 100%;
         }
+        .image_popups_list a div{
+            width: 66px;
+        }
+        .image_popups_list a div img{
+            padding-right: 2px;
+            padding-left: 2px;
+        }
     }
     .question_review_buttons{
         padding: 22px 0;
