@@ -190,6 +190,7 @@
         }
         .question_review_buttons button{
             width: 90%;
+            float: none;
         }
     }
     .question_review_buttons{
