@@ -71,7 +71,9 @@
         font-size: 18px !important;
     }
     #total_rating{
-        font-size: 35px !important;
+        font-size: large !important;
+        font-weight: bold;
+        vertical-align: middle;
     }
 
     .review_progress{

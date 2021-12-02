@@ -81,7 +81,7 @@ class ReviewController extends Controller
             return Redirect::tokenRedirect('review.request', ['notice' => 'Review pending Successfully']);
         }
         if ($review->pending_status == 'unpending'){
-            return Redirect::tokenRedirect('review.request', ['notice' => 'Review Active Successfully']);
+            return Redirect::tokenRedirect('review.request', ['notice' => 'Review Activated Successfully']);
         }
     }
     public function ReviewPublish($id){
