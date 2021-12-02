@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine&Abril Fatface">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     </head>
     <style>
         body {
@@ -100,7 +100,7 @@
                                     <label for="#">Select Font Family</label>
                                 <select class="form-control bg-white" name="font_family" id="">
                                     <option selected disabled value="reviews">Select</option>
-                                    <option style="font-family: 'Abril Fatface', serif !important" @if(isset($setting->font_family) && $setting->font_family == 'Bungee') selected @endif value="Bungee">Bungee</option>
+                                    <option style="font-family: 'Abril Fatface' !important" @if(isset($setting->font_family) && $setting->font_family == 'Bungee') selected @endif value="Bungee">Bungee</option>
                                     <option @if(isset($setting->font_family) && $setting->font_family == 'Indie Flower') selected @endif value="Indie Flower">Indie Flower</option>
                                     <option @if(isset($setting->font_family) && $setting->font_family == 'Passion One') selected @endif value="Passion One">Passion One</option>
                                     <option @if(isset($setting->font_family) && $setting->font_family == 'Lobster') selected @endif value="Lobster">Lobster</option>
