@@ -1,5 +1,11 @@
 <style>
     @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
+
+    @if(isset($display))
+    body{
+        font-family: {{$display->title}} !important;
+    }
+    @endif
     .progress-bar{
         display:block !important;
     }
