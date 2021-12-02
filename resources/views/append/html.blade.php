@@ -229,7 +229,7 @@
         border-bottom: 1px rgb(214, 214, 214) solid;
     }
     .questions_tab,.reviews_tab{
-        padding: 4px 16px;
+        padding: 4px 20px;
         margin-right: 10px;
     }
     .questions_tab a,.reviews_tab a{
