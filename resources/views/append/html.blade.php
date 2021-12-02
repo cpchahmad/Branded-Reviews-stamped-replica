@@ -110,7 +110,7 @@
         margin-top: 0px;
     }
     .left{
-        margin-top:17px !important;
+        margin-top:17px;
         width:50% !important;
     }
 
