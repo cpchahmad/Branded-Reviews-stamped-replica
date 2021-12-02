@@ -68,9 +68,9 @@
         margin: 0 auto;
         font-size: 18px;
     }
-    .base_reviews{
-        line-height: 0px !important;
-    }
+    /*.base_reviews{*/
+    /*    line-height: 0px !important;*/
+    /*}*/
     .tt_logix_reviews_r_no #base_reviews{
         margin: 0 auto !important;
         font-size: 18px !important;
@@ -284,7 +284,7 @@
     .dropdown_review select{
         position: relative;
         float: right;
-        padding: 8px;
+        padding: 6px 16px;
         font-size: 12px;
     }
 
