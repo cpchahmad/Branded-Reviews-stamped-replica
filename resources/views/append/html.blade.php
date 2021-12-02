@@ -106,14 +106,7 @@
         margin-top:10px;
         width: 100%;
     }
-
-    .review_progress:nth-child(1):nth-child(1){
-        margin-top: 0px;
-    }
-    .review_progress:nth-child(1):nth-child(2){
-        margin-top: 0px;
-    }
-    .review_progress:nth-child(1):nth-child(3){
+    .first, .second,.third{
         margin-top: 0px;
     }
     .left{
@@ -949,19 +942,19 @@
             </div>
             <div class="review_progress">
                 <div class="review_progress_1">
-                    <div class="side">
+                    <div class="side first">
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                     </div>
-                    <div class="middle">
+                    <div class="middle second">
                         <div class="bar-container">
                             <div class="bar-5 progress-bar" @if($total_reviews != 0) style="width: {{($five_star/$total_reviews)*100}}%" @else style="width: 0" @endif></div>
                         </div>
                     </div>
-                    <div class="side left">
+                    <div class="side left third">
                         <div id="five_star">&ensp;({{$five_star}})</div>
                     </div>
                 </div>
