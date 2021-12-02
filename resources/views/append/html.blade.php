@@ -153,7 +153,7 @@
 
     .image_popups_list{
         padding:3px 0 0 15px;
-        width: 30%;
+        width: 28%;
         display: flex;
         flex-wrap: wrap;
     }
@@ -184,7 +184,7 @@
     }
     .question_review_buttons{
         padding: 22px 0;
-        width: 25%;
+        width: 26%;
     }
     .question_content{
         padding: 2px 2px !important;
