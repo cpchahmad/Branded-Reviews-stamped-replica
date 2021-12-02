@@ -423,6 +423,9 @@
         width: 49%;
         font-size: 12px;
     }
+    #replier_name h4{
+        font-weight: bold;
+    }
     @media (max-width:425px) {
         .review_footer .like_dislike{
             width: 99%;
