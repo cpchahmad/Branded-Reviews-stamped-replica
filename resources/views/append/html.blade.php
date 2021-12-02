@@ -111,7 +111,7 @@
     }
 
     .left{
-        margin-top:19px !important;
+        margin-top:17px !important;
         width:50% !important;
     }
     .middle {
@@ -130,11 +130,11 @@
     }
 
     /* Individual bars */
-    .bar-5 {width: 84%; height: 18px; background-color: #005e9e;}
-    .bar-4 {width: 5%; height: 18px; background-color: #005e9e;}
-    .bar-3 {width: 0%; height: 18px; background-color: #005e9e;}
-    .bar-2 {width: 2%; height: 18px; background-color: #005e9e;}
-    .bar-1 {width: 9%; height: 18px; background-color: #005e9e;}
+    .bar-5 {width: 84%; height: 15px; background-color: #005e9e;}
+    .bar-4 {width: 5%; height: 15px; background-color: #005e9e;}
+    .bar-3 {width: 0%; height: 15px; background-color: #005e9e;}
+    .bar-2 {width: 2%; height: 15px; background-color: #005e9e;}
+    .bar-1 {width: 9%; height: 15px; background-color: #005e9e;}
 
     .image_popups_list{
         padding:15px 0 0 15px;
