@@ -101,23 +101,24 @@
         margin-top:10px;
         width: 100%;
     }
-    .side:first-child{
+
+    .middle {
+        margin-top:10px;
+        width: 100%;
+    }
+
+    .review_progress_1:nth-child(1){
         margin-top: 0px;
     }
-    .side:first-child .middle{
+    .review_progress_1:nth-child(2){
         margin-top: 0px;
     }
-    .side:first-child .left{
+    .review_progress_1:nth-child(2){
         margin-top: 0px;
     }
     .left{
         margin-top:17px !important;
         width:50% !important;
-    }
-
-    .middle {
-        margin-top:10px;
-        width: 100%;
     }
 
     #write_a_review_btn:hover, #ask_a_question_btn:hover{
