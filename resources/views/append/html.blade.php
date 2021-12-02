@@ -1292,7 +1292,7 @@
                                         </p>
                                     </div>
                                     <div class="like_dislike">
-                                        <p>Was this helpful?<span>
+                                        <p style="font-weight: bold;">Was this helpful?<span>
                             <a href="javascript:void(0)">
                               <i @if(isset($review->stats) && $review->stats->like == 1) class="fas fa-thumbs-up blue-color for-like" @else class="fas fa-thumbs-up   for-like" @endif></i> <span class="like" data-value="{{$review->id}}">{{$review->likes}}</span>
                             </a>
@@ -1445,7 +1445,7 @@
                                         </p>
                                     </div>
                                     <div class="like_dislike">
-                                        <p>Was this helpful?<span>
+                                        <p style="font-weight: bold;">Was this helpful?<span>
                             <a href="javascript:void(0)">
                               <i @if(isset($review->stats) && $review->stats->like == 1) class="fas fa-thumbs-up blue-color for-like" @else class="fas fa-thumbs-up   for-like" @endif></i> <span class="like" data-value="{{$review->id}}">{{$review->likes}}</span>
                             </a>
@@ -1610,7 +1610,7 @@
                                         </p>
                                     </div>
                                     <div class="like_dislike">
-                                        <p>Was this helpful?<span>
+                                        <p style="font-weight: bold;">Was this helpful?<span>
                             <a href="javascript:void(0)">
                               <i @if(isset($question->stats) && $question->stats->like == 1) class="fas fa-thumbs-up blue-color q-like" @else class="fas fa-thumbs-up   q-like" @endif></i> <span class="like-q" data-value="{{$question->id}}">{{$question->likes}}</span>
                             </a>
