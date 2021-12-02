@@ -1606,15 +1606,15 @@
                                     <p>{{$question->question}}</p>
                                 </div>
                                 <div class="review_footer">
-                                    <div class="share_review">
-                                        <p>
-                                            <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook-q?question_id={{$question->id}}&display=popup" target="_blank">
-                                                <i class="fas fa-share-square"></i>
-                                                Share
-                                            </a>
-                                            <span class="share_to">&ensp; | &ensp;<a href="www.facebook.com">Facebook</a>&ensp; . &ensp;<a href="www.twitter.com">Twitter</a> </span>
-                                        </p>
-                                    </div>
+{{--                                    <div class="share_review">--}}
+{{--                                        <p>--}}
+{{--                                            <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook-q?question_id={{$question->id}}&display=popup" target="_blank">--}}
+{{--                                                <i class="fas fa-share-square"></i>--}}
+{{--                                                Share--}}
+{{--                                            </a>--}}
+{{--                                            <span class="share_to">&ensp; | &ensp;<a href="www.facebook.com">Facebook</a>&ensp; . &ensp;<a href="www.twitter.com">Twitter</a> </span>--}}
+{{--                                        </p>--}}
+{{--                                    </div>--}}
                                     <div class="like_dislike">
                                         <p style="font-weight: bold;">Was this helpful?<span>
                             <a href="javascript:void(0)">
