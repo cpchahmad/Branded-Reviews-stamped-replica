@@ -235,7 +235,7 @@
         text-decoration: none;
         color: black;
         font-weight: 500;
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .active_tab{
