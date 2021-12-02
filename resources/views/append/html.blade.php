@@ -57,6 +57,7 @@
     }
     .tt_logix_reviews_r_no h1{
         font-size: 38px;
+        margin-bottom: 0px;
     }
     .tt_logix_reviews_r_no .checked{
         color: rgb(255, 210, 0);
@@ -71,10 +72,9 @@
         font-size: 18px !important;
     }
     #total_rating{
-        font-size: large !important;
+        font-size: larger !important;
         font-weight: bold;
         vertical-align: middle;
-        margin-bottom: 0px;
     }
 
     .review_progress{
