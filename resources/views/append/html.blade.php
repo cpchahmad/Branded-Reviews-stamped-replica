@@ -230,6 +230,7 @@
     }
     .questions_tab,.reviews_tab{
         padding: 4px 16px;
+        margin-right: 10px;
     }
     .questions_tab a,.reviews_tab a{
         text-decoration: none;

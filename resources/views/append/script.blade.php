@@ -1,7 +1,7 @@
 (function() {
 var shopdomain = Shopify.shop;
-var base_url = 'https://phpstack-176572-2275881.cloudwaysapps.com/';
-//     var base_url = 'https://stamped.test/';
+// var base_url = 'https://phpstack-176572-2275881.cloudwaysapps.com/';
+var base_url = 'https://stamped.test/';
 var id = meta.product.id;
 var name = Shopify.shop;
 
@@ -152,6 +152,7 @@ $("#questions_tab_content").css("display", "block");
 $("#reviews_tab_content").css("display", "none");
 $(".questions_tab").addClass("active_tab");
 $(".reviews_tab").removeClass("active_tab");
+$(".reviews_tab").style("");
 // $(".ask_a_question").css("display", "block");
 $(".ask_a_question").toggle();
 });
