@@ -109,14 +109,14 @@
         margin-top:17px !important;
         width:50% !important;
     }
-    .left:first-child{
+    .left:nth-child(3){
         margin-top: 0px;
     }
     .middle {
         margin-top:10px;
         width: 100%;
     }
-    .middle:first-child{
+    .side:nth-child(2){
         margin-top: 0px;
     }
     /* Place text to the right */
