@@ -444,12 +444,12 @@
     .questions_tab_content .search_input{
         margin-top: 20px;
         border: #d1d1d1 1px solid;
-        padding: 8px;
+        padding-left: 6px;
         width: 40%;
     }
     .questions_tab_content .search_input input{
         border: none;
-        padding: 8px;
+        padding: 10px 6px;
         width:90%;
         -webkit-box-shadow: none;
     }
