@@ -104,23 +104,24 @@
     .side:first-child{
         margin-top: 0px;
     }
-
+    .side:first-child .middle{
+        margin-top: 0px;
+    }
+    .side:first-child .left{
+        margin-top: 0px;
+    }
     .left{
         margin-top:17px !important;
         width:50% !important;
     }
-    .left:nth-child(3){
-        margin-top: 0px;
-    }
+
     .middle {
         margin-top:10px;
         width: 100%;
     }
-    .side:nth-child(2){
-        margin-top: 0px;
-    }
+
     #write_a_review_btn:hover, #ask_a_question_btn:hover{
-        background-color: deepskyblue;
+        background-color: #005e9e ;
     }
     /* Place text to the right */
 
