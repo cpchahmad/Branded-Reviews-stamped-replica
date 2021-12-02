@@ -1,5 +1,5 @@
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Roboto:ital,wght@0,300;1,900&display=swap" rel="stylesheet">
 </head>
 @extends('layouts.app')
 @section('content')
