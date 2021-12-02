@@ -239,7 +239,7 @@
                        <div class="ml-2" id="verified" style="padding-top: 3%;"><span class="badge badge-pill badge-primary py-1 px-2">@if($review->verify_status == 'verified') Verified @endif</span></div>
                    </div>
                     <div>
-                        <a href="{{route('review.pending',$review->id)}}"type="button" class="btn btn-secondary mr-1" @if($review->archive_status == 'archive') style="display: none;" @endif>@if($review->pending_status == 'pending') UnPending @else Pending @endif</a>
+                        <a href="{{route('review.pending',$review->id)}}"type="button" class="btn btn-secondary mr-1" @if($review->archive_status == 'archive') style="display: none;" @endif>@if($review->pending_status == 'pending') Active @else Pending @endif</a>
                         <a href="{{route('review.archive',$review->id)}}"type="button" class="btn btn-secondary mr-1" >@if($review->archive_status == 'archive') UnArchive @else Archive @endif</a>
                         <a href="{{route('review.feature',$review->id)}}"type="button" class="btn btn-secondary mr-1" @if($review->archive_status == 'archive') style="display: none;" @endif>@if($review->feature == 'unfeatured')Feature @else UnFeature @endif</a>
                         <a href="{{route('review.publish',$review->id)}}"type="button" class="btn btn-primary" @if($review->archive_status == 'archive') style="display: none;" @endif">@if($review->status == 'unpublish')<i class="fas fa-eye mr-1"></i> Publish @elseif($review->status == 'rejected') <i class="fas fa-eye mr-1"></i> Publish @else <i class="fas fa-eye-slash"></i>UnPublish @endif </a>
