@@ -388,10 +388,12 @@
     @media (max-width:425px) {
         .review_footer .share_review{
             width: 100%;
+            font-weight: bold;
         }
     }
     .review_footer .share_review{
         font-size: 12px;
+        font-weight: bold;
     }
     .review_footer .share_review .share_to{
         display: none;
