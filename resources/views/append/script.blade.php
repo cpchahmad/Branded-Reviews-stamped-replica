@@ -174,6 +174,7 @@ $("#questions_tab_content").css("display", "none");
 $("#reviews_tab_content").css("display", "block");
 $(".reviews_tab").addClass("active_tab");
 $(".questions_tab").removeClass("active_tab");
+$(".reviews_tab").removeAttr('style');
 // $(".write_a_review").css("display", "block");
 $(".write_a_review").toggle();
 });
