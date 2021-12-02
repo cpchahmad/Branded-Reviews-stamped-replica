@@ -390,6 +390,14 @@ class ReviewController extends Controller
     }
     public function FilterReviews(Request $request){
         $shop = User::where('name',$request->shop_name)->first();
+        if ($request->filter_value == 'sort' ) {
+            $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->latest()->get();
+            $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->latest()->get();
+            $reviews = view('append.reviews')->with([
+                'reviews_featured' => $reviews_pagi_fea,
+                'reviews_publish' => $reviews_pagi_pub
+            ])->render();
+        }
         if ($request->filter_value == 'most_recent' ) {
             $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->latest()->get();
             $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->latest()->get();

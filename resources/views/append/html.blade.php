@@ -1157,7 +1157,7 @@
                         <button id="clear_review_filter" style="float:left; display:none;"><i class="fas fa-times"></i> Clear Filter</button>
                     </div>
                     <select name="sort_review" @if($real_reviews == 0) style="display: none" @endif id="sort_review">
-                        <option value="sort" selected disabled>Sort</option>
+                        <option value="sort" selected>Sort</option>
                         <!--            <option value="saab">With Photos</option> -->
                         <option value="most_recent">Most Recent</option>
                         <option value="heighest_rating">Hightest Rating</option>
