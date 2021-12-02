@@ -38,7 +38,7 @@
         line-height: 18px;
         @if($display)
         font-family:{{$display->font_family}};
-        font-width: 100;
+        font-weight: 100;
         @else
         font-family:'Open Sans',sans-serif;
         font-weight: 100;
