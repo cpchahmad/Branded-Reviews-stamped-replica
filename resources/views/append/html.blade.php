@@ -115,7 +115,7 @@
     }
 
     #write_a_review_btn:hover, #ask_a_question_btn:hover{
-        background-color: #005e9e ;
+        background-color: #f8f9fa ;
     }
     /* Place text to the right */
 
@@ -228,6 +228,7 @@
         flex-wrap: wrap;
         border-bottom: 1px rgb(214, 214, 214) solid;
     }
+
     .questions_tab,.reviews_tab{
         padding: 4px 20px;
         margin-right: 10px;
