@@ -10,6 +10,12 @@
     #main-body{
         font-family: {{$display->font_family}} !important;
     }
+    #main-body h3{
+        font-family: {{$display->font_family}} !important;
+    }
+    #main-body button {
+        font-family: {{$display->font_family}} !important;
+    }
     @endif
     .progress-bar{
         display:block !important;
