@@ -119,6 +119,9 @@
     .side:nth-child(2){
         margin-top: 0px;
     }
+    #write_a_review_btn:hover, #ask_a_question_btn:hover{
+        background-color: deepskyblue;
+    }
     /* Place text to the right */
 
     /* The bar container */
