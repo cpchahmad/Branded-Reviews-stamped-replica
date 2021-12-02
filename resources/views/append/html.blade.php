@@ -264,7 +264,7 @@
     }
 
     .user_reviews{
-        padding: 50px 0 0 0;
+        padding: 52px 0 0 0;
         /* margin-top: 75px; */
     }
     .review_1,.review_2{
