@@ -42,8 +42,10 @@
         @else
         font-family:'Open Sans',sans-serif;
         font-weight: 100;
-
         @endif
+    }
+    .replied_text p{
+        margin-top: 0%;
     }
     .tt_logix_reviews_inner{
         display: flex;
@@ -425,6 +427,7 @@
     }
     #replier_name h4{
         font-weight: bold;
+        margin-bottom: 0%;
     }
     @media (max-width:425px) {
         .review_footer .like_dislike{
