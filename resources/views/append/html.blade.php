@@ -8,7 +8,7 @@
 
     @if(isset($display))
     #main-body{
-        font-family: {{$display->title}} !important;
+        font-family: {{$display->font_family}} !important;
     }
     @endif
     .progress-bar{
