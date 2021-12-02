@@ -67,7 +67,9 @@
         margin: 0 auto;
         font-size: 18px;
     }
-
+    .base_reviews{
+        line-height: 0px !important;
+    }
     .tt_logix_reviews_r_no #base_reviews{
         margin: 0 auto !important;
         font-size: 18px !important;
@@ -948,7 +950,7 @@
                         @endif
           </span>
                 </h1>
-                <p>Based on <span id="base_reviews">{{$total_reviews}}</span> Reviews</p>
+                <p class="base_reviews">Based on <span id="base_reviews">{{$total_reviews}}</span> Reviews</p>
             </div>
             <div class="review_progress">
                 <div class="review_progress_1">
