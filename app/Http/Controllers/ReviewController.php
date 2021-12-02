@@ -97,15 +97,16 @@ class ReviewController extends Controller
             $review->status = 'publish';
         }
         $review->save();
-        if ($review->status == 'publish'){
-            return Redirect::tokenRedirect('review.request', ['notice' => 'Review Publish Successfully']);
-        }
-        if ($review->status == 'unpublish'){
-            return Redirect::tokenRedirect('review.request', ['notice' => 'Review UnPublish Successfully']);
-        }
-        if ($review->status == 'rejected'){
-            return Redirect::tokenRedirect('review.request', ['notice' => 'Review Rejected Successfully']);
-        }
+//        if ($review->status == 'publish'){
+//            return Redirect::tokenRedirect('review.request', ['notice' => 'Review Publish Successfully']);
+//        }
+//        if ($review->status == 'unpublish'){
+//            return Redirect::tokenRedirect('review.request', ['notice' => 'Review UnPublish Successfully']);
+//        }
+//        if ($review->status == 'rejected'){
+//            return Redirect::tokenRedirect('review.request', ['notice' => 'Review Rejected Successfully']);
+//        }
+        return back();
     }
     public function ReviewVerify($id){
         $review = Review::where('id',$id)->first();
