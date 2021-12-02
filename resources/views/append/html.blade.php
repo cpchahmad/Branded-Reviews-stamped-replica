@@ -31,7 +31,7 @@
         padding: 10px;
     }
     .tt_logix_reviews p{
-        /*line-height: 18px;*/
+        line-height: 18px;
     }
     .tt_logix_reviews_inner{
         display: flex;
