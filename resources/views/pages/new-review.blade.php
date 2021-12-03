@@ -349,8 +349,7 @@
                 }
             });
             $('#country').change(function (){
-                console.log('ok');
-            var text = $('#country_code option:selected').text();
+            var text = $('#country option:selected').text();
             $('#customer_location').value(text);
             });
         });
