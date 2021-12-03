@@ -199,16 +199,16 @@
             padding: 10px 12px;
         }
         .user_pic{
-            width: 20%;
+            width: 20% !important;
         }
         .user_info{
-            width: 60%;
+            width: 60% !important;
         }
         .review_date{
-            width: 20%;
+            width: 20% !important;
         }
         .user_info h3 span{
-            font-size: 14px;
+            font-size: 14px !important;
         }
     }
     .question_review_buttons{
