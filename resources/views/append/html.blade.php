@@ -210,6 +210,15 @@
         .user_info h3 span{
             font-size: 14px !important;
         }
+        .review_footer .share_review{
+            width: 50% !important;
+        }
+        .review_footer .like_dislike{
+            width: 100% !important;
+        }
+        .review_footer{
+            display: flex !important;
+        }
     }
     .question_review_buttons{
         padding: 22px 0;
