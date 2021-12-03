@@ -586,9 +586,10 @@
                         <div class="row mb-2">
                             <div class="col-md-6 d-flex">
 {{--                                <img src="{{asset('shirt.jpg')}}" style="border-radius: 50%" width="40px" height="40px">--}}
-                                <div style="margin-left: 5%;">
+                                <div>
                                     <span>{{$review->review_reply->store_name}}</span>
-                                    <br>
+                                </div>
+                                <div>
                                     <span>{{\Illuminate\Support\Carbon::createFromTimeString($review->review_reply->created_at)->diffForHumans()}}</span>
                                 </div>
                             </div>
