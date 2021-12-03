@@ -253,7 +253,7 @@ class ReviewController extends Controller
     }
 
     public function ReplyDelete ($id){
-        dd($id);
+        dd($id,1);
         $reply = ReviewReply::where('id',$id)->first();
         $reply->delete();
         return Redirect::tokenRedirect('review.view', ['id' => $reply->review_id,'notice' => 'Deleted Successfully']);

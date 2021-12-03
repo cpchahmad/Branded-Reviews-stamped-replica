@@ -585,7 +585,7 @@
                         <h6>REPLY</h6>
                         <div class="row mb-2">
                             <div class="col-md-6 d-flex">
-                                <img src="{{asset('shirt.jpg')}}" style="border-radius: 50%" width="40px" height="40px">
+{{--                                <img src="{{asset('shirt.jpg')}}" style="border-radius: 50%" width="40px" height="40px">--}}
                                 <div style="margin-left: 5%;">
                                     <span>{{$review->review_reply->store_name}}</span>
                                     <br>

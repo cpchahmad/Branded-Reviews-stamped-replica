@@ -96,7 +96,7 @@ class QuestionController extends Controller
         return Redirect::tokenRedirect('question.view', ['id' => $request->question_id,'notice' => 'Question Updated Successfully']);
     }
     public function QuestionReplyDelete($id){
-        dd($id);
+        dd($id,2);
         $reply = QuestionReply::where('id',$id)->first();
         $reply->delete();
         return Redirect::tokenRedirect('question.view', ['id' => $id,'notice' => 'Deleted Successfully']);
