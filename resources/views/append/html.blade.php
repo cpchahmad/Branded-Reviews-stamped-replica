@@ -105,7 +105,7 @@
     .review_progress:hover{
         opacity: .5;
     }
-    .review_progress_1:hover{
+    .review_progress:hover review_progress_1{
         opacity: 1 !important;
     }
     @media (max-width:767px) {
