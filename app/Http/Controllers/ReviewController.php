@@ -202,6 +202,7 @@ class ReviewController extends Controller
         $review->likes = $request->likes;
         $review->dislikes = $request->dislikes;
         $review->customer_location = $request->customer_location;
+        $review->country_code = $request->country_code;
         $review->experience = $request->experience;
         $review->real_fake = 'fake';
         $review->created_at = $request->created_at;

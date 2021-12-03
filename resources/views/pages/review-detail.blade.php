@@ -292,7 +292,6 @@
                                                        </div>
                                                        <div class="form-group text-left">
                                                            <label for="#">Enter Country Name</label>
-                                                           <input placeholder="Enter Country Name" required name="customer_location" value="{{$review->customer_location}}" type="text" class="form-control">
                                                            <input name="customer_location" id="customer_location" type="hidden" value="{{$review->customer_location}}">
                                                            <select id="country" class="form-control" required name="country_code">
                                                                <option selected disabled>select country</option>
