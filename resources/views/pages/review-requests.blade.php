@@ -5,10 +5,10 @@
             background-color: #5cb85c !important;
         }
         .badge-danger {
-            background-color: #fd006b  !important;
+            background-color: orange  !important;
         }
         .badge-rejected {
-            background-color: orange  !important;
+            background-color: #fd006b  !important;
         }
 
         .stars-container {

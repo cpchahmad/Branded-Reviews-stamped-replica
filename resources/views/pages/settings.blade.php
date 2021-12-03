@@ -93,13 +93,8 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="#">Select Font Family</label>
-                                <select class="form-control bg-white" name="font_family" id="">
-                                    <option selected disabled value="reviews">Select</option>
-                                    @foreach($fonts as $font)
-                                    <option @if(isset($setting->font_family) && $setting->font_family == $font->title) selected @endif value="{{$font->title}}">{{$font->name}}</option>
-                                    @endforeach
-                                </select>
+                                    <label for="#">Verified buyer  Color</label>
+                                    <input placeholder="select filled star color" @if(isset($setting->verify_color)) value="{{$setting->verify_color}}" @endif name="verify_color" type="color" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -112,6 +107,17 @@
                                 <div class="form-group">
                                     <label for="#">Button Background Color</label>
                                     <input placeholder="select filled star color" @if(isset($setting->button_bg)) value="{{$setting->button_bg}}" @endif name="button_bg" type="color" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="#">Select Font Family</label>
+                                    <select class="form-control bg-white" name="font_family" id="">
+                                        <option selected disabled value="reviews">Select</option>
+                                        @foreach($fonts as $font)
+                                            <option @if(isset($setting->font_family) && $setting->font_family == $font->title) selected @endif value="{{$font->title}}">{{$font->name}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-12 text-right">
