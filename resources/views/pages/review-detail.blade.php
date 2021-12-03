@@ -777,7 +777,7 @@
             });
             $('#country').change(function (){
                 var text = $('#country option:selected').text();
-                $('#customer_location').value(text);
+                $('#customer_location').val(text);
             });
         });
     </script>

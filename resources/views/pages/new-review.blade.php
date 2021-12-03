@@ -349,9 +349,8 @@
                 }
             });
             $('#country').change(function (){
-                console.log('ok');
             var text = $('#country option:selected').text();
-            $('#customer_location').value(text);
+            $('#customer_location').val(text);
             });
         });
     </script>
