@@ -119,7 +119,7 @@ class QuestionController extends Controller
         $review = Question::where('id',$id)->first();
         $review->status = 'rejected';
         $review->save();
-        return Redirect::tokenRedirect('question.view', ['id' => $id,'notice' => 'Question Rejected  Successfully']);
+        return Redirect::tokenRedirect('question.request', ['notice' => 'Question Rejected  Successfully']);
     }
 //    public function AppendQuestions(Request $request){
 //        $shop = User::where('name',$request->shop_name)->first();
