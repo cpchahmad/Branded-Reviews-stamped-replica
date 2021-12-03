@@ -219,6 +219,12 @@
         .review_footer{
             display: flex !important;
         }
+        .replier_info{
+            display: flex;!important;
+        }
+        #replier_name h4{
+            margin-top: 12% !important;
+        }
     }
     .question_review_buttons{
         padding: 22px 0;
