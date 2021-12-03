@@ -167,6 +167,7 @@ class ReviewController extends Controller
         }else{
             $ip = $request->ip();
             $currentUserInfo = Location::get($ip);
+            dd($currentUserInfo);
             $review->customer_location = $currentUserInfo->countryName;
         }
         $review->save();
