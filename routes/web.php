@@ -31,7 +31,7 @@ Route::group(['middleware' => ['verify.shopify']], function () {
     Route::post('review-update', [App\Http\Controllers\ReviewController::class, 'ReviewUpdate'])->name('review.update');
     Route::post('review-reply', [App\Http\Controllers\ReviewController::class, 'ReviewReply'])->name('review.reply');
     Route::get('verify-review/{id}', [App\Http\Controllers\ReviewController::class, 'ReviewVerify'])->name('verify.review');
-    Route::get('reply-delete/{id}', [App\Http\Controllers\ReviewController::class, 'ReplyDelete'])->name('reply.delete');
+    Route::get('reply-delete/{id}', [App\Http\Controllers\ReviewController::class, 'ReplyDelete'])->name('reply.delete.review');
     Route::get('review-pending/{id}', [App\Http\Controllers\ReviewController::class, 'ReviewPending'])->name('review.pending');
     Route::get('review-publish/{id}', [App\Http\Controllers\ReviewController::class, 'ReviewPublish'])->name('review.publish');
     Route::get('review-archive/{id}', [App\Http\Controllers\ReviewController::class, 'ReviewArvhive'])->name('review.archive');

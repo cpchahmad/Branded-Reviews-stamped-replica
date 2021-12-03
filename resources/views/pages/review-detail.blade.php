@@ -594,7 +594,7 @@
                             </div>
                             <div class="col-md-6 text-right">
                                 <a href="#" type="button" id="reply-edit" class="btn btn-secondary"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="{{route('reply.delete',$review->review_reply->id)}}" type="button"  class="btn btn-secondary"><i class="fas fa-trash-alt"></i></a>
+                                <a href="{{route('reply.delete.review',$review->review_reply->id)}}" type="button"  class="btn btn-secondary"><i class="fas fa-trash-alt"></i></a>
                             </div>
                         </div>
                         <p>{{$review->review_reply->message}}</p>
