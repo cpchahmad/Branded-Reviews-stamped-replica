@@ -98,13 +98,13 @@ class ReviewController extends Controller
         }
         $review->save();
         if ($review->status == 'publish'){
-            return Redirect::tokenRedirect('review.view', ['id' => $id], ['notice' => 'Review Publish Successfully']);
+            return Redirect::tokenRedirect('review.view', ['id' => $id,'notice' => 'Review Publish Successfully']);
         }
         if ($review->status == 'unpublish'){
-            return Redirect::tokenRedirect('review.view', ['id' => $id], ['notice' => 'Review UnPublish Successfully']);
+            return Redirect::tokenRedirect('review.view', ['id' => $id,'notice' => 'Review UnPublish Successfully']);
         }
         if ($review->status == 'rejected'){
-            return Redirect::tokenRedirect('review.view', ['id' => $id], ['notice' => 'Review Rejected Successfully']);
+            return Redirect::tokenRedirect('review.view', ['id' => $id,'notice' => 'Review Rejected Successfully']);
         }
 //            return \redirect()->back();
     }
