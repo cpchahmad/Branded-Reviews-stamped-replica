@@ -168,7 +168,7 @@ class ReviewController extends Controller
             $ip = $request->ip();
             $currentUserInfo = Location::get($ip);
             $review->customer_location = $currentUserInfo->countryName;
-            $review->country_code = $currentUserInfo->countryCode;
+            $review->country_code = strtolower($currentUserInfo->countryCode);
         }
         $review->save();
         $facebook_share_link = 'https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook?review_id='.$review->id.'&display=popup';
