@@ -1438,7 +1438,7 @@
                                         </div>
                                     </div>
                                     <div class="user_info" id="user_info">
-                                        <h3>{{ucwords($review->name)}}<span>@if($review->verify_status == 'veified') Verified Buyer @endif</span></h3>
+                                        <h3>{{ucwords($review->name)}}<span>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                                         <p>
                                             <i class="flag flag {{$review->country_code}}"></i>
                                             {{$review->customer_location}}
