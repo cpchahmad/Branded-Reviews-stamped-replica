@@ -102,10 +102,11 @@
         padding: 5px 20px;
         border-right: 1px #cecece solid;
     }
-    .review_progress:hover{
+
+    .review_progress:hover .review_progress_1{
         opacity: .5;
     }
-    .review_progress:hover .review_progress_1{
+    .review_progress_1:hover{
         opacity: 1 !important;
     }
     @media (max-width:767px) {
