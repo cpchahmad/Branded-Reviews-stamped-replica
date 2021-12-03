@@ -621,8 +621,13 @@
     }
     .write_a_review input[type=submit] {
         float: right;
-        background-color: #0c0c0c;
+        @if(isset($display))
+        background-color: {{$display->button_bg}};
+        color: {{$display->button_text}};
+        @else
+         background-color: #0c0c0c;
         color: white;
+        @endif
         padding: 16px 28px;
         border: none;
         font-size: 18px;

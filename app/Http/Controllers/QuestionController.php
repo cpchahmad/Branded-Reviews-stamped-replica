@@ -59,10 +59,10 @@ class QuestionController extends Controller
         }
         $question->save();
         if ($question->status == 'publish'){
-            return Redirect::tokenRedirect('question.request', ['notice' => 'Question Publish Successfully']);
+            return Redirect::tokenRedirect('question.view', ['id' => $id,'notice' => 'Question Publish Successfully']);
         }
         if ($question->status == 'unpublish'){
-            return Redirect::tokenRedirect('question.request', ['notice' => 'Question UnPublish Successfully']);
+            return Redirect::tokenRedirect('question.view', ['id' => $id,'notice' => 'Question UnPublish Successfully']);
         }
     }
     public function QuestionView($id){
@@ -82,7 +82,7 @@ class QuestionController extends Controller
         $reply->message = $request->message;
         $reply->store_name = ucfirst($store_name[0]);
         $reply->save();
-        return Redirect::tokenRedirect('question.request', ['notice' => 'Replied Successfully']);
+        return Redirect::tokenRedirect('question.view', ['id' => $request->question_id,'notice' => 'Replied Successfully']);
     }
     public function QuestionUpdate(Request $request){
         $question_reply = Question::where('id',$request->question_id)->first();
@@ -93,12 +93,12 @@ class QuestionController extends Controller
         $question_reply->dislikes = $request->dislikes;
         $question_reply->question = $request->question;
         $question_reply->save();
-        return Redirect::tokenRedirect('question.request', ['notice' => 'Question Updated Successfully']);
+        return Redirect::tokenRedirect('question.view', ['id' => $request->question_id,'notice' => 'Question Updated Successfully']);
     }
     public function QuestionReplyDelete($id){
         $reply = QuestionReply::where('id',$id)->first();
         $reply->delete();
-        return Redirect::tokenRedirect('question.request', ['notice' => 'Deleted Successfully']);
+        return Redirect::tokenRedirect('question.view', ['id' => $id,'notice' => 'Deleted Successfully']);
     }
     public function QuestionVerify($id){
         $question = Question::where('id',$id)->first();
@@ -113,18 +113,18 @@ class QuestionController extends Controller
             $question->verify_status = 'verified';
         }
         $question->save();
-        return Redirect::tokenRedirect('question.request', ['notice' => 'Status has been changed Successfully']);
+        return Redirect::tokenRedirect('question.view', ['id' => $id,'notice' => 'Status has been changed Successfully']);
     }
     public function QuestionDelete($id){
         $review = Question::where('id',$id)->first();
         $review->status = 'rejected';
         $review->save();
-        return Redirect::tokenRedirect('question.request', ['notice' => 'Question Rejected  Successfully']);
+        return Redirect::tokenRedirect('question.view', ['id' => $id,'notice' => 'Question Rejected  Successfully']);
     }
 //    public function AppendQuestions(Request $request){
 //        $shop = User::where('name',$request->shop_name)->first();
 //        $questions_publish  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->get();
-//        $questions_pagination  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->paginate(5);
+//        $questions_pagination  = Question::where('shop_id',$shop- >id)->where('product_id',$request->product_id)->where('status','publish')->latest()->paginate(5);
 //        $total_question = count($questions_publish);
 //        $questions = view('append.questions')->with([
 //            'questions_publish' => $questions_pagination,
