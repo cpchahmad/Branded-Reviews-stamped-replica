@@ -5,7 +5,10 @@
             background-color: #5cb85c !important;
         }
         .badge-danger {
-            background-color: #ffe300 !important;
+            background-color: #fd006b  !important;
+        }
+        .badge-rejected {
+            background-color: orange  !important;
         }
 
         .stars-container {
@@ -223,7 +226,7 @@
                                     badge-danger
                                     @break
                                 @case('rejected')
-                                    badge-danger
+                                    badge-rejected
 @break
                                 @endswitch
                                     "><a href="{{route('review.publish',$review->id)}}" style="color: white;">@if($review->status == 'publish') Publish @elseif($review->status == 'rejected') Rejected @else UnPublish @endif</a></div></td>
