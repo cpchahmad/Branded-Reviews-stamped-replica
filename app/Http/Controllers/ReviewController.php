@@ -164,6 +164,7 @@ class ReviewController extends Controller
         $review->experience = $request->experience;
         if ($request->has('review_status')){
             $review->customer_location = $request->customer_location;
+            $review->country_code = strtolower($request->country_code);
         }else{
             $ip = $request->ip();
             $currentUserInfo = Location::get($ip);
