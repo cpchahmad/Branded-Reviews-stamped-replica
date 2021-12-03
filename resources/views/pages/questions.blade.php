@@ -5,7 +5,10 @@
             background-color: #5cb85c !important;
         }
         .badge-danger {
-            background-color: #ffe300 !important;
+            background-color: orange !important;
+        }
+        .badge-rejected {
+            background-color: #fd006b  !important;
         }
         .daterangepicker .right{
             color: inherit !important;
@@ -111,7 +114,7 @@
                                             badge-danger
 @break
                                         @case('rejected')
-                                            badge-danger
+                                            badge-rejected
 @break
                                         @endswitch
                                             "><a href="{{route('question.publish',$question->id)}}" style="color: white;">@if($question->status == 'publish') Publish @elseif($question->status == 'rejected') Rejected @else UnPublish @endif</a></div></td>
