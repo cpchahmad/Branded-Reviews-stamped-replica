@@ -225,6 +225,9 @@
         #replier_name h4{
             margin-top: 12% !important;
         }
+        .questions_tab_content .search_input{
+            width: 100% !important;
+        }
     }
     .question_review_buttons{
         padding: 22px 0;
