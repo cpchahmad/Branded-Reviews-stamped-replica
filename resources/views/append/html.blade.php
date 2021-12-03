@@ -228,6 +228,9 @@
         .questions_tab_content .search_input{
             width: 100% !important;
         }
+        #user_questions{
+            padding: 0px 0px 0px 0px !important;
+        }
     }
     .question_review_buttons{
         padding: 22px 0;
