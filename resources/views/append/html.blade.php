@@ -198,6 +198,18 @@
         .tt_logix_reviews{
             padding: 10px 12px;
         }
+        .user_pic{
+            width: 20%;
+        }
+        .user_info{
+            width: 60%;
+        }
+        .review_date{
+            width: 20%;
+        }
+        .user_info h3 span{
+            font-size: 14px;
+        }
     }
     .question_review_buttons{
         padding: 22px 0;
