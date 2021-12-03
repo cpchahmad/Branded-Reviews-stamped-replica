@@ -348,7 +348,7 @@
                     $('#review-form').css('display','none');
                 }
             });
-            $('#country_code').change(function (){
+            $('#country').change(function (){
             var text = $('#country_code option:selected').text();
             $('#customer_location').value(text);
             });

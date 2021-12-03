@@ -775,7 +775,7 @@
             $('.delete-item').click(function (){
                 $(this).parents('.parent-div').remove();
             });
-            $('#country_code').change(function (){
+            $('#country').change(function (){
                 var text = $('#country_code option:selected').text();
                 $('#customer_location').value(text);
             });
