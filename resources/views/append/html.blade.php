@@ -2174,7 +2174,7 @@
 
             </div>
             <div style="position: absolute; top: 0; right: 0;">
-                <button type="button" class="btn-close for-overlay">
+                <button type="button" @if(isset($display)) style="background-color: {{$display->button_bg}}" @endif class="btn-close for-overlay">
                     <span class="icon-cross"></span>
                     <span class="visually-hidden">Close</span>
                 </button>
