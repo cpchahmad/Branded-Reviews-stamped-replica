@@ -60,10 +60,10 @@ class ReviewController extends Controller
         }
         $review->save();
         if ($review->feature == 'unfeatured'){
-        return Redirect::tokenRedirect('review.request', ['notice' => 'Review UnFeatured Successfully']);
+        return Redirect::tokenRedirect('review.view', ['id' => $id,'notice' => 'Review UnFeatured Successfully']);
         }
         if ($review->feature == 'featured'){
-            return Redirect::tokenRedirect('review.request', ['notice' => 'Review Featured Successfully']);
+            return Redirect::tokenRedirect('review.view', ['id' => $id,'notice' => 'Review Featured Successfully']);
         }
     }
     public function ReviewPending($id){
@@ -78,10 +78,10 @@ class ReviewController extends Controller
         }
         $review->save();
         if ($review->pending_status == 'pending'){
-            return Redirect::tokenRedirect('review.request', ['notice' => 'Review pending Successfully']);
+            return Redirect::tokenRedirect('review.view', ['id' => $id,'notice' => 'Review pending Successfully']);
         }
         if ($review->pending_status == 'unpending'){
-            return Redirect::tokenRedirect('review.request', ['notice' => 'Review Activated Successfully']);
+            return Redirect::tokenRedirect('review.view', ['id' => $id,'notice' => 'Review Activated Successfully']);
         }
     }
     public function ReviewPublish($id){
@@ -118,7 +118,7 @@ class ReviewController extends Controller
             $review->verify_status = 'verify';
         }
         $review->save();
-            return Redirect::tokenRedirect('review.request', ['notice' => 'Status has been changed Successfully']);
+            return Redirect::tokenRedirect('review.view', ['id' => $id,'notice' => 'Status has been changed Successfully']);
     }
     public function ReviewArvhive($id){
         $review = Review::where('id',$id)->first();
@@ -137,10 +137,10 @@ class ReviewController extends Controller
         $review->save();
 
         if ($review->archive_status == 'archive'){
-            return Redirect::tokenRedirect('review.request', ['notice' => 'Review Archived Successfully']);
+            return Redirect::tokenRedirect('review.view', ['id' => $id,'notice' => 'Review Archived Successfully']);
         }
         if ($review->archive_status == 'unarchive'){
-            return Redirect::tokenRedirect('review.request', ['notice' => 'Review UnArchived Successfully']);
+            return Redirect::tokenRedirect('review.view', ['id' => $id,'notice' => 'Review UnArchived Successfully']);
         }
     }
     public function ReviewSubmit(Request $request){
@@ -207,7 +207,7 @@ class ReviewController extends Controller
         $review->real_fake = 'fake';
         $review->created_at = $request->created_at;
         $review->save();
-        return Redirect::tokenRedirect('review.request', ['notice' => 'Review Updated Successfully']);
+        return Redirect::tokenRedirect('review.view', ['id' => $review->id,'notice' => 'Review Updated Successfully']);
     }
     public function ReviewAddPhoto(Request $request){
         if ($request->hasFile('image')) {
@@ -220,7 +220,7 @@ class ReviewController extends Controller
             $review_media->review_media = $filename;
             $review_media->save();
         }
-        return Redirect::tokenRedirect('review.request', ['notice' => 'Photo added Successfully']);
+        return Redirect::tokenRedirect('review.view', ['id' => $request->review_id,'notice' => 'Photo added Successfully']);
     }
     public function UpdatePhotos(Request $request){
         $photos = ReviewMedia::where('review_id',$request->review_id)->get();
@@ -235,7 +235,7 @@ class ReviewController extends Controller
             }
             $photos_update = ReviewMedia::whereIn('id', $photo_ids)->delete();
         }
-        return Redirect::tokenRedirect('review.request', ['notice' => 'Photos updated Successfully']);
+        return Redirect::tokenRedirect('review.view', ['id' => $request->review_id,'notice' => 'Photos updated Successfully']);
     }
 
     public function ReviewReply(Request $request){
@@ -249,13 +249,13 @@ class ReviewController extends Controller
         $reply->message = $request->message;
         $reply->store_name = ucfirst($store_name[0]);
         $reply->save();
-        return Redirect::tokenRedirect('review.request', ['notice' => 'Replied Successfully']);
+        return Redirect::tokenRedirect('review.view', ['id' => $request->review_id,'notice' => 'Replied Successfully']);
     }
 
     public function ReplyDelete ($id){
         $reply = ReviewReply::where('id',$id)->first();
         $reply->delete();
-        return Redirect::tokenRedirect('review.request', ['notice' => 'Deleted Successfully']);
+        return Redirect::tokenRedirect('review.view', ['id' => $reply->review_id,'notice' => 'Deleted Successfully']);
     }
     public function ReviewDelete($id){
         $review = Review::where('id',$id)->first();
