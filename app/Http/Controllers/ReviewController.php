@@ -106,7 +106,7 @@ class ReviewController extends Controller
 //        if ($review->status == 'rejected'){
 //            return Redirect::tokenRedirect('review.request', ['notice' => 'Review Rejected Successfully']);
 //        }
-            return Redirect::back();
+            return \redirect()->back();
     }
     public function ReviewVerify($id){
         $review = Review::where('id',$id)->first();
