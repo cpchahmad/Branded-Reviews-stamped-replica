@@ -1433,7 +1433,7 @@
                                     <div class="user_info" id="user_info">
                                         <h3>{{ucwords($review->name)}}<span>@if($review->verify_status == 'veified') Verified Buyer @endif</span></h3>
                                         <p>
-                                            <i class="flag-icon flag-icon-sun" style="vertical-align: middle;line-height: unset;"></i>
+                                            <i class="flag flag-pk"></i>
                                             {{$review->customer_location}}
                                         </p>
                                         <div>
