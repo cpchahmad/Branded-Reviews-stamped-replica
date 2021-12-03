@@ -1,4 +1,4 @@
-<nav class="navbar  navbar-expand p-0">
+<nav class=" p-0 navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand text-center col-xs-12 col-md-3 col-lg-2 mr-0" href="#">         <img src="{{asset('polished-logo.png')}}" alt="logo" width="42px">              Stamped</a>
     <button class="btn btn-link d-block d-md-none" data-toggle="collapse" data-target="#sidebar-nav" role="button">
         <span class="oi oi-menu"></span>
