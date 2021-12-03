@@ -174,7 +174,7 @@ $("#questions_tab_content").css("display", "none");
 $("#reviews_tab_content").css("display", "block");
 $(".reviews_tab").addClass("active_tab");
 $(".questions_tab").removeClass("active_tab");
-$(".reviews_tab").removeAttr('style');
+$(".questions_tab").removeAttr('style');
 // $(".write_a_review").css("display", "block");
 $(".write_a_review").toggle();
 });
@@ -226,6 +226,7 @@ var next_url = data.paginate['links'][total - 1]['url'] + '&shop_name=' + name +
 
 //              $('#next').attr('data-page',next_url);
 $("#br_reviews_widget_wrapper").html(data.html);
+console.log(data.html);
 $(document).find('.stamped-pagination').empty();
 var total = $(data.paginate['links']).length;
 var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
@@ -322,6 +323,7 @@ url: base_url + "get-setting?shop_name=" + name,
 type: 'GET',
 success: function(data) {
 if (data.setting != 'NoSetting') {
+console.log(data.setting['bar_filled']);
 $("head").append('<style> .tt_logix_reviews_r_no .fa-star{ color: ' + data.setting['unfilled_stars'] + "!important" + ' } #rating_stars .checked{ color: ' + data.setting['stars'] + "!important" + ' } .user_info .fa-star{color:' + data.setting['unfilled_stars'] + "!important" + '} #user_info .checked{color:' + data.setting['stars'] + "!important" + '} #main-body{color:' + data.setting['text'] + "!important" + '} #user_pic{background-color:' + data.setting['circle_background'] + "!important" + '} #user_pic_inner h3{color:' + data.setting['circle_text'] + "!important" + '} #review_reply{border-left:5px solid' + data.setting['reply_border'] + "!important" + '} #user_info h3{color:' + data.setting['text'] + "!important" + '} #replier_name h4{color:' + data.setting['text'] + "!important" + '} .review_progress_1 .side .fa-star{color:' + data.setting['filled_stars'] + "!important" + '} .bar-container{background-color:' + data.setting['bar_unfilled'] + "!important" + '} .bar-5{background-color:' + data.setting['bar_filled'] + "!important" + '} .bar-4{background-color:' + data.setting['bar_filled'] + "!important" + '} .bar-3{background-color:' + data.setting['bar_filled'] + "!important" + '} .bar-2{background-color:' + data.setting['bar_filled'] + "!important" + '} .bar-1{background-color:' + data.setting['bar_filled'] + "!important" + '}</style>');
 // 									#user_info h3 span{color:' + data.setting['circle_background'] + "!important" + '}
 //               $('.tt_logix_reviews_r_no .fa-star').css('color',data.setting['unfilled_stars']);
