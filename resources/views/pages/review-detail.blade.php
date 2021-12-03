@@ -584,7 +584,7 @@
                     <div  class="card-body">
                         <h6>REPLY</h6>
                         <div class="row mb-2">
-                            <div class="col-md-6 d-flex">
+                            <div class="col-md-6 d-flex" style="justify-content: space-between;">
 {{--                                <img src="{{asset('shirt.jpg')}}" style="border-radius: 50%" width="40px" height="40px">--}}
                                 <div>
                                     <span>{{$review->review_reply->store_name}}</span>
