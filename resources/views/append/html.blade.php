@@ -1663,6 +1663,7 @@
                                     <p>{{$question->question}}</p>
                                 </div>
                                 @if($question->question_reply != null)
+                                    <div class="stamped-icon-comment" style="font-size: 14px;"><i class="fas fa-comment"></i> <span class="stamped-reply-a"><span class="stamped-reply-a-label">Answers</span> (1)</span></div>
                                     <div class="review_reply" id="review_reply">
                                         <div class="replier_info">
                                             <div class="replier_name" id="replier_name">
