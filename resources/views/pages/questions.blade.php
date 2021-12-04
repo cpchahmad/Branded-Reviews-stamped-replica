@@ -60,7 +60,10 @@
                 <div class="form-group">
                         <div class="input-group">
                             <button type="button" class="btn btn-primary filter_by_date mr-1 pl-4 pr-4" data-url="{{route('question.filter')}}">Filter</button>
-                            <button type="button" class="btn btn-secondary clear_filter_data mr-1 pl-4 pr-4">Clear</button>
+                            @if(isset($date_range) || isset($question_status) || isset($product_value) || isset($question_email))
+                                <button type="button" class="btn btn-secondary clear_filter_data mr-1 pl-4 pr-4">Clear</button>
+                            @endif
+
                             <div id="reportrange" style="background: #fff; cursor: pointer; padding: 0px 4px; border: 1px solid #ccc;">
                                 <i class="fa fa-calendar"></i>&nbsp;
                                 <span>@if(isset($date_range)) {{$date_range}} @endif</span> <i class="fa fa-caret-down"></i>

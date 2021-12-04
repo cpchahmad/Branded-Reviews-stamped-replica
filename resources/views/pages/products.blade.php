@@ -20,7 +20,9 @@
                         @sessionToken
                         <div class="input-group">
                             <button type="submit" class="btn btn-primary mr-1 pl-4 pr-4">Filter</button>
-                            <button type="button" class="btn btn-secondary clear_filter_data mr-1 pl-4 pr-4">Clear</button>
+                            @if(isset($product_filter))
+                                <button type="button" class="btn btn-secondary clear_filter_data mr-1 pl-4 pr-4">Clear</button>
+                            @endif
                             <input placeholder="Enter product title" type="text" @if (isset($product_filter)) value="{{$product_filter}}" @endif name="products_filter" id="question_email" class="form-control">
                         </div>
                     </form>
