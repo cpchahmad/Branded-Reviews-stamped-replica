@@ -54,6 +54,9 @@
         flex-wrap: wrap;
         line-height: 0px;
     }
+    .question_review_buttons button:hover{
+        box-shadow: unset;
+    }
     @media (max-width:425px) {
         .tt_logix_reviews_inner{
             text-align: center;
