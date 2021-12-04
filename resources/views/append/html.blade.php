@@ -1128,8 +1128,8 @@
     <div class="tt_logix_reviews">
         <div class="tt_logix_reviews_inner">
             <div class="tt_logix_reviews_r_no">
-                <h1>
-                    <span id="total_rating">{{$total_rating}}</span>
+                <h1 style="display: flex;">
+                    <span id="total_rating" style="margin: 0px;">{{$total_rating}}</span>
 {{--                    <span id="rating_stars">--}}
                          <div class="col-md-6" style="overflow: hidden;">
                                    <span class="stars-container stars-{{($review_value / 5) * 100}}" style="font-size: xx-large;">★★★★★</span>
