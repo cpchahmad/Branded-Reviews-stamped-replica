@@ -16,7 +16,6 @@
     #main-body h3{
         font-family: {{$display->font_family}} !important;
         font-weight: bold;
-        margin-top: 0px;
     }
     @endif
     #main-body button {
@@ -32,6 +31,7 @@
     #main-body h3{
         font-weight: bold;
         margin-bottom: 1px;
+        margin-top: 0px;
     }
     .tt_logix_reviews{
         max-width: 1160px;
