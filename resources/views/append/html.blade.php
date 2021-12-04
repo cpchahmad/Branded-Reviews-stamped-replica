@@ -48,8 +48,10 @@
         font-weight: 100;
         @endif
     }
+
     .replied_text p{
         margin-top: 0%;
+        line-height: 0px;
     }
     .tt_logix_reviews_inner{
         display: flex;
@@ -258,7 +260,7 @@
             display: flex !important;
         }
         #replier_name h4{
-            margin-top: 12% !important;
+            margin-top: 5% !important;
         }
         .questions_tab_content .search_input{
             width: 100% !important;
@@ -465,6 +467,7 @@
         text-align: right;
         color: rgb(68, 68, 68);
     }
+    .replier_info .replier_date p
     @media (max-width:475px) {
         .review_date{
             width: calc(100% - 5px);
@@ -547,6 +550,8 @@
     .replier_info .replier_date p{
         font-size: 14px;
         color: rgb(68, 68, 68);
+        margin-bottom: 1%;
+        margin-top: 2%;
     }
     .questions_tab_content{
         display: none;
