@@ -76,6 +76,9 @@
             width: 100%;
             border: none;
         }
+        .tt_logix_reviews_r_no h1{
+            justify-content: center;
+        }
     }
     .tt_logix_reviews_r_no h1{
         font-size: 38px;
