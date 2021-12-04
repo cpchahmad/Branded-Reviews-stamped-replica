@@ -1130,7 +1130,7 @@
             <div class="tt_logix_reviews_r_no">
                 <h1>
                     <span id="total_rating">{{$total_rating}}</span>
-                    <span id="rating_stars">
+{{--                    <span id="rating_stars">--}}
                          <div class="col-md-6" style="overflow: hidden;">
                                    <span class="stars-container stars-{{($review_value / 5) * 100}}" style="font-size: xx-large;">★★★★★</span>
                          </div>
@@ -1176,7 +1176,7 @@
 {{--                            <i class="fas fa-star checked"></i>--}}
 {{--                            <i class="fas fa-star checked"></i>--}}
 {{--                        @endif--}}
-          </span>
+{{--          </span>--}}
                 </h1>
                 <p class="base_reviews">Based on <span id="base_reviews">{{$total_reviews}}</span> Reviews</p>
             </div>
