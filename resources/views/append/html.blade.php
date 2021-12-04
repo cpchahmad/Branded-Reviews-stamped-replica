@@ -206,6 +206,9 @@
             display: inline;
 
         }
+        .popup {
+            overflow: scroll;
+        }
         .item .slide-image img{
             max-width: 238px !important;
         }
