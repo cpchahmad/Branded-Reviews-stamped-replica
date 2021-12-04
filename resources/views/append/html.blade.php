@@ -51,7 +51,7 @@
 
     .replied_text p{
         margin-top: 0%;
-        line-height: 0px;
+        line-height: unset;
     }
     .tt_logix_reviews_inner{
         display: flex;
