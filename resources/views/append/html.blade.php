@@ -12,10 +12,12 @@
     #main-body{
         font-family: {{$display->font_family}} !important;
     }
+    @if($display->font_family != 'Open Sans')
     #main-body h3{
         font-family: {{$display->font_family}} !important;
         font-weight: bold;
     }
+    @endif
     #main-body button {
         font-family: {{$display->font_family}} !important;
     }
