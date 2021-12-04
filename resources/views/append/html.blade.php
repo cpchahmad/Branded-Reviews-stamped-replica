@@ -268,6 +268,9 @@
         #user_questions{
             padding: 0px 0px 0px 0px !important;
         }
+        .replier_info .replier_date p{
+            margin-top: 6% !important;
+        }
     }
     .question_review_buttons{
         padding: 22px 0;
@@ -467,7 +470,7 @@
         text-align: right;
         color: rgb(68, 68, 68);
     }
-    .replier_info .replier_date p
+
     @media (max-width:475px) {
         .review_date{
             width: calc(100% - 5px);
