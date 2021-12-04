@@ -68,6 +68,9 @@
         border-right: 1px #cecece solid;
         width: 18%;
     }
+    .tt_logix_reviews_r_no h1{
+        display: flex;
+    }
     @media (max-width:767px) {
         .tt_logix_reviews_r_no{
             width: 100%;
@@ -1147,7 +1150,7 @@
     <div class="tt_logix_reviews">
         <div class="tt_logix_reviews_inner">
             <div class="tt_logix_reviews_r_no">
-                <h1 style="display: flex;">
+                <h1>
                     <span id="total_rating" style="margin: 0px;">{{$total_rating}}</span>
                          <div class="col-md-6" style="overflow: hidden;">
                                    <span class="stars-container stars-{{($review_value / 5) * 100}}" style="font-size: xx-large;">★★★★★</span>
