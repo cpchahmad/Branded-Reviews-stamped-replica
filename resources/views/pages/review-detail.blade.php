@@ -696,9 +696,7 @@
                                 <h6>Product</h6>
                             <p>@if(isset($product_title->title)){{$product_title->title}}@endif</p>
 
-                            <span class="d-flex">5<div class="col-md-6" style="overflow: hidden;">
-                                   <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size: xx-large;">★★★★★</span>
-                               </div>
+                            <span class="d-flex">5 <span class="fa fa-star star checked"></span>
                                 <div class="progress mt-2 mr-2 bg-danger" style="width: 50%; background-color: #f4f6f8 !important;">
                                   <div @if($total_reviews != 0) class="progress-bar w-{{($five_star / $total_reviews) * 100}}" @else class="progress-bar w-0" @endif style="background-color: deepskyblue; !important;" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
