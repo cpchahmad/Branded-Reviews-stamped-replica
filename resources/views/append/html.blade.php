@@ -1369,6 +1369,15 @@
 
 
                             <div class="review_2">
+                                @if($review->review_rating == null)
+                                    <div class="col-md-6" style="overflow: hidden;">
+                                        <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: xx-large;">★★★★★</span>
+                                    </div>
+                                @else
+                                    <div class="col-md-6" style="overflow: hidden;">
+                                        <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size: xx-large;">★★★★★</span>
+                                    </div>
+                                @endif
                                 <div class="review_1_header">
                                     <div class="user_pic" id="user_pic">
                                         <div class="user_pic_inner" id="user_pic_inner">
@@ -1384,15 +1393,7 @@
                                             {{$review->customer_location}}
                                         </p>
                                         <div>
-                                            @if($review->review_rating == 0)
-                                                <div class="col-md-6" style="overflow: hidden;">
-                                                    <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: xx-large;">★★★★★</span>
-                                                </div>
-                                            @else
-                                            <div class="col-md-6" style="overflow: hidden;">
-                                                <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size: xx-large;">★★★★★</span>
-                                            </div>
-                                            @endif
+
 {{--                                            @if($review->review_rating == null)--}}
 {{--                                                <span class="fa fa-star "></span>--}}
 {{--                                                <span class="fa fa-star "></span>--}}
