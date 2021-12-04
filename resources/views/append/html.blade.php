@@ -1378,6 +1378,11 @@
                                         </div>
                                     </div>
                                     <div class="user_info" id="user_info">
+                                        <h3>{{ucwords($review->name)}}<span @if(isset($display)) style="color: {{$display->verify_color}}" @endif>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
+                                        <p>
+                                            <i class="flag flag {{$review->country_code}}"></i>
+                                            {{$review->customer_location}}
+                                        </p>
                                         @if($review->review_rating == null)
                                             <div class="col-md-6" style="overflow: hidden;">
                                                 <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: xx-large;">★★★★★</span>
@@ -1387,51 +1392,6 @@
                                                 <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size: xx-large;">★★★★★</span>
                                             </div>
                                         @endif
-                                        <h3>{{ucwords($review->name)}}<span @if(isset($display)) style="color: {{$display->verify_color}}" @endif>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
-                                        <p>
-                                            <i class="flag flag {{$review->country_code}}"></i>
-                                            {{$review->customer_location}}
-                                        </p>
-                                        <div>
-
-{{--                                            @if($review->review_rating == null)--}}
-{{--                                                <span class="fa fa-star "></span>--}}
-{{--                                                <span class="fa fa-star "></span>--}}
-{{--                                                <span class="fa fa-star "></span>--}}
-{{--                                                <span class="fa fa-star "></span>--}}
-{{--                                                <span class="fa fa-star "></span>--}}
-{{--                                            @elseif($review->review_rating == 1)--}}
-{{--                                                <span class="fa fa-star checked"></span>--}}
-{{--                                                <span class="fa fa-star "></span>--}}
-{{--                                                <span class="fa fa-star "></span>--}}
-{{--                                                <span class="fa fa-star "></span>--}}
-{{--                                                <span class="fa fa-star "></span>--}}
-{{--                                            @elseif($review->review_rating == 2)--}}
-{{--                                                <span class="fa fa-star checked"></span>--}}
-{{--                                                <span class="fa fa-star checked"></span>--}}
-{{--                                                <span class="fa fa-star "></span>--}}
-{{--                                                <span class="fa fa-star "></span>--}}
-{{--                                                <span class="fa fa-star "></span>--}}
-{{--                                            @elseif($review->review_rating == 3)--}}
-{{--                                                <span class="fa fa-star checked"></span>--}}
-{{--                                                <span class="fa fa-star checked"></span>--}}
-{{--                                                <span class="fa fa-star checked"></span>--}}
-{{--                                                <span class="fa fa-star "></span>--}}
-{{--                                                <span class="fa fa-star "></span>--}}
-{{--                                            @elseif($review->review_rating == 4)--}}
-{{--                                                <span class="fa fa-star checked"></span>--}}
-{{--                                                <span class="fa fa-star checked"></span>--}}
-{{--                                                <span class="fa fa-star checked"></span>--}}
-{{--                                                <span class="fa fa-star checked"></span>--}}
-{{--                                                <span class="fa fa-star "></span>--}}
-{{--                                            @elseif($review->review_rating == 5)--}}
-{{--                                                <span class="fa fa-star checked"></span>--}}
-{{--                                                <span class="fa fa-star checked"></span>--}}
-{{--                                                <span class="fa fa-star checked"></span>--}}
-{{--                                                <span class="fa fa-star checked"></span>--}}
-{{--                                                <span class="fa fa-star checked"></span>--}}
-{{--                                            @endif--}}
-                                        </div>
                                     </div>
                                     <div class="review_date">
 
