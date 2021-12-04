@@ -202,7 +202,7 @@
             float: none;
         }
         #review_images a{
-            pointer-events: none;
+            /*pointer-events: none;*/
         }
         .tt_logix_reviews{
             padding: 10px 12px;
