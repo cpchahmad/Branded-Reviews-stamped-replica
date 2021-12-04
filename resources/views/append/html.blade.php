@@ -1377,16 +1377,16 @@
                                             </h3>
                                         </div>
                                     </div>
-                                    @if($review->review_rating == null)
-                                        <div class="col-md-6" style="overflow: hidden;">
-                                            <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: xx-large;">★★★★★</span>
-                                        </div>
-                                    @else
-                                        <div class="col-md-6" style="overflow: hidden;">
-                                            <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size: xx-large;">★★★★★</span>
-                                        </div>
-                                    @endif
                                     <div class="user_info" id="user_info">
+                                        @if($review->review_rating == null)
+                                            <div class="col-md-6" style="overflow: hidden;">
+                                                <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: xx-large;">★★★★★</span>
+                                            </div>
+                                        @else
+                                            <div class="col-md-6" style="overflow: hidden;">
+                                                <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size: xx-large;">★★★★★</span>
+                                            </div>
+                                        @endif
                                         <h3>{{ucwords($review->name)}}<span @if(isset($display)) style="color: {{$display->verify_color}}" @endif>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                                         <p>
                                             <i class="flag flag {{$review->country_code}}"></i>
