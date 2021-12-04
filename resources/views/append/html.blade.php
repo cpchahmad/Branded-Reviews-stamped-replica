@@ -16,6 +16,7 @@
     #main-body h3{
         font-family: {{$display->font_family}} !important;
         font-weight: bold;
+        margin-top: 0px;
     }
     @endif
     #main-body button {
@@ -35,7 +36,6 @@
     .tt_logix_reviews{
         max-width: 1160px;
         margin: 0 auto;
-        padding: 0;
         padding: 10px;
     }
     .tt_logix_reviews p{
@@ -513,6 +513,7 @@
     #replier_name h4{
         font-weight: bold;
         margin-bottom: 0%;
+
     }
     @media (max-width:425px) {
         .review_footer .like_dislike{
