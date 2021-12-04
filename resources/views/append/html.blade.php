@@ -201,8 +201,20 @@
             width: 90%;
             float: none;
         }
-        #review_images a{
-            /*pointer-events: none;*/
+
+        .popup .item{
+            display: inline;
+
+        }
+        .item .slide-image img{
+            max-width: 238px;
+        }
+        .item .image-content .product-details .review_date{
+            width: 48% !important;
+            margin-top: -2%;
+        }
+        .item .image-content .product-details .review_date p{
+            margin-left: 34%;
         }
         .tt_logix_reviews{
             padding: 10px 12px;
