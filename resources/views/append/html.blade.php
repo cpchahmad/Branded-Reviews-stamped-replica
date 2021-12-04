@@ -516,7 +516,7 @@
     #replier_name h4{
         font-weight: bold;
         margin-bottom: 0%;
-
+        margin-top: 0%;
     }
     @media (max-width:425px) {
         .review_footer .like_dislike{
