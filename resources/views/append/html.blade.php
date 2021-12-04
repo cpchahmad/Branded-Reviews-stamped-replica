@@ -207,14 +207,14 @@
 
         }
         .item .slide-image img{
-            max-width: 238px;
+            max-width: 238px !important;
         }
         .item .image-content .product-details .review_date{
             width: 48% !important;
             margin-top: -2%;
         }
         .item .image-content .product-details .review_date p{
-            margin-left: 34%;
+            /*margin-left: 34%;*/
         }
         .tt_logix_reviews{
             padding: 10px 12px;
