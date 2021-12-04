@@ -467,7 +467,7 @@
         text-align: right;
         color: rgb(68, 68, 68);
     }
-    .replier_info .replier_date p
+
     @media (max-width:475px) {
         .review_date{
             width: calc(100% - 5px);
@@ -550,8 +550,8 @@
     .replier_info .replier_date p{
         font-size: 14px;
         color: rgb(68, 68, 68);
-        margin-bottom: 1%;
-        margin-top: 2%;
+        margin-bottom: 2%;
+        margin-top: 6%;
     }
     .questions_tab_content{
         display: none;
