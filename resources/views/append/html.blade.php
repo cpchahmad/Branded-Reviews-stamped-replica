@@ -2021,6 +2021,11 @@
     @media screen and (max-width: 1000px) {
         .popup {
             width: 80%;
+            top: 48%;
+            height: 430px;
+        }
+        .item .slide-image img{
+            max-width: 290px;
         }
     }
 
