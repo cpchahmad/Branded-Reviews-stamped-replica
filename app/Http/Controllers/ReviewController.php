@@ -514,6 +514,57 @@ class ReviewController extends Controller
         ]);
     }
     public function FilterOnStars(Request $request){
-        dd($request->all());
+        $shop = User::where('name',$request->shop_name)->first();
+        if ($request->data == 5 ) {
+            $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->where('review_rating',5)->latest()->get();
+            $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->where('review_rating',5)->latest()->get();
+            $reviews = view('append.reviews')->with([
+                'reviews_featured' => $reviews_pagi_fea,
+                'reviews_publish' => $reviews_pagi_pub
+            ])->render();
+        }
+        if ($request->data == 4) {
+            $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->where('review_rating',4)->latest()->get();
+            $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->where('review_rating',4)->latest()->get();
+            $reviews = view('append.reviews')->with([
+                'reviews_featured' => $reviews_pagi_fea,
+                'reviews_publish' => $reviews_pagi_pub
+            ])->render();
+        }
+        if ($request->data == 3) {
+            $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->where('review_rating',3)->get();
+            $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->where('review_rating',3)->get();
+            $reviews = view('append.reviews')->with([
+                'reviews_featured' => $reviews_pagi_fea,
+                'reviews_publish' => $reviews_pagi_pub
+            ])->render();
+        }
+        if ($request->data == 2) {
+            $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->where('review_rating',2)->get();
+            $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->where('review_rating',2)->get();
+            $reviews = view('append.reviews')->with([
+                'reviews_featured' => $reviews_pagi_fea,
+                'reviews_publish' => $reviews_pagi_pub
+            ])->render();
+        }
+        if ($request->data == 1) {
+            $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->where('review_rating',1)->get();
+            $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->where('review_rating',1)->get();
+            $reviews = view('append.reviews')->with([
+                'reviews_featured' => $reviews_pagi_fea,
+                'reviews_publish' => $reviews_pagi_pub
+            ])->render();
+        }
+
+        if ($reviews_pagi_fea || $reviews_pagi_pub != null){
+            return response([
+                'paginate'=>json_decode(json_encode($reviews_pagi_pub)),
+                'reviews'=>$reviews,
+            ]);
+        }else{
+            return response([
+                'reviews'=>'no reviews',
+            ]);
+        }
     }
 }
