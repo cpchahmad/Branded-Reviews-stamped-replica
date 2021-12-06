@@ -19,14 +19,20 @@
 
             <div class="review_2">
                 <div class="review_1_header">
-                    <div class="user_pic" id="user_pic">
-                        <div class="user_pic_inner" id="user_pic_inner">
-                            <h3>
-                                {{$acronym}}
-                            </h3>
+                    <div style="position: relative">
+                        <div class="user_pic" id="user_pic">
+                            <div class="user_pic_inner" id="user_pic_inner">
+                                <h3>
+                                    {{$acronym}}
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="sheild-badge">
+                            @if($review->verify_status == 'verified')
+                                <i class="fas fa-shield-check"></i>
+                            @endif
                         </div>
                     </div>
-                    <img src="{{asset('polished/badge2.png')}}" width="10px" height="10px">
                     <div class="user_info" id="user_info">
                         <h3>{{ucwords($review->name)}}<span>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                         <p>
@@ -174,14 +180,20 @@
                 @endphp
                 <div class="review_2">
                     <div class="review_1_header">
-                        <div class="user_pic" id="user_pic">
-                            <div class="user_pic_inner" id="user_pic_inner">
-                                <h3>
-                                    {{$acronym}}
-                                </h3>
+                        <div style="position: relative">
+                            <div class="user_pic" id="user_pic">
+                                <div class="user_pic_inner" id="user_pic_inner">
+                                    <h3>
+                                        {{$acronym}}
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="sheild-badge">
+                                @if($review->verify_status == 'verified')
+                                    <i class="fas fa-shield-check"></i>
+                                @endif
                             </div>
                         </div>
-                        <img src="{{asset('polished/badge2.png')}}" width="10px" height="10px">
                         <div class="user_info" id="user_info">
                             <h3>{{ucwords($review->name)}}<span>@if($review->verify_status == 'veified') Verified Buyer @endif</span></h3>
                             <p>
