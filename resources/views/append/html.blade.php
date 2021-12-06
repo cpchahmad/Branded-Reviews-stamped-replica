@@ -1560,7 +1560,7 @@
                                                 </h3>
                                             </div>
                                         </div>
-                                        <div class="sheid-badge">
+                                        <div class="sheild-badge">
                                             <i class="fas fa-shield-check"></i>
                                         </div>
                                     </div>
