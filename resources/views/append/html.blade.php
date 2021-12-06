@@ -449,7 +449,7 @@
         font-weight: bold;
     }
     .user_info{
-        width: 58%;
+        width: 50%;
         display: inline-block;
         vertical-align: middle;
         padding: 0 15px;
