@@ -964,7 +964,11 @@
         right: -8px;
         top: 30px;
         font-size: 21px;
+        @if(isset($display))
+        color: {{$display->verify_color}};
+    @else
         color: #1cc286;
+    @endif
     }
 
     .stamped-pagination a:not(.link):not(.btn) {
@@ -1173,7 +1177,7 @@
         <div class="tt_logix_reviews_inner">
             <div class="tt_logix_reviews_r_no">
                 <h1>
-                    <span id="total_rating" style="margin: 0px;">{{$total_rating}}</span>
+                    <span id="total_rating" style="margin: 0px; margin-right: 7px;">{{$total_rating}}</span>
                          <div class="col-md-6" style="overflow: hidden;">
                                    <span class="stars-container stars-{{($review_value / 5) * 100}}" style="font-size: xx-large;">★★★★★</span>
                          </div>
@@ -1432,7 +1436,9 @@
                                             </div>
                                         </div>
                                         <div class="sheild-badge">
+                                            @if($review->verify_status == 'verified')
                                             <i class="fas fa-shield-check"></i>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="user_info" id="user_info">
