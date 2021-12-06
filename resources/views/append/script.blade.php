@@ -588,6 +588,24 @@ $('.stamped-question').append("<li class='question_page'><a href='javascript:voi
 $('#review_pagination').css('display', 'block');
 });
 
+$(document).on('click','.review_progress_1',function(){
+var data = $(this).data('value');
+$.ajax({
+url: base_url + "filter-on-stars?product_id=" + id + "&shop_name=" + name + "&data=" + data,
+type: 'GET',
+success: function(data) {
+console.log('ok');
+//                                 if (data.questions != 'no questions') {
+//                                     $('#user_questions').html(data.questions);
+//                                 } else {
+//                                     console.log('there are no questions for this filter')
+//                                 }
+
+//                                 $('#clear_filter').css('display', 'block');
+//                                 $('#question_pagination').css('display', 'none');
+}
+});
+});
 
 $(document).on("keypress", "#question_search", function() {
 if (event.which == 13) {
