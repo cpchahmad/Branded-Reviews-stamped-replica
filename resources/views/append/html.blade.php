@@ -1423,7 +1423,9 @@
                                             </h3>
                                         </div>
                                     </div>
+                                    <div>
                                     <i class="fas fa-shield-check"></i>
+                                    </div>
                                     <div class="user_info" id="user_info">
                                         <h3>{{ucwords($review->name)}}<span @if(isset($display)) style="color: {{$display->verify_color}}" @endif>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                                         <p>
@@ -1548,7 +1550,9 @@
                                             </h3>
                                         </div>
                                     </div>
-                                    <i class="fas fa-shield-check"></i>
+                                    <div>
+                                        <i class="fas fa-shield-check"></i>
+                                    </div>
                                     <div class="user_info" id="user_info">
                                         <h3>{{ucwords($review->name)}}<span @if(isset($display)) style="color: {{$display->verify_color}}" @endif>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                                         <p>
