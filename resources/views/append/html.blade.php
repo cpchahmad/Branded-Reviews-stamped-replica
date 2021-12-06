@@ -271,6 +271,17 @@
         .replier_info .replier_date p{
             margin-top: 6% !important;
         }
+        .tt_logix_reviews p{
+            margin-top: 20px !important;
+            margin-bottom: 30px !important;
+        }
+        .write_a_review form{
+            padding: 0 18px;
+        }
+        .write_a_review input[type=text], textarea{
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
     }
 
     .question_review_buttons{
@@ -414,7 +425,7 @@
         flex-wrap: wrap;
     }
     .user_pic{
-        width: 60px;
+        width: 60px !important;
         margin: 0;
         height: 60px;
         position: relative;
@@ -438,7 +449,7 @@
         font-weight: bold;
     }
     .user_info{
-        width: 50%;
+        width: 58%;
         display: inline-block;
         vertical-align: middle;
         padding: 0 15px;
