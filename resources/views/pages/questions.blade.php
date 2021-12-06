@@ -167,12 +167,12 @@
                 border-radius: 27px;
             }
         </style>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <div class="container">
             <div class="row">
                 <div class="profile-header-container">
                     <div class="profile-header-img">
                         <img class="img-circle" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" />
-                        <!-- badge -->
                         <div class="rank-label-container">
                             <span class="label label-default rank-label">100 puntos</span>
                         </div>
