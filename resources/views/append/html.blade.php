@@ -1171,6 +1171,27 @@
     .stars-99:after { width: 99%; }
     .stars-100:after { width: 100%; }
 
+    .input-container {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .icon {
+        padding: 10px;
+        background: dodgerblue;
+        color: white;
+        min-width: 50px;
+        text-align: center;
+    }
+
+    .input-field {
+        width: 100%;
+        padding: 10px;
+        outline: none;
+    }
+
 </style>
 <div id="main-body">
     <div class="tt_logix_reviews">
@@ -1395,11 +1416,9 @@
                     <div class="question_review_buttons" style="padding:0px;">
                         <button id="clear_review_filter" style="float:left; display:none;"><i class="fas fa-times"></i> Clear Filter</button>
                     </div>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <span class="input-group-text" id="basic-addon2">@example.com</span>
-                        </div>
+                    <div class="input-container">
+                        <input class="input-field" type="text" placeholder="Username" name="usrnm">
+                        <i class="fa fa-user icon"></i>
                     </div>
                     <select name="sort_review" @if($real_reviews == 0) style="display: none" @endif id="sort_review">
                         <option value="sort" selected>Sort</option>
