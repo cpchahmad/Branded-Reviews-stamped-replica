@@ -423,6 +423,12 @@
         font-size: 12px;
         -webkit-appearance: none;
         border: 1px solid black;
+
+    }
+    .dropdown_review select:focus-visible{
+        outline: none;
+        outline-offset: none;
+        box-shadow: none;
     }
 
     .user_reviews{
