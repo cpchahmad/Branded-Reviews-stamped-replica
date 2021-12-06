@@ -308,5 +308,5 @@
             @endforeach
         @endif
         @if (count($reviews_featured) == 0 && count($reviews_publish) == 0)
-            <p>This Product has No Publish Reviews yet!</p>
+            <p>There are No Publish Reviews yet!</p>
         @endif

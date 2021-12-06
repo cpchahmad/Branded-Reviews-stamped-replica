@@ -1173,6 +1173,7 @@
                 <p class="base_reviews">Based on <span id="base_reviews">{{$total_reviews}}</span> Reviews</p>
             </div>
             <div class="review_progress">
+                <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
                 <div class="review_progress_1" data-value="5">
                     <div class="side first">
                             <span class="fa fa-star"></span>
@@ -1190,6 +1191,8 @@
                         <div id="five_star">&ensp;({{$five_star}})</div>
                     </div>
                 </div>
+                </a>
+                <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
                 <div class="review_progress_1" data-value="4">
                     <div class="side">
                             <span class="fa fa-star"></span>
@@ -1207,6 +1210,8 @@
                         <div id="four_star">&ensp;({{$four_star}})</div>
                     </div>
                 </div>
+                </a>
+                <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
                 <div class="review_progress_1" data-value="3">
                     <div class="side">
                             <span class="fa fa-star"></span>
@@ -1224,6 +1229,8 @@
                         <div id="three_star">&ensp;({{$three_star}})</div>
                     </div>
                 </div>
+                    </a>
+                <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
                 <div class="review_progress_1" data-value="2">
                     <div class="side">
                             <span class="fa fa-star"></span>
@@ -1241,6 +1248,8 @@
                         <div id="two_star">&ensp;({{$two_star}})</div>
                     </div>
                 </div>
+                </a>
+                <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
                 <div class="review_progress_1" data-value="1">
                     <div class="side">
                             <span class="fa fa-star"></span>
@@ -1258,6 +1267,7 @@
                         <div id="one_star">&ensp;({{$one_star}})</div>
                     </div>
                 </div>
+                </a>
             </div>
             <div class="image_popups_list quick-view-controller" style="display: flex;" id="review_images">
                 @php
