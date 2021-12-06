@@ -509,7 +509,7 @@
     .review_footer{
         display: inline-block;
         width: 100%;
-        /*padding-bottom: 2%;*/
+        padding-bottom: 1%;
     }
     .review_footer .share_review{
         display: inline-block;
