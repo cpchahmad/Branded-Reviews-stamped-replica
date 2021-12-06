@@ -238,9 +238,9 @@
         .user_pic{
             width: 20% !important;
         }
-        .user_info{
-            width: 60% !important;
-        }
+        /*.user_info{*/
+        /*    width: 60% !important;*/
+        /*}*/
         .review_date{
             width: 20% !important;
         }
@@ -281,6 +281,9 @@
         .write_a_review input[type=text], textarea{
             margin-top: 0 !important;
             margin-bottom: 0 !important;
+        }
+        .review_date p{
+            margin-top: 0px;
         }
     }
 
