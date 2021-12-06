@@ -491,7 +491,7 @@
     .review_footer{
         display: inline-block;
         width: 100%;
-        padding-bottom: 2%;
+        /*padding-bottom: 2%;*/
     }
     .review_footer .share_review{
         display: inline-block;
@@ -513,6 +513,7 @@
     .review_footer .share_review a{
         text-decoration: none;
         color: rgb(32, 32, 32);
+        padding-left: 10px;
     }
     .review_footer .like_dislike{
         display: inline-block;
@@ -1531,6 +1532,7 @@
                                     </div>
                                 </div>
                                 @if($review->review_reply != null)
+                                    <div class="stamped-icon-comment" style="font-size: 14px;"><i class="fas fa-comment"></i> <span class="stamped-reply-a"><span class="stamped-reply-a-label">Answers</span> (1)</span></div>
                                     <div class="review_reply" id="review_reply">
                                         <div class="replier_info">
                                             <div class="replier_name" id="replier_name">
@@ -1662,6 +1664,7 @@
                                     </div>
                                 </div>
                                 @if($review->review_reply != null)
+                                    <div class="stamped-icon-comment" style="font-size: 14px;"><i class="fas fa-comment"></i> <span class="stamped-reply-a"><span class="stamped-reply-a-label">Answers</span> (1)</span></div>
                                     <div class="review_reply" id="review_reply">
                                         <div class="replier_info">
                                             <div class="replier_name" id="replier_name">
