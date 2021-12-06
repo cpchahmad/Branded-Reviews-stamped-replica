@@ -959,6 +959,14 @@
 
     }
 
+    .sheild-badge{
+        position: absolute;
+        right: -8px;
+        top: 30px;
+        font-size: 21px;
+        color: #1cc286;
+    }
+
     .stamped-pagination a:not(.link):not(.btn) {
         border: none;
     }
@@ -1415,7 +1423,7 @@
 
                             <div class="review_2">
                                 <div class="review_1_header">
-                                    <div>
+                                    <div style="position: relative">
                                         <div class="user_pic" id="user_pic">
                                             <div class="user_pic_inner" id="user_pic_inner">
                                                 <h3>
@@ -1423,7 +1431,7 @@
                                                 </h3>
                                             </div>
                                         </div>
-                                        <div>
+                                        <div class="sheild-badge">
                                             <i class="fas fa-shield-check"></i>
                                         </div>
                                     </div>
@@ -1544,16 +1552,18 @@
                             @endphp
                             <div class="review_2">
                                 <div class="review_1_header">
-                                    <div class="user_pic" id="user_pic">
-                                        <div class="user_pic_inner" id="user_pic_inner">
-                                            <h3>
-                                                {{$acronym}}
-                                            </h3>
+                                    <div style="position: relative">
+                                        <div class="user_pic" id="user_pic">
+                                            <div class="user_pic_inner" id="user_pic_inner">
+                                                <h3>
+                                                    {{$acronym}}
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="sheid-badge">
+                                            <i class="fas fa-shield-check"></i>
                                         </div>
                                     </div>
-{{--                                    <div>--}}
-{{--                                        <i class="fas fa-shield-check"></i>--}}
-{{--                                    </div>--}}
                                     <div class="user_info" id="user_info">
                                         <h3>{{ucwords($review->name)}}<span @if(isset($display)) style="color: {{$display->verify_color}}" @endif>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                                         <p>
