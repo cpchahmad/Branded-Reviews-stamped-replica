@@ -288,6 +288,9 @@
         .image_popups_list{
             padding: 0 !important;
         }
+        .review_1,.review_2{
+            padding: 3%;
+        }
     }
 
     .question_review_buttons{
@@ -456,7 +459,7 @@
         font-weight: bold;
     }
     .user_info{
-        width: 58%;
+        width: 56%;
         display: inline-block;
         vertical-align: middle;
         padding: 0 15px;
