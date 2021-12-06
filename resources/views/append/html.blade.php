@@ -285,6 +285,9 @@
         .review_date p{
             margin-top: 0px;
         }
+        .image_popups_list{
+            padding: 0 !important;
+        }
     }
 
     .question_review_buttons{
