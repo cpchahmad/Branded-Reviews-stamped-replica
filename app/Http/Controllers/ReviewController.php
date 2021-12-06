@@ -513,4 +513,7 @@ class ReviewController extends Controller
             'popup'=>$popup,
         ]);
     }
+    public function FilterOnStars(Request $request){
+        dd($request->all());
+    }
 }

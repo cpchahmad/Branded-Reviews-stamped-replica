@@ -88,6 +88,7 @@ Route::group(['middleware' => ['verify.shopify']], function () {
     Route::get('get-setting',  [App\Http\Controllers\AdminController::class, 'GetSetting'])->name('get.setting');
     // Filter Reviews
     Route::get('filter-reviews',  [App\Http\Controllers\ReviewController::class, 'FilterReviews'])->name('filter.reviews');
+    Route::get('filter-on-stars',  [App\Http\Controllers\ReviewController::class, 'FilterOnStars'])->name('filter.on.stars');
 
     //Filter Questions
     Route::get('filter-questions',  [App\Http\Controllers\QuestionController::class, 'FilterQuestions'])->name('filter.questions');
@@ -98,7 +99,7 @@ Route::group(['middleware' => ['verify.shopify']], function () {
     // Share twitter
     Route::get('on-twitter',  [App\Http\Controllers\AdminController::class, 'ShareTwitter'])->name('on.twitter');
     // popup
-Route::get('get-popup',  [App\Http\Controllers\ReviewController::class, 'GetPopup'])->name('get.popup');
+    Route::get('get-popup',  [App\Http\Controllers\ReviewController::class, 'GetPopup'])->name('get.popup');
 
     // loadscript
     Route::get('script-js',  [App\Http\Controllers\AdminController::class, 'LoadScript'])->name('script.js');
