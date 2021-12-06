@@ -1573,7 +1573,9 @@
                                             </div>
                                         </div>
                                         <div class="sheild-badge">
-                                            <i class="fas fa-shield-check"></i>
+                                            @if($review->verify_status == 'verified')
+                                                <i class="fas fa-shield-check"></i>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="user_info" id="user_info">
