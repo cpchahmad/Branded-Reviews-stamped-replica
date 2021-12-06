@@ -271,10 +271,10 @@
         .replier_info .replier_date p{
             margin-top: 6% !important;
         }
-        /*.tt_logix_reviews p{*/
-        /*    margin-top: 20px !important;*/
-        /*    margin-bottom: 30px !important;*/
-        /*}*/
+        .base_reviews2{
+            margin-top: 20px !important;
+            margin-bottom: 30px !important;
+        }
         .write_a_review form{
             padding: 0 18px;
         }
@@ -1217,7 +1217,7 @@
                                    <span class="stars-container stars-{{($review_value / 5) * 100}}" style="font-size: xx-large;">★★★★★</span>
                          </div>
                 </h1>
-                <p class="base_reviews">Based on <span id="base_reviews">{{$total_reviews}}</span> Reviews</p>
+                <p class="base_reviews base_reviews2">Based on <span id="base_reviews">{{$total_reviews}}</span> Reviews</p>
             </div>
             <div class="review_progress">
                 <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
