@@ -1181,7 +1181,7 @@
 
     .icon {
         padding: 10px;
-            background: #f8f9fa;
+        background-color: #f8f9fa;
         min-width: 50px;
         text-align: center;
         margin-top: -1px;
