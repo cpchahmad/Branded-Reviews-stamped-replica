@@ -75,15 +75,7 @@
     .tt_logix_reviews_r_no h1{
         display: flex;
     }
-    @media (max-width:767px) {
-        .tt_logix_reviews_r_no{
-            width: 100%;
-            border: none;
-        }
-        .tt_logix_reviews_r_no h1{
-            justify-content: center;
-        }
-    }
+
     .tt_logix_reviews_r_no h1{
         font-size: 38px;
         margin-bottom: 0px;
@@ -122,12 +114,7 @@
     .review_progress_1:hover{
         opacity: 1 !important;
     }
-    @media (max-width:767px) {
-        .review_progress{
-            width: 100%;
-            border: none;
-        }
-    }
+
     .review_progress_1{
         display: flex;
     }
@@ -282,6 +269,30 @@
             margin-top: 0 !important;
             margin-bottom: 0 !important;
         }
+        .review_progress{
+            width: 100%;
+            border: none;
+        }
+        .tt_logix_reviews_r_no{
+            width: 100%;
+            border: none;
+        }
+        .tt_logix_reviews_r_no h1{
+            justify-content: center;
+        }
+        .item .slide-image{
+            max-width: 100%;
+        }
+        .item .image-content{
+            max-width: 100%;
+        }
+        .question_review_buttons{
+            width: 100%;
+            margin-top: 3%;
+        }
+        .question_review_buttons button{
+            float: initial;
+        }
     }
 
     .question_review_buttons{
@@ -337,14 +348,6 @@
         }
     }
 
-    @media (max-width:767px) {
-        .question_review_buttons{
-            width: 100%;
-        }
-        .question_review_buttons button{
-            float: initial;
-        }
-    }
     /* tabs */
     .tabs_view{
         margin-top: 25px;
@@ -843,14 +846,7 @@
     {
         margin: 12px 0 0 0;
     }
-    @media (max-width:767px) {
-        .item .slide-image{
-            max-width: 100%;
-        }
-         .item .image-content{
-            max-width: 100%;
-        }
-    }
+
      .item .image-content .fa-star{
         color: rgb(255, 210, 0);
     }
