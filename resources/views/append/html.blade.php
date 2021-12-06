@@ -349,12 +349,15 @@
     @media (max-width:767px) {
         .question_review_buttons{
             width: 100%;
-            margin-top: 3%;
         }
         .question_review_buttons button{
             float: initial;
         }
+        .question_review_buttons2{
+            margin-top: 3%;
+        }
     }
+
     /* tabs */
     .tabs_view{
         margin-top: 25px;
@@ -1356,7 +1359,7 @@
                 @endif
 
             </div>
-            <div class="question_review_buttons">
+            <div class="question_review_buttons question_review_buttons2">
                 <button id="write_a_review_btn"><i class="far fa-edit"></i>&emsp;Write a Review</button>
                 <button id="ask_a_question_btn"><i class="far fa-comments"></i>&emsp;Ask a Question</button>
             </div>
