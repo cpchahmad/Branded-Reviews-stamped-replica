@@ -1171,26 +1171,26 @@
     .stars-99:after { width: 99%; }
     .stars-100:after { width: 100%; }
 
-    .input-container {
-        display: -ms-flexbox; /* IE10 */
-        display: flex;
-        /*width: 100%;*/
-        /*margin-bottom: 15px;*/
-        float: right;
-    }
+    /*.input-container {*/
+    /*    display: -ms-flexbox; !* IE10 *!*/
+    /*    display: flex;*/
+    /*    !*width: 100%;*!*/
+    /*    !*margin-bottom: 15px;*!*/
+    /*    float: right;*/
+    /*}*/
 
-    .icon {
-        padding: 10px;
-            background: #f8f9fa;
-        min-width: 50px;
-        text-align: center;
-        margin-top: -1px;
-    }
-    .input-field{
-        padding: 8px;
-        margin-top: -1px;
-        padding-right: 24px;
-    }
+    /*.icon {*/
+    /*    padding: 10px;*/
+    /*        background: #f8f9fa;*/
+    /*    min-width: 50px;*/
+    /*    text-align: center;*/
+    /*    margin-top: -1px;*/
+    /*}*/
+    /*.input-field{*/
+    /*    padding: 8px;*/
+    /*    margin-top: -1px;*/
+    /*    padding-right: 24px;*/
+    /*}*/
 
 </style>
 <div id="main-body">
