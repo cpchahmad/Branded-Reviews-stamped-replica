@@ -394,11 +394,11 @@
     .dropdown_review select{
         position: relative;
         float: right;
-        padding-right: 60px !important;
+        padding-right: 50px !important;
         padding: 6px;
         font-size: 12px;
         -webkit-appearance: none;
-        border: 1px solid #f8f9fa;
+        border: 1px solid black;
     }
 
     .user_reviews{
@@ -1183,12 +1183,14 @@
     }
 
     .icon {
-        padding: 10px;
+        padding: 11px;
         background-color: #f8f9fa;
-        min-width: 50px;
+        min-width: 44px;
         text-align: center;
         margin-top: -1px;
-        border: 1px solid #f8f9fa;
+        border: 1px solid black;
+        border-left: none;
+        font-size: 11px;
     }
 
 
