@@ -1417,17 +1417,17 @@
                         <button id="clear_review_filter" style="float:left; display:none;"><i class="fas fa-times"></i> Clear Filter</button>
                     </div>
                     <div class="input-container">
-                        <input class="input-field" type="text" placeholder="Username" name="usrnm">
+{{--                        <input class="input-field" type="text" placeholder="Username" name="usrnm">--}}
+                        <select name="sort_review" @if($real_reviews == 0) style="display: none" @endif id="sort_review">
+                            <option value="sort" selected class="input-field">Sort</option>
+                            <!--            <option value="saab">With Photos</option> -->
+                            <option value="most_recent">Most Recent</option>
+                            <option value="heighest_rating">Hightest Rating</option>
+                            <option value="lowest_rating">lowest Rating</option>
+                            <option value="most_helpful">Most Helpful</option>
+                        </select>
                         <i class="fa fa-user icon"></i>
                     </div>
-                    <select name="sort_review" @if($real_reviews == 0) style="display: none" @endif id="sort_review">
-                        <option value="sort" selected>Sort</option>
-                        <!--            <option value="saab">With Photos</option> -->
-                        <option value="most_recent">Most Recent</option>
-                        <option value="heighest_rating">Hightest Rating</option>
-                        <option value="lowest_rating">lowest Rating</option>
-                        <option value="most_helpful">Most Helpful</option>
-                    </select>
                 </div>
                 <div class="user_reviews" id="user_reviews">
 
