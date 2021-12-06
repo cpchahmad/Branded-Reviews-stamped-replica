@@ -167,7 +167,6 @@
                 border-radius: 27px;
             }
         </style>
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <div class="container">
             <div class="row">
                 <div class="profile-header-container">
