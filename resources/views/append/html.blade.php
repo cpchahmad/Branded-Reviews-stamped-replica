@@ -449,7 +449,8 @@
     .user_info h3 span{
         font-size: 18px;
         color: green;
-        font-weight: 600;
+        font-weight: 100;
+        margin-left: 7px;
     }
     .user_info h3{
         margin: 10px 0;
