@@ -394,10 +394,11 @@
     .dropdown_review select{
         position: relative;
         float: right;
-        padding-right: 60px;
+        padding-right: 60px !important;
         padding: 6px;
         font-size: 12px;
         -webkit-appearance: none;
+        border: 1px solid #f8f9fa;
     }
 
     .user_reviews{
@@ -1187,12 +1188,9 @@
         min-width: 50px;
         text-align: center;
         margin-top: -1px;
+        border: 1px solid #f8f9fa;
     }
-    .input-field{
-        padding: 8px;
-        margin-top: -1px;
-        padding-right: 24px;
-    }
+
 
 </style>
 <div id="main-body">
