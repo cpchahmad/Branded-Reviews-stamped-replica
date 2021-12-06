@@ -460,9 +460,9 @@
         line-height: 5px;
     }
     @media (max-width:475px) {
-        .user_info{
-            width: calc(100% - 60px);
-        }
+        /*.user_info{*/
+        /*    width: calc(100% - 60px);*/
+        /*}*/
     }
     .user_info h3 span{
         font-size: 18px;
