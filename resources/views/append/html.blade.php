@@ -2,7 +2,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amatic+SC&family=Bangers&family=Caveat&family=Courgette&family=Indie+Flower&family=Kaushan+Script&family=Lobster&family=Lobster+Two&family=Montserrat:wght@100&family=Open+Sans:wght@300&family=Orbitron&family=Pacifico&family=Patrick+Hand&family=Rajdhani:wght@300&family=Raleway:wght@100&family=Righteous&family=Roboto:wght@100&family=Sacramento&family=Satisfy&family=Helvetica&family=Helvetica Neue&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/mdb5/3.10.1/compiled.min.css">
+{{--    <link rel="stylesheet" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/mdb5/3.10.1/compiled.min.css">--}}
     <link rel="stylesheet" href="{{ asset('flags.css')}}">
 </head>
 <style>
@@ -1171,6 +1171,27 @@
     .stars-99:after { width: 99%; }
     .stars-100:after { width: 100%; }
 
+    .input-container {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        /*width: 100%;*/
+        /*margin-bottom: 15px;*/
+        float: right;
+    }
+
+    .icon {
+        padding: 10px;
+            background: #f8f9fa;
+        min-width: 50px;
+        text-align: center;
+        margin-top: -1px;
+    }
+    .input-field{
+        padding: 8px;
+        margin-top: -1px;
+        padding-right: 24px;
+    }
+
 </style>
 <div id="main-body">
     <div class="tt_logix_reviews">
@@ -1395,14 +1416,18 @@
                     <div class="question_review_buttons" style="padding:0px;">
                         <button id="clear_review_filter" style="float:left; display:none;"><i class="fas fa-times"></i> Clear Filter</button>
                     </div>
-                    <select name="sort_review" @if($real_reviews == 0) style="display: none" @endif id="sort_review">
-                        <option value="sort" selected>Sort</option>
-                        <!--            <option value="saab">With Photos</option> -->
-                        <option value="most_recent">Most Recent</option>
-                        <option value="heighest_rating">Hightest Rating</option>
-                        <option value="lowest_rating">lowest Rating</option>
-                        <option value="most_helpful">Most Helpful</option>
-                    </select>
+                    <div class="input-container">
+{{--                        <input class="input-field" type="text" placeholder="Username" name="usrnm">--}}
+                        <select name="sort_review" @if($real_reviews == 0) style="display: none" @endif id="sort_review">
+                            <option value="sort" selected>Sort</option>
+                            <!--            <option value="saab">With Photos</option> -->
+                            <option value="most_recent">Most Recent</option>
+                            <option value="heighest_rating">Hightest Rating</option>
+                            <option value="lowest_rating">lowest Rating</option>
+                            <option value="most_helpful">Most Helpful</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
                 </div>
                 <div class="user_reviews" id="user_reviews">
 
@@ -1567,7 +1592,9 @@
                                             </div>
                                         </div>
                                         <div class="sheild-badge">
-                                            <i class="fas fa-shield-check"></i>
+                                            @if($review->verify_status == 'verified')
+                                                <i class="fas fa-shield-check"></i>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="user_info" id="user_info">
