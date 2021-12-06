@@ -120,7 +120,7 @@
         opacity: .5;
     }
     .review_progress_1:hover{
-        opacity: 1 ;
+        opacity: 1 !important;
     }
     @media (max-width:767px) {
         .review_progress{
