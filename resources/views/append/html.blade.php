@@ -1548,7 +1548,7 @@
                                             </h3>
                                         </div>
                                     </div>
-                                    <img src="{{asset('polished/badge2.png')}}" width="10px" height="10px">
+                                    <img src="{{asset('polished/badge2.png')}}" width="20px" height="20px">
                                     <div class="user_info" id="user_info">
                                         <h3>{{ucwords($review->name)}}<span @if(isset($display)) style="color: {{$display->verify_color}}" @endif>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                                         <p>
