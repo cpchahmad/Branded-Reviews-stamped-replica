@@ -291,6 +291,9 @@
         .review_1,.review_2{
             padding: 3%;
         }
+        .user_info{
+            width: 56% !important;
+        }
     }
 
     .question_review_buttons{
@@ -468,7 +471,7 @@
         font-weight: bold;
     }
     .user_info{
-        width: 56%;
+        width: 50%;
         display: inline-block;
         vertical-align: middle;
         padding: 0 15px;
