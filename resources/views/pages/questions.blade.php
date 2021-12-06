@@ -136,14 +136,6 @@
             </div>
         </div>
         <style>
-            body, html {
-                height: 100%;
-                background-repeat: no-repeat;
-                background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
-            }
-            /**
-             * Profile image component
-             */
             .profile-header-container{
                 margin: 0 auto;
                 text-align: center;
@@ -163,9 +155,6 @@
                 margin-top: 43px;
             }
 
-            /**
-             * Ranking component
-             */
             .rank-label-container {
                 margin-top: -19px;
                 /* z-index: 1000; */
@@ -179,8 +168,6 @@
             }
         </style>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <!------ Include the above in your HEAD tag ---------->
 
         <div class="container">
