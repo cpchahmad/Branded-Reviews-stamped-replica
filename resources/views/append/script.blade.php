@@ -516,7 +516,7 @@ $('#review_pagination').css('display', 'none');
 });
 
 $(document).on('click','.review_progress_1',function(){
-$('.review_progress').css("opacity",'.5');
+$('.review_progress_1').css("opacity",'.5');
 $(this).css('opacity','1');
 $('.review_progress_1').hover().css('opacity','1');
 var data = $(this).data('value');
