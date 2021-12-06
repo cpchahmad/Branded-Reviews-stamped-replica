@@ -1174,8 +1174,9 @@
     .input-container {
         display: -ms-flexbox; /* IE10 */
         display: flex;
-        width: 100%;
-        margin-bottom: 15px;
+        /*width: 100%;*/
+        /*margin-bottom: 15px;*/
+        float: right;
     }
 
     .icon {
@@ -1184,12 +1185,6 @@
         color: white;
         min-width: 50px;
         text-align: center;
-    }
-
-    .input-field {
-        width: 100%;
-        padding: 10px;
-        outline: none;
     }
 
 </style>
@@ -1418,7 +1413,7 @@
                     </div>
                     <div class="input-container">
 {{--                        <input class="input-field" type="text" placeholder="Username" name="usrnm">--}}
-                        <select name="sort_review" class="input-field" @if($real_reviews == 0) style="display: none" @endif id="sort_review">
+                        <select name="sort_review" @if($real_reviews == 0) style="display: none" @endif id="sort_review">
                             <option value="sort" selected>Sort</option>
                             <!--            <option value="saab">With Photos</option> -->
                             <option value="most_recent">Most Recent</option>
