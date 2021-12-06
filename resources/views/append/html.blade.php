@@ -2,7 +2,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amatic+SC&family=Bangers&family=Caveat&family=Courgette&family=Indie+Flower&family=Kaushan+Script&family=Lobster&family=Lobster+Two&family=Montserrat:wght@100&family=Open+Sans:wght@300&family=Orbitron&family=Pacifico&family=Patrick+Hand&family=Rajdhani:wght@300&family=Raleway:wght@100&family=Righteous&family=Roboto:wght@100&family=Sacramento&family=Satisfy&family=Helvetica&family=Helvetica Neue&display=swap"
         rel="stylesheet">
-{{--    <link rel="stylesheet" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/mdb5/3.10.1/compiled.min.css">--}}
+    <link rel="stylesheet" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/mdb5/3.10.1/compiled.min.css">
     <link rel="stylesheet" href="{{ asset('flags.css')}}">
 </head>
 <style>
@@ -1394,6 +1394,12 @@
                 <div class="dropdown_review">
                     <div class="question_review_buttons" style="padding:0px;">
                         <button id="clear_review_filter" style="float:left; display:none;"><i class="fas fa-times"></i> Clear Filter</button>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">@example.com</span>
+                        </div>
                     </div>
                     <select name="sort_review" @if($real_reviews == 0) style="display: none" @endif id="sort_review">
                         <option value="sort" selected>Sort</option>
