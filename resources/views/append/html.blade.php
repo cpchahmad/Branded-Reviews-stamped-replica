@@ -1181,8 +1181,7 @@
 
     .icon {
         padding: 10px;
-        background: dodgerblue;
-        color: white;
+            background: #f8f9fa;
         min-width: 50px;
         text-align: center;
         margin-top: -1px;
