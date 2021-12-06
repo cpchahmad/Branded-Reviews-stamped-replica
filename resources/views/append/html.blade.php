@@ -1185,6 +1185,12 @@
         color: white;
         min-width: 50px;
         text-align: center;
+        margin-top: -1px;
+    }
+    .input-field{
+        padding: 8px;
+        margin-top: -1px;
+        padding-right: 24px;
     }
 
 </style>
@@ -1421,7 +1427,7 @@
                             <option value="lowest_rating">lowest Rating</option>
                             <option value="most_helpful">Most Helpful</option>
                         </select>
-                        <i class="fa fa-user icon"></i>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
                 </div>
                 <div class="user_reviews" id="user_reviews">
