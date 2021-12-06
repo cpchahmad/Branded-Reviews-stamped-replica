@@ -266,7 +266,7 @@
             width: 100% !important;
         }
         #user_questions{
-            /*padding: 0 0 0 0 !important;*/
+            padding: 0 0 0 0 !important;
         }
         .replier_info .replier_date p{
             margin-top: 6% !important;
