@@ -1426,7 +1426,7 @@
                             <option value="lowest_rating">lowest Rating</option>
                             <option value="most_helpful">Most Helpful</option>
                         </select>
-                        <i class="fas fa-chevron-down"></i>
+                        <i class="fas fa-chevron-down icon"></i>
                     </div>
                 </div>
                 <div class="user_reviews" id="user_reviews">
