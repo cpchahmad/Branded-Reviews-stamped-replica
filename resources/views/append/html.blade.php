@@ -394,8 +394,10 @@
     .dropdown_review select{
         position: relative;
         float: right;
-        padding: 6px 16px;
+        padding-right: 60px;
+        padding: 6px;
         font-size: 12px;
+        -webkit-appearance: none;
     }
 
     .user_reviews{
