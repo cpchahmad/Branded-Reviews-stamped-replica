@@ -233,7 +233,7 @@
             /*margin-left: 34%;*/
         }
         .tt_logix_reviews{
-            padding: 10px 12px;
+            padding: 10px 18px;
         }
         .user_pic{
             width: 20% !important;
