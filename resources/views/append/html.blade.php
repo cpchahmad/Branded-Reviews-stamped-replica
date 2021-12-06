@@ -274,7 +274,6 @@
     }
 
     .question_review_buttons{
-        padding: 22px 0;
         width: 26%;
     }
     .question_content{
