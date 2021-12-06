@@ -136,25 +136,6 @@
             </div>
         </div>
         <style>
-            .profile-header-container{
-                margin: 0 auto;
-                text-align: center;
-            }
-
-            .profile-header-img {
-                padding: 54px;
-            }
-
-            .profile-header-img > img.img-circle {
-                width: 120px;
-                height: 120px;
-                border: 2px solid #51D2B7;
-            }
-
-            .profile-header {
-                margin-top: 43px;
-            }
-
             .rank-label-container {
                 margin-top: -19px;
                 /* z-index: 1000; */
@@ -167,18 +148,13 @@
                 border-radius: 27px;
             }
         </style>
-        <div class="container">
-            <div class="row">
-                <div class="profile-header-container">
+
                     <div class="profile-header-img">
                         <img class="img-circle" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" />
                         <div class="rank-label-container">
                             <span class="label label-default rank-label">100 puntos</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
     </div>
 @endsection
 @section('scripts')
