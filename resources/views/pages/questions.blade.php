@@ -135,26 +135,6 @@
                 </div>
             </div>
         </div>
-        <style>
-            .rank-label-container {
-                margin-top: -19px;
-                /* z-index: 1000; */
-                text-align: center;
-            }
-
-            .label.label-default.rank-label {
-                background-color: rgb(81, 210, 183);
-                padding: 5px 10px 5px 10px;
-                border-radius: 27px;
-            }
-        </style>
-
-                    <div class="profile-header-img">
-                        <img class="img-circle" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" />
-                        <div class="rank-label-container">
-                            <span class="label label-default rank-label">100 puntos</span>
-                        </div>
-                    </div>
     </div>
 @endsection
 @section('scripts')
