@@ -1413,19 +1413,18 @@
                                     }
                             @endphp
 
+
                             <div class="review_2">
                                 <div class="review_1_header">
+                                    <div class="user_pic" id="user_pic">
+                                        <div class="user_pic_inner" id="user_pic_inner">
+                                            <h3>
+                                                {{$acronym}}
+                                            </h3>
+                                        </div>
+                                    </div>
                                     <div>
-                                        <div class="user_pic" id="user_pic">
-                                            <div class="user_pic_inner" id="user_pic_inner">
-                                                <h3>
-                                                    {{$acronym}}
-                                                </h3>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <i class="fas fa-shield-check"></i>
-                                        </div>
+                                    <i class="fas fa-shield-check"></i>
                                     </div>
                                     <div class="user_info" id="user_info">
                                         <h3>{{ucwords($review->name)}}<span @if(isset($display)) style="color: {{$display->verify_color}}" @endif>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
@@ -1551,9 +1550,9 @@
                                             </h3>
                                         </div>
                                     </div>
-{{--                                    <div>--}}
-{{--                                        <i class="fas fa-shield-check"></i>--}}
-{{--                                    </div>--}}
+                                    <div>
+                                        <i class="fas fa-shield-check"></i>
+                                    </div>
                                     <div class="user_info" id="user_info">
                                         <h3>{{ucwords($review->name)}}<span @if(isset($display)) style="color: {{$display->verify_color}}" @endif>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                                         <p>
