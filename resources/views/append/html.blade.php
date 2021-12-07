@@ -2181,7 +2181,7 @@
             height: 100%;
         }
         .item .slide-image img{
-            max-width: 98%;
+            max-width: 98% !important;
         }
         .for-overlay{
             color: white;
