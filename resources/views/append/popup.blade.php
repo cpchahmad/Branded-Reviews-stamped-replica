@@ -41,7 +41,10 @@
                         </span>
                     </p>
                 </div>
+                <hr>
+                <div>
                       <img src="{{asset('shirt.jpg')}}" alt="" width="75px" height="100px">
+                </div>
             </div>
         </div>
     </div>

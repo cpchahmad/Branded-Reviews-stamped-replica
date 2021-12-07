@@ -910,6 +910,7 @@
     hr{
         height: 1px;
         margin: 12px;
+        width: 100%;
     }
      .item .image-content .product-details .like_dislike a{
         text-decoration: none;
