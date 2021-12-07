@@ -312,30 +312,7 @@ var next_url = '';
 }
 //              $('#next_question').attr('data-page',next_url);
 $("#br_reviews_widget_wrapper").html(data.html);
-$(data.paginate_q['links']).each(function(index) {
-//                    if (index === 0) {
-//                        $('.stamped-pagination').append("<li class='previous'><a href='javascript:void(0)' id='previous' data-page='' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
-//                   	}
-if (index != 0) {
-if (index != total - 1) {
-if (total != 3) {
-var url_link = data.paginate_q['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
-if (index == 1) {
-$('.stamped-pagination').append("<li class='page active'><a href='javascript:void(0)' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
-} else {
-$('.stamped-pagination').append("<li class='page'><a href='javascript:void(0)' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
-}
-}
-}
-//           			 if (index === total - 1) {
 
-//                      $('.stamped-pagination').append("<li class='next'><a href='javascript:void(0)' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
-
-//                   	}
-
-}
-
-});
 }
 });
 });
