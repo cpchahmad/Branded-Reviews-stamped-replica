@@ -526,6 +526,7 @@ type: 'GET',
 success: function(data) {
 
 if (data.reviews != 'no reviews') {
+$('#total_reviews').html(data.total_reviews);
 $('#user_reviews').html(data.reviews);
 } else {
 console.log('there are no reviews for this filter')

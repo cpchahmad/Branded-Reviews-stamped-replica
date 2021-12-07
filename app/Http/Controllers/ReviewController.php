@@ -520,6 +520,7 @@ class ReviewController extends Controller
         if ($request->data == 5 ) {
             $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->where('review_rating',5)->latest()->get();
             $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->where('review_rating',5)->latest()->get();
+            $total_reviews = count($reviews_pagi_fea) + count($reviews_pagi_pub);
             $reviews = view('append.reviews')->with([
                 'reviews_featured' => $reviews_pagi_fea,
                 'reviews_publish' => $reviews_pagi_pub
@@ -528,6 +529,7 @@ class ReviewController extends Controller
         if ($request->data == 4) {
             $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->where('review_rating',4)->latest()->get();
             $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->where('review_rating',4)->latest()->get();
+            $total_reviews = count($reviews_pagi_fea) + count($reviews_pagi_pub);
             $reviews = view('append.reviews')->with([
                 'reviews_featured' => $reviews_pagi_fea,
                 'reviews_publish' => $reviews_pagi_pub
@@ -536,6 +538,7 @@ class ReviewController extends Controller
         if ($request->data == 3) {
             $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->where('review_rating',3)->get();
             $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->where('review_rating',3)->get();
+            $total_reviews = count($reviews_pagi_fea) + count($reviews_pagi_pub);
             $reviews = view('append.reviews')->with([
                 'reviews_featured' => $reviews_pagi_fea,
                 'reviews_publish' => $reviews_pagi_pub
@@ -544,6 +547,7 @@ class ReviewController extends Controller
         if ($request->data == 2) {
             $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->where('review_rating',2)->get();
             $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->where('review_rating',2)->get();
+            $total_reviews = count($reviews_pagi_fea) + count($reviews_pagi_pub);
             $reviews = view('append.reviews')->with([
                 'reviews_featured' => $reviews_pagi_fea,
                 'reviews_publish' => $reviews_pagi_pub
@@ -552,6 +556,7 @@ class ReviewController extends Controller
         if ($request->data == 1) {
             $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->where('review_rating',1)->get();
             $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->where('review_rating',1)->get();
+            $total_reviews = count($reviews_pagi_fea) + count($reviews_pagi_pub);
             $reviews = view('append.reviews')->with([
                 'reviews_featured' => $reviews_pagi_fea,
                 'reviews_publish' => $reviews_pagi_pub
@@ -562,6 +567,7 @@ class ReviewController extends Controller
             return response([
                 'paginate'=>json_decode(json_encode($reviews_pagi_pub)),
                 'reviews'=>$reviews,
+                'total_reviews'=>$total_reviews,
             ]);
         }else{
             return response([
