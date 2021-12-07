@@ -934,8 +934,8 @@
         color: #ffffff;
     }
      .item .image-content img{
-        max-width: 100px;
         height: 100%;
+         width: 120px;
     }
 
     .stamped-messages .stamped-thank-you {
