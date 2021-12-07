@@ -31,8 +31,8 @@
                 @endif
                 <div class="like_dislike">
                     <p>
-                        <span style="display: flex; font-size: larger;">
-                          <a href="javascript:void(0)" style="display: inherit; margin-right: 18%;">
+                        <span style="display: flex;">
+                          <a href="javascript:void(0)" style="display: inherit; margin-right: 28%;">
                             <i class="fas fa-thumbs-up" style="margin-top: 22%"></i> <span style="margin-left: 22%">{{$review->likes}}</span>
                           </a>
                           <a href="javascript:void(0)" style="display: inherit">
