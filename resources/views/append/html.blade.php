@@ -1105,7 +1105,8 @@
         top: 0;
         left: 0;
         content: '★★★★★';
-        color: lightgray;
+        color: #ffd200;
+        /*color: lightgray;*/
     }
 
     .stars-container:after {
