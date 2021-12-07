@@ -2171,7 +2171,7 @@
         border: 1px solid black;
     }
     .product-title a:hover{
-        text-decoration: underline;
+        text-decoration: underline !important;
     }
 
     @media screen and (max-width: 1000px) {
