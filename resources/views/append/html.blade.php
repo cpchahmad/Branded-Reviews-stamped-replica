@@ -94,7 +94,7 @@
         color: rgb(255, 210, 0);
     }
     .tt_logix_reviews_r_no span{
-        margin: 0 auto;
+        margin: 1px auto;
         font-size: 18px;
     }
     /*.base_reviews{*/
