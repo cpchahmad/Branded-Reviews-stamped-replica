@@ -31,12 +31,12 @@
                 @endif
                 <div class="like_dislike">
                     <p>
-                        <span style="display: flex">
-                          <a href="javascript:void(0)" style="display: inherit; margin-right: 12%;">
-                            <i class="fas fa-thumbs-up"></i> <span style="margin-left: 15%">{{$review->likes}}</span>
+                        <span style="display: flex; font-size: larger;">
+                          <a href="javascript:void(0)" style="display: inherit; margin-right: 18%;">
+                            <i class="fas fa-thumbs-up" style="margin-left: 22%"></i> <span style="margin-left: 22%">{{$review->likes}}</span>
                           </a>
                           <a href="javascript:void(0)" style="display: inherit">
-                            <i class="fas fa-thumbs-down"></i><span style="margin-left: 15%">{{$review->dislikes}}</span>
+                            <i class="fas fa-thumbs-down" style="margin-left: 22%"></i><span style="margin-left: 22%">{{$review->dislikes}}</span>
                           </a>
                         </span>
                     </p>
