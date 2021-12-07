@@ -856,7 +856,7 @@
         vertical-align: middle;
     }
     .item .slide-image img{
-        max-width: 350px;
+        max-width: 362px;
         /*height: 440px;*/
         height: auto;
     }
