@@ -210,6 +210,7 @@ $(function() {
 
 $(document).on("click", ".paginate_link", function(e) {
 $('.page').removeClass('active');
+$('.question_page').removeClass('active');
 
 var for_url = $(this).data('page');
 var index_value = $(this).data('index');
@@ -282,7 +283,7 @@ $('.stamped-question').append("<li class='question_page'><a href='javascript:voi
 }
 
 });
-$('.page').removeClass('active');
+
 $(document).find("[data-index='" + index_value + "']").parent().addClass('active');
 }
 
@@ -291,6 +292,7 @@ $(document).find("[data-index='" + index_value + "']").parent().addClass('active
 
 $(document).on("click", ".question_link", function() {
 $('.question_page').removeClass('active');
+$('.page').removeClass('active');
 if (!$(this).parent().hasClass("previous") && !$(this).parent().hasClass("next")) {
 $(this).parent().addClass('active');
 }
@@ -675,6 +677,7 @@ $('.stamped-question').append("<li class='question_page'><a href='javascript:voi
 
 });
 $('.page').removeClass('active');
+$('.question_page').removeClass('active');
 $(document).find("[data-index='" + index_value + "']").parent().addClass('active');
 }
 
