@@ -2370,7 +2370,7 @@
 {{--                <span class="icon-cross"></span>--}}
 {{--                <span class="visually-hidden">Close</span>--}}
 {{--            </button>--}}
-            <i class="fal fa-times" style="font-size: 43px;"></i>
+            <i class="fal fa-times btn-close for-overlay"  style="font-size: 43px;"></i>
         </div>
         {{--            <div style="position: absolute;  bottom: 280px; left: 0;">--}}
         {{--                <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">--}}
