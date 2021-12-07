@@ -855,15 +855,15 @@
         vertical-align: middle;
     }
     .item .slide-image img{
-        max-width: 375px;
+        max-width: 350px;
         /*height: 440px;*/
         height: auto;
     }
     .item .image-content{
         display: inline-block;
         vertical-align: middle;
-        padding: 0 10px;
-        max-width: 49%;
+        padding: 0 3%;
+        max-width: 53%;
         width:100%;
     }
      .item .image-content div,
