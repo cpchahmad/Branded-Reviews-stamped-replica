@@ -184,5 +184,13 @@ class AdminController extends Controller
     public function LoadScript(){
         return view('append.script');
     }
-
+    public function ProductPage(Request $request){
+        $review = Review::where('id',$request->review_id)->first();
+        $product = Product::where('shopify_id',$review->product_id)->first();
+        $shop = User::where('id',$review->shop_id)->first();
+        $link = 'https://'.$shop->name.'/products/'.$product->handle;
+        return response([
+            'link'=>$link,
+        ]);
+    }
 }

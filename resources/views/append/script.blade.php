@@ -539,13 +539,14 @@ $('#review_pagination').css('display', 'none');
 $(document).on('click','.popup-image-link',function(){
 var review_id = $(this).data('value');
 $.ajax({
-url: base_url + "on-facebook?product_id=" + id + "&shop_name=" + name + "&review_id=" + review_id,
+url: base_url + "on-product?product_id=" + id + "&shop_name=" + name + "&review_id=" + review_id,
 type: 'GET',
 success: function(data) {
-console.log('ok');
+window.location.href = data.link;
 }
 });
 });
+
 $(document).on("click", "#clear_review_filter", function() {
 $(this).css('display', 'none');
 $('#sort_review option[value=sort]').prop('selected', true);

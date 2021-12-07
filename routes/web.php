@@ -103,6 +103,8 @@ Route::group(['middleware' => ['verify.shopify']], function () {
 
     // loadscript
     Route::get('script-js',  [App\Http\Controllers\AdminController::class, 'LoadScript'])->name('script.js');
+    // product page
+    Route::get('on-product',  [App\Http\Controllers\AdminController::class, 'ProductPage'])->name('on.product');
 
 
 
