@@ -516,9 +516,9 @@ $('#review_pagination').css('display', 'none');
 });
 
 $(document).on('click','.review_progress_1',function(){
-//                   $('.review_progress_1').css("opacity",'.5');
-//                   $(this).css('opacity','1');
-//                   $('.review_progress_1').hover().css('opacity','1');
+$('.review_progress_1').removeClass('active');
+$(this).addClass('active');
+
 var data = $(this).data('value');
 $.ajax({
 url: base_url + "filter-on-stars?product_id=" + id + "&shop_name=" + name + "&data=" + data,
