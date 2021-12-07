@@ -2137,7 +2137,7 @@
 
     .popup {
         position: absolute;
-        top: 49%;
+        top: 50%;
         left: 50%;
         -webkit-transform: translateX(-50%) translateY(-50%);
         -moz-transform: translateX(-50%) translateY(-50%);
@@ -2149,7 +2149,7 @@
         -webkit-border-radius: 5px;
         border-radius: 5px;
         width: 800px;
-        height: 598px;
+        height: 100%;
         position: fixed;
         box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.09), 0px 11px 12px 7px rgba(0, 0, 0, 0.02);
         -moz-transition: all 120ms;
