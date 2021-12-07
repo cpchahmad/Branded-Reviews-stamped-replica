@@ -2148,7 +2148,7 @@
         -webkit-border-radius: 5px;
         border-radius: 5px;
         width: 800px;
-        height: 580px;
+        height: 598px;
         position: fixed;
         box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.09), 0px 11px 12px 7px rgba(0, 0, 0, 0.02);
         -moz-transition: all 120ms;
