@@ -22,12 +22,12 @@
                     </div>
                 </div>
 
-                <h3 style="margin-top: 0px;">{{$review->review_title}}</h3>
-                <p>{{$review->experience}}</p>
+                <h3 style="margin-top: 0; margin-bottom: 1%; font-weight: bold;">{{$review->review_title}}</h3>
+                <p style="margin: 0">{{$review->experience}}</p>
                 <hr>
                 @if($review->review_reply != null)
-                <h4>Reply:</h4>
-                <p>{{$review->review_reply->message}}</p>
+                <h4 style="margin: 0; font-weight: bold">Reply:</h4>
+                <p style="margin: 0">{{$review->review_reply->message}}</p>
                 @endif
                 <div class="like_dislike">
                     <p>
