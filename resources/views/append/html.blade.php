@@ -1914,9 +1914,7 @@
                 </div>
                 <div id="question_pagination">
                     <ul aria-label="Reviews Pagination" role="navigation" class="stamped-question stamped-reviews-ul">
-                        <li class="page active"><a href="#" data-page="1" class="paginate_link" aria-label="Page 1">1</a></li>
-                        <li class="page"><a href="#" data-page="2" aria-label="Page 2" tabindex="">2</a></li>
-                        <li class="page"><a href="#" data-page="3" onclick="StampedFn.pageReviews('3', '', this); return false;" aria-label="Page 3" tabindex="">3</a></li>
+
                     </ul>
                 </div>
             </div>
