@@ -2194,11 +2194,11 @@
         }
         .for-overlay{
             color: white;
-        }
-        .fas-times{
             margin-top: 2% !important;
             margin-right: 5% !important;
-            background: #fff !important;
+        }
+        .fas-times{
+            background: grey !important;
         }
     }
 
