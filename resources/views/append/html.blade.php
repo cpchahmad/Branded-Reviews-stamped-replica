@@ -2167,8 +2167,11 @@
         height: 110px !important;
         width: 29%;
     }
-    .popup-image2:hover{
+    .popup-image2:hover {
         border: 1px solid black;
+    }
+    .popup-image2:hover .product-title{
+        text-decoration: underline;
     }
 
     @media screen and (max-width: 1000px) {
