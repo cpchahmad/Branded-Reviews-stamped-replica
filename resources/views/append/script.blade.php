@@ -253,7 +253,7 @@ $('.stamped-pagination').append("<li class='page'><a href='javascript:void(0)' d
 
 });
 
-$('[data-index=index_value]').addClass('active');
+
 
 $('.stamped-question').empty();
 var total = $(data.paginate_q['links']).length;
@@ -282,6 +282,7 @@ $('.stamped-question').append("<li class='question_page'><a href='javascript:voi
 }
 
 });
+$(document).find("[data-index='" + index_value + "']").parent().addClass('active');
 }
 
 });
@@ -295,7 +296,7 @@ $(this).parent().addClass('active');
 
 var for_url = $(this).data('page');
 var index_value = $(this).data('index');
-console.log(index_value);
+
 $.ajax({
 url: for_url,
 type: 'GET',
@@ -343,7 +344,7 @@ $('.stamped-pagination').append("<li class='page'><a href='javascript:void(0)' d
 
 });
 
-$('[data-index=index_value]').addClass('active');
+
 
 $('.stamped-question').empty();
 var total = $(data.paginate_q['links']).length;
@@ -672,7 +673,7 @@ $('.stamped-question').append("<li class='question_page'><a href='javascript:voi
 }
 
 });
-
+$(document).find("[data-index='" + index_value + "']").parent().addClass('active');
 }
 
 });
