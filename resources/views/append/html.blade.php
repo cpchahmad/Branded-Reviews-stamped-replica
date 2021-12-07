@@ -2158,6 +2158,7 @@
         z-index: 99;
         padding: 1%;
         color: #5E5E5E;
+        overflow: scroll;
     }
 
     @media screen and (max-width: 1000px) {
@@ -2350,7 +2351,9 @@
 </style>
 
 <div class="container">
+    <div>
         <div id="myPopup" class="popup">
+    </div>
             <div class="item" id="item">
 
             </div>
