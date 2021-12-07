@@ -857,7 +857,7 @@
     }
     .item .slide-image img{
         max-width: 362px;
-        min-width: 362;
+        min-width: 362px;
         /*height: 440px;*/
         height: auto;
     }

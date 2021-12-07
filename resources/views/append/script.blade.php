@@ -213,7 +213,7 @@ $('.page').removeClass('active');
 var thiss = $(this)
 
 var for_url = $(this).data('page');
-
+var index_value = $(this).data('index');
 $.ajax({
 url: for_url,
 type: 'GET',
@@ -254,10 +254,9 @@ $('.stamped-pagination').append("<li class='page'><a href='javascript:void(0)' d
 }
 
 });
-$('.page').removeClass('active');
-if (!thiss.parent().hasClass("previous") && !thiss.parent().hasClass("next")) {
-thiss.parent().addClass('active');
-}
+
+$('[data-test=index_value]').addClass('active');
+
 $('.stamped-question').empty();
 var total = $(data.paginate_q['links']).length;
 
@@ -271,9 +270,9 @@ if (index != total - 1) {
 if (total != 3) {
 var url_link = data.paginate_q['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
 if (index == 1) {
-$('.stamped-question').append("<li class='question_page active'><a href='javascript:void(0)' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-question').append("<li class='question_page active'><a href='javascript:void(0)' data-index='" + index + "' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
 } else {
-$('.stamped-question').append("<li class='question_page'><a href='javascript:void(0)' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-question').append("<li class='question_page'><a href='javascript:void(0)' data-index='" + index + "' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
 }
 }
 }
