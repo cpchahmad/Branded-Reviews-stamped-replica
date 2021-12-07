@@ -282,6 +282,7 @@ $('.stamped-question').append("<li class='question_page'><a href='javascript:voi
 }
 
 });
+$('.page').removeClass('active');
 $(document).find("[data-index='" + index_value + "']").parent().addClass('active');
 }
 
@@ -673,6 +674,7 @@ $('.stamped-question').append("<li class='question_page'><a href='javascript:voi
 }
 
 });
+$('.page').removeClass('active');
 $(document).find("[data-index='" + index_value + "']").parent().addClass('active');
 }
 
