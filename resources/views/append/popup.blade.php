@@ -43,6 +43,7 @@
                 </div>
                 <hr>
                 <div>
+                    <a href="javascript:void(0)" data-value="{{$review->id}}" class='popup-image-link'></a>
                       <img class="popup-image2" src="{{asset('shirt.jpg')}}">
                 </div>
             </div>
