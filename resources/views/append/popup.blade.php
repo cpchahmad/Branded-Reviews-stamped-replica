@@ -41,8 +41,8 @@
                         </span>
                     </p>
                 </div>
-                {{--                                                                    <hr>--}}
-                {{--                                                                    <img src="{{asset('shirt.jpg')}}" alt="" width="75px" height="100px">--}}
+                                                                                    <hr>
+                                                                                    <img src="{{asset('shirt.jpg')}}" alt="" width="75px" height="100px">
             </div>
         </div>
     </div>
