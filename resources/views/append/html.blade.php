@@ -2176,12 +2176,15 @@
 
     @media screen and (max-width: 1000px) {
         .popup {
-            width: 80%;
-            top: 48%;
-            height: 430px;
+            width: 94%;
+            top: 50%;
+            height: 100%;
         }
         .item .slide-image img{
-            max-width: 290px;
+            max-width: 98%;
+        }
+        .for-overlay{
+            color: white;
         }
     }
 
