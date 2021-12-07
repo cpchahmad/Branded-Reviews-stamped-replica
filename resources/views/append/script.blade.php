@@ -208,85 +208,85 @@ $('#review_rating').val(rating);
 
 $(function() {
 
-$(document).on("click", ".paginate_link", function(e) {
-$('.page').removeClass('active');
-var thiss = $(this)
+//                 $(document).on("click", ".paginate_link", function(e) {
+//                     $('.page').removeClass('active');
+//                     var thiss = $(this)
 
-var for_url = $(this).data('page');
-var index_value = $(this).data('index');
-$.ajax({
-url: for_url,
-type: 'GET',
-success: function(data) {
-var total = $(data.paginate['links']).length;
-var previous_url = data.paginate['links'][0]['url'] + '&shop_name=' + name + '&product_id=' + id;
+//                     var for_url = $(this).data('page');
+// 					var index_value = $(this).data('index');
+//                     $.ajax({
+//                         url: for_url,
+//                         type: 'GET',
+//                         success: function(data) {
+//                             var total = $(data.paginate['links']).length;
+//                             var previous_url = data.paginate['links'][0]['url'] + '&shop_name=' + name + '&product_id=' + id;
 
-//              $('#previous').attr('data-page',previous_url);
-var next_url = data.paginate['links'][total - 1]['url'] + '&shop_name=' + name + '&product_id=' + id;
+//                             //              $('#previous').attr('data-page',previous_url);
+//                             var next_url = data.paginate['links'][total - 1]['url'] + '&shop_name=' + name + '&product_id=' + id;
 
-//              $('#next').attr('data-page',next_url);
-$("#br_reviews_widget_wrapper").html(data.html);
-$(document).find('.stamped-pagination').empty();
-var total = $(data.paginate['links']).length;
-var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
-$(data.paginate['links']).each(function(index) {
-//                    if (index === 0) {
-//                        $('.stamped-pagination').append("<li class='previous'><a href='javascript:void(0)' id='previous' data-page='' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
-//                   	}
-if (index != 0) {
-if (index != total - 1) {
-if (total != 3) {
-var url_link = data.paginate['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
-if (index == 1) {
-$('.stamped-pagination').append("<li class='page active'><a href='javascript:void(0)' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
-} else {
-$('.stamped-pagination').append("<li class='page'><a href='javascript:void(0)' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
-}
-}
-}
-//           			 if (index === total - 1) {
+//                             //              $('#next').attr('data-page',next_url);
+//                             $("#br_reviews_widget_wrapper").html(data.html);
+//                             $(document).find('.stamped-pagination').empty();
+//                             var total = $(data.paginate['links']).length;
+//                             var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
+//                             $(data.paginate['links']).each(function(index) {
+//                                 //                    if (index === 0) {
+//                                 //                        $('.stamped-pagination').append("<li class='previous'><a href='javascript:void(0)' id='previous' data-page='' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
+//                                 //                   	}
+//                                 if (index != 0) {
+//                                     if (index != total - 1) {
+//                                         if (total != 3) {
+//                                             var url_link = data.paginate['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
+//                                             if (index == 1) {
+//                                                 $('.stamped-pagination').append("<li class='page active'><a href='javascript:void(0)' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
+//                                             } else {
+//                                                 $('.stamped-pagination').append("<li class='page'><a href='javascript:void(0)' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
+//                                             }
+//                                         }
+//                                     }
+//                                     //           			 if (index === total - 1) {
 
-//                      $('.stamped-pagination').append("<li class='next'><a href='javascript:void(0)' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
+//                                     //                      $('.stamped-pagination').append("<li class='next'><a href='javascript:void(0)' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
 
-//                   	}
+//                                     //                   	}
 
-}
+//                                 }
 
-});
+//                             });
 
-$('[data-test=index_value]').addClass('active');
+//                           $('[data-test=index_value]').addClass('active');
 
-$('.stamped-question').empty();
-var total = $(data.paginate_q['links']).length;
+//                             $('.stamped-question').empty();
+//                             var total = $(data.paginate_q['links']).length;
 
-var next_url = data.paginate_q['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
-$(data.paginate_q['links']).each(function(index) {
-//                    if (index === 0) {
-//                        $('.stamped-question').append("<li class='previous'><a href='javascript:void(0)' id='previous_question' data-page='' class='question_link' aria-label='Previous page'>&lt;</a></li>");
-//                   	}
-if (index != 0) {
-if (index != total - 1) {
-if (total != 3) {
-var url_link = data.paginate_q['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
-if (index == 1) {
-$('.stamped-question').append("<li class='question_page active'><a href='javascript:void(0)' data-index='" + index + "' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
-} else {
-$('.stamped-question').append("<li class='question_page'><a href='javascript:void(0)' data-index='" + index + "' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
-}
-}
-}
-//           			 if (index === total - 1) {
+//                             var next_url = data.paginate_q['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
+//                             $(data.paginate_q['links']).each(function(index) {
+//                                 //                    if (index === 0) {
+//                                 //                        $('.stamped-question').append("<li class='previous'><a href='javascript:void(0)' id='previous_question' data-page='' class='question_link' aria-label='Previous page'>&lt;</a></li>");
+//                                 //                   	}
+//                                 if (index != 0) {
+//                                     if (index != total - 1) {
+//                                         if (total != 3) {
+//                                             var url_link = data.paginate_q['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
+//                                             if (index == 1) {
+//                                                 $('.stamped-question').append("<li class='question_page active'><a href='javascript:void(0)' data-index='" + index + "' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
+//                                             } else {
+//                                                 $('.stamped-question').append("<li class='question_page'><a href='javascript:void(0)' data-index='" + index + "' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
+//                                             }
+//                                         }
+//                                     }
+//                                     //           			 if (index === total - 1) {
 
-//                      $('.stamped-question').append("<li class='next'><a href='javascript:void(0)' id='next_question' data-page='"+next_url+"' class='question_link' aria-label='Next page'>&gt;</a></li>");
+//                                     //                      $('.stamped-question').append("<li class='next'><a href='javascript:void(0)' id='next_question' data-page='"+next_url+"' class='question_link' aria-label='Next page'>&gt;</a></li>");
 
-//                   	}
-}
+//                                     //                   	}
+//                                 }
 
-});
-}
+//                             });
+//                         }
 
-});
-});
+//                     });
+//                 });
 
 $(document).on("click", ".question_link", function() {
 $('.question_page').removeClass('active');
