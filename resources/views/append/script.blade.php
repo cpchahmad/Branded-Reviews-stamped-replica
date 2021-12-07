@@ -311,6 +311,8 @@ var next_url = '';
 }
 //              $('#next_question').attr('data-page',next_url);
 $("#br_reviews_widget_wrapper").html(data.html);
+
+$('#questions').trigger('click');
 $(document).find('.stamped-pagination').empty();
 var total = $(data.paginate['links']).length;
 var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
