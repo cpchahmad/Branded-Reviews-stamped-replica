@@ -122,9 +122,11 @@
     .review_progress_1:hover{
         opacity: 1 !important;
     }
-    .review_progress_1:active{
-        opacity: 1 !important;
+
+    .review_progress.active .review_progress_1.active {
+        opacity: 1;
     }
+
     @media (max-width:767px) {
         .review_progress{
             width: 100%;
