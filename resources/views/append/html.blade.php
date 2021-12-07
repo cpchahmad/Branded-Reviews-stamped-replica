@@ -116,12 +116,12 @@
         border-right: 1px #cecece solid;
     }
 
-    /*.review_progress:hover .review_progress_1{*/
-    /*    opacity: .5;*/
-    /*}*/
-    /*.review_progress_1:hover{*/
-    /*    opacity: 1 !important;*/
-    /*}*/
+    .review_progress:hover .review_progress_1{
+        opacity: .5;
+    }
+    .review_progress_1:hover{
+        opacity: 1 !important;
+    }
 
     .review_progress.active .review_progress_1 {
         opacity: .5;
