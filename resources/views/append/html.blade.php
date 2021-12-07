@@ -848,6 +848,7 @@
         padding: 5px;
         font-size: medium;
          height: 550px;
+         justify-content: space-between;
     }
     .item .slide-image{
         display: inline-block;
@@ -862,7 +863,6 @@
     .item .image-content{
         display: inline-block;
         vertical-align: middle;
-        padding: 0 3%;
         max-width: 53%;
         width:100%;
     }
@@ -2148,7 +2148,7 @@
         -o-border-radius: 5px;
         -webkit-border-radius: 5px;
         border-radius: 5px;
-        width: 800px;
+        width: 65%;
         height: 100%;
         position: fixed;
         box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.09), 0px 11px 12px 7px rgba(0, 0, 0, 0.02);
