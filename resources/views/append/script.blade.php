@@ -676,9 +676,7 @@ $('.stamped-question').append("<li class='question_page'><a href='javascript:voi
 }
 
 });
-$('.page').removeClass('active');
-$('.question_page').removeClass('active');
-$(document).find("[data-index='" + index_value + "']").parent().addClass('active');
+
 }
 
 });
@@ -853,5 +851,3 @@ console.log('Some thing went Wrong!');
 };
 ppTyInitialise();
 })();
-
-
