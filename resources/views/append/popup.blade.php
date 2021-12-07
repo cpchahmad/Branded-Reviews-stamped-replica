@@ -43,7 +43,7 @@
                 </div>
                 <hr>
                 <div class="product-title">
-                    <a href="javascript:void(0)" data-value="{{$review->id}}" class='popup-image-link'>
+                    <a href="javascript:void(0)" style="text-decoration: none; color: black;" data-value="{{$review->id}}" class='popup-image-link'>
                      <div><img class="popup-image2" src="{{asset('shirt.jpg')}}"></div>
                     <div><p style="margin-top: 0">{{$product->title}}</p></div>
                     </a>

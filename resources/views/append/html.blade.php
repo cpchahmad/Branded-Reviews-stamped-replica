@@ -2170,7 +2170,7 @@
     .popup-image2:hover {
         border: 1px solid black;
     }
-    .popup-image2:hover .product-title p{
+    .product-title a:hover{
         text-decoration: underline;
     }
 
