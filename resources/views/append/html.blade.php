@@ -908,7 +908,7 @@
         float: right;
     }
     hr{
-        height: 3px;
+        height: 1px;
         margin: 12px;
     }
      .item .image-content .product-details .like_dislike a{
