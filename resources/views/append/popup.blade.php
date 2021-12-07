@@ -7,47 +7,14 @@
                 <h3 style="margin-bottom: 0px;" class="product-name">{{$review->name}}</h3>
                 <div class="star-main">
                     <div class="ratings">
-                        @if ($review->review_rating == 0)
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-
-                        @elseif ($review->review_rating == 1)
-                            <i class="fas fa-star checked"></i>
-                            <i class="fas fa-star "></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-
-                        @elseif ($review->review_rating == 2)
-                            <i class="fas fa-star checked"></i>
-                            <i class="fas fa-star checked"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-
-                        @elseif ($review->review_rating == 3)
-                            <i class="fas fa-star checked"></i>
-                            <i class="fas fa-star checked"></i>
-                            <i class="fas fa-star checked"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-
-                        @elseif ($review->review_rating == 4)
-                            <i class="fas fa-star checked"></i>
-                            <i class="fas fa-star checked"></i>
-                            <i class="fas fa-star checked"></i>
-                            <i class="fas fa-star checked"></i>
-                            <i class="fas fa-star"></i>
-
-                        @elseif ($review->review_rating == 5)
-                            <i class="fas fa-star checked"></i>
-                            <i class="fas fa-star checked"></i>
-                            <i class="fas fa-star checked"></i>
-                            <i class="fas fa-star checked"></i>
-                            <i class="fas fa-star checked"></i>
+                        @if($review->review_rating == null)
+                            <div class="col-md-6" style="overflow: hidden; line-height: 1">
+                                <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: 20px;">★★★★★</span>
+                            </div>
+                        @else
+                            <div class="col-md-6" style="overflow: hidden;line-height: 1">
+                                <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size: 20px;">★★★★★</span>
+                            </div>
                         @endif
                     </div>
                     <div class="review_date">
