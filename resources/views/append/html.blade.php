@@ -2194,6 +2194,8 @@
         }
         .for-overlay{
             color: white;
+        }
+        .fas-times2{
             margin-top: 2% !important;
             margin-right: 5% !important;
         }
@@ -2384,7 +2386,7 @@
     <div id="myPopup" class="popup">
         <div class="item" id="item">
         </div>
-        <div style="position: absolute; top: 0; right: 0;margin-right: 1%;">
+        <div class="fas-times2" style="position: absolute; top: 0; right: 0;margin-right: 1%;">
 {{--            <button type="button" @if(isset($display)) style="background-color: {{$display->circle_background}}" @endif class="btn-close for-overlay">--}}
 {{--                <span class="icon-cross"></span>--}}
 {{--                <span class="visually-hidden">Close</span>--}}
