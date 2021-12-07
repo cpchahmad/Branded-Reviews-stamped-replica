@@ -1105,7 +1105,10 @@
         top: 0;
         left: 0;
         content: '★★★★★';
-        color: #ffd200;
+        color: white;
+        /*color: #ffd200;*/
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #ffd200;
         /*color: lightgray;*/
     }
 
