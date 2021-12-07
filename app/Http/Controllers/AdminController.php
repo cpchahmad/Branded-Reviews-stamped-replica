@@ -32,7 +32,6 @@ class AdminController extends Controller
     public function SettingSave(Request $request){
         $shop = User::where('name',$request->shop_name)->first();
         $product = $shop->api()->rest('post', '/admin/products.json',
-            "products",
             [
                 "product" => [
                     "title" => "Burton Custom Freestyle 151",
