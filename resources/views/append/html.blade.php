@@ -876,6 +876,7 @@
     @media (max-width:767px) {
         .item .slide-image{
             max-width: 100%;
+            padding: 0 10px;
         }
          .item .image-content{
             max-width: 100%;
