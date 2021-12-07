@@ -881,7 +881,11 @@
         }
          .item .image-content{
             max-width: 100%;
+             padding: 4%;
         }
+         .product-name{
+             margin-top: 0;
+         }
     }
      .item .image-content .fa-star{
         color: rgb(255, 210, 0);
@@ -2186,6 +2190,7 @@
         }
         .item .slide-image img{
             max-width: 98% !important;
+            min-width: 0; !important;
         }
         .for-overlay{
             color: white;
