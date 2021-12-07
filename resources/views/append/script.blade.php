@@ -372,7 +372,7 @@ $('.stamped-question').append("<li class='question_page'><a href='javascript:voi
 }
 
 });
-$('[data-index="index_value"]').addClass('active');
+$(document).find("[data-index='" + index_value + "']").parent().addClass('active');
 
 }
 });
