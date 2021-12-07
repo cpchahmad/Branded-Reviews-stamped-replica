@@ -2161,7 +2161,7 @@
         color: #5E5E5E;
         overflow: scroll;
     }
-    popup-image2{
+    .popup-image2{
         border: 1px solid #ececec;
         padding: 1%;
         height: 132px;
