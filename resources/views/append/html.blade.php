@@ -123,6 +123,9 @@
     /*    opacity: 1 !important;*/
     /*}*/
 
+    .review_progress.active .review_progress_1 {
+        opacity: .5;
+    }
     .review_progress.active .review_progress_1.active {
         opacity: 1;
     }
