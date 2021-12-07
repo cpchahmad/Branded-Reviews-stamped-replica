@@ -311,6 +311,33 @@ var next_url = '';
 }
 //              $('#next_question').attr('data-page',next_url);
 $("#br_reviews_widget_wrapper").html(data.html);
+$('.stamped-question').empty();
+var total = $(data.paginate_q['links']).length;
+
+var next_url = data.paginate_q['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
+$(data.paginate_q['links']).each(function(index) {
+//                    if (index === 0) {
+//                        $('.stamped-question').append("<li class='previous'><a href='javascript:void(0)' id='previous_question' data-page='' class='question_link' aria-label='Previous page'>&lt;</a></li>");
+//                   	}
+if (index != 0) {
+if (index != total - 1) {
+if (total != 3) {
+var url_link = data.paginate_q['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
+if (index == 1) {
+$('.stamped-question').append("<li class='question_page active'><a href='javascript:void(0)' data-index='" + index + "' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
+} else {
+$('.stamped-question').append("<li class='question_page'><a href='javascript:void(0)' data-index='" + index + "' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
+}
+}
+}
+//           			 if (index === total - 1) {
+
+//                      $('.stamped-question').append("<li class='next'><a href='javascript:void(0)' id='next_question' data-page='"+next_url+"' class='question_link' aria-label='Next page'>&gt;</a></li>");
+
+//                   	}
+}
+
+});
 
 }
 });
