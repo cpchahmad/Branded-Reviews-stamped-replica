@@ -133,7 +133,6 @@ class AdminController extends Controller
         }
         $questions_publish  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->get();
         $questions_pagination  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->paginate(5);
-        dd($questions_pagination);
         $total_question = count($questions_publish);
         $display_setting = ThemeSetting::where('shop_id',$shop->id)->first();
         $html = view('append.html')->with([
