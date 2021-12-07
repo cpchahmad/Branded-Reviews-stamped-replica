@@ -2195,6 +2195,11 @@
         .for-overlay{
             color: white;
         }
+        .fas-times{
+            margin-top: 2% !important;
+            margin-right: 5% !important;
+            background: #fff !important;
+        }
     }
 
     .popup-header {
@@ -2384,7 +2389,7 @@
 {{--                <span class="icon-cross"></span>--}}
 {{--                <span class="visually-hidden">Close</span>--}}
 {{--            </button>--}}
-            <i class="fal fa-times for-overlay"  style="font-size: 43px;"></i>
+            <i class="fal fa-times for-overlay" class="fas-times"  style="font-size: 43px;"></i>
         </div>
         {{--            <div style="position: absolute;  bottom: 280px; left: 0;">--}}
         {{--                <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">--}}
