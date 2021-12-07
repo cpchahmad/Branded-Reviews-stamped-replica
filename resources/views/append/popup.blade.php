@@ -4,7 +4,7 @@
     <div class="image-content">
         <div class="detail">
             <div class="product-details" style="margin-top: 3%;">
-                <h3 style="margin-bottom: 0px;" class="product-name">{{$review->name}}<span>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
+                <h3 style="margin-bottom: 0px;" class="product-name">{{$review->name}}<span style="font-size: 18px;color: #1cc286;font-weight: 100;margin-left: 7px;">@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                 <div class="star-main">
                     <div class="ratings">
                         @if($review->review_rating == null)
