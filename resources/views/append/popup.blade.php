@@ -43,7 +43,7 @@
                 </div>
                 <hr>
                 <div>
-                      <img src="{{asset('shirt.jpg')}}" alt="" width="75px" height="100px">
+                      <img class="popup-image2" src="{{asset('shirt.jpg')}}">
                 </div>
             </div>
         </div>
