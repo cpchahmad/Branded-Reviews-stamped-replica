@@ -2164,8 +2164,11 @@
     .popup-image2{
         border: 1px solid #ececec;
         padding: 1%;
-        height: 132px;
-        width: 35%;
+        height: 110px !important;
+        width: 29%;
+    }
+    .popup-image2:hover{
+        border: 1px solid black;
     }
 
     @media screen and (max-width: 1000px) {
