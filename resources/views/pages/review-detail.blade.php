@@ -669,7 +669,7 @@
                             @endforeach
                             @if(count($review->medias) > 0)
                             <div class="col-md-12 text-right">
-                                <button type="submit" class="btn btn-secondary">update</button>
+                                <button type="submit" class="btn btn-secondary mt-1">update</button>
                             </div>
                             @endif
                         </div>
