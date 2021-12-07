@@ -2366,11 +2366,11 @@
 
         </div>
         <div style="position: absolute; top: 0; right: 0;margin-right: 1%;">
-            <button type="button" @if(isset($display)) style="background-color: {{$display->circle_background}}" @endif class="btn-close for-overlay">
-                <span class="icon-cross"></span>
-                <span class="visually-hidden">Close</span>
-            </button>
-            <i class="fal fa-times btn-close for-overlay"  style="font-size: 43px;"></i>
+{{--            <button type="button" @if(isset($display)) style="background-color: {{$display->circle_background}}" @endif class="btn-close for-overlay">--}}
+{{--                <span class="icon-cross"></span>--}}
+{{--                <span class="visually-hidden">Close</span>--}}
+{{--            </button>--}}
+            <i class="fal fa-times for-overlay"  style="font-size: 43px;"></i>
         </div>
         {{--            <div style="position: absolute;  bottom: 280px; left: 0;">--}}
         {{--                <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">--}}
