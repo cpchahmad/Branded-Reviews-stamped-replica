@@ -6,15 +6,15 @@
 <style>
     @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
     @font-face {
-        font-family: 'Helvetica';
+        font-family: 'helvetica';
         src: url('{{ asset('Helvetica-Font/Helvetica.ttf')}}');
     }
     @font-face {
-        font-family: 'Helvetica-Bold';
+        font-family: 'helvetica-bold';
         src: url('{{ asset('Helvetica-Font/Helvetica-Bold.ttf')}}');
     }
     @font-face {
-        font-family: 'Helvetica-BoldOblique';
+        font-family: 'helvetica-boldoblique';
         src: url('{{ asset('Helvetica-Font/Helvetica-BoldOblique.ttf')}}');
     }
     @font-face {
@@ -22,7 +22,7 @@
         src: url('{{ asset('Helvetica-Font/helvetica-compressed-5871d14b6903a.otf')}}');
     }
     @font-face {
-        font-family: 'Helvetica-Oblique';
+        font-family: 'helvetica-oblique';
         src: url('{{ asset('Helvetica-Font/Helvetica-Oblique.ttf')}}');
     }
 
