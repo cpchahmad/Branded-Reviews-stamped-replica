@@ -5,47 +5,45 @@
 </head>
 <style>
     @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
-    @font-face {
-        font-family: 'Helvetica';
-        src: url('{{ asset('Helvetica-Font/Helvetica.ttf')}}');
-    }
-    @font-face {
-        font-family: 'Helvetica-Bold';
-        src: url('{{ asset('Helvetica-Font/Helvetica-Bold.ttf')}}');
-    }
-    @font-face {
-        font-family: 'Helvetica-BoldOblique';
-        src: url('{{ asset('Helvetica-Font/Helvetica-BoldOblique.ttf')}}');
-    }
+    {{--@font-face {--}}
+    {{--    font-family: 'Helvetica';--}}
+    {{--    src: url('{{ asset('Helvetica-Font/Helvetica.ttf')}}');--}}
+    {{--}--}}
+    {{--@font-face {--}}
+    {{--    font-family: 'Helvetica-Bold';--}}
+    {{--    src: url('{{ asset('Helvetica-Font/Helvetica-Bold.ttf')}}');--}}
+    {{--}--}}
+    {{--@font-face {--}}
+    {{--    font-family: 'Helvetica-BoldOblique';--}}
+    {{--    src: url('{{ asset('Helvetica-Font/Helvetica-BoldOblique.ttf')}}');--}}
+    {{--}--}}
     {{--@font-face {--}}
     {{--    font-family: 'helvetica-compressed';--}}
     {{--    src: url('{{ asset('Helvetica-Font/helvetica-compressed-5871d14b6903a.otf')}}');--}}
     {{--}--}}
-    @font-face {
-        font-family: 'Helvetica-Oblique';
-        src: url('{{ asset('Helvetica-Font/Helvetica-Oblique.ttf')}}');
-    }
+    {{--@font-face {--}}
+    {{--    font-family: 'Helvetica-Oblique';--}}
+    {{--    src: url('{{ asset('Helvetica-Font/Helvetica-Oblique.ttf')}}');--}}
+    {{--}--}}
 
-{{--    @if(isset($display))--}}
-{{--    #main-body{--}}
-{{--        font-family: {{$display->font_family}} !important;--}}
-{{--    }--}}
-{{--    @if($display->font_family != 'Open Sans')--}}
-{{--    #main-body h3{--}}
-{{--        font-family: {{$display->font_family}} !important;--}}
-{{--        font-weight: bold;--}}
-{{--    }--}}
-{{--    @endif--}}
-{{--    #main-body button {--}}
-{{--        font-family: {{$display->font_family}} !important;--}}
-{{--    }--}}
-{{--    #main-body select {--}}
-{{--        font-family: {{$display->font_family}} !important;--}}
-{{--    }--}}
-{{--    @endif--}}
+    @if(isset($display))
     #main-body{
-    font-family: Helvetica !important;
-}
+        font-family: {{$display->font_family}} !important;
+    }
+    @if($display->font_family != 'Open Sans')
+    #main-body h3{
+        font-family: {{$display->font_family}} !important;
+        font-weight: bold;
+    }
+    @endif
+    #main-body button {
+        font-family: {{$display->font_family}} !important;
+    }
+    #main-body select {
+        font-family: {{$display->font_family}} !important;
+    }
+    @endif
+
     .progress-bar{
         display:block !important;
     }
