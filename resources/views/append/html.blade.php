@@ -1266,15 +1266,35 @@ color:black;
         float: right;
     }
 
-    .icon-down {
-        padding: 11px;
-        background-color: #f8f9fa;
-        min-width: 44px;
-        text-align: center;
-        margin-top: -1px;
-        border: 1px solid black;
-        border-left: none;
+    .stamped-filter{
+        color: #333;
+        position: initial;
+        height: 35px;
+        min-height: 35px;
+        background-position: right -1px center;
+        background-image: url(https://cdn.stamped.io/cdn/images/icon-arrow-down-bg.svg) !important;
+        background-repeat: no-repeat;
+        background-color: #fff;
+        background-size: initial;
+        /*padding-right: 0;*/
+        padding-left: 12px;
+        line-height: 1.25;
+        text-indent: 0.01px;
+        text-overflow: '';
+        border: 1px solid #ccd6e0 !important;
+        bottom: 12px;
+        /*-webkit-appearance: none;*/
+        /*-moz-appearance: none;*/
+        appearance: none;
+        transition: all ease-in-out .2s;
+        cursor: pointer;
+        z-index: 2;
+        border-radius: 3px;
         font-size: 11px;
+        font-weight: 400;
+        width: auto;
+        min-width: 170px;
+        margin-bottom: 15px;
     }
 
 
