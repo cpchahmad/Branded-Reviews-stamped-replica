@@ -342,7 +342,7 @@
     }
     .question_review_buttons button{
         padding: 10px;
-        margin: 6px 0 6px 10px;
+        margin: 6px 0 6px 8px;
         cursor: pointer;
         float: right;
         @if(isset($display))
