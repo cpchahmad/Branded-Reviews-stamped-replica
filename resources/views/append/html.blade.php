@@ -6,15 +6,15 @@
 <style>
     @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
     @font-face {
-        font-family: 'Helvetica';
+        font-family: 'helvetica';
         src: url('{{ asset('Helvetica-Font/Helvetica.ttf')}}');
     }
     @font-face {
-        font-family: 'Helvetica-Bold';
+        font-family: 'helvetica-bold';
         src: url('{{ asset('Helvetica-Font/Helvetica-Bold.ttf')}}');
     }
     @font-face {
-        font-family: 'Helvetica-BoldOblique';
+        font-family: 'helvetica-boldoblique';
         src: url('{{ asset('Helvetica-Font/Helvetica-BoldOblique.ttf')}}');
     }
     @font-face {
