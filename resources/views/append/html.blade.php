@@ -2223,6 +2223,9 @@ color:black;
         position: absolute;
         top: 50%;
         left: 50%;
+        @if(isset($display))
+        font-family:{{$display->font_family}} !important;
+        @endif
         -webkit-transform: translateX(-50%) translateY(-50%);
         -moz-transform: translateX(-50%) translateY(-50%);
         -o-transform: translateX(-50%) translateY(-50%);
@@ -2244,6 +2247,11 @@ color:black;
         padding: 1%;
         color: #5E5E5E;
         overflow: scroll;
+    }
+    .popup h3,h4{
+        @if(isset($display))
+        font-family:{{$display->font_family}} !important;
+        @endif
     }
     .popup-image2{
         border: 1px solid #ececec;
