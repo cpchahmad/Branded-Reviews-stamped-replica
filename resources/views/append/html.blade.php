@@ -1504,7 +1504,7 @@ color:black;
                     </div>
                     <div class="input-container">
 {{--                        <input class="input-field" type="text" placeholder="Username" name="usrnm">--}}
-                        <select name="sort_review" @if($real_reviews == 0) style="display: none" @endif id="sort_review">
+                        <select class="stamped-filter" name="sort_review" @if($real_reviews == 0) style="display: none" @endif id="sort_review">
                             <option value="sort" selected>Sort</option>
                             <!--            <option value="saab">With Photos</option> -->
                             <option value="most_recent">Most Recent</option>
@@ -1512,7 +1512,7 @@ color:black;
                             <option value="lowest_rating">lowest Rating</option>
                             <option value="most_helpful">Most Helpful</option>
                         </select>
-                        <i class="fas fa-chevron-down icon-down"></i>
+{{--                        <i class="fas fa-chevron-down icon-down"></i>--}}
                     </div>
                 </div>
                 <div class="user_reviews" id="user_reviews">
