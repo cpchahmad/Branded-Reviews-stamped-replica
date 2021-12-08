@@ -386,9 +386,8 @@ $(document).find("[data-index='" + index_value + "']").parent().addClass('active
 });
 });
 
-$(document).ready(function(){
-// Add smooth scrolling to all links
-$('a').on('click', function(event) {
+
+$(document).on('click','.paginate_link', function(event) {
 if (this.hash !== "") {
 // Prevent default anchor click behavior
 event.preventDefault();
@@ -401,7 +400,7 @@ window.location.hash = hash;
 });
 }
 });
-});
+
 
 $.ajax({
 url: base_url + "get-setting?shop_name=" + name,
