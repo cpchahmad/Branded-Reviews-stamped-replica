@@ -86,6 +86,7 @@ class AdminController extends Controller
     public function HtmlAppend(Request $request){
         $shop = User::where('name',$request->shop_name)->first();
         $status = 'real';
+        $page_load = 'yes';
         $review_status = FakeReview::where('shop_id',$shop->id)->where('product_id',$request->product_id)->first();
         if ($review_status !=null){
             if ($review_status->status == 'fake'){
