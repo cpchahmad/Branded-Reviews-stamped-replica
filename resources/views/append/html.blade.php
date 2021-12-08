@@ -2225,6 +2225,8 @@ color:black;
         left: 50%;
         @if(isset($display))
         font-family:{{$display->font_family}} !important;
+        @else
+        font-family:'Open Sans';
         @endif
         -webkit-transform: translateX(-50%) translateY(-50%);
         -moz-transform: translateX(-50%) translateY(-50%);
@@ -2251,6 +2253,8 @@ color:black;
     .popup h3,h4{
         @if(isset($display))
         font-family:{{$display->font_family}} !important;
+    @else
+    font-family:'Open Sans';
         @endif
     }
     .popup-image2{
