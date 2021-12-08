@@ -85,9 +85,9 @@ if (index != total - 1) {
 if (total != 3) {
 var url_link = data.paginate_q['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
 if (index == 1) {
-$('.stamped-question').append("<li class='question_page active'><a href='javascript:void(0)' data-index='"+ index +"' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-question').append("<li class='question_page active'><a href='#user_reviews' data-index='"+ index +"' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
 } else {
-$('.stamped-question').append("<li class='question_page'><a href='javascript:void(0)' data-index='"+ index +"' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-question').append("<li class='question_page'><a href='#user_reviews' data-index='"+ index +"' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
 }
 }
 }
@@ -240,9 +240,9 @@ if (index != total - 1) {
 if (total != 3) {
 var url_link = data.paginate['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
 if (index == 1) {
-$('.stamped-pagination').append("<li class='page'><a href='javascript:void(0)' data-index='"+ index +"' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-pagination').append("<li class='page'><a href='#user_reviews' data-index='"+ index +"' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
 } else {
-$('.stamped-pagination').append("<li class='page'><a href='javascript:void(0)' data-index='"+ index +"' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-pagination').append("<li class='page'><a href='#user_reviews' data-index='"+ index +"' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
 }
 }
 }
@@ -271,9 +271,9 @@ if (index != total - 1) {
 if (total != 3) {
 var url_link = data.paginate_q['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
 if (index == 1) {
-$('.stamped-question').append("<li class='question_page'><a href='javascript:void(0)' data-index='" + index + "' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-question').append("<li class='question_page'><a href='#user_reviews' data-index='" + index + "' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
 } else {
-$('.stamped-question').append("<li class='question_page'><a href='javascript:void(0)' data-index='" + index + "' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-question').append("<li class='question_page'><a href='#user_reviews' data-index='" + index + "' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
 }
 }
 }
@@ -335,9 +335,9 @@ if (index != total - 1) {
 if (total != 3) {
 var url_link = data.paginate['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
 if (index == 1) {
-$('.stamped-pagination').append("<li class='page'><a href='javascript:void(0)' data-index='"+ index +"' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-pagination').append("<li class='page'><a href='#user_reviews' data-index='"+ index +"' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
 } else {
-$('.stamped-pagination').append("<li class='page'><a href='javascript:void(0)' data-index='"+ index +"' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-pagination').append("<li class='page'><a href='#user_reviews' data-index='"+ index +"' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
 }
 }
 }
@@ -366,9 +366,9 @@ if (index != total - 1) {
 if (total != 3) {
 var url_link = data.paginate_q['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
 if (index == 1) {
-$('.stamped-question').append("<li class='question_page'><a href='javascript:void(0)' data-index='" + index + "' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-question').append("<li class='question_page'><a href='#user_reviews' data-index='" + index + "' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
 } else {
-$('.stamped-question').append("<li class='question_page'><a href='javascript:void(0)' data-index='" + index + "' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-question').append("<li class='question_page'><a href='#user_reviews' data-index='" + index + "' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
 }
 }
 }
@@ -656,9 +656,9 @@ if (index != total - 1) {
 if (total != 3) {
 var url_link = data.paginate['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
 if (index == 1) {
-$('.stamped-pagination').append("<li class='page active'><a href='javascript:void(0)' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-pagination').append("<li class='page active'><a href='#user_reviews' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
 } else {
-$('.stamped-pagination').append("<li class='page'><a href='javascript:void(0)' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-pagination').append("<li class='page'><a href='#user_reviews' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
 }
 }
 }
@@ -685,9 +685,9 @@ if (index != total - 1) {
 if (total != 3) {
 var url_link = data.paginate_q['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
 if (index == 1) {
-$('.stamped-question').append("<li class='question_page active'><a href='javascript:void(0)' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-question').append("<li class='question_page active'><a href='#user_reviews' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
 } else {
-$('.stamped-question').append("<li class='question_page'><a href='javascript:void(0)' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-question').append("<li class='question_page'><a href='#user_reviews' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
 }
 }
 }
@@ -751,9 +751,9 @@ if (index != total - 1) {
 if (total != 3) {
 var url_link = data.paginate['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
 if (index == 1) {
-$('.stamped-pagination').append("<li class='page active'><a href='javascript:void(0)' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-pagination').append("<li class='page active'><a href='#user_reviews' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
 } else {
-$('.stamped-pagination').append("<li class='page'><a href='javascript:void(0)' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-pagination').append("<li class='page'><a href='#user_reviews' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
 }
 }
 }
