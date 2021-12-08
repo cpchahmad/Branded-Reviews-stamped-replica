@@ -368,9 +368,11 @@
         }
         .image_popups_list{
             width: 50%;
+            margin-top: 2%;
         }
         .question_review_buttons{
             width: 50%;
+            margin-top: 2%;
         }
     }
     @media only screen and (min-device-width: 1075px) and (max-device-width: 1117px) {
