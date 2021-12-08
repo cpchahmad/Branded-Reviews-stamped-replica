@@ -388,7 +388,7 @@ $(document).find("[data-index='" + index_value + "']").parent().addClass('active
 
 $(document).ready(function(){
 // Add smooth scrolling to all links
-$('.paginate_link').on('click', function(event) {
+$('a').on('click', function(event) {
 if (this.hash !== "") {
 // Prevent default anchor click behavior
 event.preventDefault();
