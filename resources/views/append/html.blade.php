@@ -299,6 +299,7 @@
         }
         .questions_tab_content .search_input{
             width: 100% !important;
+            margin-top: 20%;
         }
         #user_questions{
             padding: 0 0 0 0 !important;
