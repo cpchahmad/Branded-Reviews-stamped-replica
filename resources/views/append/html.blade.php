@@ -665,7 +665,7 @@
     .ask_a_question input[type=submit] {
         float: right;
         @if(isset($display))
-        background-color: {{$display->button_bg}};
+        background-color: {{$display->tabs_background}};
         color: {{$display->button_text}};
         @else
          background-color: #0c0c0c;
@@ -680,7 +680,13 @@
         cursor: pointer;
     }
     .ask_a_question input[type=submit]:hover {
-        background-color: #131313;
+        /*background-color: #131313;*/
+        background-color: #f8f9fa;
+        @if(isset($display))
+        color: {{$display->button_text}};
+    @else
+    color:black;
+    @endif
     }
 
     .facebook{
