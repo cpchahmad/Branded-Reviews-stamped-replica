@@ -209,6 +209,7 @@ $('#review_rating').val(rating);
 $(function() {
 
 $(document).on("click", ".paginate_link", function(e) {
+$('.loader').css('display','block');
 $('.page').removeClass('active');
 $('.question_page').removeClass('active');
 
@@ -225,6 +226,7 @@ var previous_url = data.paginate['links'][0]['url'] + '&shop_name=' + name + '&p
 var next_url = data.paginate['links'][total - 1]['url'] + '&shop_name=' + name + '&product_id=' + id;
 
 //              $('#next').attr('data-page',next_url);
+$('.loader').css('display','none');
 $("#br_reviews_widget_wrapper").html(data.html);
 $(document).find('.stamped-pagination').empty();
 var total = $(data.paginate['links']).length;
@@ -291,6 +293,7 @@ $(document).find("[data-index='" + index_value + "']").parent().addClass('active
 });
 
 $(document).on("click", ".question_link", function() {
+$('.loader').css('display','block');
 $('.question_page').removeClass('active');
 $('.page').removeClass('active');
 if (!$(this).parent().hasClass("previous") && !$(this).parent().hasClass("next")) {
@@ -316,6 +319,7 @@ if (data.paginate['links'][total - 1]['url'] == null) {
 var next_url = '';
 }
 //              $('#next_question').attr('data-page',next_url);
+$('.loader').css('display','none');
 $("#br_reviews_widget_wrapper").html(data.html);
 
 $('#questions').trigger('click');
