@@ -1866,6 +1866,9 @@ color:black;
                     </select>
 
                 </div>
+                <div class="loader" style="display: none;">
+                    <div class="loader-active" style="width: fit-content;margin: 0 auto;">Loading...</div>
+                </div>
                 <div class="user_reviews" id="user_questions">
 
                     @if (count($questions_publish) > 0)
