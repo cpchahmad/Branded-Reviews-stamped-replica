@@ -1235,16 +1235,16 @@
         float: right;
     }
 
-    .icon {
-        padding: 11px;
-        background-color: #f8f9fa;
-        min-width: 44px;
-        text-align: center;
-        margin-top: -1px;
-        border: 1px solid black;
-        border-left: none;
-        font-size: 11px;
-    }
+    /*.icon {*/
+    /*    padding: 11px;*/
+    /*    background-color: #f8f9fa;*/
+    /*    min-width: 44px;*/
+    /*    text-align: center;*/
+    /*    margin-top: -1px;*/
+    /*    border: 1px solid black;*/
+    /*    border-left: none;*/
+    /*    font-size: 11px;*/
+    /*}*/
 
 
 </style>
@@ -2391,7 +2391,7 @@
 {{--                <span class="icon-cross"></span>--}}
 {{--                <span class="visually-hidden">Close</span>--}}
 {{--            </button>--}}
-{{--            <i class="fal fa-times for-overlay fas-times"  style="font-size: 43px;"></i>--}}
+            <i class="fal fa-times for-overlay fas-times"  style="font-size: 43px;"></i>
         </div>
         {{--            <div style="position: absolute;  bottom: 280px; left: 0;">--}}
         {{--                <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">--}}
