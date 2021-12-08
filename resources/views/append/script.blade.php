@@ -386,6 +386,23 @@ $(document).find("[data-index='" + index_value + "']").parent().addClass('active
 });
 });
 
+$(document).ready(function(){
+// Add smooth scrolling to all links
+$('.paginate_link').on('click', function(event) {
+if (this.hash !== "") {
+// Prevent default anchor click behavior
+event.preventDefault();
+var hash = this.hash;
+$('html, body').animate({
+scrollTop: $(hash).offset().top
+}, 800, function(){
+// Add hash (#) to URL when done scrolling (default click behavior)
+window.location.hash = hash;
+});
+}
+});
+});
+
 $.ajax({
 url: base_url + "get-setting?shop_name=" + name,
 type: 'GET',
