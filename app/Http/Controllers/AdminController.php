@@ -84,6 +84,7 @@ class AdminController extends Controller
         }
     }
     public function HtmlAppend(Request $request){
+        dd($request->all());
         $shop = User::where('name',$request->shop_name)->first();
         $status = 'real';
         $page_load = 'yes';
@@ -99,7 +100,6 @@ class AdminController extends Controller
                 $status = 'fake';
             }
         }
-
         $reviews_featured = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->get();
         $reviews_publish  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->get();
         if ($page_load =='yes' || isset($request->status) && $request->status == 'reviews'){
