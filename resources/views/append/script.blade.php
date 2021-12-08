@@ -75,7 +75,7 @@ $('.stamped-pagination').append("<li class='page'><a href='#user_reviews' data-i
 $('.stamped-question').empty();
 var total = $(data.paginate_q['links']).length;
 
-var next_url = data.paginate_q['next_page_url'] + '&shop_name=' + name + '&product_id=' + id + '&status=reviews';
+var next_url = data.paginate_q['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
 $(data.paginate_q['links']).each(function(index) {
 //                    if (index === 0) {
 //                        $('.stamped-question').append("<li class='previous'><a href='javascript:void(0)' id='previous_question' data-page='' class='question_link' aria-label='Previous page'>&lt;</a></li>");
@@ -215,9 +215,8 @@ $('.question_page').removeClass('active');
 
 var for_url = $(this).data('page');
 var index_value = $(this).data('index');
-var status = $(this).data('status');
 $.ajax({
-url: for_url + '&status=' + status,
+url: for_url,
 type: 'GET',
 success: function(data) {
 var total = $(data.paginate['links']).length;
