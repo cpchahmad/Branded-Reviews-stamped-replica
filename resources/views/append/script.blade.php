@@ -752,6 +752,7 @@ type: 'GET',
 success: function(data) {
 
 $('#br_reviews_widget_wrapper').html(data.html);
+$('#questions').trigger('click');
 $('.stamped-pagination').empty();
 var total = $(data.paginate['links']).length;
 var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
