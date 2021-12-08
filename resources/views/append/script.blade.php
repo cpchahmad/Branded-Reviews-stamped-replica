@@ -387,7 +387,7 @@ url: base_url + "get-setting?shop_name=" + name,
 type: 'GET',
 success: function(data) {
 if (data.setting != 'NoSetting') {
-console.log(data.setting['bar_filled']);
+
 $("head").append('<style> .tt_logix_reviews_r_no .fa-star{ color: ' + data.setting['unfilled_stars'] + "!important" + ' } #rating_stars .checked{ color: ' + data.setting['stars'] + "!important" + ' } .user_info .fa-star{color:' + data.setting['unfilled_stars'] + "!important" + '} #user_info .checked{color:' + data.setting['stars'] + "!important" + '} #main-body{color:' + data.setting['text'] + "!important" + '} #user_pic{background-color:' + data.setting['circle_background'] + "!important" + '} #user_pic_inner h3{color:' + data.setting['circle_text'] + "!important" + '} #review_reply{border-left:5px solid' + data.setting['reply_border'] + "!important" + '} #user_info h3{color:' + data.setting['text'] + "!important" + '} #replier_name h4{color:' + data.setting['text'] + "!important" + '} .review_progress_1 .side .fa-star{color:' + data.setting['filled_stars'] + "!important" + '} .bar-container{background-color:' + data.setting['bar_unfilled'] + "!important" + '} .bar-5{background-color:' + data.setting['bar_filled'] + "!important" + '} .bar-4{background-color:' + data.setting['bar_filled'] + "!important" + '} .bar-3{background-color:' + data.setting['bar_filled'] + "!important" + '} .bar-2{background-color:' + data.setting['bar_filled'] + "!important" + '} .bar-1{background-color:' + data.setting['bar_filled'] + "!important" + '}</style>');
 // 									#user_info h3 span{color:' + data.setting['circle_background'] + "!important" + '}
 //               $('.tt_logix_reviews_r_no .fa-star').css('color',data.setting['unfilled_stars']);
@@ -561,6 +561,7 @@ thiss.parents('.like_dislike').find('.like-q').append(data.likes);
 });
 
 $(document).on("change", "#sort_review", function(e) {
+$('.loader').css('display','block');
 var optionSelected = $("option:selected", this);
 var valueSelected = this.value;
 
@@ -568,6 +569,7 @@ $.ajax({
 url: base_url + "filter-reviews?product_id=" + id + "&shop_name=" + name + "&filter_value=" + valueSelected,
 type: 'GET',
 success: function(data) {
+$('.loader').css('display','none');
 if (data.reviews != 'no reviews') {
 $('#user_reviews').html(data.reviews);
 } else {
@@ -580,6 +582,7 @@ $('#review_pagination').css('display', 'none');
 });
 
 $(document).on('click','.review_progress_1',function(){
+$('.loader').css('display','block');
 $('.review_progress').addClass('active');
 $('.review_progress_1').removeClass('active');
 $(this).addClass('active');
@@ -588,7 +591,7 @@ $.ajax({
 url: base_url + "filter-on-stars?product_id=" + id + "&shop_name=" + name + "&data=" + data,
 type: 'GET',
 success: function(data) {
-
+$('.loader').css('display','none');
 if (data.reviews != 'no reviews') {
 $('#total_reviews').html(data.total_reviews);
 $('#user_reviews').html(data.reviews);
