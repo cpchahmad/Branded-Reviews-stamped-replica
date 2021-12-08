@@ -1572,7 +1572,7 @@ color:black;
                                     <div style="position: relative">
                                         <div class="user_pic" id="user_pic">
                                             <div class="user_pic_inner" id="user_pic_inner">
-                                                <h3>
+                                                <h3 style="font-family: 'helvetica-boldoblique';">
                                                     {{$acronym}}
                                                 </h3>
                                             </div>
