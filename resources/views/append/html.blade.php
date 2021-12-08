@@ -446,7 +446,7 @@
         padding: 0;
     }
     .dropdown_review select{
-        position: relative;
+        /*position: relative;*/
         float: right;
         padding-right: 50px !important;
         padding: 6px;
