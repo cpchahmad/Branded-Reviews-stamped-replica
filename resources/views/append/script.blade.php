@@ -215,8 +215,9 @@ $('.question_page').removeClass('active');
 
 var for_url = $(this).data('page');
 var index_value = $(this).data('index');
+var status = $(this).data('status');
 $.ajax({
-url: for_url,
+url: for_url + '&status=' + status,
 type: 'GET',
 success: function(data) {
 var total = $(data.paginate['links']).length;
