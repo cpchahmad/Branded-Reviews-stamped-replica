@@ -5,26 +5,26 @@
 </head>
 <style>
     @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
-    {{--@font-face {--}}
-    {{--    font-family: 'Helvetica';--}}
-    {{--    src: url('{{ asset('Helvetica-Font/Helvetica.ttf')}}');--}}
-    {{--}--}}
-    {{--@font-face {--}}
-    {{--    font-family: 'Helvetica-Bold';--}}
-    {{--    src: url('{{ asset('Helvetica-Font/Helvetica-Bold.ttf')}}');--}}
-    {{--}--}}
-    {{--@font-face {--}}
-    {{--    font-family: 'Helvetica-BoldOblique';--}}
-    {{--    src: url('{{ asset('Helvetica-Font/Helvetica-BoldOblique.ttf')}}');--}}
-    {{--}--}}
-    {{--@font-face {--}}
-    {{--    font-family: 'helvetica-compressed';--}}
-    {{--    src: url('{{ asset('Helvetica-Font/helvetica-compressed-5871d14b6903a.otf')}}');--}}
-    {{--}--}}
-    {{--@font-face {--}}
-    {{--    font-family: 'Helvetica-Oblique';--}}
-    {{--    src: url('{{ asset('Helvetica-Font/Helvetica-Oblique.ttf')}}');--}}
-    {{--}--}}
+    @font-face {
+        font-family: 'Helvetica';
+        src: url('{{ asset('Helvetica-Font/Helvetica.ttf')}}');
+    }
+    @font-face {
+        font-family: 'Helvetica-Bold';
+        src: url('{{ asset('Helvetica-Font/Helvetica-Bold.ttf')}}');
+    }
+    @font-face {
+        font-family: 'Helvetica-BoldOblique';
+        src: url('{{ asset('Helvetica-Font/Helvetica-BoldOblique.ttf')}}');
+    }
+    @font-face {
+        font-family: 'helvetica-compressed';
+        src: url('{{ asset('Helvetica-Font/helvetica-compressed-5871d14b6903a.otf')}}');
+    }
+    @font-face {
+        font-family: 'Helvetica-Oblique';
+        src: url('{{ asset('Helvetica-Font/Helvetica-Oblique.ttf')}}');
+    }
 
     @if(isset($display))
     #main-body{
