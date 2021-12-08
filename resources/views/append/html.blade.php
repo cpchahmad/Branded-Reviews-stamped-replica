@@ -6,15 +6,15 @@
 <style>
     @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
     @font-face {
-        font-family: 'helvetica';
+        font-family: 'Helvetica';
         src: url('{{ asset('Helvetica-Font/Helvetica.ttf')}}');
     }
     @font-face {
-        font-family: 'helvetica-bold';
+        font-family: 'Helvetica-Bold';
         src: url('{{ asset('Helvetica-Font/Helvetica-Bold.ttf')}}');
     }
     @font-face {
-        font-family: 'helvetica-boldoblique';
+        font-family: 'Helvetica-BoldOblique';
         src: url('{{ asset('Helvetica-Font/Helvetica-BoldOblique.ttf')}}');
     }
     @font-face {
@@ -1572,7 +1572,7 @@ color:black;
                                     <div style="position: relative">
                                         <div class="user_pic" id="user_pic">
                                             <div class="user_pic_inner" id="user_pic_inner">
-                                                <h3 style="font-family: 'helvetica-boldoblique';">
+                                                <h3>
                                                     {{$acronym}}
                                                 </h3>
                                             </div>
