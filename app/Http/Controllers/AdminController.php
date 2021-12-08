@@ -84,7 +84,7 @@ class AdminController extends Controller
         }
     }
     public function HtmlAppend(Request $request){
-//        dd($request->all());
+        dd($request->all());
         $shop = User::where('name',$request->shop_name)->first();
         $status = 'real';
         $page_load = 'yes';
