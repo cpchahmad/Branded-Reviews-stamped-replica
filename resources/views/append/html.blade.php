@@ -358,7 +358,10 @@
 
     @media only screen and (min-device-width: 768px) and (max-device-width: 1074px) {
         .tt_logix_reviews_r_no{
-            width: 50%;
+            width: 31%;
+        }
+        .tt_logix_reviews{
+            padding: 5%;
         }
         .review_progress{
             width: 50%;
