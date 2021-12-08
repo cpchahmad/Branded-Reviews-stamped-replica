@@ -97,7 +97,7 @@
     }
     .tt_logix_reviews_r_no{
         border-right: 1px #cecece solid;
-        width: 18%;
+        width: 19%;
     }
     .tt_logix_reviews_r_no h1{
         display: flex;
@@ -210,7 +210,7 @@
 
     .image_popups_list{
         padding:3px 0 0 15px;
-        width: 28%;
+        width: 27%;
         display: flex;
         flex-wrap: wrap;
     }
@@ -342,7 +342,7 @@
     }
     .question_review_buttons button{
         padding: 10px;
-        margin: 6px 0 6px 6px;
+        margin: 6px 0 6px 10px;
         cursor: pointer;
         float: right;
         @if(isset($display))
