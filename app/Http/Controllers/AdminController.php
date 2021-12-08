@@ -104,9 +104,9 @@ class AdminController extends Controller
         $reviews_featured = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->get();
         $reviews_publish  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->get();
 //        if ($page_load =='yes' || isset($request->status) && $request->status == 'reviews'){
-//        $reviews_pagi_fea = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->paginate(5);
+        $reviews_pagi_fea = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->paginate(2);
 //        Paginator::setPageName('reviews_page');
-        $reviews_pagi_pub  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->paginate(5);
+        $reviews_pagi_pub  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->paginate(2);
 //        }
         $total_five_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',5)->count();
         $total_four_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',4)->count();
@@ -150,7 +150,7 @@ class AdminController extends Controller
         $total_question = count($questions_publish);
         $display_setting = ThemeSetting::where('shop_id',$shop->id)->first();
         $html = view('append.html')->with([
-            'reviews_featured' => $reviews_featured,
+            'reviews_featured' => $reviews_pagi_fea,
             'reviews_publish' => $reviews_pagi_pub,
             'total_reviews'=>$count_reviews,
             'total_rating'=>$over_all_rating,
