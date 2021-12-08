@@ -441,6 +441,15 @@
         @endif
 
     }
+    .loader-active{
+        padding: 4px 20px;
+        margin-right: 10px;
+        @if(isset($display))
+        background-color: {{$display->tabs_background}};
+        @else
+         background-color: rgb(238, 238, 238);
+    @endif
+}
     .reviews_tab_content{
         margin-top: 0;
         padding: 0;
@@ -1536,7 +1545,10 @@ color:black;
                     </div>
                 </div>
                 <div class="user_reviews" id="user_reviews">
-
+                    <div style="text-align: center;">
+                        <hr style="margin: 0;">
+                        <div class="loader-active" style="width: fit-content;text-align: center;">loadin more</div>
+                    </div>
                     @if (count($reviews_featured) > 0)
                         @foreach($reviews_featured as $review)
                             @php
