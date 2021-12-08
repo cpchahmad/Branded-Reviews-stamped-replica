@@ -54,11 +54,11 @@ $(data.paginate['links']).each(function(index) {
 if (index != 0) {
 if (index != total - 1) {
 if (total != 3) {
-var url_link = data.paginate['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
+var url_link = data.paginate['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id + '&status=reviews';
 if (index == 1) {
-$('.stamped-pagination').append("<li class='page active'><a href='#user_reviews' data-status='reviews' data-index='"+ index +"' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-pagination').append("<li class='page active'><a href='#user_reviews' data-index='"+ index +"' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
 } else {
-$('.stamped-pagination').append("<li class='page'><a href='#user_reviews' data-status='reviews' data-index='"+ index +"' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
+$('.stamped-pagination').append("<li class='page'><a href='#user_reviews' data-index='"+ index +"' data-page='" + url_link + "' class='paginate_link' aria-label='Page 1'>" + index + "</a></li>");
 }
 }
 }
@@ -75,7 +75,7 @@ $('.stamped-pagination').append("<li class='page'><a href='#user_reviews' data-s
 $('.stamped-question').empty();
 var total = $(data.paginate_q['links']).length;
 
-var next_url = data.paginate_q['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
+var next_url = data.paginate_q['next_page_url'] + '&shop_name=' + name + '&product_id=' + id + '&status=reviews';
 $(data.paginate_q['links']).each(function(index) {
 //                    if (index === 0) {
 //                        $('.stamped-question').append("<li class='previous'><a href='javascript:void(0)' id='previous_question' data-page='' class='question_link' aria-label='Previous page'>&lt;</a></li>");
