@@ -1235,16 +1235,16 @@
         float: right;
     }
 
-    /*.icon {*/
-    /*    padding: 11px;*/
-    /*    background-color: #f8f9fa;*/
-    /*    min-width: 44px;*/
-    /*    text-align: center;*/
-    /*    margin-top: -1px;*/
-    /*    border: 1px solid black;*/
-    /*    border-left: none;*/
-    /*    font-size: 11px;*/
-    /*}*/
+    .icon-down {
+        padding: 11px;
+        background-color: #f8f9fa;
+        min-width: 44px;
+        text-align: center;
+        margin-top: -1px;
+        border: 1px solid black;
+        border-left: none;
+        font-size: 11px;
+    }
 
 
 </style>
@@ -1481,7 +1481,7 @@
                             <option value="lowest_rating">lowest Rating</option>
                             <option value="most_helpful">Most Helpful</option>
                         </select>
-                        <i class="fas fa-chevron-down icon"></i>
+                        <i class="fas fa-chevron-down icon-down"></i>
                     </div>
                 </div>
                 <div class="user_reviews" id="user_reviews">
