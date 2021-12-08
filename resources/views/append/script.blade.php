@@ -83,7 +83,7 @@ $(data.paginate_q['links']).each(function(index) {
 if (index != 0) {
 if (index != total - 1) {
 if (total != 3) {
-var url_link = data.paginate_q['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id;
+var url_link = data.paginate_q['links'][index]['url'] + '&shop_name=' + name + '&product_id=' + id + '&status=questions';
 if (index == 1) {
 $('.stamped-question').append("<li class='question_page active'><a href='#search_question' data-status='questions' data-index='"+ index +"' data-page='" + url_link + "' class='question_link' aria-label='Page 1'>" + index + "</a></li>");
 } else {
