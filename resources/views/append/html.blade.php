@@ -18,12 +18,20 @@
         src: url('{{ asset('Helvetica-Font/Helvetica-BoldOblique.ttf')}}');
     }
     @font-face {
+        font-family: 'helvetica-light';
+        src: url('{{ asset('Helvetica-Font/helvetica-light-587ebe5a59211.ttf')}}');
+    }
+    @font-face {
         font-family: 'helvetica-compressed';
         src: url('{{ asset('Helvetica-Font/helvetica-compressed-5871d14b6903a.otf')}}');
     }
     @font-face {
         font-family: 'helvetica-oblique';
         src: url('{{ asset('Helvetica-Font/Helvetica-Oblique.ttf')}}');
+    }
+    @font-face {
+        font-family: 'helvetica-rounded';
+        src: url('{{ asset('Helvetica-Font/helvetica-rounded-bold-5871d05ead8de.otf')}}');
     }
 
     @if(isset($display))
@@ -594,6 +602,9 @@
         font-weight: bold;
         margin-bottom: 0%;
         margin-top: 0%;
+        @if(isset($display))
+        font-family:{{$display->font_family}} !important;
+    @endif
     }
     @media (max-width:425px) {
         .review_footer .like_dislike{
