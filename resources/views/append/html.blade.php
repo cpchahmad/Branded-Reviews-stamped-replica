@@ -972,7 +972,7 @@ color:black;
     }
      .item .image-content img{
         height: 100%;
-         width: 120px;
+         width: 126px;
     }
 
     .stamped-messages .stamped-thank-you {
