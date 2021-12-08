@@ -1544,10 +1544,10 @@ color:black;
 {{--                        <i class="fas fa-chevron-down icon-down"></i>--}}
                     </div>
                 </div>
-                <div>
-                    <div class="loader-active" style="width: fit-content;margin: 0 auto;">Loading more...</div>
-                </div>
                 <div class="user_reviews" id="user_reviews">
+                    <div>
+                        <div class="loader-active" style="width: fit-content;margin: 0 auto;">Loading more...</div>
+                    </div>
                     @if (count($reviews_featured) > 0)
                         @foreach($reviews_featured as $review)
                             @php
