@@ -2226,7 +2226,7 @@ color:black;
         @if(isset($display))
         font-family:{{$display->font_family}} !important;
         @else
-        font-family:'Open Sans';
+        font-family:Assistant, sans-serif;
         @endif
         -webkit-transform: translateX(-50%) translateY(-50%);
         -moz-transform: translateX(-50%) translateY(-50%);
@@ -2254,7 +2254,7 @@ color:black;
         @if(isset($display))
         font-family:{{$display->font_family}} !important;
     @else
-    font-family:'Open Sans';
+    font-family:Assistant, sans-serif;
         @endif
     }
     .popup-image2{
