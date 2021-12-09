@@ -104,9 +104,7 @@ class AdminController extends Controller
         $reviews_featured = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->get();
         $reviews_publish  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->get();
 //        if ($page_load =='yes' || isset($request->status) && $request->status == 'reviews'){
-        Paginator::setPageName('page_r');
         $reviews_pagi_fea = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->paginate(2);
-//        Paginator::setPageName('reviews_page');
         $reviews_pagi_pub  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->paginate(2);
 //        }
         $total_five_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',5)->count();
@@ -146,7 +144,6 @@ class AdminController extends Controller
         $questions_publish  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->get();
 //        if ($page_load =='yes' || isset($request->status) && $request->status == 'questions'){
 //        Paginator::setPageName('questions_page');
-        Paginator::setPageName('page_q');
         $questions_pagination  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->paginate(5);
 //        }
         $total_question = count($questions_publish);
