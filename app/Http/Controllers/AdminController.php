@@ -104,6 +104,7 @@ class AdminController extends Controller
         $reviews_featured = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->get();
         $reviews_publish  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->get();
 //        if ($page_load =='yes' || isset($request->status) && $request->status == 'reviews'){
+        Paginator::setPageName('page_r');
         $reviews_pagi_fea = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->paginate(2);
 //        Paginator::setPageName('reviews_page');
         $reviews_pagi_pub  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->paginate(2);
@@ -145,6 +146,7 @@ class AdminController extends Controller
         $questions_publish  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->get();
 //        if ($page_load =='yes' || isset($request->status) && $request->status == 'questions'){
 //        Paginator::setPageName('questions_page');
+        Paginator::setPageName('page_q');
         $questions_pagination  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->paginate(5);
 //        }
         $total_question = count($questions_publish);
@@ -175,7 +177,6 @@ class AdminController extends Controller
             'paginate_q'=>json_decode(json_encode($questions_pagination)),
             'paginate'=>json_decode(json_encode($reviews_pagi_pub)),
         ]);
-
     }
     public function ShareFacebook(Request $request){
         $review = Review::where('id',$request->review_id)->first();
