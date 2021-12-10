@@ -367,8 +367,8 @@
             padding-bottom: 24% !important;
         }
         .custom-file-upload{
-            margin-top: 12px;
-            margin-bottom: 8px;
+            margin-top: 12px !important;
+            margin-bottom: 8px !important;
         }
     }
 
@@ -1084,8 +1084,8 @@ color:black;
         display: inline-block;
         padding: 6px 12px;
         cursor: pointer;
-        margin-top: 6px;
-        margin-bottom: 16px;
+        margin-top: 12px;
+        margin-bottom: 8px;
         width:100%;
     }
     .black-color{
