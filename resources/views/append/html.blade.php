@@ -1142,8 +1142,8 @@ color:black;
 
     .sheild-badge{
         position: absolute;
-        right: -5px;
-        bottom: -7px;
+        right: -4px;
+        bottom: -8px;
         font-size: 18px;
         @if(isset($display))
         color: {{$display->verify_color}};
