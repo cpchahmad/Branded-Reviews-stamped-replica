@@ -816,6 +816,11 @@
 color:black;
     @endif
     }
+    .rating_on_review ul{
+        margin-top: 10px;
+        margin-bottom: 15px;
+        line-height: 23px;
+    }
     .rating_on_review > ul >li{
         font-size: 32px;
         display: inline-block;
@@ -1570,7 +1575,7 @@ color:black;
 
                         <label for="rating">Rating</label>
                         <div class="rating_on_review">
-                            <ul style="margin-top: 0px;margin-bottom: 0px;">
+                            <ul>
                                 <li class="list_item" data-value='5'>&#9734;</li>
                                 <li class="list_item" data-value='4'>&#9734;</li>
                                 <li class="list_item" data-value='3'>&#9734;</li>
