@@ -269,7 +269,11 @@
             /*margin-left: 34%;*/
         }
         .tt_logix_reviews{
-            padding: 10px 30px;
+            padding: 10px 20px;
+        }
+        .question_review_buttons button{
+            margin: 6px 0 6px 0px;
+            width: 100%;
         }
         .user_pic{
             width: 20% !important;
