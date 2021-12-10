@@ -1568,15 +1568,16 @@ color:black;
 {{--                       <form id="review" action="https://stamped.test/review-submit" method="POST">--}}
                     <form id="review" action="https://phpstack-176572-2275881.cloudwaysapps.com/review-submit" method="POST">
                         <div>
-                            <label for="name">Name</label>
-                            <input type="text" id="name" required name="name" placeholder="Your name..">
-                        </div>
+                            <div>
+                                <label for="name">Name</label>
+                                <input type="text" id="name" required name="name" placeholder="Your name..">
+                            </div>
 
-                        <div>
-                            <label for="email">Email</label>
-                            <input type="text" required id="email" name="email" placeholder="Your email..">
+                            <div>
+                                <label for="email">Email</label>
+                                <input type="text" required id="email" name="email" placeholder="Your email..">
+                            </div>
                         </div>
-
                         <label for="rating">Rating</label>
                         <div class="rating_on_review">
                             <ul>
