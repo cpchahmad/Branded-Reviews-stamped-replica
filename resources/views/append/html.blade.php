@@ -311,7 +311,7 @@
         }
         .questions_tab_content .search_input{
             width: 100% !important;
-            margin-top: 20%;
+            margin-top: 20% !important;
         }
         #user_questions{
             padding: 0 0 0 0 !important;
@@ -323,7 +323,7 @@
             margin-top: 20px !important;
             margin-bottom: 30px !important;
         }
-        .write_a_review form{
+        .write_a_review form , .ask_a_question form{
             padding: 0 18px;
         }
         .write_a_review input[type=text], textarea{
