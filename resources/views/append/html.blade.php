@@ -1383,6 +1383,7 @@ color:black;
     .first-lable{
         width: 28%;
         display: inline-block;
+        padding-right: 15px;
     }
 </style>
 <div id="main-body">
