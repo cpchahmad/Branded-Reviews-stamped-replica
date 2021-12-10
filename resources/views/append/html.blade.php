@@ -276,8 +276,8 @@
             width: 100%;
         }
         .user_pic{
-            height: 45px;
-            width: 45px;
+            height: 45px !important;
+            width: 45px !important;
         }
         .user_pic{
             width: 20% !important;
