@@ -791,6 +791,7 @@
     .ask_a_question{
         border: 1px solid rgb(238, 238, 238);
         padding: 0 15px;
+        padding-bottom: 8%;
     }
     .write_a_review form{
         margin: 10px 0 60px 0;
@@ -805,7 +806,7 @@
         border-radius: 4px;
         box-sizing: border-box;
         margin-top: 6px;
-        margin-bottom: 16px;
+        /*margin-bottom: 16px;*/
         resize: vertical;
     }
     .write_a_review input[type=submit] {
