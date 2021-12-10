@@ -729,6 +729,7 @@
         font-weight: 600;
         border-radius: 28px;
         cursor: pointer;
+        margin-top: 1%;
     }
     .ask_a_question input[type=submit]:hover {
         /*background-color: #131313;*/
