@@ -777,6 +777,9 @@
     .write_a_review form{
         margin: 10px 0 60px 0;
     }
+    .write_a_review form label , .ask_a_question form label{
+        font-size: 14px;
+    }
     .write_a_review input[type=text], textarea {
         width: 100%;
         padding: 12px;
