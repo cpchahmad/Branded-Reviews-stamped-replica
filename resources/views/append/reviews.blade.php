@@ -36,8 +36,10 @@
                     <div class="user_info" id="user_info">
                         <h3>{{ucwords($review->name)}}<span>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                         <p>
-                            <i class="flag flag {{$review->country_code}}"></i>
+{{--                            <i class="flag flag {{$review->country_code}}"></i>--}}
+                            <img src="{{asset('flags/bigger/'.$review->country_code.'.svg')}}" class="flag-image">
                             {{$review->customer_location}}
+
                         </p>
                         <div>
                             @if($review->review_rating == null)
@@ -169,7 +171,8 @@
                         <div class="user_info" id="user_info">
                             <h3>{{ucwords($review->name)}}<span>@if($review->verify_status == 'veified') Verified Buyer @endif</span></h3>
                             <p>
-                                <i class="flag flag {{$review->country_code}}"></i>
+{{--                                <i class="flag flag {{$review->country_code}}"></i>--}}
+                                <img src="{{asset('flags/bigger/'.$review->country_code.'.svg')}}" class="flag-image">
                                 {{$review->customer_location}}
                             </p>
                             <div>

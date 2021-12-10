@@ -1604,7 +1604,7 @@ color:black;
                                         <h3>{{ucwords($review->name)}}<span @if(isset($display)) style="color: {{$display->verify_color}}" @endif>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                                         <p>
 {{--                                            <i class="flag flag {{$review->country_code}}"></i>--}}
-                                            <img src="{{asset('flags/bigger/pk.svg')}}" class="flag-image">
+                                            <img src="{{asset('flags/bigger/'.$review->country_code.'.svg')}}" class="flag-image">
                                             {{$review->customer_location}}
                                         </p>
                                         @if($review->review_rating == null)
@@ -1736,7 +1736,8 @@ color:black;
                                     <div class="user_info" id="user_info">
                                         <h3>{{ucwords($review->name)}}<span @if(isset($display)) style="color: {{$display->verify_color}}" @endif>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                                         <p>
-                                            <i class="flag flag {{$review->country_code}}"></i>
+{{--                                            <i class="flag flag {{$review->country_code}}"></i>--}}
+                                            <img src="{{asset('flags/bigger/'.$review->country_code.'.svg')}}" class="flag-image">
                                             {{$review->customer_location}}
                                         </p>
 
