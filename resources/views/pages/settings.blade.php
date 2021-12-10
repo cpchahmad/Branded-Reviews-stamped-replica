@@ -122,7 +122,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="#">Enter Font Text (px)</label>
+                                    <label for="#">Enter FontText size (px)</label>
                                     <input placeholder="enter font text" @if(isset($setting->font_text)) value="{{$setting->font_text}}" @endif name="font_text" type="number" step="1" class="form-control">
                                 </div>
                             </div>
