@@ -272,7 +272,7 @@
             padding: 10px 20px;
         }
         .question_review_buttons button{
-            margin: 6px 0 6px 0px;
+            margin: 6px 0 6px 0 !important;
             width: 100%;
         }
         .user_pic{
@@ -344,8 +344,8 @@
             padding: 4px 10px;
         }
         .sheild-badge{
-            right: -4px;
-            bottom: 19px;
+            right: -4px !important;
+            bottom: 19px !important;
         }
     }
 
