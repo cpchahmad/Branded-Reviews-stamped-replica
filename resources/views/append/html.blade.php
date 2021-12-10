@@ -366,6 +366,10 @@
         .ask_a_question{
             padding-bottom: 24% !important;
         }
+        .custom-file-upload{
+            margin-top: 12px;
+            margin-bottom: 8px;
+        }
     }
 
     .question_review_buttons{
@@ -375,7 +379,7 @@
         padding: 2px 2px !important;
     }
     .question_content p{
-        margin-top: 0px;
+        margin-top: 0;
     }
     .question_review_buttons button{
         padding: 10px;
