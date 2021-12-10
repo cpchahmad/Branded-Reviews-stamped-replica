@@ -120,6 +120,17 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="#">Enter Font Text</label>
+                                    <select class="form-control bg-white" name="font_family" id="">
+                                        <option selected disabled value="reviews">Select</option>
+                                        @foreach($fonts as $font)
+                                            <option @if(isset($setting->font_family) && $setting->font_family == $font->title) selected @endif value="{{$font->title}}">{{$font->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
                             <div class="col-md-12 text-right">
                                 <button type="submit" class="btn btn-primary">Save</button>
                             </div>

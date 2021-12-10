@@ -37,7 +37,7 @@
                         <h3>{{ucwords($review->name)}}<span>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                         <p>
 {{--                            <i class="flag flag {{$review->country_code}}"></i>--}}
-                            <img src="{{asset('flags/bigger/'.$review->country_code.'.svg')}}" class="flag-image">
+                            <img src="{{asset('flags/bigger/'.$review->country_code.'.svg')}}" width="15" height="13" class="flag-image">
                             {{$review->customer_location}}
 
                         </p>
@@ -172,7 +172,7 @@
                             <h3>{{ucwords($review->name)}}<span>@if($review->verify_status == 'veified') Verified Buyer @endif</span></h3>
                             <p>
 {{--                                <i class="flag flag {{$review->country_code}}"></i>--}}
-                                <img src="{{asset('flags/bigger/'.$review->country_code.'.svg')}}" class="flag-image">
+                                <img src="{{asset('flags/bigger/'.$review->country_code.'.svg')}}" width="15" height="13" class="flag-image">
                                 {{$review->customer_location}}
                             </p>
                             <div>
