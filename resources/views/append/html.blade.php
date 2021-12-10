@@ -1072,7 +1072,7 @@ color:black;
 
     .sheild-badge{
         position: absolute;
-        right: -5px;
+        right: -6px;
         bottom: 0;
         font-size: 18px;
         @if(isset($display))
