@@ -1594,7 +1594,7 @@ color:black;
                         <input id="file-upload" name="image" type="file"/>
 
                         <label for="experience">How was your overall experience?</label>
-                        <textarea id="experience" required name="experience" placeholder=""></textarea>
+                        <textarea id="experience" required rows="10" name="experience" placeholder=""></textarea>
 
                         <input type="submit" value="Submit">
                     </form>
@@ -1913,7 +1913,7 @@ color:black;
                         <input type="text" required id="email" name="email" placeholder="Your email..">
 
                         <label for="question">Question</label>
-                        <textarea required id="subject" name="subject" required placeholder="Type Your Question ...."></textarea>
+                        <textarea required id="subject" rows="10" name="subject" required placeholder="Type Your Question ...."></textarea>
                         <input type="hidden" class="product_id" value="" name="product_id">
                         <input type="hidden" id="shop_name" class="shop_name" value="" name="shop_name">
 
