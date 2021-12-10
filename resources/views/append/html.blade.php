@@ -66,7 +66,7 @@
         padding: 10px;
     }
     .tt_logix_reviews p{
-        font-size: 14px;
+        font-size: 12px;
         line-height: 18px;
         @if($display)
         font-family:{{$display->font_family}};
