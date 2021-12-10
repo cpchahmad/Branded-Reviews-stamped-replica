@@ -54,7 +54,7 @@
 
      @if(isset($display))
      #main-body{
-        font-size: {{$display->font_text}};
+        font-size: {{$display->font_text}} !important;
     }
      @endif
     .progress-bar{
