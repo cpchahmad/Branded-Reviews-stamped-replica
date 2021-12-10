@@ -1340,6 +1340,9 @@ color:black;
     .review_date p{
         font-size: 12px;
     }
+    .replier_name h4{
+        font-size: 14px;
+    }
 </style>
 <div id="main-body">
     <div class="tt_logix_reviews">
