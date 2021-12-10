@@ -514,7 +514,7 @@
         flex-wrap: wrap;
     }
     .user_pic{
-        width: 55px !important;
+        width: 55px;
         margin: 0;
         height: 56px;
         position: relative;
