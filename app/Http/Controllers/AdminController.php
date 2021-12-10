@@ -52,7 +52,7 @@ class AdminController extends Controller
             $shopsetting->font_family = $request->font_family;
             $shopsetting->button_text = $request->button_text;
             $shopsetting->button_bg = $request->button_bg;
-            $shopsetting->font_size = $request->font_text;
+            $shopsetting->font_text = $request->font_text;
             $shopsetting->save();
         return Redirect::tokenRedirect('settings', ['notice' => 'Settings Saved Successfully']);
     }
