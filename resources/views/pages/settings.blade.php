@@ -122,13 +122,8 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="#">Enter Font Text</label>
-                                    <select class="form-control bg-white" name="font_family" id="">
-                                        <option selected disabled value="reviews">Select</option>
-                                        @foreach($fonts as $font)
-                                            <option @if(isset($setting->font_family) && $setting->font_family == $font->title) selected @endif value="{{$font->title}}">{{$font->name}}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="#">Enter Font Text (px)</label>
+                                    <input placeholder="enter font text" @if(isset($setting->font_text)) value="{{$setting->font_text}}" @endif name="font_text" type="number" step="1" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-12 text-right">
