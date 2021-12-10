@@ -52,6 +52,11 @@
     }
     @endif
 
+     @if(isset($display))
+     #main-body{
+        font-size: {{$display->font_text}};
+    }
+     @endif
     .progress-bar{
         display:block !important;
     }
