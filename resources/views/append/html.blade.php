@@ -1604,7 +1604,7 @@ color:black;
                                         <h3>{{ucwords($review->name)}}<span @if(isset($display)) style="color: {{$display->verify_color}}" @endif>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                                         <p>
 {{--                                            <i class="flag flag {{$review->country_code}}"></i>--}}
-                                            <img src="{{asset('flags/lower/pk.svg')}}" width="15" height="13">
+                                            <img src="{{asset('flags2/pk.svg')}}" width="15" height="13">
                                             {{$review->customer_location}}
                                         </p>
                                         @if($review->review_rating == null)
