@@ -276,6 +276,10 @@
             width: 100%;
         }
         .user_pic{
+            height: 45px;
+            width: 45px;
+        }
+        .user_pic{
             width: 20% !important;
         }
         /*.user_info{*/
@@ -334,9 +338,14 @@
         }
         .user_info{
             width: 56% !important;
+            padding: 0 9px;
         }
         .questions_tab, .reviews_tab{
             padding: 4px 10px;
+        }
+        .sheild-badge{
+            right: -4px;
+            bottom: 19px;
         }
     }
 
