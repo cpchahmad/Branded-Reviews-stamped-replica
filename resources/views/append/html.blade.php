@@ -1572,15 +1572,17 @@ color:black;
                 <div class="write_a_review">
 {{--                       <form id="review" action="https://stamped.test/review-submit" method="POST">--}}
                     <form id="review" action="https://phpstack-176572-2275881.cloudwaysapps.com/review-submit" method="POST">
-                            <div class="first-lable" style="float: left">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" required name="name" placeholder="Your name..">
-                            </div>
+                           <div>
+                               <div class="first-lable" style="float: left">
+                                   <label for="name">Name</label>
+                                   <input type="text" id="name" required name="name" placeholder="Your name..">
+                               </div>
 
-                            <div class="first-lable">
-                                <label for="email">Email</label>
-                                <input type="text" required id="email" name="email" placeholder="Your email..">
-                            </div>
+                               <div class="first-lable">
+                                   <label for="email">Email</label>
+                                   <input type="text" required id="email" name="email" placeholder="Your email..">
+                               </div>
+                           </div>
                         <label for="rating">Rating</label>
                         <div class="rating_on_review">
                             <ul>
