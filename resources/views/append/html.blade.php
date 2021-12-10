@@ -1337,7 +1337,7 @@ color:black;
     .review_footer p{
         font-size: 12px;
     }
-    .review_date{
+    .review_date p{
         font-size: 12px;
     }
 </style>
