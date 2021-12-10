@@ -311,7 +311,7 @@
         }
         .questions_tab_content .search_input{
             width: 100% !important;
-            margin-top: 20% !important;
+            /*margin-top: 20% !important;*/
         }
         #user_questions{
             padding: 0 0 0 0 !important;
@@ -361,7 +361,10 @@
             padding: 0 0 !important;
         }
         .write_a_review{
-            padding-bottom: 8% !important;
+            padding-bottom: 2% !important;
+        }
+        .ask_a_question{
+            padding-bottom: 24% ;
         }
     }
 
