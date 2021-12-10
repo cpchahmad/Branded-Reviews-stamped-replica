@@ -52,11 +52,6 @@
     }
     @endif
 
-     @if(isset($display))
-     #main-body{
-        font-size: {{$display->font_text}} !important;
-    }
-     @endif
     .progress-bar{
         display:block !important;
     }
@@ -502,9 +497,9 @@
         flex-wrap: wrap;
     }
     .user_pic{
-        width: 60px !important;
+        width: 55px !important;
         margin: 0;
-        height: 60px;
+        height: 56px;
         position: relative;
         background: #005e9e;
         border-radius: 100%;
@@ -524,6 +519,7 @@
         margin: 0;
         padding: 0;
         font-weight: bold;
+        font-size: 20px;
     }
     .user_info{
         width: 50%;
@@ -1075,9 +1071,9 @@ color:black;
 
     .sheild-badge{
         position: absolute;
-        right: -8px;
-        top: 30px;
-        font-size: 21px;
+        right: -5px;
+        bottom: 0;
+        font-size: 18px;
         @if(isset($display))
         color: {{$display->verify_color}};
     @else
