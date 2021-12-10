@@ -822,10 +822,10 @@ color:black;
         line-height: 23px;
     }
     .rating_on_review > ul >li{
-        font-size: 32px;
+        font-size: 28px;
         display: inline-block;
         position: relative;
-        width: 1.1em;
+        /*width: 1.1em;*/
         color: rgb(255, 210, 0);
     }
     .rating_on_review > ul > li:hover:before {
