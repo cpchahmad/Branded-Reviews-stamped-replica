@@ -344,8 +344,8 @@
             padding: 4px 10px;
         }
         .sheild-badge{
-            right: -2px !important;
-            bottom: 10px !important;
+            right: -4px !important;
+            bottom: 19px !important;
         }
     }
 
