@@ -280,7 +280,7 @@
             width: 45px !important;
         }
         .user_pic{
-            width: 20% !important;
+            /*width: 20% !important;*/
         }
         /*.user_info{*/
         /*    width: 60% !important;*/
