@@ -534,13 +534,14 @@
         /*}*/
     }
     .user_info h3 span{
-        font-size: 18px;
+        font-size: 14px;
         color: green;
         font-weight: 100;
         margin-left: 7px;
     }
     .user_info h3{
         margin: 10px 0;
+        font-size: 14px;
     }
     .user_info p{
         font-size: 12px;
