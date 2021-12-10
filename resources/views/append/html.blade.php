@@ -364,7 +364,7 @@
             padding-bottom: 2% !important;
         }
         .ask_a_question{
-            padding-bottom: 24% ;
+            padding-bottom: 24% !important;
         }
     }
 
