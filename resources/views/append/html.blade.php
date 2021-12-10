@@ -1016,6 +1016,7 @@ color:black;
         /*display: flex;*/
         /*width: 40%;*/
          margin-top: 3%;
+         margin-bottom: 3%;
     }
     .star-main{
         display: flex;
