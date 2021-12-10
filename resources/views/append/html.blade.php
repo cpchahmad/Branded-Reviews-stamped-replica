@@ -559,7 +559,7 @@
         margin: 0;
         padding: 0;
         font-weight: bold;
-        font-size: 19px;
+        font-size: 18px;
     }
     .user_info{
         width: 50%;
