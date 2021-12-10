@@ -66,6 +66,7 @@
         padding: 10px;
     }
     .tt_logix_reviews p{
+        font-size: 14px;
         line-height: 18px;
         @if($display)
         font-family:{{$display->font_family}};
@@ -555,7 +556,7 @@
         width: calc(50% - 60px);
         display: inline-block;
         vertical-align: middle;
-        font-size: 14px;
+        font-size: 12px;
         text-align: right;
         color: rgb(68, 68, 68);
     }
@@ -570,7 +571,7 @@
         line-height: 4px;
     }
     .review_content span{
-        font-size: 18px;
+        font-size: 15px;
         font-weight: 600;
     }
     .review_footer{
@@ -1662,7 +1663,7 @@ color:black;
                                         </p>
                                     </div>
                                     <div class="like_dislike">
-                                        <p style="font-weight: bold;">Was this helpful?<span>
+                                        <p>Was this helpful?<span>
                             <a href="javascript:void(0)">
                               <i @if(isset($review->stats) && $review->stats->like == 1) class="fas fa-thumbs-up blue-color for-like" @else class="fas fa-thumbs-up   for-like" @endif></i> <span class="like" data-value="{{$review->id}}">{{$review->likes}}</span>
                             </a>
@@ -1795,7 +1796,7 @@ color:black;
                                         </p>
                                     </div>
                                     <div class="like_dislike">
-                                        <p style="font-weight: bold;">Was this helpful?<span>
+                                        <p>Was this helpful?<span>
                             <a href="javascript:void(0)">
                               <i @if(isset($review->stats) && $review->stats->like == 1) class="fas fa-thumbs-up blue-color for-like" @else class="fas fa-thumbs-up   for-like" @endif></i> <span class="like" data-value="{{$review->id}}">{{$review->likes}}</span>
                             </a>
@@ -1993,7 +1994,7 @@ color:black;
                                     {{--                                        </p>--}}
                                     {{--                                    </div>--}}
                                     <div class="like_dislike">
-                                        <p style="font-weight: bold;">Was this helpful?<span>
+                                        <p>Was this helpful?<span>
                             <a href="javascript:void(0)">
                               <i @if(isset($question->stats) && $question->stats->like == 1) class="fas fa-thumbs-up blue-color q-like" @else class="fas fa-thumbs-up   q-like" @endif></i> <span class="like-q" data-value="{{$question->id}}">{{$question->likes}}</span>
                             </a>
