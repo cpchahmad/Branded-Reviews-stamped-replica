@@ -41,6 +41,7 @@
     @if($display->font_family != 'Open Sans')
     #main-body h3{
         font-family: {{$display->font_family}} !important;
+        font-weight: bold;
     }
     @endif
     #main-body button {
@@ -55,9 +56,8 @@
         display:block !important;
     }
     #main-body h3{
-        font-weight: 700;
+        font-weight: bold;
         margin-bottom: 1px;
-        font-size: 14px;
         margin-top: 0px;
     }
     .tt_logix_reviews{
@@ -534,7 +534,7 @@
         /*}*/
     }
     .user_info h3 span{
-        font-size: 14px;
+        font-size: 18px;
         color: green;
         font-weight: 100;
         margin-left: 7px;
