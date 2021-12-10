@@ -370,6 +370,12 @@
             margin-top: 12px !important;
             margin-bottom: 8px !important;
         }
+        .item .image-content .product-details .review_date{
+            margin-top: 5% !important;
+        }
+        .item .image-content .product-details{
+            margin-top: 8% !important;
+        }
     }
 
     .question_review_buttons{
@@ -1011,6 +1017,9 @@ color:black;
     }
      .item .image-content .product-details{
         display: block;
+    }
+    .item .image-content .product-details .product-name{
+        margin-bottom: 2%; font-weight: 600; font-size: 18px;
     }
      .item .image-content .product-details .ratings{
         /*display: flex;*/
