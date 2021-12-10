@@ -66,7 +66,7 @@
         padding: 10px;
     }
     .tt_logix_reviews p{
-        font-size: 12px;
+        font-size: 14px;
         line-height: 18px;
         @if($display)
         font-family:{{$display->font_family}};
@@ -1334,7 +1334,12 @@ color:black;
         margin: 3px 3px 3px 1px !important;
         line-height: 0;
     }
-
+    .review_footer p{
+        font-size: 12px;
+    }
+    .review_date{
+        font-size: 12px;
+    }
 </style>
 <div id="main-body">
     <div class="tt_logix_reviews">
