@@ -1322,7 +1322,15 @@ color:black;
         min-width: 170px;
         margin-bottom: 15px;
     }
-
+    .flag-image{
+        width: 18px;
+        max-width: 18px;
+        min-width: 18px;
+        display: inline-block;
+        vertical-align: bottom;
+        margin: 3px 3px 3px 1px !important;
+        line-height: 0;
+    }
 
 </style>
 <div id="main-body">
