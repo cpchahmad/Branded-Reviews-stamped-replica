@@ -269,7 +269,7 @@
             /*margin-left: 34%;*/
         }
         .tt_logix_reviews{
-            padding: 10px 18px;
+            padding: 10px 30px;
         }
         .user_pic{
             width: 20% !important;
@@ -330,6 +330,9 @@
         }
         .user_info{
             width: 56% !important;
+        }
+        .questions_tab, .reviews_tab{
+            padding: 4px 10px;
         }
     }
 
