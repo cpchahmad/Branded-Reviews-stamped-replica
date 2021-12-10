@@ -519,7 +519,7 @@
         margin: 0;
         padding: 0;
         font-weight: bold;
-        font-size: 20px;
+        font-size: 19px;
     }
     .user_info{
         width: 50%;
