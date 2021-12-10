@@ -353,6 +353,16 @@
         .review-stars{
             margin-left: -53%;
         }
+        .first-lable{
+            width: 100% !important;
+            padding-right: 0 !important;
+        }
+        .write_a_review form, .ask_a_question form{
+            padding: 0 0 !important;
+        }
+        .write_a_review{
+            padding-bottom: 8% !important;
+        }
     }
 
     .question_review_buttons{
