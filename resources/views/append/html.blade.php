@@ -1917,12 +1917,16 @@ color:black;
                 <div class="ask_a_question">
 {{--                     <form id="question" action="https://stamped.test/question-submit" method="POST">--}}
                     <form id="question" action="https://phpstack-176572-2275881.cloudwaysapps.com/question-submit" method="POST">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" required name="name" placeholder="Your name..">
-
-                        <label for="email">Email</label>
-                        <input type="text" required id="email" name="email" placeholder="Your email..">
-
+                        <div>
+                           <div class="first-lable" style="float:left;">
+                               <label for="name">Name</label>
+                               <input type="text" id="name" required name="name" placeholder="Your name..">
+                           </div>
+                            <div class="first-lable">
+                                <label for="email">Email</label>
+                                <input type="text" required id="email" name="email" placeholder="Your email..">
+                            </div>
+                        </div>
                         <label for="question">Question</label>
                         <textarea required id="subject" rows="10" name="subject" required placeholder="Type Your Question ...."></textarea>
                         <input type="hidden" class="product_id" value="" name="product_id">
