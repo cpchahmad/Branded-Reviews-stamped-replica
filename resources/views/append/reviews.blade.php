@@ -44,11 +44,11 @@
                         <div>
                             @if($review->review_rating == null)
                                 <div class="col-md-6" style="overflow: hidden; line-height: 1">
-                                    <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: 22px;">★★★★★</span>
+                                    <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: 18px;">★★★★★</span>
                                 </div>
                             @else
                                 <div class="col-md-6" style="overflow: hidden;line-height: 1">
-                                    <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size: 22px;">★★★★★</span>
+                                    <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size: 18px;">★★★★★</span>
                                 </div>
                             @endif
                         </div>
@@ -178,11 +178,11 @@
                             <div>
                                 @if($review->review_rating == null)
                                     <div class="col-md-6" style="overflow: hidden; line-height: 1">
-                                        <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: 22px;">★★★★★</span>
+                                        <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: 18px;">★★★★★</span>
                                     </div>
                                 @else
                                     <div class="col-md-6" style="overflow: hidden;line-height: 1">
-                                        <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size: 22px;">★★★★★</span>
+                                        <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size: 18px;">★★★★★</span>
                                     </div>
                                 @endif
                             </div>

@@ -1072,8 +1072,8 @@ color:black;
 
     .sheild-badge{
         position: absolute;
-        right: -6px;
-        bottom: 0;
+        right: -5px;
+        bottom: -7px;
         font-size: 18px;
         @if(isset($display))
         color: {{$display->verify_color}};
@@ -1619,11 +1619,11 @@ color:black;
                                         </p>
                                         @if($review->review_rating == null)
                                             <div class="col-md-6" style="overflow: hidden; line-height: 1">
-                                                <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: 22px;">★★★★★</span>
+                                                <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: 18px;">★★★★★</span>
                                             </div>
                                         @else
                                             <div class="col-md-6" style="overflow: hidden;line-height: 1">
-                                                <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size: 22px;">★★★★★</span>
+                                                <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size: 18px;">★★★★★</span>
                                             </div>
                                         @endif
                                     </div>
@@ -1753,11 +1753,11 @@ color:black;
 
                                             @if($review->review_rating == null)
                                                 <div class="col-md-6" style="overflow: hidden; line-height: 1">
-                                                    <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: 22px;">★★★★★</span>
+                                                    <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: 18px;">★★★★★</span>
                                                 </div>
                                             @else
                                                 <div class="col-md-6" style="overflow: hidden;line-height: 1">
-                                                    <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size: 22px;">★★★★★</span>
+                                                    <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size: 18px;">★★★★★</span>
                                                 </div>
                                             @endif
                                     </div>
