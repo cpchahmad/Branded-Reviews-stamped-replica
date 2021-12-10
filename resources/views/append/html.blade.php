@@ -282,6 +282,9 @@
         .user_pic{
             /*width: 20% !important;*/
         }
+        .review_progress{
+            padding: 5px 0px 14px 26px !important;
+        }
         /*.user_info{*/
         /*    width: 60% !important;*/
         /*}*/
