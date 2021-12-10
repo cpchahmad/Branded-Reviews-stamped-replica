@@ -338,14 +338,14 @@
         }
         .user_info{
             width: 56% !important;
-            padding: 0 9px;
+            padding: 0 9px !important;
         }
         .questions_tab, .reviews_tab{
             padding: 4px 10px;
         }
         .sheild-badge{
-            right: -4px !important;
-            bottom: 19px !important;
+            right: -2px !important;
+            bottom: 10px !important;
         }
     }
 
