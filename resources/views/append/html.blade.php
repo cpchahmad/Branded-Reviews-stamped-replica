@@ -411,6 +411,9 @@
             margin-top: 2%;
             padding: 3px 0 0 0 ;
         }
+        .ask_a_question{
+            padding-bottom: 12% !important;
+        }
         .question_review_buttons{
             width: 50%;
             margin-top: 2%;
