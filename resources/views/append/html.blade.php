@@ -1379,6 +1379,11 @@ color:black;
     .replier_name h4{
         font-size: 14px;
     }
+
+    .first-lable{
+        width: 28%;
+        display: inline-block;
+    }
 </style>
 <div id="main-body">
     <div class="tt_logix_reviews">
@@ -1567,17 +1572,15 @@ color:black;
                 <div class="write_a_review">
 {{--                       <form id="review" action="https://stamped.test/review-submit" method="POST">--}}
                     <form id="review" action="https://phpstack-176572-2275881.cloudwaysapps.com/review-submit" method="POST">
-                        <div>
-                            <div>
+                            <div class="first-lable" style="float: left">
                                 <label for="name">Name</label>
                                 <input type="text" id="name" required name="name" placeholder="Your name..">
                             </div>
 
-                            <div>
+                            <div class="first-lable">
                                 <label for="email">Email</label>
                                 <input type="text" required id="email" name="email" placeholder="Your email..">
                             </div>
-                        </div>
                         <label for="rating">Rating</label>
                         <div class="rating_on_review">
                             <ul>
