@@ -645,7 +645,7 @@
         width: 49%;
     }
     .replier_info .replier_date p{
-        font-size: 14px;
+        font-size: 12px;
         color: rgb(68, 68, 68);
         margin-bottom: 1%;
         margin-top: 2%;
