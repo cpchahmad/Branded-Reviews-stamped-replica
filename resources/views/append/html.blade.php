@@ -767,6 +767,12 @@
 
     .write_a_review{
         display: none;
+        border: 1px solid rgb(238, 238, 238);
+        padding: 0 15px;
+    }
+    .ask_a_question{
+        border: 1px solid rgb(238, 238, 238);
+        padding: 0 15px;
     }
     .write_a_review form{
         margin: 10px 0 60px 0;
