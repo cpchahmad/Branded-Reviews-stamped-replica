@@ -569,7 +569,7 @@
         width: 50%;
         display: inline-block;
         vertical-align: middle;
-        padding: 0 15px;
+        padding: 0 10px;
         line-height: 5px;
     }
     @media (max-width:475px) {
