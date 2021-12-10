@@ -409,6 +409,7 @@
         .image_popups_list{
             width: 50%;
             margin-top: 2%;
+            padding: 3px 0 0 0 ;
         }
         .question_review_buttons{
             width: 50%;
