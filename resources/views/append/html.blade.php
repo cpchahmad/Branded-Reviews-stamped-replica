@@ -350,6 +350,9 @@
             right: -4px !important;
             bottom: 19px !important;
         }
+        .review-stars{
+            margin-left: -53%;
+        }
     }
 
     .question_review_buttons{
@@ -1646,7 +1649,7 @@ color:black;
                                             {{$review->customer_location}}
                                         </p>
                                         @if($review->review_rating == null)
-                                            <div class="col-md-6" style="overflow: hidden; line-height: 1">
+                                            <div class="col-md-6 review-stars" style="overflow: hidden; line-height: 1">
                                                 <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: 18px;">★★★★★</span>
                                             </div>
                                         @else
