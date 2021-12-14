@@ -240,7 +240,6 @@
                                 </div>
                                 <div class="replier_date">
                                     @if($loop->index == 0)
-
                                         @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
                                             <p> {{now()->subDays(1)->format('d/m/y')}} </p>
                                         @else
