@@ -140,7 +140,7 @@
 
     .review_progress{
         width: 27%;
-        padding: 5px 0 5px 26px;
+        padding: 5px 10px 5px 24px;
         border-right: 1px #cecece solid;
     }
 
