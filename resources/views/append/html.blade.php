@@ -337,7 +337,7 @@
             padding: 0 !important;
             overflow: hidden;
             flex-wrap: nowrap;
-            margin: 0 16px;
+            margin: 0 0 0 16px;
         }
         .review_1,.review_2{
             /*padding: 3%;*/
@@ -383,7 +383,7 @@
             padding: 0 16px;
         }
         .like_dislike p span{
-            margin-left: 2%;
+            margin-left: 1%;
         }
     }
 
