@@ -336,8 +336,11 @@
         .image_popups_list{
             padding: 0 !important;
             overflow: hidden;
-            flex-wrap: nowrap;
+            /*flex-wrap: nowrap;*/
             margin: 0 16px 0 16px;
+        }
+        .for-image-hidden{
+            width: 25px !important;
         }
         .review_1,.review_2{
             /*padding: 3%;*/
@@ -1549,7 +1552,7 @@ color:black;
                         @if(count($review->medias) > 0)
                             @foreach($review->medias as $key => $media)
                                 @if($counter <= 7)
-                                    <a href="javascript:void(0)" title="My Watch" data-value="{{$media->id}}" data-target="myPopup" class="btn-view">
+                                    <a href="javascript:void(0)" title="My Watch" data-value="{{$media->id}}" data-target="myPopup" class="btn-view @if($key == 3 || $key == 7) for-image-hidden @endif">
                                         <div>
                                             <img src="{{asset('review-images'.'/'.$media->review_media)}}" width="70"  height="55" alt="Picture">
                                         </div>
