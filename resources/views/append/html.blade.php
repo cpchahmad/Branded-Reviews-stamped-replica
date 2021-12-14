@@ -283,7 +283,7 @@
             /*width: 20% !important;*/
         }
         .review_progress{
-            padding: 5px 12 14px 24px !important;
+            padding: 5px 12px 14px 24px !important;
         }
         /*.user_info{*/
         /*    width: 60% !important;*/
@@ -354,7 +354,7 @@
             bottom: 19px !important;
         }
         .review-stars{
-            margin-left: -53%;
+            margin-left: -50%;
         }
         .first-lable{
             width: 100% !important;
@@ -1853,7 +1853,7 @@ color:black;
                                         </p>
 
                                             @if($review->review_rating == null)
-                                                <div class="col-md-6" style="overflow: hidden; line-height: 1">
+                                                <div class="col-md-6 review-stars" style="overflow: hidden; line-height: 1">
                                                     <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: 18px;">★★★★★</span>
                                                 </div>
                                             @else
