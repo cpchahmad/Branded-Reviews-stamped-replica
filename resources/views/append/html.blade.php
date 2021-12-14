@@ -41,7 +41,7 @@
     @if($display->font_family != 'Open Sans')
     #main-body h3{
         font-family: {{$display->font_family}} !important;
-        font-weight: bold;
+        font-weight: 700;
     }
     @endif
     #main-body button {
@@ -56,9 +56,9 @@
         display:block !important;
     }
     #main-body h3{
-        font-weight: bold;
+        font-weight: 700;
         margin-bottom: 1px;
-        margin-top: 0px;
+        margin-top: 0;
     }
     .tt_logix_reviews{
         max-width: 1160px;
