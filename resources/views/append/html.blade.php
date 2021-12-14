@@ -331,7 +331,7 @@
             margin-bottom: 0 !important;
         }
         .review_date p{
-            margin-top: 0px;
+            margin-top: 0;
         }
         .image_popups_list{
             padding: 0 !important;
