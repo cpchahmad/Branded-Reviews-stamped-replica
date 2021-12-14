@@ -680,7 +680,7 @@
     .review_footer .like_dislike a{
         text-decoration: none;
         color: rgb(32, 32, 32);
-        margin: 0 0 0 9px;
+        margin: 0 0 0 4px;
     }
     /* replied section */
     .review_reply{
