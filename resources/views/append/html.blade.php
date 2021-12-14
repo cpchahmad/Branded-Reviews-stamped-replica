@@ -295,7 +295,7 @@
             font-size: 14px !important;
         }
         .review_footer .share_review{
-            width: 50% !important;
+            width: 40% !important;
         }
         .review_footer .like_dislike{
             width: 100% !important;
@@ -381,6 +381,9 @@
         }
         .customer_reviews{
             padding: 0 16px;
+        }
+        .like_dislike p span{
+            margin-left: 2%;
         }
     }
 
