@@ -337,11 +337,11 @@
             padding: 0 !important;
         }
         .review_1,.review_2{
-            padding: 3%;
+            /*padding: 3%;*/
         }
         .user_info{
             width: 56% !important;
-            padding: 0 9px !important;
+            /*padding: 0 9px !important;*/
         }
         .questions_tab, .reviews_tab{
             padding: 4px 10px;
@@ -545,6 +545,7 @@
         padding: 10px 0;
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
     .user_pic{
         width: 55px;
