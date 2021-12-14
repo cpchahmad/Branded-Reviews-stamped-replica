@@ -283,7 +283,7 @@
             /*width: 20% !important;*/
         }
         .review_progress{
-            padding: 5px 0px 14px 26px !important;
+            padding: 5px 12 14px 24px !important;
         }
         /*.user_info{*/
         /*    width: 60% !important;*/
@@ -337,7 +337,7 @@
             padding: 0 !important;
             overflow: hidden;
             flex-wrap: nowrap;
-            margin: 0 0 0 16px;
+            margin: 0 16px 0 16px;
         }
         .review_1,.review_2{
             /*padding: 3%;*/
@@ -459,6 +459,7 @@
         .question_review_buttons2{
             margin-top: 3%;
             margin-left: 6%;
+            margin-right: 16px;
         }
     }
 
