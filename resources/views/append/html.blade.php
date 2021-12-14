@@ -347,7 +347,7 @@
             padding: 0 0 !important;
         }
         .questions_tab, .reviews_tab{
-            padding: 4px 10px;
+            padding: 4px 11px !important;
         }
         .sheild-badge{
             right: -4px !important;
