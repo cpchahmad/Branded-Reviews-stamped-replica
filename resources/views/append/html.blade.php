@@ -341,7 +341,7 @@
         }
         .user_info{
             width: 56% !important;
-            /*padding: 0 9px !important;*/
+            padding: 0 0 !important;
         }
         .questions_tab, .reviews_tab{
             padding: 4px 10px;
