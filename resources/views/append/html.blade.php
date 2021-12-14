@@ -335,6 +335,9 @@
         }
         .image_popups_list{
             padding: 0 !important;
+            overflow: hidden;
+            flex-wrap: nowrap;
+            margin: 0 16px;
         }
         .review_1,.review_2{
             /*padding: 3%;*/
