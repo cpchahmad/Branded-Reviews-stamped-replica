@@ -376,6 +376,9 @@
         .item .image-content .product-details{
             margin-top: 8% !important;
         }
+        .customer_reviews{
+            padding: 0 16px;
+        }
     }
 
     .question_review_buttons{
