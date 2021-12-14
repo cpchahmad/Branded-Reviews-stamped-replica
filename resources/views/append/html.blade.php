@@ -445,13 +445,14 @@
 
     @media (max-width:767px) {
         .question_review_buttons{
-            width: 100%;
+            width: 95%;
         }
         .question_review_buttons button{
             float: initial;
         }
         .question_review_buttons2{
             margin-top: 3%;
+            margin-left: 6%;
         }
     }
 
