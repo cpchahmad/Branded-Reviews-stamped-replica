@@ -388,6 +388,9 @@
         .like_dislike p span{
             margin-left: 1%;
         }
+        .user_reviews{
+            padding: 42% 0 0 0;
+        }
     }
 
     .question_review_buttons{
