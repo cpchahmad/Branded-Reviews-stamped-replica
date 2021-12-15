@@ -1,234 +1,197 @@
 <head>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amatic+SC&family=Bangers&family=Caveat&family=Courgette&family=Indie+Flower&family=Kaushan+Script&family=Lobster&family=Lobster+Two&family=Montserrat:wght@100&family=Open+Sans:wght@300&family=Orbitron&family=Pacifico&family=Patrick+Hand&family=Rajdhani:wght@300&family=Raleway:wght@100&family=Righteous&family=Roboto:wght@100&family=Sacramento&family=Satisfy&display=swap"
-        rel="stylesheet">
-    {{--    <link rel="stylesheet" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/mdb5/3.10.1/compiled.min.css">--}}
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amatic+SC&family=Bangers&family=Caveat&family=Courgette&family=Indie+Flower&family=Kaushan+Script&family=Lobster&family=Lobster+Two&family=Montserrat:wght@100&family=Open+Sans:wght@300&family=Orbitron&family=Pacifico&family=Patrick+Hand&family=Rajdhani:wght@300&family=Raleway:wght@100&family=Righteous&family=Roboto:wght@100&family=Sacramento&family=Satisfy&display=swap" rel="stylesheet">
+{{--    <link rel="stylesheet" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/mdb5/3.10.1/compiled.min.css">--}}
     <link rel="stylesheet" href="{{ asset('flags.css')}}">
 </head>
 <style>
     @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
-
     @font-face {
         font-family: 'helvetica';
         src: url('{{ asset('Helvetica-Font/Helvetica.ttf')}}');
     }
-
     @font-face {
         font-family: 'helvetica-bold';
         src: url('{{ asset('Helvetica-Font/Helvetica-Bold.ttf')}}');
     }
-
     @font-face {
         font-family: 'helvetica-boldoblique';
         src: url('{{ asset('Helvetica-Font/Helvetica-BoldOblique.ttf')}}');
     }
-
     @font-face {
         font-family: 'helvetica-light';
         src: url('{{ asset('Helvetica-Font/helvetica-light-587ebe5a59211.ttf')}}');
     }
-
     @font-face {
         font-family: 'helvetica-compressed';
         src: url('{{ asset('Helvetica-Font/helvetica-compressed-5871d14b6903a.otf')}}');
     }
-
     @font-face {
         font-family: 'helvetica-oblique';
         src: url('{{ asset('Helvetica-Font/Helvetica-Oblique.ttf')}}');
     }
-
     @font-face {
         font-family: 'helvetica-rounded';
         src: url('{{ asset('Helvetica-Font/helvetica-rounded-bold-5871d05ead8de.otf')}}');
     }
 
     @if(isset($display))
-    #main-body {
-        font-family: {{$display->font_family}}  !important;
+    #main-body{
+        font-family: {{$display->font_family}} !important;
     }
-
     @if($display->font_family != 'Open Sans')
-    #main-body h3 {
-        font-family: {{$display->font_family}}  !important;
+    #main-body h3{
+        font-family: {{$display->font_family}} !important;
         font-weight: 700;
     }
-
     @endif
     #main-body button {
-        font-family: {{$display->font_family}}  !important;
+        font-family: {{$display->font_family}} !important;
     }
-
     #main-body select {
-        font-family: {{$display->font_family}}  !important;
+        font-family: {{$display->font_family}} !important;
     }
-
     @endif
 
-    .progress-bar {
-        display: block !important;
+    .progress-bar{
+        display:block !important;
     }
-
-    #main-body h3 {
+    #main-body h3{
         font-weight: 700;
         margin-bottom: 1px;
         margin-top: 0;
     }
-
-    .tt_logix_reviews {
+    .tt_logix_reviews{
         max-width: 1160px;
         margin: 0 auto;
         padding: 10px;
     }
-
-    .tt_logix_reviews p {
+    .tt_logix_reviews p{
         font-size: 14px;
         line-height: 18px;
         @if($display)
-         font-family: {{$display->font_family}};
+        font-family:{{$display->font_family}};
         font-weight: 100;
         @else
-         font-family: 'Open Sans', sans-serif;
+        font-family:'Open Sans',sans-serif;
         font-weight: 100;
-    @endif
-
+        @endif
     }
 
-    .replied_text p {
+    .replied_text p{
         margin-top: 0%;
         line-height: unset;
     }
-
-    .tt_logix_reviews_inner {
+    .tt_logix_reviews_inner{
         display: flex;
         flex-wrap: wrap;
         line-height: 0px;
     }
-
-    .question_review_buttons button:hover {
+    .question_review_buttons button:hover{
         box-shadow: unset;
     }
-
-    @media (max-width: 425px) {
-        .tt_logix_reviews_inner {
+    @media (max-width:425px) {
+        .tt_logix_reviews_inner{
             text-align: center;
             line-height: 0px;
 
         }
     }
-
-    .tt_logix_reviews_r_no {
+    .tt_logix_reviews_r_no{
         border-right: 1px #cecece solid;
         width: 19%;
     }
-
-    .tt_logix_reviews_r_no h1 {
+    .tt_logix_reviews_r_no h1{
         display: flex;
     }
-
-    @media (max-width: 767px) {
-        .tt_logix_reviews_r_no {
+    @media (max-width:767px) {
+        .tt_logix_reviews_r_no{
             width: 100%;
             border: none;
         }
-
-        .tt_logix_reviews_r_no h1 {
+        .tt_logix_reviews_r_no h1{
             justify-content: center;
         }
     }
-
-    .tt_logix_reviews_r_no h1 {
+    .tt_logix_reviews_r_no h1{
         font-size: 38px;
         margin-bottom: 0px;
         margin-top: 0px;
         line-height: 22px;
     }
-
-    .tt_logix_reviews_r_no .checked {
+    .tt_logix_reviews_r_no .checked{
         color: rgb(255, 210, 0);
     }
-
-    .tt_logix_reviews_r_no span {
+    .tt_logix_reviews_r_no span{
         margin: 1px auto;
         font-size: 18px;
     }
-
     /*.base_reviews{*/
     /*    line-height: 0px !important;*/
     /*}*/
-    .tt_logix_reviews_r_no #base_reviews {
+    .tt_logix_reviews_r_no #base_reviews{
         margin: 0 auto !important;
         font-size: 18px !important;
     }
-
-    #total_rating {
+    #total_rating{
         font-size: inherit !important;
         font-weight: bold;
         vertical-align: middle;
     }
 
-    .review_progress {
+    .review_progress{
         width: 27%;
         padding: 5px 10px 5px 24px;
         border-right: 1px #cecece solid;
     }
 
-    .review_progress:hover .review_progress_1 {
+    .review_progress:hover .review_progress_1{
         opacity: .5;
     }
-
-    .review_progress_1:hover {
+    .review_progress_1:hover{
         opacity: 1 !important;
     }
 
     .review_progress.active .review_progress_1 {
         opacity: .5;
     }
-
     .review_progress.active .review_progress_1.active {
         opacity: 1;
     }
 
-    @media (max-width: 767px) {
-        .review_progress {
+    @media (max-width:767px) {
+        .review_progress{
             width: 100%;
             border: none;
         }
     }
-
-    .review_progress_1 {
+    .review_progress_1{
         display: flex;
     }
-
-    .review_progress_1 .side .fa-star {
+    .review_progress_1 .side .fa-star{
         color: gray;
         font-size: 12px;
     }
-
     /* Three column layout */
     .side {
-        margin-top: 10px;
+        margin-top:10px;
         width: 100%;
     }
 
     .middle {
-        margin-top: 10px;
+        margin-top:10px;
         width: 100%;
     }
-
-    .first, .second {
+    .first, .second{
         margin-top: 0px;
     }
-
-    .left {
-        margin-top: 17px;
-        width: 50% !important;
+    .left{
+        margin-top:17px;
+        width:50% !important;
     }
 
-    #write_a_review_btn:hover, #ask_a_question_btn:hover {
-        background-color: #f8f9fa;
+    #write_a_review_btn:hover, #ask_a_question_btn:hover{
+        background-color: #f8f9fa ;
     }
-
     /* Place text to the right */
 
     /* The bar container */
@@ -240,44 +203,19 @@
     }
 
     /* Individual bars */
-    .bar-5 {
-        width: 84%;
-        height: 15px;
-        background-color: #005e9e;
-    }
+    .bar-5 {width: 84%; height: 15px; background-color: #005e9e;}
+    .bar-4 {width: 5%; height: 15px; background-color: #005e9e;}
+    .bar-3 {width: 0%; height: 15px; background-color: #005e9e;}
+    .bar-2 {width: 2%; height: 15px; background-color: #005e9e;}
+    .bar-1 {width: 9%; height: 15px; background-color: #005e9e;}
 
-    .bar-4 {
-        width: 5%;
-        height: 15px;
-        background-color: #005e9e;
-    }
-
-    .bar-3 {
-        width: 0%;
-        height: 15px;
-        background-color: #005e9e;
-    }
-
-    .bar-2 {
-        width: 2%;
-        height: 15px;
-        background-color: #005e9e;
-    }
-
-    .bar-1 {
-        width: 9%;
-        height: 15px;
-        background-color: #005e9e;
-    }
-
-    .image_popups_list {
-        padding: 3px 0 0 15px;
+    .image_popups_list{
+        padding:3px 0 0 15px;
         width: 27%;
         display: flex;
         flex-wrap: wrap;
     }
-
-    .image_popups_list a div {
+    .image_popups_list a div{
         position: relative;
         width: 70px;
         height: 55px;
@@ -291,298 +229,240 @@
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
     }
-
     /*   .image_popups_list a:nth-child(odd) div{
         background-image: url('https://cdn.shopify.com/s/files/1/0606/5366/6521/files/img1.jpg?v=1636109386');
       }
       .image_popups_list a:nth-child(even) div{
         background-image: url('https://cdn.shopify.com/s/files/1/0606/5366/6521/files/img2.jpg?v=1636109386');
       } */
-    @media (max-width: 767px) {
-        .image_popups_list {
+    @media (max-width:767px) {
+        .image_popups_list{
             width: 100%;
         }
-
-        .image_popups_list a div {
+        .image_popups_list a div{
             width: 66px;
         }
-
-        .image_popups_list a div img {
+        .image_popups_list a div img{
             padding-right: 2px;
             padding-left: 2px;
         }
-
-        .question_review_buttons button {
+        .question_review_buttons button{
             width: 90%;
             float: none;
         }
 
-        .popup .item {
+        .popup .item{
             display: inline;
 
         }
-
         .popup {
             overflow: scroll;
         }
-
-        .item .slide-image img {
+        .item .slide-image img{
             max-width: 238px !important;
         }
-
-        .item .image-content .product-details .review_date {
+        .item .image-content .product-details .review_date{
             width: 48% !important;
             margin-top: -2%;
         }
-
-        .item .image-content .product-details .review_date p {
+        .item .image-content .product-details .review_date p{
             /*margin-left: 34%;*/
         }
-
-        .tt_logix_reviews {
+        .tt_logix_reviews{
             padding: 10px 20px;
         }
-
-        .question_review_buttons button {
+        .question_review_buttons button{
             margin: 6px 0 6px 0 !important;
             width: 100%;
         }
-
-        .user_pic {
+        .user_pic{
             height: 45px !important;
             width: 45px !important;
         }
-
-        .user_pic {
+        .user_pic{
             /*width: 20% !important;*/
         }
-
-        .review_progress {
+        .review_progress{
             padding: 5px 12px 14px 24px !important;
         }
-
         /*.user_info{*/
         /*    width: 60% !important;*/
         /*}*/
-        .review_date {
+        .review_date{
             width: 20% !important;
         }
-
-        .user_info h3 span {
+        .user_info h3 span{
             font-size: 14px !important;
         }
-
-        .review_footer .share_review {
+        .review_footer .share_review{
             width: 40% !important;
         }
-
-        .review_footer .like_dislike {
+        .review_footer .like_dislike{
             width: 100% !important;
         }
-
-        .review_footer {
+        .review_footer{
             display: flex !important;
         }
-
-        .replier_info {
+        .replier_info{
             display: flex !important;
         }
-
-        #replier_name h4 {
+        #replier_name h4{
             margin-top: 5% !important;
         }
-
-        .questions_tab_content .search_input {
+        .questions_tab_content .search_input{
             width: 100% !important;
             /*margin-top: 20% !important;*/
         }
-
-        #user_questions {
+        #user_questions{
             padding: 0 0 0 0 !important;
         }
-
-        .replier_info .replier_date p {
+        .replier_info .replier_date p{
             margin-top: 6% !important;
         }
-
-        .base_reviews2 {
+        .base_reviews2{
             margin-top: 20px !important;
             margin-bottom: 30px !important;
         }
-
-        .write_a_review form, .ask_a_question form {
+        .write_a_review form , .ask_a_question form{
             padding: 0 18px;
         }
-
-        .write_a_review input[type=text], textarea {
+        .write_a_review input[type=text], textarea{
             margin-top: 0 !important;
             margin-bottom: 0 !important;
         }
-
-        .review_date p {
+        .review_date p{
             margin-top: 0;
         }
-
-        .image_popups_list {
+        .image_popups_list{
             padding: 0 !important;
             overflow: hidden;
             /*flex-wrap: nowrap;*/
             margin: 0 16px 0 16px;
         }
-
-        .for-image-hidden {
+        .for-image-hidden{
             width: 25px !important;
         }
-
-        .review_1, .review_2 {
+        .review_1,.review_2{
             /*padding: 3%;*/
         }
-
-        .user_info {
+        .user_info{
             width: 56% !important;
             padding: 0 0 !important;
         }
-
-        .questions_tab, .reviews_tab {
+        .questions_tab, .reviews_tab{
             padding: 4px 11px !important;
         }
-
-        .sheild-badge {
+        .sheild-badge{
             right: -4px !important;
             bottom: 19px !important;
         }
-
-        .review-stars {
+        .review-stars{
             margin-left: -37%;
         }
-
-        .first-lable {
+        .first-lable{
             width: 100% !important;
             padding-right: 0 !important;
         }
-
-        .write_a_review form, .ask_a_question form {
+        .write_a_review form, .ask_a_question form{
             padding: 0 0 !important;
         }
-
-        .write_a_review {
+        .write_a_review{
             padding-bottom: 2% !important;
         }
-
-        .ask_a_question {
+        .ask_a_question{
             padding-bottom: 24% !important;
         }
-
-        .custom-file-upload {
+        .custom-file-upload{
             margin-top: 12px !important;
             margin-bottom: 8px !important;
         }
-
-        .item .image-content .product-details .review_date {
+        .item .image-content .product-details .review_date{
             margin-top: 5% !important;
         }
-
-        .item .image-content .product-details {
+        .item .image-content .product-details{
             margin-top: 8% !important;
         }
-
-        .customer_reviews {
+        .customer_reviews{
             padding: 0 16px;
         }
-
-        .like_dislike p span {
+        .like_dislike p span{
             margin-left: 1%;
         }
-
-        .review-padding {
+        .review-padding{
             padding: 42% 0 0 0 !important;
         }
     }
 
-    .question_review_buttons {
+    .question_review_buttons{
         width: 26%;
     }
-
-    .question_content {
+    .question_content{
         padding: 2px 2px !important;
     }
-
-    .question_content p {
+    .question_content p{
         margin-top: 0;
     }
-
-    .question_review_buttons button {
+    .question_review_buttons button{
         padding: 10px;
         margin: 6px 0 6px 8px;
         cursor: pointer;
         float: right;
         @if(isset($display))
-         color: {{$display->button_text}};
-        background-color: {{$display->button_bg}};
+        color : {{$display->button_text}};
+        background-color:{{$display->button_bg}};
         @else
-         background-color: #ffffff;
+        background-color :#ffffff;
         @endif
-         border: 1px solid #ccd6e0;
+        border: 1px solid #ccd6e0;
         box-shadow: 2px 3px 5px 0 #8888886b;
     }
 
     @media only screen and (min-device-width: 768px) and (max-device-width: 1074px) {
-        .tt_logix_reviews_r_no {
+        .tt_logix_reviews_r_no{
             width: 31%;
         }
-
-        .tt_logix_reviews {
+        .tt_logix_reviews{
             padding: 5%;
         }
-
-        .review_progress {
+        .review_progress{
             width: 50%;
         }
-
-        .image_popups_list {
+        .image_popups_list{
             width: 50%;
             margin-top: 2%;
             padding: 3px 0 0 0 !important;
         }
-
-        .ask_a_question {
+        .ask_a_question{
             padding-bottom: 12% !important;
         }
-
-        .question_review_buttons {
+        .question_review_buttons{
             width: 50%;
             margin-top: 2%;
         }
     }
-
     @media only screen and (min-device-width: 1075px) and (max-device-width: 1117px) {
-        .tt_logix_reviews_r_no {
+        .tt_logix_reviews_r_no{
             width: 21%;
         }
-
-        .review_progress {
+        .review_progress{
             width: 26%;
         }
-
-        .image_popups_list {
+        .image_popups_list{
             width: 28%;
         }
-
-        .question_review_buttons {
+        .question_review_buttons{
             width: 25%;
         }
     }
 
-    @media (max-width: 767px) {
-        .question_review_buttons {
+    @media (max-width:767px) {
+        .question_review_buttons{
             width: 95%;
         }
-
-        .question_review_buttons button {
+        .question_review_buttons button{
             float: initial;
         }
-
-        .question_review_buttons2 {
+        .question_review_buttons2{
             margin-top: 3%;
             margin-left: 6%;
             margin-right: 16px;
@@ -590,82 +470,72 @@
     }
 
     /* tabs */
-    .tabs_view {
+    .tabs_view{
         margin-top: 25px;
         display: flex;
         flex-wrap: wrap;
         border-bottom: 1px rgb(214, 214, 214) solid;
     }
 
-    .questions_tab, .reviews_tab {
+    .questions_tab,.reviews_tab{
         padding: 4px 20px;
         margin-right: 10px;
     }
-
-    .questions_tab a, .reviews_tab a {
+    .questions_tab a,.reviews_tab a{
         text-decoration: none;
         color: black;
         font-weight: 500;
         font-size: 15px;
     }
 
-    .active_tab {
-        @if(isset($display))
- background-color: {{$display->tabs_background}};
-        border-bottom: 3px solid{{$display->tabs_border_bottom}};
+    .active_tab{
+       @if(isset($display))
+        background-color: {{$display->tabs_background}};
+        border-bottom: 3px solid {{$display->tabs_border_bottom}};
         @else
-          background-color: rgb(238, 238, 238);
-        border-bottom: 3px rgb(0, 94, 158) solid;
-    @endif
-
+         background-color: rgb(238, 238, 238);
+         border-bottom: 3px rgb(0, 94, 158) solid;
+        @endif
 
     }
-
-    .active_tab a {
+    .active_tab a{
         color: rgb(0, 94, 158);
         font-weight: 600;
     }
-
-    .active_tab a span {
+    .active_tab a span{
         @if(isset($display))
-         background-color: {{$display->tabs_counter_background}};
-        padding: 4px;
-        @else
-         background-color: #f8f9fa;
-        padding: 4px;
-    @endif
-
-    }
-
-    .questions_tab a span, .reviews_tab a span {
-        @if(isset($display))
-         background-color: {{$display->tabs_counter_background}};
+        background-color: {{$display->tabs_counter_background}};
         padding: 4px;
         @else
         background-color: #f8f9fa;
         padding: 4px;
-    @endif
-
-
+        @endif
     }
 
-    .loader-active {
+    .questions_tab a span, .reviews_tab a span{
+        @if(isset($display))
+        background-color: {{$display->tabs_counter_background}};
+        padding: 4px;
+        @else
+       background-color: #f8f9fa;
+        padding: 4px;
+        @endif
+
+    }
+    .loader-active{
         padding: 4px 20px;
         margin-right: 10px;
         @if(isset($display))
-         background-color: {{$display->tabs_background}};
+        background-color: {{$display->tabs_background}};
         @else
-          background-color: rgb(238, 238, 238);
+         background-color: rgb(238, 238, 238);
     @endif
-
-    }
-
-    .reviews_tab_content {
+}
+    .reviews_tab_content{
         margin-top: 0;
         padding: 0;
     }
-
-    .dropdown_review select {
+    .dropdown_review select{
         /*position: relative;*/
         float: right;
         padding-right: 50px !important;
@@ -675,30 +545,26 @@
         border: 1px solid black;
 
     }
-
-    .dropdown_review select:focus-visible {
+    .dropdown_review select:focus-visible{
         outline: none;
         outline-offset: none;
         box-shadow: none;
     }
 
-    .user_reviews {
+    .user_reviews{
         padding: 52px 0 0 0;
         /* margin-top: 75px; */
     }
-
-    .review_1, .review_2 {
+    .review_1,.review_2{
         border-bottom: 1px rgb(214, 214, 214) solid;
     }
-
-    .review_1_header {
+    .review_1_header{
         padding: 10px 0;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
-
-    .user_pic {
+    .user_pic{
         width: 55px;
         margin: 0;
         height: 56px;
@@ -708,8 +574,7 @@
         display: inline-block;
         vertical-align: middle;
     }
-
-    .user_pic .user_pic_inner {
+    .user_pic .user_pic_inner{
         margin-right: 8px;
         position: absolute;
         top: 50%;
@@ -718,50 +583,43 @@
         color: white;
         transform: translate(-50%, -50%);
     }
-
-    .user_pic .user_pic_inner h3 {
+    .user_pic .user_pic_inner h3{
         margin: 0;
         padding: 0;
         font-weight: bold;
         font-size: 18px;
     }
-
-    .user_info {
+    .user_info{
         width: 50%;
         display: inline-block;
         vertical-align: middle;
         padding: 0 10px;
         line-height: 5px;
     }
-
-    @media (max-width: 475px) {
+    @media (max-width:475px) {
         /*.user_info{*/
         /*    width: calc(100% - 60px);*/
         /*}*/
     }
-
-    .user_info h3 span {
+    .user_info h3 span{
         font-size: 14px;
         color: green;
         font-weight: 100;
         margin-left: 7px;
     }
-
-    .user_info h3 {
+    .user_info h3{
         margin: 10px 0;
         font-size: 14px;
     }
-
-    .user_info p {
+    .user_info p{
         font-size: 12px;
         margin: 0;
     }
 
-    .user_info .checked {
+    .user_info .checked{
         color: rgb(255, 210, 0);
     }
-
-    .review_date {
+    .review_date{
         width: calc(50% - 60px);
         display: inline-block;
         vertical-align: middle;
@@ -770,150 +628,126 @@
         color: rgb(68, 68, 68);
     }
 
-    @media (max-width: 475px) {
-        .review_date {
+    @media (max-width:475px) {
+        .review_date{
             width: calc(100% - 5px);
         }
     }
-
-    .review_content {
+    .review_content{
         padding: 10px 2px;
         line-height: 4px;
     }
-
-    .review_content span {
+    .review_content span{
         font-size: 15px;
         font-weight: 600;
     }
-
-    .review_footer {
+    .review_footer{
         display: inline-block;
         width: 100%;
         padding-bottom: 1%;
     }
-
-    .review_footer .share_review {
+    .review_footer .share_review{
         display: inline-block;
         width: 50%;
     }
-
-    @media (max-width: 425px) {
-        .review_footer .share_review {
+    @media (max-width:425px) {
+        .review_footer .share_review{
             width: 100%;
             font-weight: bold;
         }
     }
-
-    .review_footer .share_review {
+    .review_footer .share_review{
         font-size: 12px;
         font-weight: bold;
     }
-
-    .review_footer .share_review .share_to {
+    .review_footer .share_review .share_to{
         display: none;
     }
-
-    .review_footer .share_review a {
+    .review_footer .share_review a{
         text-decoration: none;
         color: rgb(32, 32, 32);
         padding-left: 10px;
     }
-
-    .review_footer .like_dislike {
+    .review_footer .like_dislike{
         display: inline-block;
         text-align: right;
         width: 49%;
         font-size: 12px;
     }
-
-    #replier_name h4 {
+    #replier_name h4{
         font-weight: bold;
         margin-bottom: 0%;
         margin-top: 0%;
         @if(isset($display))
-         font-family: {{$display->font_family}}  !important;
+        font-family:{{$display->font_family}} !important;
     @endif
-
     }
-
-    @media (max-width: 425px) {
-        .review_footer .like_dislike {
+    @media (max-width:425px) {
+        .review_footer .like_dislike{
             width: 99%;
         }
     }
-
-    .review_footer .like_dislike a {
+    .review_footer .like_dislike a{
         text-decoration: none;
         color: rgb(32, 32, 32);
         margin: 0 0 0 4px;
     }
-
     /* replied section */
-    .review_reply {
+    .review_reply{
         margin: 10px 0 10px 30px;
         padding-left: 10px;
         border-left: 5px #d1d1d1 solid;
     }
-
-    .replier_info {
+    .replier_info{
         display: inline-block;
         width: 100%;
     }
-
-    .replier_info .replier_name {
+    .replier_info .replier_name{
         display: inline-block;
         width: 50%;
     }
-
-    .replier_info .replier_date {
+    .replier_info .replier_date{
         display: inline-block;
         text-align: right;
         width: 49%;
     }
-
-    .replier_info .replier_date p {
+    .replier_info .replier_date p{
         font-size: 12px;
         color: rgb(68, 68, 68);
         margin-bottom: 1%;
         margin-top: 2%;
     }
-
-    .questions_tab_content {
+    .questions_tab_content{
         display: none;
     }
 
-    .questions_tab_content {
+    .questions_tab_content{
         padding: 0;
     }
-
-    .questions_tab_content .search_input {
+    .questions_tab_content .search_input{
         margin-top: 20px;
         border: #d1d1d1 1px solid;
         padding-left: 6px;
         width: 40%;
     }
-
-    .questions_tab_content .search_input input {
+    .questions_tab_content .search_input input{
         border: none;
         padding: 10px 6px;
-        width: 90%;
+        width:90%;
         -webkit-box-shadow: none;
     }
-
-    .questions_tab_content .search_input input:focus {
+    .questions_tab_content .search_input input:focus{
         outline: none;
-        border: none;
+        border:none;
     }
 
-    .ask_a_question {
+    .ask_a_question{
         display: none;
 
     }
-
-    .ask_a_question form {
+    .ask_a_question form{
         margin-top: 20px;
     }
-
     .ask_a_question input[type=text], textarea {
         width: 100%;
         padding: 12px;
@@ -924,17 +758,16 @@
         margin-bottom: 16px;
         resize: vertical;
     }
-
     .ask_a_question input[type=submit] {
         float: right;
         @if(isset($display))
-         background-color: {{$display->tabs_background}};
+        background-color: {{$display->tabs_background}};
         color: {{$display->button_text}};
         @else
-          background-color: #0c0c0c;
+         background-color: #0c0c0c;
         color: white;
         @endif
-         padding: 16px 28px;
+        padding: 16px 28px;
         border: none;
         font-size: 18px;
         letter-spacing: 1px;
@@ -943,20 +776,30 @@
         cursor: pointer;
         margin-top: 1%;
     }
-
     .ask_a_question input[type=submit]:hover {
         /*background-color: #131313;*/
         background-color: #f8f9fa;
         @if(isset($display))
-         color: {{$display->button_text}};
-        @else
- color: black;
+        color: {{$display->button_text}};
+    @else
+    color:black;
     @endif
-
     }
 
-    .facebook {
-        text-decoration: none;
+    .facebook{
+        text-decoration:none;
+        background-color: #0c0c0c;
+        color: white;
+        padding: 16px 28px;
+        border: none;
+        font-size: 18px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        border-radius: 28px;
+        cursor: pointer;
+    }
+    .twitter{
+        text-decoration:none;
         background-color: #0c0c0c;
         color: white;
         padding: 16px 28px;
@@ -968,39 +811,22 @@
         cursor: pointer;
     }
 
-    .twitter {
-        text-decoration: none;
-        background-color: #0c0c0c;
-        color: white;
-        padding: 16px 28px;
-        border: none;
-        font-size: 18px;
-        letter-spacing: 1px;
-        font-weight: 600;
-        border-radius: 28px;
-        cursor: pointer;
-    }
-
-    .write_a_review {
+    .write_a_review{
         display: none;
         border: 1px solid rgb(238, 238, 238);
         padding: 0 15px;
     }
-
-    .ask_a_question {
+    .ask_a_question{
         border: 1px solid rgb(238, 238, 238);
         padding: 0 15px;
         padding-bottom: 8%;
     }
-
-    .write_a_review form {
+    .write_a_review form{
         margin: 10px 0 60px 0;
     }
-
-    .write_a_review form label, .ask_a_question form label {
+    .write_a_review form label , .ask_a_question form label{
         font-size: 14px;
     }
-
     .write_a_review input[type=text], textarea {
         width: 100%;
         padding: 12px;
@@ -1011,17 +837,16 @@
         /*margin-bottom: 16px;*/
         resize: vertical;
     }
-
     .write_a_review input[type=submit] {
         float: right;
         @if(isset($display))
-         background-color: {{$display->tabs_background}};
+        background-color: {{$display->tabs_background}};
         color: {{$display->button_text}};
         @else
-          background-color: #0c0c0c;
+         background-color: #0c0c0c;
         color: white;
         @endif
-         padding: 16px 28px;
+        padding: 16px 28px;
         border: none;
         font-size: 18px;
         letter-spacing: 1px;
@@ -1029,52 +854,44 @@
         border-radius: 28px;
         cursor: pointer;
     }
-
     .write_a_review input[type=submit]:hover {
         /*background-color: #131313;*/
         background-color: #f8f9fa;
         @if(isset($display))
-         color: {{$display->button_text}};
+        color: {{$display->button_text}};
         @else
- color: black;
+color:black;
     @endif
-
     }
-
-    .rating_on_review ul {
+    .rating_on_review ul{
         margin-top: 10px;
         margin-bottom: 15px;
         line-height: 23px;
     }
-
-    .rating_on_review > ul > li {
+    .rating_on_review > ul >li{
         font-size: 28px;
         display: inline-block;
         position: relative;
         /*width: 1.1em;*/
         color: rgb(255, 210, 0);
     }
-
     .rating_on_review > ul > li:hover:before {
         content: "\2605";
         position: absolute;
         color: rgb(255, 210, 0);
     }
-
     .rating_on_review {
         unicode-bidi: bidi-override;
         direction: rtl;
         text-align: left;
 
     }
-
     .rating_on_review > ul > li:hover:before,
     .rating_on_review > ul > li:hover ~ li:before {
         content: "\2605";
         position: absolute;
         color: rgb(255, 210, 0);
     }
-
     /* .rating_on_review > ul > list_color:before {
         content: "\2605";
         position: absolute;
@@ -1089,36 +906,34 @@
      */
     /* Rating Star Widgets Style */
     .rating-stars ul {
-        list-style-type: none;
-        padding: 0;
+        list-style-type:none;
+        padding:0;
 
-        -moz-user-select: none;
-        -webkit-user-select: none;
+        -moz-user-select:none;
+        -webkit-user-select:none;
     }
-
     .rating-stars ul > li.star {
-        display: inline-block;
+        display:inline-block;
 
     }
 
     /* Idle State of the stars */
     .rating-stars ul > li.star > i.fa {
-        font-size: 2.5em; /* Change the size of the stars */
-        color: #ccc; /* Color on idle state */
+        font-size:2.5em; /* Change the size of the stars */
+        color:#ccc; /* Color on idle state */
     }
 
     /* Hover state of the stars */
     .rating-stars ul > li.star.hover > i.fa {
-        color: #FFCC36;
+        color:#FFCC36;
     }
 
     /* Selected state of the stars */
     .rating-stars ul > li.star.selected > i.fa {
-        color: #FF912C;
+        color:#FF912C;
     }
-
     /* popup quick view */
-    .popup_overlay {
+    .popup_overlay{
         position: fixed;
         display: none;
         width: 100%;
@@ -1127,9 +942,8 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0,0,0,0.5);
     }
-
     #quick-view-pop-up {
         display: none;
         background: #fff;
@@ -1141,19 +955,16 @@
         right: 18%;
         max-width: 1160px;
     }
-
-    @media (max-width: 767px) {
-        #quick-view-pop-up {
+    @media (max-width:767px) {
+        #quick-view-pop-up{
             left: 8%;
             right: 8%;
         }
     }
-
-    .gallery-cell {
+    .gallery-cell{
         position: relative;
     }
-
-    .owl-nav .owl-prev {
+    .owl-nav .owl-prev{
         position: absolute;
         top: 50%;
         left: -6%;
@@ -1161,8 +972,7 @@
         /* padding: 20px; */
         border-radius: 50%;
     }
-
-    .owl-nav .owl-next {
+    .owl-nav .owl-next{
         position: absolute;
         top: 50%;
         right: -6%;
@@ -1170,118 +980,98 @@
         /* padding: 20px; */
         border-radius: 50%;
     }
-
     .owl-nav .owl-next i,
-    .owl-nav .owl-prev i {
+    .owl-nav .owl-prev i{
         font-size: 28px;
         color: #ffffff;
         margin: 8px 14px;
     }
-
-    .item {
+     .item{
         display: flex;
         padding: 5px;
         font-size: medium;
-        height: 550px;
-        justify-content: space-between;
+         height: 550px;
+         justify-content: space-between;
     }
-
-    .item .slide-image {
+    .item .slide-image{
         display: inline-block;
         max-width: 50%;
         vertical-align: middle;
     }
-
-    .item .slide-image img {
+    .item .slide-image img{
         max-width: 362px;
         min-width: 362px;
         /*height: 440px;*/
         height: auto;
     }
-
-    .item .image-content {
+    .item .image-content{
         display: inline-block;
         vertical-align: middle;
         max-width: 53%;
-        width: 100%;
+        width:100%;
     }
-
-    .item .image-content div,
+     .item .image-content div,
     .item .image-content p,
     .item .image-content h3,
-    . .item .image-content h4 {
+    . .item .image-content h4
+    {
         margin: 12px 0 0 0;
     }
-
-    @media (max-width: 767px) {
-        .item .slide-image {
+    @media (max-width:767px) {
+        .item .slide-image{
             max-width: 100%;
             padding: 0 10px;
         }
-
-        .item .image-content {
+         .item .image-content{
             max-width: 100%;
-            padding: 4%;
+             padding: 4%;
         }
-
-        .product-name {
-            margin-top: 0;
-        }
+         .product-name{
+             margin-top: 0;
+         }
     }
-
-    .item .image-content .fa-star {
+     .item .image-content .fa-star{
         color: rgb(255, 210, 0);
     }
-
-    .item .image-content .product-details {
+     .item .image-content .product-details{
         display: block;
     }
-
-    .item .image-content .product-details .product-name {
-        margin-bottom: 2%;
-        font-weight: 600;
-        font-size: 18px;
+    .item .image-content .product-details .product-name{
+        margin-bottom: 2%; font-weight: 600; font-size: 18px;
     }
-
-    .item .image-content .product-details .ratings {
+     .item .image-content .product-details .ratings{
         /*display: flex;*/
         /*width: 40%;*/
-        margin-top: 3%;
-        margin-bottom: 3%;
+         margin-top: 3%;
+         margin-bottom: 3%;
     }
-
-    .star-main {
+    .star-main{
         display: flex;
         justify-content: space-between;
     }
-
-    .item .image-content .product-details .review_date {
+     .item .image-content .product-details .review_date{
         display: inline-block;
         width: 48%;
         text-align: right;
     }
-
-    .item .image-content .product-details .like_dislike {
+    .item .image-content .product-details .like_dislike{
         display: inline-block;
         text-align: right;
         width: 23%;
         float: right;
     }
-
-    hr {
+    hr{
         height: 1px;
         margin: 12px;
         width: 100%;
     }
-
-    .item .image-content .product-details .like_dislike a {
+     .item .image-content .product-details .like_dislike a{
         text-decoration: none;
         color: black;
         height: 100% !important;
         font-size: smaller;
     }
-
-    .quick-view-close {
+    .quick-view-close{
         position: absolute;
         right: -6%;
         top: 0;
@@ -1291,16 +1081,14 @@
         background-color: rgb(0, 94, 158);
         border-radius: 50%;
     }
-
-    .quick-view-close .fa-times {
+    .quick-view-close .fa-times{
         font-size: 28px;
         /* margin: 10px; */
         color: #ffffff;
     }
-
-    .item .image-content img {
+     .item .image-content img{
         height: 100%;
-        width: 126px;
+         width: 126px;
     }
 
     .stamped-messages .stamped-thank-you {
@@ -1315,16 +1103,14 @@
     .stamped-empty-state {
         margin-top: 50px;
     }
-
     .stamped-container {
-        font-family: 'Open Sans', Verdana, sans-serif;
+        font-family: 'Open Sans',Verdana,sans-serif;
         text-align: left;
     }
 
     input[type="file"] {
         display: none;
     }
-
     .custom-file-upload {
         border: 1px solid #ccc;
         display: inline-block;
@@ -1332,19 +1118,16 @@
         cursor: pointer;
         margin-top: 12px;
         margin-bottom: 8px;
-        width: 100%;
+        width:100%;
     }
-
-    .black-color {
-        color: black;
+    .black-color{
+        color:black;
     }
-
-    .blue-color {
-        color: black;
+    .blue-color{
+        color:black;
     }
-
-    .user_pic_inner h3 {
-        color: white;
+    .user_pic_inner h3{
+        color:white;
     }
 
     .stamped-pagination {
@@ -1352,9 +1135,8 @@
         position: relative;
         margin: 20px 0 20px;
         padding: 0;
-        display: inline-flex;
+        display:inline-flex;
     }
-
     .stamped-reviews-nav, .stamped-reviews-ul, nav.stamped-reviews {
         margin: auto !important;
     }
@@ -1364,7 +1146,6 @@
         margin-top: 0;
 
     }
-
     .stamped-pagination li {
         float: none;
         list-style: none;
@@ -1377,42 +1158,37 @@
 
     }
 
-    .sheild-badge {
+    .sheild-badge{
         position: absolute;
         right: -4px;
         bottom: -8px;
         font-size: 18px;
         @if(isset($display))
-         color: {{$display->verify_color}};
-        @else
- color: #1cc286;
+        color: {{$display->verify_color}};
+    @else
+        color: #1cc286;
     @endif
-
     }
 
     .stamped-pagination a:not(.link):not(.btn) {
         border: none;
     }
-
     .stamped-pagination a {
         padding: 10px;
         cursor: pointer;
         text-decoration: none;
         font-size: 15px;
-        color: black;
+        color:black;
     }
-
     .stamped-link-disabled {
         pointer-events: none;
     }
-
-    #review_pagination {
+    #review_pagination{
         margin-top: 1%;
         text-align: center;
     }
-
-    .active a {
-        text-decoration: underline;
+    .active a{
+        text-decoration :underline;
     }
 
 
@@ -1421,9 +1197,8 @@
         position: relative;
         margin: 20px 0 20px;
         padding: 0;
-        display: inline-flex;
+        display:inline-flex;
     }
-
     .stamped-reviews-nav, .stamped-reviews-ul, nav.stamped-reviews {
         margin: auto !important;
     }
@@ -1433,7 +1208,6 @@
         margin-top: 0;
 
     }
-
     .stamped-question li {
         float: none;
         list-style: none;
@@ -1443,35 +1217,31 @@
         margin-top: 0px;
         margin-right: 0px;
         padding: 0;
-        color: black;
+        color:black;
     }
 
     .stamped-question a:not(.link):not(.btn) {
         border: none;
     }
-
     .stamped-question a {
         padding: 10px;
         cursor: pointer;
         text-decoration: none;
         font-size: 15px;
-        color: black;
+        color:black;
     }
-
     .stamped-link-disabled {
         pointer-events: none;
     }
-
-    #question_pagination {
+    #question_pagination{
         margin-top: 1%;
         text-align: center;
     }
-
-    .active a {
-        text-decoration: underline;
+    .active a{
+        text-decoration :underline;
     }
 
-    .clear_filter {
+    .clear_filter{
         margin-left: 3%;
         margin-top: 20px;
     }
@@ -1502,410 +1272,107 @@
         color: gold;
         overflow: hidden;
     }
-
-    .stars-0:after {
-        width: 0%;
-    }
-
-    .stars-1:after {
-        width: 1%;
-    }
-
-    .stars-2:after {
-        width: 2%;
-    }
-
-    .stars-3:after {
-        width: 3%;
-    }
-
-    .stars-4:after {
-        width: 4%;
-    }
-
-    .stars-5:after {
-        width: 5%;
-    }
-
-    .stars-6:after {
-        width: 6%;
-    }
-
-    .stars-7:after {
-        width: 7%;
-    }
-
-    .stars-8:after {
-        width: 8%;
-    }
-
-    .stars-9:after {
-        width: 9%;
-    }
-
-    .stars-10:after {
-        width: 10%;
-    }
-
-    .stars-11:after {
-        width: 11%;
-    }
-
-    .stars-12:after {
-        width: 12%;
-    }
-
-    .stars-13:after {
-        width: 13%;
-    }
-
-    .stars-14:after {
-        width: 14%;
-    }
-
-    .stars-15:after {
-        width: 15%;
-    }
-
-    .stars-16:after {
-        width: 16%;
-    }
-
-    .stars-17:after {
-        width: 17%;
-    }
-
-    .stars-18:after {
-        width: 18%;
-    }
-
-    .stars-19:after {
-        width: 19%;
-    }
-
-    .stars-20:after {
-        width: 20%;
-    }
-
-    .stars-21:after {
-        width: 21%;
-    }
-
-    .stars-22:after {
-        width: 22%;
-    }
-
-    .stars-23:after {
-        width: 23%;
-    }
-
-    .stars-24:after {
-        width: 24%;
-    }
-
-    .stars-25:after {
-        width: 25%;
-    }
-
-    .stars-26:after {
-        width: 26%;
-    }
-
-    .stars-27:after {
-        width: 27%;
-    }
-
-    .stars-28:after {
-        width: 28%;
-    }
-
-    .stars-29:after {
-        width: 29%;
-    }
-
-    .stars-30:after {
-        width: 30%;
-    }
-
-    .stars-31:after {
-        width: 31%;
-    }
-
-    .stars-32:after {
-        width: 32%;
-    }
-
-    .stars-33:after {
-        width: 33%;
-    }
-
-    .stars-34:after {
-        width: 34%;
-    }
-
-    .stars-35:after {
-        width: 35%;
-    }
-
-    .stars-36:after {
-        width: 36%;
-    }
-
-    .stars-37:after {
-        width: 37%;
-    }
-
-    .stars-38:after {
-        width: 38%;
-    }
-
-    .stars-39:after {
-        width: 39%;
-    }
-
-    .stars-40:after {
-        width: 40%;
-    }
-
-    .stars-41:after {
-        width: 41%;
-    }
-
-    .stars-42:after {
-        width: 42%;
-    }
-
-    .stars-43:after {
-        width: 43%;
-    }
-
-    .stars-44:after {
-        width: 44%;
-    }
-
-    .stars-45:after {
-        width: 45%;
-    }
-
-    .stars-46:after {
-        width: 46%;
-    }
-
-    .stars-47:after {
-        width: 47%;
-    }
-
-    .stars-48:after {
-        width: 48%;
-    }
-
-    .stars-49:after {
-        width: 49%;
-    }
-
-    .stars-50:after {
-        width: 50%;
-    }
-
-    .stars-51:after {
-        width: 51%;
-    }
-
-    .stars-52:after {
-        width: 52%;
-    }
-
-    .stars-53:after {
-        width: 53%;
-    }
-
-    .stars-54:after {
-        width: 54%;
-    }
-
-    .stars-55:after {
-        width: 55%;
-    }
-
-    .stars-56:after {
-        width: 56%;
-    }
-
-    .stars-57:after {
-        width: 57%;
-    }
-
-    .stars-58:after {
-        width: 58%;
-    }
-
-    .stars-59:after {
-        width: 59%;
-    }
-
-    .stars-60:after {
-        width: 60%;
-    }
-
-    .stars-61:after {
-        width: 61%;
-    }
-
-    .stars-62:after {
-        width: 62%;
-    }
-
-    .stars-63:after {
-        width: 63%;
-    }
-
-    .stars-64:after {
-        width: 64%;
-    }
-
-    .stars-65:after {
-        width: 65%;
-    }
-
-    .stars-66:after {
-        width: 66%;
-    }
-
-    .stars-67:after {
-        width: 67%;
-    }
-
-    .stars-68:after {
-        width: 68%;
-    }
-
-    .stars-69:after {
-        width: 69%;
-    }
-
-    .stars-70:after {
-        width: 70%;
-    }
-
-    .stars-71:after {
-        width: 71%;
-    }
-
-    .stars-72:after {
-        width: 72%;
-    }
-
-    .stars-73:after {
-        width: 73%;
-    }
-
-    .stars-74:after {
-        width: 74%;
-    }
-
-    .stars-75:after {
-        width: 75%;
-    }
-
-    .stars-76:after {
-        width: 76%;
-    }
-
-    .stars-77:after {
-        width: 77%;
-    }
-
-    .stars-78:after {
-        width: 78%;
-    }
-
-    .stars-79:after {
-        width: 79%;
-    }
-
-    .stars-80:after {
-        width: 80%;
-    }
-
-    .stars-81:after {
-        width: 81%;
-    }
-
-    .stars-82:after {
-        width: 82%;
-    }
-
-    .stars-83:after {
-        width: 83%;
-    }
-
-    .stars-84:after {
-        width: 84%;
-    }
-
-    .stars-85:after {
-        width: 85%;
-    }
-
-    .stars-86:after {
-        width: 86%;
-    }
-
-    .stars-87:after {
-        width: 87%;
-    }
-
-    .stars-88:after {
-        width: 88%;
-    }
-
-    .stars-89:after {
-        width: 89%;
-    }
-
-    .stars-90:after {
-        width: 90%;
-    }
-
-    .stars-91:after {
-        width: 91%;
-    }
-
-    .stars-92:after {
-        width: 92%;
-    }
-
-    .stars-93:after {
-        width: 93%;
-    }
-
-    .stars-94:after {
-        width: 94%;
-    }
-
-    .stars-95:after {
-        width: 95%;
-    }
-
-    .stars-96:after {
-        width: 96%;
-    }
-
-    .stars-97:after {
-        width: 97%;
-    }
-
-    .stars-98:after {
-        width: 98%;
-    }
-
-    .stars-99:after {
-        width: 99%;
-    }
-
-    .stars-100:after {
-        width: 100%;
-    }
+    .stars-0:after { width: 0%; }
+    .stars-1:after { width: 1%; }
+    .stars-2:after { width: 2%; }
+    .stars-3:after { width: 3%; }
+    .stars-4:after { width: 4%; }
+    .stars-5:after { width: 5%; }
+    .stars-6:after { width: 6%; }
+    .stars-7:after { width: 7%; }
+    .stars-8:after { width: 8%; }
+    .stars-9:after { width: 9%; }
+    .stars-10:after { width: 10%; }
+    .stars-11:after { width: 11%; }
+    .stars-12:after { width: 12%; }
+    .stars-13:after { width: 13%; }
+    .stars-14:after { width: 14%; }
+    .stars-15:after { width: 15%; }
+    .stars-16:after { width: 16%; }
+    .stars-17:after { width: 17%; }
+    .stars-18:after { width: 18%; }
+    .stars-19:after { width: 19%; }
+    .stars-20:after { width: 20%; }
+    .stars-21:after { width: 21%; }
+    .stars-22:after { width: 22%; }
+    .stars-23:after { width: 23%; }
+    .stars-24:after { width: 24%; }
+    .stars-25:after { width: 25%; }
+    .stars-26:after { width: 26%; }
+    .stars-27:after { width: 27%; }
+    .stars-28:after { width: 28%; }
+    .stars-29:after { width: 29%; }
+    .stars-30:after { width: 30%; }
+    .stars-31:after { width: 31%; }
+    .stars-32:after { width: 32%; }
+    .stars-33:after { width: 33%; }
+    .stars-34:after { width: 34%; }
+    .stars-35:after { width: 35%; }
+    .stars-36:after { width: 36%; }
+    .stars-37:after { width: 37%; }
+    .stars-38:after { width: 38%; }
+    .stars-39:after { width: 39%; }
+    .stars-40:after { width: 40%; }
+    .stars-41:after { width: 41%; }
+    .stars-42:after { width: 42%; }
+    .stars-43:after { width: 43%; }
+    .stars-44:after { width: 44%; }
+    .stars-45:after { width: 45%; }
+    .stars-46:after { width: 46%; }
+    .stars-47:after { width: 47%; }
+    .stars-48:after { width: 48%; }
+    .stars-49:after { width: 49%; }
+    .stars-50:after { width: 50%; }
+    .stars-51:after { width: 51%; }
+    .stars-52:after { width: 52%; }
+    .stars-53:after { width: 53%; }
+    .stars-54:after { width: 54%; }
+    .stars-55:after { width: 55%; }
+    .stars-56:after { width: 56%; }
+    .stars-57:after { width: 57%; }
+    .stars-58:after { width: 58%; }
+    .stars-59:after { width: 59%; }
+    .stars-60:after { width: 60%; }
+    .stars-61:after { width: 61%; }
+    .stars-62:after { width: 62%; }
+    .stars-63:after { width: 63%; }
+    .stars-64:after { width: 64%; }
+    .stars-65:after { width: 65%; }
+    .stars-66:after { width: 66%; }
+    .stars-67:after { width: 67%; }
+    .stars-68:after { width: 68%; }
+    .stars-69:after { width: 69%; }
+    .stars-70:after { width: 70%; }
+    .stars-71:after { width: 71%; }
+    .stars-72:after { width: 72%; }
+    .stars-73:after { width: 73%; }
+    .stars-74:after { width: 74%; }
+    .stars-75:after { width: 75%; }
+    .stars-76:after { width: 76%; }
+    .stars-77:after { width: 77%; }
+    .stars-78:after { width: 78%; }
+    .stars-79:after { width: 79%; }
+    .stars-80:after { width: 80%; }
+    .stars-81:after { width: 81%; }
+    .stars-82:after { width: 82%; }
+    .stars-83:after { width: 83%; }
+    .stars-84:after { width: 84%; }
+    .stars-85:after { width: 85%; }
+    .stars-86:after { width: 86%; }
+    .stars-87:after { width: 87%; }
+    .stars-88:after { width: 88%; }
+    .stars-89:after { width: 89%; }
+    .stars-90:after { width: 90%; }
+    .stars-91:after { width: 91%; }
+    .stars-92:after { width: 92%; }
+    .stars-93:after { width: 93%; }
+    .stars-94:after { width: 94%; }
+    .stars-95:after { width: 95%; }
+    .stars-96:after { width: 96%; }
+    .stars-97:after { width: 97%; }
+    .stars-98:after { width: 98%; }
+    .stars-99:after { width: 99%; }
+    .stars-100:after { width: 100%; }
 
     .input-container {
         display: -ms-flexbox; /* IE10 */
@@ -1915,7 +1382,7 @@
         float: right;
     }
 
-    .stamped-filter {
+    .stamped-filter{
         color: #333;
         position: initial;
         height: 35px;
@@ -1945,8 +1412,7 @@
         min-width: 170px;
         margin-bottom: 15px;
     }
-
-    .flag-image {
+    .flag-image{
         width: 18px;
         max-width: 18px;
         min-width: 18px;
@@ -1955,20 +1421,17 @@
         margin: 3px 3px 3px 1px !important;
         line-height: 0;
     }
-
-    .review_footer p {
+    .review_footer p{
         font-size: 12px;
     }
-
-    .review_date p {
+    .review_date p{
         font-size: 12px;
     }
-
-    .replier_name h4 {
+    .replier_name h4{
         font-size: 14px;
     }
 
-    .first-lable {
+    .first-lable{
         width: 28%;
         display: inline-block;
         padding-right: 15px;
@@ -1979,160 +1442,139 @@
         <div class="tt_logix_reviews_inner">
             <div class="tt_logix_reviews_r_no">
                 <h1>
-                    <span id="total_rating"
-                          style="margin: 0; margin-right: 5%; margin-top: 1%;">{{$total_rating}}</span>
-                    <div class="col-md-6" style="overflow: hidden;">
-                        <span class="stars-container stars-{{($review_value / 5) * 100}}"
-                              style="font-size: 30px;">★★★★★</span>
-                    </div>
+                    <span id="total_rating" style="margin: 0; margin-right: 5%; margin-top: 1%;">{{$total_rating}}</span>
+                         <div class="col-md-6" style="overflow: hidden;">
+                                   <span class="stars-container stars-{{($review_value / 5) * 100}}" style="font-size: 30px;">★★★★★</span>
+                         </div>
                 </h1>
-                <p class="base_reviews base_reviews2">Based on <span id="base_reviews">{{$total_reviews}}</span> Reviews
-                </p>
+                <p class="base_reviews base_reviews2">Based on <span id="base_reviews">{{$total_reviews}}</span> Reviews</p>
             </div>
             <div class="review_progress">
                 <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
-                    <div class="review_progress_1" data-value="5">
-                        <div class="side first">
+                <div class="review_progress_1" data-value="5">
+                    <div class="side first">
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
-                        </div>
-                        <div class="middle second">
-                            <div class="bar-container">
-                                <div class="bar-5 progress-bar"
-                                     @if($total_reviews != 0) style="width: {{($five_star/$total_reviews)*100}}%"
-                                     @else style="width: 0" @endif></div>
-                            </div>
-                        </div>
-                        <div class="side left" style="margin-top: 8px;">
-                            <div id="five_star">&ensp;({{$five_star}})</div>
+                    </div>
+                    <div class="middle second">
+                        <div class="bar-container">
+                            <div class="bar-5 progress-bar" @if($total_reviews != 0) style="width: {{($five_star/$total_reviews)*100}}%" @else style="width: 0" @endif></div>
                         </div>
                     </div>
+                    <div class="side left" style="margin-top: 8px;">
+                        <div id="five_star">&ensp;({{$five_star}})</div>
+                    </div>
+                </div>
                 </a>
                 <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
-                    <div class="review_progress_1" data-value="4">
-                        <div class="side">
+                <div class="review_progress_1" data-value="4">
+                    <div class="side">
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="far fa-star"></span>
-                        </div>
-                        <div class="middle">
-                            <div class="bar-container">
-                                <div class="bar-4 progress-bar"
-                                     @if($total_reviews != 0) style="width: {{($four_star/$total_reviews)*100}}%"
-                                     @else style="width: 0" @endif></div>
-                            </div>
-                        </div>
-                        <div class="side left">
-                            <div id="four_star">&ensp;({{$four_star}})</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-4 progress-bar" @if($total_reviews != 0) style="width: {{($four_star/$total_reviews)*100}}%" @else style="width: 0" @endif></div>
                         </div>
                     </div>
+                    <div class="side left">
+                        <div id="four_star">&ensp;({{$four_star}})</div>
+                    </div>
+                </div>
                 </a>
                 <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
-                    <div class="review_progress_1" data-value="3">
-                        <div class="side">
+                <div class="review_progress_1" data-value="3">
+                    <div class="side">
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             <span class="far fa-star"></span>
                             <span class="far fa-star"></span>
-                        </div>
-                        <div class="middle">
-                            <div class="bar-container">
-                                <div class="bar-3 progress-bar"
-                                     @if($total_reviews != 0) style="width: {{($three_star/$total_reviews)*100}}%"
-                                     @else style="width: 0" @endif></div>
-                            </div>
-                        </div>
-                        <div class="side left">
-                            <div id="three_star">&ensp;({{$three_star}})</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-3 progress-bar" @if($total_reviews != 0) style="width: {{($three_star/$total_reviews)*100}}%" @else style="width: 0" @endif></div>
                         </div>
                     </div>
+                    <div class="side left">
+                        <div id="three_star">&ensp;({{$three_star}})</div>
+                    </div>
+                </div>
+                    </a>
+                <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
+                <div class="review_progress_1" data-value="2">
+                    <div class="side">
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="far fa-star"></span>
+                            <span class="far fa-star"></span>
+                            <span class="far fa-star"></span>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-2 progress-bar" @if($total_reviews != 0) style="width: {{($two_star/$total_reviews)*100}}%" @else style="width: 0" @endif></div>
+                        </div>
+                    </div>
+                    <div class="side left">
+                        <div id="two_star">&ensp;({{$two_star}})</div>
+                    </div>
+                </div>
                 </a>
                 <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
-                    <div class="review_progress_1" data-value="2">
-                        <div class="side">
+                <div class="review_progress_1" data-value="1">
+                    <div class="side">
                             <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
                             <span class="far fa-star"></span>
                             <span class="far fa-star"></span>
                             <span class="far fa-star"></span>
-                        </div>
-                        <div class="middle">
-                            <div class="bar-container">
-                                <div class="bar-2 progress-bar"
-                                     @if($total_reviews != 0) style="width: {{($two_star/$total_reviews)*100}}%"
-                                     @else style="width: 0" @endif></div>
-                            </div>
-                        </div>
-                        <div class="side left">
-                            <div id="two_star">&ensp;({{$two_star}})</div>
+                            <span class="far fa-star"></span>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-1 progress-bar" @if($total_reviews != 0) style="width: {{($one_star/$total_reviews)*100}}%" @else style="width: 0" @endif></div>
                         </div>
                     </div>
-                </a>
-                <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
-                    <div class="review_progress_1" data-value="1">
-                        <div class="side">
-                            <span class="fa fa-star"></span>
-                            <span class="far fa-star"></span>
-                            <span class="far fa-star"></span>
-                            <span class="far fa-star"></span>
-                            <span class="far fa-star"></span>
-                        </div>
-                        <div class="middle">
-                            <div class="bar-container">
-                                <div class="bar-1 progress-bar"
-                                     @if($total_reviews != 0) style="width: {{($one_star/$total_reviews)*100}}%"
-                                     @else style="width: 0" @endif></div>
-                            </div>
-                        </div>
-                        <div class="side left">
-                            <div id="one_star">&ensp;({{$one_star}})</div>
-                        </div>
+                    <div class="side left">
+                        <div id="one_star">&ensp;({{$one_star}})</div>
                     </div>
+                </div>
                 </a>
             </div>
             <div class="image_popups_list quick-view-controller" style="display: flex;" id="review_images">
-                <div>
-                    <div>
-                        @php
-                            $counter = 0;
-                        @endphp
-                        @if(count($reviews_images) > 0)
-                            @foreach($reviews_images as $review)
-                                @if(count($review->medias) > 0)
-                                    @foreach($review->medias as $key => $media)
-                                        @if($counter <= 7)
-                                            <div>
-                                                <a href="javascript:void(0)" title="My Watch"
-                                                   data-value="{{$media->id}}" data-target="myPopup"
-                                                   class="btn-view @if($counter == 3 || $counter == 7) for-image-hidden @endif">
-                                                    <div>
-                                                        <img src="{{asset('review-images'.'/'.$media->review_media)}}"
-                                                             width="70" height="55" alt="Picture">
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            @php $counter += 1; @endphp
-                                        @endif
-                                    @endforeach
-                                @else
-                                    {{--        <a href="javascript:void(0)" title="My Watch" class="">--}}
-                                    {{--            <div>--}}
-                                    {{--                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">--}}
-                                    {{--            </div>--}}
-                                    {{--        </a>--}}
+                @php
+                    $counter = 0;
+                @endphp
+                @if(count($reviews_images) > 0)
+                    @foreach($reviews_images as $review)
+                        @if(count($review->medias) > 0)
+                            @foreach($review->medias as $key => $media)
+                                @if($counter <= 7)
+                                       <a href="javascript:void(0)" title="My Watch" data-value="{{$media->id}}" data-target="myPopup" class="btn-view @if($counter == 3 || $counter == 7) for-image-hidden @endif">
+                                           <div>
+                                               <img src="{{asset('review-images'.'/'.$media->review_media)}}" width="70"  height="55" alt="Picture">
+                                           </div>
+                                       </a>
+                                    @php $counter += 1; @endphp
                                 @endif
                             @endforeach
                         @else
-
+                            {{--        <a href="javascript:void(0)" title="My Watch" class="">--}}
+                            {{--            <div>--}}
+                            {{--                <img src="{{asset('empty.jpg')}}" width="70"  height="55" alt="Picture">--}}
+                            {{--            </div>--}}
+                            {{--        </a>--}}
                         @endif
-                    </div>
-                </div>
+                    @endforeach
+                @else
+
+                @endif
+
             </div>
             <div class="question_review_buttons question_review_buttons2">
                 <button id="write_a_review_btn"><i class="far fa-edit"></i>&emsp;Write a Review</button>
@@ -2143,12 +1585,10 @@
         <!-- tabs -->
         <div class="customer_reviews">
             <div class="tabs_view">
-                <div class="reviews_tab active_tab">
+                <div class="reviews_tab active_tab" >
                     <a id="reviews" href="#reviews_tab_content">
                         Reviews
-                        <span
-                            id="total_reviews">@if($status == 'real'){{$real_reviews}} @endif @if($status == 'fake' && $real_reviews != 0){{$real_reviews}} @endif @if($status == 'fake' && $real_reviews == 0)
-                                0 @endif</span>
+                        <span id="total_reviews">@if($status == 'real'){{$real_reviews}} @endif @if($status == 'fake' && $real_reviews != 0){{$real_reviews}} @endif @if($status == 'fake' && $real_reviews == 0) 0 @endif</span>
                     </a>
                 </div>
                 <div class="questions_tab">
@@ -2161,51 +1601,40 @@
 
             <div class="stamped-messages" id="thanks_msj" style="display:none;">
                 <div class="stamped-thank-you" style="display: block;">
-                    <p style="font-weight: bold;font-size: xx-large; line-height:0px;margin-bottom:5%;">Thank you for
-                        submitting a review!</p>
-                    <p style="font-weight: bolder;line-height:0px;">Your input is very much appreciated. Share it with
-                        your friends so they can enjoy it too!</p>
+                    <p style="font-weight: bold;font-size: xx-large; line-height:0px;margin-bottom:5%;">Thank you for submitting a review!</p>
+                    <p style="font-weight: bolder;line-height:0px;">Your input is very much appreciated. Share it with your friends so they can enjoy it too!</p>
                     <div class="stamped-share-links" style="margin-top:4%;">
-                        <a class="facebook" id="facebook_share" href="" target="_blank"><span><i
-                                    class="stamped-fa stamped-fa-facebook"></i>Facebook</span></a>
-                        <a class="twitter" id="twitter_share" href="" target="_blank"><span><i
-                                    class="stamped-fa stamped-fa-twitter"></i>Twitter</span></a>
+                        <a class="facebook" id="facebook_share" href="" target="_blank"><span><i class="stamped-fa stamped-fa-facebook"></i>Facebook</span></a>
+                        <a class="twitter" id="twitter_share" href="" target="_blank"><span><i class="stamped-fa stamped-fa-twitter"></i>Twitter</span></a>
                     </div>
                 </div>
-                <div class="stamped-empty-state" style="display:none;">
-                    <div>Be the first to review this item</div>
-                </div>
+                <div class="stamped-empty-state" style="display:none;"><div>Be the first to review this item</div></div>
             </div>
 
             <div class="stamped-messages" id="thanks_msj_qus" style="display:none;">
                 <div class="stamped-thank-you" style="display: block;">
-                    <p style="font-weight: bold;font-size: xx-large; line-height:0px;margin-bottom:5%;">Thank you for
-                        posting a question!</p>
-                    <p style="font-weight: bolder;line-height:0px;">Your question will appear on the site once we've
-                        answered it.</p>
+                    <p style="font-weight: bold;font-size: xx-large; line-height:0px;margin-bottom:5%;">Thank you for posting a question!</p>
+                    <p style="font-weight: bolder;line-height:0px;">Your question will appear on the site once we've answered it.</p>
                 </div>
-                <div class="stamped-empty-state" style="display:none;">
-                    <div>Be the first to review this item</div>
-                </div>
+                <div class="stamped-empty-state" style="display:none;"><div>Be the first to review this item</div></div>
             </div>
 
             <!-- reviews_tab_content -->
             <div id="reviews_tab_content" class="reviews_tab_content tabs">
                 <div class="write_a_review">
-                    {{--                       <form id="review" action="https://stamped.test/review-submit" method="POST">--}}
-                    <form id="review" action="https://phpstack-176572-2275881.cloudwaysapps.com/review-submit"
-                          method="POST">
-                        <div>
-                            <div class="first-lable" style="float: left">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" required name="name" placeholder="Your name..">
-                            </div>
+{{--                       <form id="review" action="https://stamped.test/review-submit" method="POST">--}}
+                    <form id="review" action="https://phpstack-176572-2275881.cloudwaysapps.com/review-submit" method="POST">
+                           <div>
+                               <div class="first-lable" style="float: left">
+                                   <label for="name">Name</label>
+                                   <input type="text" id="name" required name="name" placeholder="Your name..">
+                               </div>
 
-                            <div class="first-lable">
-                                <label for="email">Email</label>
-                                <input type="text" required id="email" name="email" placeholder="Your email..">
-                            </div>
-                        </div>
+                               <div class="first-lable">
+                                   <label for="email">Email</label>
+                                   <input type="text" required id="email" name="email" placeholder="Your email..">
+                               </div>
+                           </div>
                         <label for="rating">Rating</label>
                         <div class="rating_on_review">
                             <ul>
@@ -2217,16 +1646,13 @@
                             </ul>
                         </div>
 
-                        <input type="hidden" class="product_id" value="" name="product_id">
+                        <input type="hidden" class="product_id"  value="" name="product_id">
                         <input type="hidden" id="review_rating" value="" name="review_rating">
                         <input type="hidden" id="shop_name" class="shop_name" value="" name="shop_name">
                         <label class="review_title" for="review_title">Title of Review</label>
-                        <input type="text" required id="review_title" name="review_title"
-                               placeholder="Give your review a title">
+                        <input type="text" required id="review_title" name="review_title" placeholder="Give your review a title">
 
-                        <label for="file-upload" class="custom-file-upload"><i class="fa fa-cloud-upload"
-                                                                               style="margin-right:1%;"></i><span
-                                id="upload_image">Upload an Image</span></label>
+                        <label for="file-upload" class="custom-file-upload"><i class="fa fa-cloud-upload" style="margin-right:1%;"></i><span id="upload_image">Upload an Image</span></label>
                         <input id="file-upload" name="image" type="file"/>
 
                         <label for="experience">How was your overall experience?</label>
@@ -2237,14 +1663,11 @@
                 </div>
                 <div class="dropdown_review">
                     <div class="question_review_buttons" style="padding:0px;">
-                        <button id="clear_review_filter" style="float:left; display:none;"><i class="fas fa-times"></i>
-                            Clear Filter
-                        </button>
+                        <button id="clear_review_filter" style="float:left; display:none;"><i class="fas fa-times"></i> Clear Filter</button>
                     </div>
                     <div class="input-container">
-                        {{--                        <input class="input-field" type="text" placeholder="Username" name="usrnm">--}}
-                        <select class="stamped-filter" name="sort_review" @if($real_reviews == 0) style="display: none"
-                                @endif id="sort_review">
+{{--                        <input class="input-field" type="text" placeholder="Username" name="usrnm">--}}
+                        <select class="stamped-filter" name="sort_review" @if($real_reviews == 0) style="display: none" @endif id="sort_review">
                             <option value="sort" selected>Sort</option>
                             <!--            <option value="saab">With Photos</option> -->
                             <option value="most_recent">Most Recent</option>
@@ -2252,7 +1675,7 @@
                             <option value="lowest_rating">lowest Rating</option>
                             <option value="most_helpful">Most Helpful</option>
                         </select>
-                        {{--                        <i class="fas fa-chevron-down icon-down"></i>--}}
+{{--                        <i class="fas fa-chevron-down icon-down"></i>--}}
                     </div>
                 </div>
                 <div class="user_reviews" id="user_reviews">
@@ -2290,34 +1713,24 @@
                                         </div>
                                         <div class="sheild-badge">
                                             @if($review->verify_status == 'verified')
-                                                <i class="fas fa-shield-check"></i>
+                                            <i class="fas fa-shield-check"></i>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="user_info" id="user_info">
-                                        <h3>{{ucwords($review->name)}}<span
-                                                @if(isset($display)) style="color: {{$display->verify_color}}" @endif>@if($review->verify_status == 'verified')
-                                                    Verified Buyer @endif</span></h3>
+                                        <h3>{{ucwords($review->name)}}<span @if(isset($display)) style="color: {{$display->verify_color}}" @endif>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                                         <p>
-                                            {{--                                            <i class="flag flag {{$review->country_code}}"></i>--}}
-                                            <img src="{{asset('flags/bigger/'.$review->country_code.'.svg')}}"
-                                                 width="15" height="13" class="flag-image">
+{{--                                            <i class="flag flag {{$review->country_code}}"></i>--}}
+                                            <img src="{{asset('flags/bigger/'.$review->country_code.'.svg')}}" width="15" height="13" class="flag-image">
                                             {{$review->customer_location}}
                                         </p>
                                         @if($review->review_rating == null)
-                                            <div
-                                                class="col-md-6 @if($review->verify_status == 'verified') review-stars @endif"
-                                                style="overflow: hidden; line-height: 1">
-                                                <span class="stars-container stars-{{(0 / 5) * 100}}"
-                                                      style="font-size: 18px;">★★★★★</span>
+                                            <div class="col-md-6 @if($review->verify_status == 'verified') review-stars @endif" style="overflow: hidden; line-height: 1">
+                                                <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: 18px;">★★★★★</span>
                                             </div>
                                         @else
-                                            <div
-                                                class="col-md-6 @if($review->verify_status == 'verified') review-stars @endif"
-                                                style="overflow: hidden;line-height: 1">
-                                                <span
-                                                    class="stars-container stars-{{($review->review_rating / 5) * 100}}"
-                                                    style="font-size: 18px;">★★★★★</span>
+                                            <div class="col-md-6 @if($review->verify_status == 'verified') review-stars @endif" style="overflow: hidden;line-height: 1">
+                                                <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size: 18px;">★★★★★</span>
                                             </div>
                                         @endif
                                     </div>
@@ -2348,37 +1761,27 @@
                                 <div class="review_footer">
                                     <div class="share_review">
                                         <p>
-                                            <a id="share_towards"
-                                               href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook?review_id={{$review->id}}&display=popup"
-                                               target="_blank">
+                                            <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook?review_id={{$review->id}}&display=popup" target="_blank">
                                                 <i class="fas fa-share-square"></i>
                                                 Share
                                             </a>
-                                            <span class="share_to">&ensp; | &ensp;<a
-                                                    href="www.facebook.com">Facebook</a>&ensp; . &ensp;<a
-                                                    href="www.twitter.com">Twitter</a> </span>
+                                            <span class="share_to">&ensp; | &ensp;<a href="www.facebook.com">Facebook</a>&ensp; . &ensp;<a href="www.twitter.com">Twitter</a> </span>
                                         </p>
                                     </div>
                                     <div class="like_dislike">
                                         <p>Was this helpful?<span>
                             <a href="javascript:void(0)">
-                              <i @if(isset($review->stats) && $review->stats->like == 1) class="fas fa-thumbs-up blue-color for-like"
-                                 @else class="fas fa-thumbs-up   for-like" @endif></i> <span class="like"
-                                                                                             data-value="{{$review->id}}">{{$review->likes}}</span>
+                              <i @if(isset($review->stats) && $review->stats->like == 1) class="fas fa-thumbs-up blue-color for-like" @else class="fas fa-thumbs-up   for-like" @endif></i> <span class="like" data-value="{{$review->id}}">{{$review->likes}}</span>
                             </a>
                             <a href="javascript:void(0)">
-                              <i @if(isset($review->stats) && $review->stats->dislike == 1) class="fas fa-thumbs-down blue-color for-dislike"
-                                 @else  class="fas fa-thumbs-down for-dislike" @endif></i> <span class="dislike"
-                                                                                                 data-value="{{$review->id}}">{{$review->dislikes}}</span>
+                              <i @if(isset($review->stats) && $review->stats->dislike == 1) class="fas fa-thumbs-down blue-color for-dislike" @else  class="fas fa-thumbs-down for-dislike" @endif></i> <span class="dislike" data-value="{{$review->id}}">{{$review->dislikes}}</span>
                             </a>
                           </span>
                                         </p>
                                     </div>
                                 </div>
                                 @if($review->review_reply != null)
-                                    <div class="stamped-icon-comment" style="font-size: 14px;"><i
-                                            class="fas fa-comment"></i> <span class="stamped-reply-a"><span
-                                                class="stamped-reply-a-label">Answers</span> (1)</span></div>
+                                    <div class="stamped-icon-comment" style="font-size: 14px;"><i class="fas fa-comment"></i> <span class="stamped-reply-a"><span class="stamped-reply-a-label">Answers</span> (1)</span></div>
                                     <div class="review_reply" id="review_reply">
                                         <div class="replier_info">
                                             <div class="replier_name" id="replier_name">
@@ -2448,32 +1851,22 @@
                                         </div>
                                     </div>
                                     <div class="user_info" id="user_info">
-                                        <h3>{{ucwords($review->name)}}<span
-                                                @if(isset($display)) style="color: {{$display->verify_color}}" @endif>@if($review->verify_status == 'verified')
-                                                    Verified Buyer @endif</span></h3>
+                                        <h3>{{ucwords($review->name)}}<span @if(isset($display)) style="color: {{$display->verify_color}}" @endif>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
                                         <p>
-                                            {{--                                            <i class="flag flag {{$review->country_code}}"></i>--}}
-                                            <img src="{{asset('flags/bigger/'.$review->country_code.'.svg')}}"
-                                                 width="15" height="13" class="flag-image">
+{{--                                            <i class="flag flag {{$review->country_code}}"></i>--}}
+                                            <img src="{{asset('flags/bigger/'.$review->country_code.'.svg')}}" width="15" height="13" class="flag-image">
                                             {{$review->customer_location}}
                                         </p>
 
-                                        @if($review->review_rating == null)
-                                            <div
-                                                class="col-md-6 @if($review->verify_status == 'verified') review-stars @endif"
-                                                style="overflow: hidden; line-height: 1">
-                                                <span class="stars-container stars-{{(0 / 5) * 100}}"
-                                                      style="font-size: 18px;">★★★★★</span>
-                                            </div>
-                                        @else
-                                            <div
-                                                class="col-md-6 @if($review->verify_status == 'verified') review-stars @endif"
-                                                style="overflow: hidden;line-height: 1">
-                                                <span
-                                                    class="stars-container stars-{{($review->review_rating / 5) * 100}}"
-                                                    style="font-size: 18px;">★★★★★</span>
-                                            </div>
-                                        @endif
+                                            @if($review->review_rating == null)
+                                                <div class="col-md-6 @if($review->verify_status == 'verified') review-stars @endif" style="overflow: hidden; line-height: 1">
+                                                    <span class="stars-container stars-{{(0 / 5) * 100}}" style="font-size: 18px;">★★★★★</span>
+                                                </div>
+                                            @else
+                                                <div class="col-md-6 @if($review->verify_status == 'verified') review-stars @endif" style="overflow: hidden;line-height: 1">
+                                                    <span class="stars-container stars-{{($review->review_rating / 5) * 100}}" style="font-size: 18px;">★★★★★</span>
+                                                </div>
+                                            @endif
                                     </div>
                                     <div class="review_date">
                                         @if($loop->index == 0)
@@ -2501,37 +1894,27 @@
                                 <div class="review_footer">
                                     <div class="share_review">
                                         <p>
-                                            <a id="share_towards"
-                                               href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook?review_id={{$review->id}}&display=popup"
-                                               target="_blank">
+                                            <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook?review_id={{$review->id}}&display=popup" target="_blank">
                                                 <i class="fas fa-share-square"></i>
                                                 Share
                                             </a>
-                                            <span class="share_to">&ensp; | &ensp;<a
-                                                    href="www.facebook.com">Facebook</a>&ensp; . &ensp;<a
-                                                    href="www.twitter.com">Twitter</a> </span>
+                                            <span class="share_to">&ensp; | &ensp;<a href="www.facebook.com">Facebook</a>&ensp; . &ensp;<a href="www.twitter.com">Twitter</a> </span>
                                         </p>
                                     </div>
                                     <div class="like_dislike">
                                         <p>Was this helpful?<span>
                             <a href="javascript:void(0)">
-                              <i @if(isset($review->stats) && $review->stats->like == 1) class="fas fa-thumbs-up blue-color for-like"
-                                 @else class="fas fa-thumbs-up   for-like" @endif></i> <span class="like"
-                                                                                             data-value="{{$review->id}}">{{$review->likes}}</span>
+                              <i @if(isset($review->stats) && $review->stats->like == 1) class="fas fa-thumbs-up blue-color for-like" @else class="fas fa-thumbs-up   for-like" @endif></i> <span class="like" data-value="{{$review->id}}">{{$review->likes}}</span>
                             </a>
                             <a href="javascript:void(0)">
-                              <i @if(isset($review->stats) && $review->stats->dislike == 1) class="fas fa-thumbs-down blue-color for-dislike"
-                                 @else  class="fas fa-thumbs-down for-dislike" @endif></i> <span class="dislike"
-                                                                                                 data-value="{{$review->id}}">{{$review->dislikes}}</span>
+                              <i @if(isset($review->stats) && $review->stats->dislike == 1) class="fas fa-thumbs-down blue-color for-dislike" @else  class="fas fa-thumbs-down for-dislike" @endif></i> <span class="dislike" data-value="{{$review->id}}">{{$review->dislikes}}</span>
                             </a>
                           </span>
                                         </p>
                                     </div>
                                 </div>
                                 @if($review->review_reply != null)
-                                    <div class="stamped-icon-comment" style="font-size: 14px;"><i
-                                            class="fas fa-comment"></i> <span class="stamped-reply-a"><span
-                                                class="stamped-reply-a-label">Answers</span> (1)</span></div>
+                                    <div class="stamped-icon-comment" style="font-size: 14px;"><i class="fas fa-comment"></i> <span class="stamped-reply-a"><span class="stamped-reply-a-label">Answers</span> (1)</span></div>
                                     <div class="review_reply" id="review_reply">
                                         <div class="replier_info">
                                             <div class="replier_name" id="replier_name">
@@ -2583,22 +1966,20 @@
             <div id="questions_tab_content" class="questions_tab_content tabs">
 
                 <div class="ask_a_question">
-                    {{--                     <form id="question" action="https://stamped.test/question-submit" method="POST">--}}
-                    <form id="question" action="https://phpstack-176572-2275881.cloudwaysapps.com/question-submit"
-                          method="POST">
+{{--                     <form id="question" action="https://stamped.test/question-submit" method="POST">--}}
+                    <form id="question" action="https://phpstack-176572-2275881.cloudwaysapps.com/question-submit" method="POST">
                         <div>
-                            <div class="first-lable" style="float:left;">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" required name="name" placeholder="Your name..">
-                            </div>
+                           <div class="first-lable" style="float:left;">
+                               <label for="name">Name</label>
+                               <input type="text" id="name" required name="name" placeholder="Your name..">
+                           </div>
                             <div class="first-lable">
                                 <label for="email">Email</label>
                                 <input type="text" required id="email" name="email" placeholder="Your email..">
                             </div>
                         </div>
                         <label for="question">Question</label>
-                        <textarea required id="subject" rows="10" name="subject" required
-                                  placeholder="Type Your Question ...."></textarea>
+                        <textarea required id="subject" rows="10" name="subject" required placeholder="Type Your Question ...."></textarea>
                         <input type="hidden" class="product_id" value="" name="product_id">
                         <input type="hidden" id="shop_name" class="shop_name" value="" name="shop_name">
 
@@ -2606,16 +1987,13 @@
                     </form>
                 </div>
 
-                <div class="dropdown_review" @if($total_question == 0) style="display: none;"
-                     @endif id="search_question">
+                <div class="dropdown_review" @if($total_question == 0) style="display: none;" @endif id="search_question">
                     <div class="search_input">
                         <i class="fas fa-search"></i>
                         <input type="search" id="question_search" placeholder="Search Questions">
                     </div>
                     <div class="question_review_buttons" style="padding:0px;">
-                        <button id="clear_filter" style="float:left; display:none;"><i class="fas fa-times"></i> Clear
-                            Filter
-                        </button>
+                        <button id="clear_filter" style="float:left; display:none;"><i class="fas fa-times"></i> Clear Filter</button>
                     </div>
 
                     <select name="sort_review" style="display:none;" id="sort_question">
@@ -2686,9 +2064,7 @@
                                     <p>{{$question->question}}</p>
                                 </div>
                                 @if($question->question_reply != null)
-                                    <div class="stamped-icon-comment" style="font-size: 14px;"><i
-                                            class="fas fa-comment"></i> <span class="stamped-reply-a"><span
-                                                class="stamped-reply-a-label">Answers</span> (1)</span></div>
+                                    <div class="stamped-icon-comment" style="font-size: 14px;"><i class="fas fa-comment"></i> <span class="stamped-reply-a"><span class="stamped-reply-a-label">Answers</span> (1)</span></div>
                                     <div class="review_reply" id="review_reply">
                                         <div class="replier_info">
                                             <div class="replier_name" id="replier_name">
@@ -2730,14 +2106,10 @@
                                     <div class="like_dislike">
                                         <p>Was this helpful?<span>
                             <a href="javascript:void(0)">
-                              <i @if(isset($question->stats) && $question->stats->like == 1) class="fas fa-thumbs-up blue-color q-like"
-                                 @else class="fas fa-thumbs-up   q-like" @endif></i> <span class="like-q"
-                                                                                           data-value="{{$question->id}}">{{$question->likes}}</span>
+                              <i @if(isset($question->stats) && $question->stats->like == 1) class="fas fa-thumbs-up blue-color q-like" @else class="fas fa-thumbs-up   q-like" @endif></i> <span class="like-q" data-value="{{$question->id}}">{{$question->likes}}</span>
                             </a>
                             <a href="javascript:void(0)">
-                              <i @if(isset($question->stats) && $question->stats->dislike == 1) class="fas fa-thumbs-down blue-color q-dislike"
-                                 @else  class="fas fa-thumbs-down q-dislike" @endif></i> <span class="dislike-q"
-                                                                                               data-value="{{$question->id}}">{{$question->dislikes}}</span>
+                              <i @if(isset($question->stats) && $question->stats->dislike == 1) class="fas fa-thumbs-down blue-color q-dislike" @else  class="fas fa-thumbs-down q-dislike" @endif></i> <span class="dislike-q" data-value="{{$question->id}}">{{$question->dislikes}}</span>
                             </a>
                           </span>
                                         </p>
@@ -2894,7 +2266,7 @@
 
 {{--</div>--}}
 {{--</div>--}}
-<!-- popup end -->
+    <!-- popup end -->
 </div>
 
 <style>
@@ -2904,9 +2276,7 @@
         box-sizing: border-box;
     }
 
-    body {
-        font-family: sans-serif;
-    }
+    body { font-family: sans-serif; }
 
     .gallery {
         background: #EEE;
@@ -2983,11 +2353,11 @@
         top: 50%;
         left: 50%;
         @if(isset($display))
-         font-family: {{$display->font_family}}  !important;
+        font-family:{{$display->font_family}} !important;
         @else
-         font-family: Assistant, sans-serif;
+        font-family:Assistant, sans-serif;
         @endif
-         -webkit-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
         -moz-transform: translateX(-50%) translateY(-50%);
         -o-transform: translateX(-50%) translateY(-50%);
         transform: translateX(-50%) translateY(-50%);
@@ -3009,28 +2379,23 @@
         color: #5E5E5E;
         overflow: scroll;
     }
-
-    .popup h3, h4 {
+    .popup h3,h4{
         @if(isset($display))
-         font-family: {{$display->font_family}}  !important;
-        @else
- font-family: Assistant, sans-serif;
-    @endif
-
+        font-family:{{$display->font_family}} !important;
+    @else
+    font-family:Assistant, sans-serif;
+        @endif
     }
-
-    .popup-image2 {
+    .popup-image2{
         border: 1px solid #ececec;
         padding: 1%;
         height: 110px !important;
         width: 29%;
     }
-
     .popup-image2:hover {
         border: 1px solid black;
     }
-
-    .product-title a:hover {
+    .product-title a:hover{
         text-decoration: underline !important;
     }
 
@@ -3040,23 +2405,18 @@
             top: 50%;
             height: 100%;
         }
-
-        .item .slide-image img {
+        .item .slide-image img{
             max-width: 98% !important;
-            min-width: 0;
-        !important;
+            min-width: 0; !important;
         }
-
-        .for-overlay {
+        .for-overlay{
             color: white;
         }
-
-        .fas-times2 {
+        .fas-times2{
             margin-top: 2% !important;
             margin-right: 5% !important;
         }
-
-        .fas-times {
+        .fas-times{
             background: grey !important;
         }
     }
@@ -3078,7 +2438,7 @@
         color: #5E5E5E;
         cursor: pointer;
         transition: all 120ms ease-in;
-        outline: none;
+        outline:none;
     }
 
     .button:hover {
@@ -3088,11 +2448,10 @@
 
     .button:active, .button:visited {
         transform: translateY(1px);
-        outline: none;
+        outline:none;
         box-shadow: 1px 2px 3px #F5F5F5;
     }
-
-    .flickity-viewport {
+    .flickity-viewport{
         height: 500px !important;
     }
 
@@ -3111,23 +2470,19 @@
         cursor: pointer;
         transition: all 150ms;
     }
-
     .flickity-prev-next-button.next {
         right: -42px !important;
         background-color: blue !important;
         color: white !important;
     }
-
     .flickity-prev-next-button.previous {
         left: -42px !important;
         background-color: blue !important;
         color: white !important;
     }
-
-    .flickity-button:hover {
+    .flickity-button:hover{
         background-color: blue;
     }
-
     .btn-close .icon-cross {
         margin: 0;
         padding: 0;
@@ -3137,7 +2492,6 @@
         width: 18px;
         height: 40px;
     }
-
     .btn-close .icon-cross:before, .btn-close .icon-cross:after {
         content: "";
         position: absolute;
@@ -3148,19 +2502,15 @@
         background: #fff;
         border-radius: 6px;
     }
-
     .btn-close .icon-cross:before {
         transform: rotate(45deg);
     }
-
     .btn-close .icon-cross:after {
         transform: rotate(-45deg);
     }
-
     .btn-close .icon-cross span {
         display: block;
     }
-
     /*.btn-close:hover, .btn-close:focus {*/
     /*    transform: rotateZ(90deg);*/
     /*    background: #0052cc;*/
@@ -3175,7 +2525,6 @@
         width: 40px;
         height: 40px;
     }
-
     .cross-stand-alone:before, .cross-stand-alone:after {
         content: "";
         position: absolute;
@@ -3186,15 +2535,12 @@
         background: #000;
         border-radius: 4px;
     }
-
     .cross-stand-alone:before {
         transform: rotate(45deg);
     }
-
     .cross-stand-alone:after {
         transform: rotate(-45deg);
     }
-
     .cross-stand-alone span {
         display: block;
     }
@@ -3208,7 +2554,6 @@
         width: 80px;
         height: 80px;
     }
-
     .cross-1px:before, .cross-1px:after {
         content: "";
         position: absolute;
@@ -3219,15 +2564,12 @@
         background: #000;
         border-radius: 1px;
     }
-
     .cross-1px:before {
         transform: rotate(45deg);
     }
-
     .cross-1px:after {
         transform: rotate(-45deg);
     }
-
     .cross-1px span {
         display: block;
     }
@@ -3241,8 +2583,7 @@
         width: 1px !important;
         overflow: hidden;
     }
-
-    .container {
+    .container{
         position: fixed;
         width: 100%;
         height: 100%;
@@ -3251,7 +2592,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0,0,0,0.5);
         z-index: 9999;
         cursor: pointer;
     }
@@ -3263,11 +2604,11 @@
         <div class="item" id="item">
         </div>
         <div class="fas-times2" style="position: absolute; top: 0; right: 0;margin-right: 1%;">
-            {{--            <button type="button" @if(isset($display)) style="background-color: {{$display->circle_background}}" @endif class="btn-close for-overlay">--}}
-            {{--                <span class="icon-cross"></span>--}}
-            {{--                <span class="visually-hidden">Close</span>--}}
-            {{--            </button>--}}
-            <i class="fal fa-times for-overlay fas-times" style="font-size: 43px;"></i>
+{{--            <button type="button" @if(isset($display)) style="background-color: {{$display->circle_background}}" @endif class="btn-close for-overlay">--}}
+{{--                <span class="icon-cross"></span>--}}
+{{--                <span class="visually-hidden">Close</span>--}}
+{{--            </button>--}}
+            <i class="fal fa-times for-overlay fas-times"  style="font-size: 43px;"></i>
         </div>
         {{--            <div style="position: absolute;  bottom: 280px; left: 0;">--}}
         {{--                <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">--}}
