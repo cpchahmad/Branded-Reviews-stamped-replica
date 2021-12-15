@@ -1437,6 +1437,9 @@ color:black;
         display: inline-block;
         padding-right: 15px;
     }
+    .image_popups_list a div img{
+        object-fit: cover;
+    }
 </style>
 <div id="main-body">
     <div class="tt_logix_reviews">
