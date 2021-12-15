@@ -609,8 +609,8 @@ $('#user_reviews').html(data.reviews);
 console.log('there are no reviews for this filter')
 }
 $('#clear_review_filter').css('display', 'block');
-$('#clear_review_filter').removeClass('review-padding');
-$('#clear_review_filter').addClass('review-padding');
+$('.user_reviews').removeClass('review-padding');
+$('.user_reviews').addClass('review-padding');
 $('#review_pagination').css('display', 'none');
 }
 });
@@ -634,8 +634,8 @@ $('#user_reviews').html(data.reviews);
 console.log('there are no reviews for this filter')
 }
 $('#clear_review_filter').css('display', 'block');
-$('#clear_review_filter').removeClass('review-padding');
-$('#clear_review_filter').addClass('review-padding');
+$('.user_reviews').removeClass('review-padding');
+$('.user_reviews').addClass('review-padding');
 $('#review_pagination').css('display', 'none');
 }
 });
@@ -653,7 +653,9 @@ window.location.href = data.link;
 });
 
 $(document).on("click", "#clear_review_filter", function() {
+$('.user_reviews').removeClass('review-padding');
 $(this).css('display', 'none');
+$('.user_reviews').removeClass('review-padding');
 $('#sort_review option[value=sort]').prop('selected', true);
 $.ajax({
 url: base_url + "get-data?product_id=" + id + "&shop_name=" + name,
@@ -722,12 +724,6 @@ $('.stamped-question').append("<li class='question_page'><a href='#search_questi
 });
 
 $('#review_pagination').css('display', 'block');
-});
-
-$(function(){
-if ($('#clear_review_filter').hasClass('review-padding')){
-$('.user_reviews').css('padding','42%');
-}
 });
 
 
