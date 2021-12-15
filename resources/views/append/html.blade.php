@@ -245,6 +245,7 @@
         .image_popups_list a div img{
             padding-right: 2px;
             padding-left: 2px;
+            object-fit: cover;
         }
         .question_review_buttons button{
             width: 90%;
