@@ -153,7 +153,7 @@
         .button {
             position: absolute;
             left:105px;
-            top: 118px;
+            top: 82px;
             bottom : 0;
             opacity: 0;
             transition: opacity .35s ease;
