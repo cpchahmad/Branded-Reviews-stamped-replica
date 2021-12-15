@@ -147,7 +147,7 @@
         #add-image {
             /*position: absolute;*/
             width: 170px;
-            height: 150px;
+            height: auto;
             left: 0;
         }
         .button {
