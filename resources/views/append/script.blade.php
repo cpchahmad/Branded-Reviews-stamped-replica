@@ -609,6 +609,8 @@ $('#user_reviews').html(data.reviews);
 console.log('there are no reviews for this filter')
 }
 $('#clear_review_filter').css('display', 'block');
+$('#clear_review_filter').removeClass('review-padding');
+$('#clear_review_filter').addClass('review-padding');
 $('#review_pagination').css('display', 'none');
 }
 });
@@ -632,6 +634,8 @@ $('#user_reviews').html(data.reviews);
 console.log('there are no reviews for this filter')
 }
 $('#clear_review_filter').css('display', 'block');
+$('#clear_review_filter').removeClass('review-padding');
+$('#clear_review_filter').addClass('review-padding');
 $('#review_pagination').css('display', 'none');
 }
 });
