@@ -724,11 +724,12 @@ $('.stamped-question').append("<li class='question_page'><a href='#search_questi
 $('#review_pagination').css('display', 'block');
 });
 
-function(){
+$(function(){
 if ($('#clear_review_filter').hasClass('review-padding')){
 $('.user_reviews').css('padding','42%');
 }
-};
+});
+
 
 $(document).on("keypress", "#question_search", function() {
 if (event.which == 13) {
