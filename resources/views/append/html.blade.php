@@ -1592,7 +1592,7 @@ color:black;
                 <div class="reviews_tab active_tab" >
                     <a id="reviews" href="#reviews_tab_content">
                         Reviews
-                        <span id="total_reviews">@if($status == 'real'){{$real_reviews}} @endif @if($status == 'fake' && $real_reviews != 0){{$real_reviews}} @endif @if($status == 'fake' && $real_reviews == 0) 0 @endif</span>
+                        <span id="total_reviews">{{--@if($status == 'real'){{$real_reviews}} @endif @if($status == 'fake' && $real_reviews != 0){{$real_reviews}} @endif @if($status == 'fake' && $real_reviews == 0) 0 @endif--}} {{$real_reviews}}</span>
                     </a>
                 </div>
                 <div class="questions_tab">

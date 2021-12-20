@@ -115,7 +115,7 @@ class AdminController extends Controller
         $total_one_star = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->where('review_rating',1)->count();
 
         $count_reviews = count($reviews_featured) + count($reviews_publish);
-        $real_reviews = $count_reviews;
+        $tab_reviews = $count_reviews;
         $count_rating =  $reviews_featured->sum('review_rating') + $reviews_publish->sum('review_rating');
         if ($count_reviews != 0){
             $over_all_rating = $count_rating / $count_reviews;
@@ -141,6 +141,7 @@ class AdminController extends Controller
             $total_three_star = $review_status->three_star;
             $total_two_star = $review_status->two_star;
             $total_one_star = $review_status->one_star;
+            $tab_reviews = $count_reviews;
         }
         $questions_publish  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->get();
 //        if ($page_load =='yes' || isset($request->status) && $request->status == 'questions'){
@@ -162,7 +163,7 @@ class AdminController extends Controller
             'one_star'=>$total_one_star,
             'review_images'=>$images,
             'popups'=>$popups,
-            'real_reviews'=>$real_reviews,
+            'real_reviews'=>$tab_reviews,
             'status'=>$status,
             'reviews_images' => $review_images,
             'reviews_popups'=>$review_images,
