@@ -1455,7 +1455,7 @@ color:black;
             </div>
             <div class="review_progress">
                 <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
-                <div class="review_progress_1" data-value="5">
+                <div class="review_progress_1" data-value="5" data-status="{{$status}}">
                     <div class="side first">
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
