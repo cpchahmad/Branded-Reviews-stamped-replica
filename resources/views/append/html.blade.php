@@ -1474,7 +1474,7 @@ color:black;
                 </div>
                 </a>
                 <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
-                <div class="review_progress_1" data-value="4">
+                <div class="review_progress_1" data-value="4" data-status="{{$status}}">
                     <div class="side">
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
@@ -1493,7 +1493,7 @@ color:black;
                 </div>
                 </a>
                 <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
-                <div class="review_progress_1" data-value="3">
+                <div class="review_progress_1" data-value="3" data-status="{{$status}}">
                     <div class="side">
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
@@ -1512,7 +1512,7 @@ color:black;
                 </div>
                     </a>
                 <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
-                <div class="review_progress_1" data-value="2">
+                <div class="review_progress_1" data-value="2" data-status="{{$status}}">
                     <div class="side">
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
@@ -1531,7 +1531,7 @@ color:black;
                 </div>
                 </a>
                 <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
-                <div class="review_progress_1" data-value="1">
+                <div class="review_progress_1" data-value="1" data-status="{{$status}}">
                     <div class="side">
                             <span class="fa fa-star"></span>
                             <span class="far fa-star"></span>
