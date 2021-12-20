@@ -622,8 +622,9 @@ $('.review_progress').addClass('active');
 $('.review_progress_1').removeClass('active');
 $(this).addClass('active');
 var data = $(this).data('value');
+var status = $(this).data('status');
 $.ajax({
-url: base_url + "filter-on-stars?product_id=" + id + "&shop_name=" + name + "&data=" + data,
+url: base_url + "filter-on-stars?product_id=" + id + "&shop_name=" + name + "&data=" + data+ "&status=" + status,
 type: 'GET',
 success: function(data) {
 $('.loader').css('display','none');

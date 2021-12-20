@@ -521,6 +521,10 @@ class ReviewController extends Controller
             $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->where('review_rating',5)->latest()->get();
             $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->where('review_rating',5)->latest()->get();
             $total_reviews = count($reviews_pagi_fea) + count($reviews_pagi_pub);
+            if ($request->status == 'fake'){
+                $product = FakeReview::where('shop_id',$shop->id)->where('product_id',$request->product_id)->first();
+                $total_reviews = $product->five_star;
+            }
             $reviews = view('append.reviews')->with([
                 'reviews_featured' => $reviews_pagi_fea,
                 'reviews_publish' => $reviews_pagi_pub
@@ -530,6 +534,10 @@ class ReviewController extends Controller
             $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->where('review_rating',4)->latest()->get();
             $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->where('review_rating',4)->latest()->get();
             $total_reviews = count($reviews_pagi_fea) + count($reviews_pagi_pub);
+            if ($request->status == 'fake'){
+                $product = FakeReview::where('shop_id',$shop->id)->where('product_id',$request->product_id)->first();
+                $total_reviews = $product->four_star;
+            }
             $reviews = view('append.reviews')->with([
                 'reviews_featured' => $reviews_pagi_fea,
                 'reviews_publish' => $reviews_pagi_pub
@@ -539,6 +547,10 @@ class ReviewController extends Controller
             $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->where('review_rating',3)->get();
             $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->where('review_rating',3)->get();
             $total_reviews = count($reviews_pagi_fea) + count($reviews_pagi_pub);
+            if ($request->status == 'fake'){
+                $product = FakeReview::where('shop_id',$shop->id)->where('product_id',$request->product_id)->first();
+                $total_reviews = $product->three_star;
+            }
             $reviews = view('append.reviews')->with([
                 'reviews_featured' => $reviews_pagi_fea,
                 'reviews_publish' => $reviews_pagi_pub
@@ -548,6 +560,10 @@ class ReviewController extends Controller
             $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->where('review_rating',2)->get();
             $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->where('review_rating',2)->get();
             $total_reviews = count($reviews_pagi_fea) + count($reviews_pagi_pub);
+            if ($request->status == 'fake'){
+                $product = FakeReview::where('shop_id',$shop->id)->where('product_id',$request->product_id)->first();
+                $total_reviews = $product->two_star;
+            }
             $reviews = view('append.reviews')->with([
                 'reviews_featured' => $reviews_pagi_fea,
                 'reviews_publish' => $reviews_pagi_pub
@@ -557,6 +573,10 @@ class ReviewController extends Controller
             $reviews_pagi_fea = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'featured')->where('status', 'publish')->where('review_rating',1)->get();
             $reviews_pagi_pub = Review::where('shop_id', $shop->id)->where('product_id', $request->product_id)->where('feature', 'unfeatured')->where('status', 'publish')->where('review_rating',1)->get();
             $total_reviews = count($reviews_pagi_fea) + count($reviews_pagi_pub);
+            if ($request->status == 'fake'){
+                $product = FakeReview::where('shop_id',$shop->id)->where('product_id',$request->product_id)->first();
+                $total_reviews = $product->one_star;
+            }
             $reviews = view('append.reviews')->with([
                 'reviews_featured' => $reviews_pagi_fea,
                 'reviews_publish' => $reviews_pagi_pub
