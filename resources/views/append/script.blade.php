@@ -631,6 +631,13 @@ $('.loader').css('display','none');
 if (data.reviews != 'no reviews') {
 $('#total_reviews').html(data.total_reviews);
 $('#user_reviews').html(data.reviews);
+
+$("#questions_tab_content").css("display", "none");
+$("#reviews_tab_content").css("display", "block");
+$(".reviews_tab").addClass("active_tab");
+$(".questions_tab").removeClass("active_tab");
+
+
 } else {
 console.log('there are no reviews for this filter')
 }
