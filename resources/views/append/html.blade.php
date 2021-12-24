@@ -229,6 +229,31 @@
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
     }
+    .btn-view{
+        position: relative;
+    }
+    .image_popups_list .for-image-border::before{
+        content: ' ';
+        border-right: 1px solid #ccc;
+        width: 70px;
+        height: 55px;
+        position: absolute;
+        top: 1px;
+        border-bottom: 1px solid #ccc;
+        left: 1px;
+        z-index: 0;
+    }
+    .image_popups_list .for-image-border::after{
+        content: ' ';
+        border-right: 1px solid #ccc;
+        width: 70px;
+        height: 55px;
+        position: absolute;
+        top: 3px;
+        border-bottom: 1px solid #ccc;
+        left: 3px;
+        z-index: 0;
+    }
     /*   .image_popups_list a:nth-child(odd) div{
         background-image: url('https://cdn.shopify.com/s/files/1/0606/5366/6521/files/img1.jpg?v=1636109386');
       }
@@ -1562,7 +1587,7 @@ color:black;
                         @if(count($review->medias) > 0)
                             @foreach($review->medias as $key => $media)
                                 @if($counter <= 7)
-                                       <a href="javascript:void(0)" title="My Watch" data-value="{{$media->id}}" data-target="myPopup" class="btn-view @if($counter == 3 || $counter == 7) for-image-hidden @endif">
+                                       <a href="javascript:void(0)" title="My Watch" data-value="{{$media->id}}" data-target="myPopup" class="btn-view @if($counter == 3 || $counter == 7) for-image-hidden @endif @if($counter == 7) for-image-border @endif">
                                            <div>
                                                <img src="{{asset('review-images'.'/'.$media->review_media)}}" width="70"  height="55" alt="Picture">
                                            </div>
@@ -1877,7 +1902,6 @@ color:black;
                                     </div>
                                     <div class="review_date">
                                         @if($loop->index == 0)
-
                                             @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
                                                 <p> {{now()->subDays(2)->format('m/d/y')}} </p>
                                             @else
