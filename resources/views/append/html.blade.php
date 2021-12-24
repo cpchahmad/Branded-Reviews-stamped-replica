@@ -309,7 +309,7 @@
             /*width: 20% !important;*/
         }
         .review_progress{
-            padding: 5px 12px 14px 24px !important;
+            padding: 5px 18px 14px 18px !important;
         }
         /*.user_info{*/
         /*    width: 60% !important;*/
