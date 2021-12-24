@@ -261,9 +261,9 @@
         background-image: url('https://cdn.shopify.com/s/files/1/0606/5366/6521/files/img2.jpg?v=1636109386');
       } */
     @media (max-width:374px) {
-        .for-image-hidden{
-            width: 25px !important;
-        }
+        /*.for-image-hidden{*/
+        /*    width: 25px !important;*/
+        /*}*/
     }
 
     @media (max-width:767px) {
