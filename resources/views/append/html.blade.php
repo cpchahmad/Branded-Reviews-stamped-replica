@@ -380,7 +380,7 @@
         }
         .sheild-badge{
             right: -5px !important;
-            bottom: 9px !important;
+            bottom: -9px !important;
         }
         /*.review-stars{*/
         /*    margin-left: -37%;*/
