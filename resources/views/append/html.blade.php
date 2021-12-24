@@ -229,6 +229,9 @@
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
     }
+    .for-image-border{
+        position: relative;
+    }
     .image_popups_list .for-image-border::before{
         content: ' ';
         border-right: 1px solid #ccc;
@@ -1461,7 +1464,6 @@ color:black;
     }
     .image_popups_list a div img{
         object-fit: cover;
-        position: relative;
     }
     #five_star,#four_star,#three_star,#two_star,#one_star{
         font-size: 12px;
@@ -1586,8 +1588,8 @@ color:black;
                             @foreach($review->medias as $key => $media)
                                 @if($counter <= 7)
                                        <a href="javascript:void(0)" title="My Watch" data-value="{{$media->id}}" data-target="myPopup" class="btn-view @if($counter == 3 || $counter == 7) for-image-hidden @endif">
-                                           <div>
-                                               <img src="{{asset('review-images'.'/'.$media->review_media)}}" class="@if($counter == 7) for-image-border @endif" width="70"  height="55" alt="Picture">
+                                           <div class="@if($counter == 7) for-image-border @endif">
+                                               <img src="{{asset('review-images'.'/'.$media->review_media)}}" width="70"  height="55" alt="Picture">
                                            </div>
                                        </a>
                                     @php $counter += 1; @endphp
