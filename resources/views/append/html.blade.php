@@ -418,7 +418,18 @@
             padding: 42% 0 0 0 !important;
         }
     }
+    @media (max-width:400px) {
 
+        .image_popups_list{
+            padding: 0 !important;
+            overflow: hidden;
+            /*flex-wrap: nowrap;*/
+            margin: 0 16px 0 22px;
+        }
+        .btn-view {
+            margin-right: 4px;
+        }
+    }
     .question_review_buttons{
         width: 26%;
     }
