@@ -238,9 +238,9 @@
         width: 70px;
         height: 55px;
         position: absolute;
-        top: 6px;
+        top: 5px;
         border-bottom: 1px solid #ccc;
-        left: 6px;
+        left: 5px;
         z-index: 0;
     }
     .image_popups_list .for-image-border::after{
