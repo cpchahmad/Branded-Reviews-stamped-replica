@@ -1440,6 +1440,9 @@ color:black;
     .image_popups_list a div img{
         object-fit: cover;
     }
+    #five_star,#four_star,#three_star,#two_star,#one_star{
+        font-size: 12px;
+    }
 </style>
 <div id="main-body">
     <div class="tt_logix_reviews">
