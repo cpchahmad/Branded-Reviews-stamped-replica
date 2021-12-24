@@ -130,7 +130,7 @@
     /*}*/
     .tt_logix_reviews_r_no #base_reviews{
         margin: 0 auto !important;
-        font-size: 18px !important;
+        font-size: 15px !important;
     }
     #total_rating{
         font-size: inherit !important;
