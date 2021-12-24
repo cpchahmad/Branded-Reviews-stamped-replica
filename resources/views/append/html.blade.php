@@ -365,9 +365,9 @@
             /*flex-wrap: nowrap;*/
             margin: 0 16px 0 16px;
         }
-        .for-image-hidden{
-            width: 25px !important;
-        }
+        /*.for-image-hidden{*/
+        /*    width: 25px !important;*/
+        /*}*/
         .review_1,.review_2{
             /*padding: 3%;*/
         }
