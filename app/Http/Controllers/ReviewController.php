@@ -168,7 +168,6 @@ class ReviewController extends Controller
         }else{
             $ip = $request->ip();
             $currentUserInfo = Location::get($ip);
-            dd($currentUserInfo->countryCode);
             $review->customer_location = $currentUserInfo->countryName;
             $review->country_code = strtolower($currentUserInfo->countryCode);
         }
