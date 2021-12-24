@@ -26,12 +26,13 @@
                                     {{$acronym}}
                                 </h3>
                             </div>
+                            <div class="sheild-badge">
+                                @if($review->verify_status == 'verified')
+                                    <i class="fas fa-shield-check"></i>
+                                @endif
+                            </div>
                         </div>
-                        <div class="sheild-badge">
-                            @if($review->verify_status == 'verified')
-                                <i class="fas fa-shield-check"></i>
-                            @endif
-                        </div>
+
                     </div>
                     <div class="user_info" id="user_info">
                         <h3>{{ucwords($review->name)}}<span>@if($review->verify_status == 'verified') Verified Buyer @endif</span></h3>
@@ -161,11 +162,11 @@
                                         {{$acronym}}
                                     </h3>
                                 </div>
-                            </div>
-                            <div class="sheild-badge">
-                                @if($review->verify_status == 'verified')
-                                    <i class="fas fa-shield-check"></i>
-                                @endif
+                                <div class="sheild-badge">
+                                    @if($review->verify_status == 'verified')
+                                        <i class="fas fa-shield-check"></i>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                         <div class="user_info" id="user_info">

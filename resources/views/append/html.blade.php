@@ -1886,11 +1886,11 @@ color:black;
                                                     {{$acronym}}
                                                 </h3>
                                             </div>
-                                        </div>
-                                        <div class="sheild-badge">
-                                            @if($review->verify_status == 'verified')
-                                                <i class="fas fa-shield-check"></i>
-                                            @endif
+                                            <div class="sheild-badge">
+                                                @if($review->verify_status == 'verified')
+                                                    <i class="fas fa-shield-check"></i>
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="user_info" id="user_info">
