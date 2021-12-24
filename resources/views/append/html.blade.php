@@ -260,6 +260,12 @@
       .image_popups_list a:nth-child(even) div{
         background-image: url('https://cdn.shopify.com/s/files/1/0606/5366/6521/files/img2.jpg?v=1636109386');
       } */
+    @media (max-width:374px) {
+        .for-image-hidden{
+            width: 25px !important;
+        }
+    }
+
     @media (max-width:767px) {
         .image_popups_list{
             width: 100%;
@@ -365,9 +371,7 @@
             /*flex-wrap: nowrap;*/
             margin: 0 16px 0 16px;
         }
-        /*.for-image-hidden{*/
-        /*    width: 25px !important;*/
-        /*}*/
+
         .review_1,.review_2{
             /*padding: 3%;*/
         }
