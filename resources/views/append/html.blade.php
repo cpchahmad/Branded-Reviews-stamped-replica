@@ -431,7 +431,10 @@
             margin: 0 16px 0 22px;
         }
         .btn-view {
-            margin-right: 4px;
+            margin-right: 4px !important;
+        }
+        .image_popups_list a div img{
+            width: 74px !important;
         }
     }
     .question_review_buttons{
