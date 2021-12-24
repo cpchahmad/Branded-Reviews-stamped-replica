@@ -1607,7 +1607,7 @@ color:black;
                                 @if($counter <= 7)
                                        <a href="javascript:void(0)" title="My Watch" data-value="{{$media->id}}" data-target="myPopup" class="btn-view @if($counter == 3 || $counter == 7) for-image-hidden @endif">
                                            <div class="@if($counter == 7) for-image-border @endif">
-                                               <img src="{{asset('review-images'.'/'.$media->review_media)}}" width="74"  height="55" alt="Picture">
+                                               <img src="{{asset('review-images'.'/'.$media->review_media)}}" width="70"  height="55" alt="Picture">
                                            </div>
                                        </a>
                                     @php $counter += 1; @endphp
