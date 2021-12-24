@@ -382,9 +382,9 @@
             right: -4px !important;
             bottom: 19px !important;
         }
-        .review-stars{
-            margin-left: -37%;
-        }
+        /*.review-stars{*/
+        /*    margin-left: -37%;*/
+        /*}*/
         .first-lable{
             width: 100% !important;
             padding-right: 0 !important;
