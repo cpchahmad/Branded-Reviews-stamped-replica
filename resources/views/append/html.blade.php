@@ -508,6 +508,9 @@
             margin-left: 5%;
             margin-right: 16px;
         }
+        .btn-view {
+            margin-right: 4px;
+        }
     }
 
     /* tabs */
