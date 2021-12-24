@@ -379,8 +379,8 @@
             padding: 4px 11px !important;
         }
         .sheild-badge{
-            right: -4px !important;
-            bottom: 19px !important;
+            right: -5px !important;
+            bottom: 9px !important;
         }
         /*.review-stars{*/
         /*    margin-left: -37%;*/
