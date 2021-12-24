@@ -104,7 +104,8 @@ class AdminController extends Controller
         }
         $reviews_featured = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->get();
         $reviews_publish  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->get();
-//        if ($page_load =='yes' || isset($request->status) && $request->status == 'reviews'){
+        dd($reviews_publish);
+        //        if ($page_load =='yes' || isset($request->status) && $request->status == 'reviews'){
         $reviews_pagi_fea = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','featured')->where('status','publish')->latest()->paginate(5);
         $reviews_pagi_pub  = Review::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('feature','unfeatured')->where('status','publish')->latest()->paginate(5);
 //        }
