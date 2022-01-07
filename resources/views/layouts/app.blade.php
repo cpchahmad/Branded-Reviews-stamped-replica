@@ -27,6 +27,14 @@
         .table-responsive{
             width: 1000px !important;
         }
+        @media screen and (max-width: 767px) {
+            .input-group{
+                display: block !important;
+            }
+            #reportrange{
+                padding: 8px 4px !important;
+            }
+        }
     </style>
 </head>
 

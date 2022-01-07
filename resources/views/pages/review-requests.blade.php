@@ -447,11 +447,6 @@
         .daterangepicker {
             width: 341px !important;
         }
-        @media screen and (max-width: 767px) {
-            .input-group{
-                display: block !important;
-            }
-        }
     </style>
 
     <div class="col-lg-12 col-md-12 pl-4 pt-3 pr-4">

@@ -229,11 +229,29 @@
         .slider.round:before {
             border-radius: 50%;
         }
+        @media screen and (max-width: 767px) {
+            .reviews-details{
+                display: block !important;
+            }
+            .for-unpublish{
+                margin: 3% 0;
+            }
+            .for-product-detail{
+                text-align: center !important;
+            }
+            .for-product-detail2 span{
+                justify-content: center !important;
+            }
+            .for-product-detail3{
+                text-align: center !important;
+            }
+        }
+
     </style>
     <div class="col-lg-12 col-md-12">
         <div class="row pt-4 ml-0 mr-0">
             <div class="col-md-12 card card-border-radius mb-2 pt-4 pb-1">
-                <div class="d-flex align-items-center" style="justify-content: space-between;">
+                <div class="d-flex align-items-center reviews-details" style="justify-content: space-between;">
                    <div class="d-flex">
                        <div><h4>{{$review->review_title}}</h4></div>
                        <div class="ml-2" id="verified" style="padding-top: 3%;"><span class="badge badge-pill badge-primary py-1 px-2">@if($review->verify_status == 'verified') Verified @endif</span></div>
@@ -242,7 +260,7 @@
                         <a href="{{route('review.pending',$review->id)}}"type="button" class="btn btn-secondary mr-1" @if($review->archive_status == 'archive') style="display: none;" @endif>@if($review->pending_status == 'pending') Active @else Pending @endif</a>
                         <a href="{{route('review.archive',$review->id)}}"type="button" class="btn btn-secondary mr-1" >@if($review->archive_status == 'archive') UnArchive @else Archive @endif</a>
                         <a href="{{route('review.feature',$review->id)}}"type="button" class="btn btn-secondary mr-1" @if($review->archive_status == 'archive') style="display: none;" @endif>@if($review->feature == 'unfeatured')Feature @else UnFeature @endif</a>
-                        <a href="{{route('review.publish',$review->id)}}"type="button" class="btn btn-primary" @if($review->archive_status == 'archive') style="display: none;" @endif">@if($review->status == 'unpublish')<i class="fas fa-eye mr-1"></i> Publish @elseif($review->status == 'rejected') <i class="fas fa-eye mr-1"></i> Publish @else <i class="fas fa-eye-slash"></i>UnPublish @endif </a>
+                        <a href="{{route('review.publish',$review->id)}}"type="button" class="btn btn-primary for-unpublish" @if($review->archive_status == 'archive') style="display: none;" @endif">@if($review->status == 'unpublish')<i class="fas fa-eye mr-1"></i> Publish @elseif($review->status == 'rejected') <i class="fas fa-eye mr-1"></i> Publish @else <i class="fas fa-eye-slash"></i>UnPublish @endif </a>
                     </div>
                 </div>
                 <div class="">
@@ -690,9 +708,9 @@
                         <span>{{$review->email}}</span>
                     </div>
                 </div>
-                <div class="mt-2">
+                <div class="mt-2 for-product-detail">
                     <div class="card border-light border-0 text-indigo shadow-sm">
-                        <div class="card-body bg-white">
+                        <div class="card-body bg-white for-product-detail2">
                                 <h6>Product</h6>
                             <p>@if(isset($product_title->title)){{$product_title->title}}@endif</p>
 
@@ -732,7 +750,7 @@
                     </div>
                 </div>
                 <div class="card mt-2 border-light border-0 text-indigo shadow-sm">
-                    <div class="card-header bg-white">
+                    <div class="card-header for-product-detail3 bg-white">
                         <div><h6>Verify Review</h6></div>
                         <br>
                         <a href="{{route('verify.review',$review->id)}}"type="button"  class="btn btn-secondary for-change">@if($review->verify_status == 'verify')Verified @else Verify @endif</a>
