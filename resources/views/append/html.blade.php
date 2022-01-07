@@ -267,7 +267,7 @@
         /*}*/
     }
 
-    @media (max-width:767px) {
+    @media (max-width:480px) {
         .image_popups_list{
             width: 100%;
         }
