@@ -447,7 +447,11 @@
         .daterangepicker {
             width: 341px !important;
         }
-
+        @media screen and (max-width: 767px) {
+            .input-group{
+                display: block !important;
+            }
+        }
     </style>
 
     <div class="col-lg-12 col-md-12 pl-4 pt-3 pr-4">
@@ -465,12 +469,11 @@
                             <button type="button" class="btn btn-secondary clear_filter_data mr-1 pl-4 pr-4">Clear
                             </button>
                         @endif
-                        <div id="reportrange"
-                             style="background: #fff; cursor: pointer; padding: 0px 4px; border: 1px solid #ccc;">
+                        <div id="reportrange" style="background: #fff; cursor: pointer; padding: 0px 4px; border: 1px solid #ccc;">
                             <i class="fa fa-calendar"></i>&nbsp;
                             <span>@if(isset($date_range)) {{$date_range}} @endif</span> <i class="fa fa-caret-down"></i>
                         </div>
-                        <select class="form-control bg-white mr-1" name="reviews" id="reviews">
+                        <select class="form-control for-reviews1 bg-white mr-1" name="reviews" id="reviews">
                             <option selected disabled value="reviews">Reviews</option>
                             <option @if(isset($review_stars) && $review_stars== 5) selected @endif value="5">5 Star
                             </option>
@@ -483,7 +486,7 @@
                             <option @if(isset($review_stars) && $review_stars== 1) selected @endif value="1">1 Star
                             </option>
                         </select>
-                        <select class="form-control bg-white mr-1" name="review_status" id="review_status">
+                        <select class="form-control bg-white for-reviews2 mr-1" name="review_status" id="review_status">
                             <option selected disabled value="status">Status</option>
                             <option @if(isset($review_status) && $review_status== 'publish') selected
                                     @endif value="publish">Publish
@@ -499,7 +502,7 @@
                             </option>
                         </select>
 
-                        <select class="form-control bg-white mr-1" name="product_reviews" id="product_reviews">
+                        <select class="form-control for-reviews3 bg-white mr-1" name="product_reviews" id="product_reviews">
                             <option selected disabled value="product">Products</option>
                             @if(count($products) > 0 )
                                 @foreach($products as $product)
@@ -512,7 +515,7 @@
 
                         <input placeholder="Email/Title/Desc" type="text" id="email_title_desc"
                                @if (isset($email_title_desc)) value="{{$email_title_desc}}"
-                               @endif name="email_title_desc" class="form-control">
+                               @endif name="email_title_desc" class="form-control for-reviews4">
                     </div>
                 </div>
             </div>
