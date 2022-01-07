@@ -607,7 +607,7 @@
         border-bottom: 1px rgb(214, 214, 214) solid;
     }
     .review_1_header{
-        padding: 10px 0;
+        padding: 25px 0 10px 0;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -1843,7 +1843,6 @@ color:black;
                                             </div>
                                             <div class="replier_date">
                                                 @if($loop->index == 0)
-
                                                     @if((new DateTime($review->created_at))->diff(new DateTime())->format('%d') > 10)
                                                         <p> {{now()->subDays(2)->format('m/d/y')}} </p>
                                                     @else
