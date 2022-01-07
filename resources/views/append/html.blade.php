@@ -742,7 +742,7 @@
     }
     /* replied section */
     .review_reply{
-        margin: 10px 0 10px 30px;
+        margin: 10px 0 30px 30px;
         padding-left: 10px;
         border-left: 5px #d1d1d1 solid;
     }
