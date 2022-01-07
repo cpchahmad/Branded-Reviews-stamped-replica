@@ -266,8 +266,18 @@
         /*    width: 25px !important;*/
         /*}*/
     }
-
     @media (max-width:480px) {
+       #review_images{
+           max-width: 300px;
+           margin: 0 auto;
+       }
+        .review_progress{
+            max-width: 300px;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width:767px) {
         .image_popups_list{
             width: 100%;
         }
@@ -1501,7 +1511,7 @@ color:black;
                                    <span class="stars-container stars-{{($review_value / 5) * 100}}" style="font-size: 30px;">★★★★★</span>
                          </div>
                 </h1>
-                <p class="base_reviews base_reviews2">Based on <span id="base_reviews">{{$total_reviews}}</span> Reviews</p>
+                <p class="base_reviews base_reviews2" style="text-align: center;">Based on <span id="base_reviews">{{$total_reviews}}</span> Reviews</p>
             </div>
             <div class="review_progress">
                 <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
