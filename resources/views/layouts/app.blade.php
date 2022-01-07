@@ -24,7 +24,9 @@
             text-align: center;
             border-radius: 50%;
         }
-
+        .table-responsive{
+            width: 1000px !important;
+        }
     </style>
 </head>
 

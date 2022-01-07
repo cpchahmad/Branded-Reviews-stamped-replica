@@ -261,12 +261,7 @@
       .image_popups_list a:nth-child(even) div{
         background-image: url('https://cdn.shopify.com/s/files/1/0606/5366/6521/files/img2.jpg?v=1636109386');
       } */
-    @media (max-width:374px) {
-        /*.for-image-hidden{*/
-        /*    width: 25px !important;*/
-        /*}*/
-    }
-    @media (max-width:480px) {
+    @media (max-width:640px) {
        #review_images{
            max-width: 300px;
            margin: 0 auto;
@@ -275,9 +270,100 @@
             max-width: 300px;
             margin: 0 auto;
         }
+        .tt_logix_reviews_r_no{
+            max-width: 300px;
+            margin: 0 auto;
+        }
+    }
+    @media (min-width:520px) and  (max-width:640px) {
+        .tt_logix_reviews_r_no{
+            width: 40%;
+            margin-left: 3% ;
+        }
+        .review_progress{
+            width: 57%;
+        }
+        .image_popups_list{
+            width: 62% !important;
+        }
+        .question_review_buttons{
+            width: 28% !important;
+        }
+        .question_review_buttons2{
+            margin-left: unset !important;
+        }
+    }
+    @media (min-width:640px) and  (max-width:767px) {
+        .tt_logix_reviews_r_no{
+            max-width: 300px;
+        }
+        .review_progress{
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        #review_images{
+            max-width: 330px;
+            margin: 0 auto;
+        }
+        .question_review_buttons2{
+            max-width: 226px;
+            margin: 0 auto !important;
+        }
+    }
+
+    @media (min-width:811px) and  (max-width:1046px) {
+        .review_progress{
+            max-width: 300px;
+        }
+        #review_images{
+            max-width: 350px;
+        }
+        .question_review_buttons button{
+            padding: 10px 40px !important;
+        }
+    }
+
+    @media (min-width:1046px) and  (max-width:1069px) {
+        .review_progress{
+            max-width: 300px;
+        }
+        #review_images{
+            max-width: 364px;
+        }
+        .question_review_buttons button{
+            padding: 10px 40px !important;
+        }
+    }
+    @media (min-width:1069px) and  (max-width:1074px) {
+        .review_progress{
+            max-width: 300px;
+        }
+        #review_images{
+            max-width: 300px;
+            margin-left: 3%;
+        }
+        #write_a_review_btn{
+            float: left;
+        }
+        #ask_a_question_btn{
+            float: left;
+        }
+        .question_review_buttons button{
+            padding: 10px 40px !important;
+        }
+    }
+
+    @media (min-width:1075px) and  (max-width:1158px) {
+        .image_popups_list{
+            width: 30% !important;
+        }
+        .question_review_buttons{
+            width: 18% !important;
+        }
     }
 
     @media (max-width:767px) {
+
         .image_popups_list{
             width: 100%;
         }
@@ -1500,6 +1586,63 @@ color:black;
     #five_star,#four_star,#three_star,#two_star,#one_star{
         font-size: 12px;
     }
+    @media (min-width:320px) and  (max-width:340px) {
+        #review_images{
+            margin: 0 16px 0 16px !important;
+        }
+        .image_popups_list a div img{
+            width: 62px !important;
+        }
+        .btn-view2{
+            margin-right: -9px !important;
+        }
+        .image_popups_list .for-image-border::before {
+            left: -3px;
+        }
+        .image_popups_list .for-image-border::after {
+            left: -6px;
+        }
+        .questions_tab, .reviews_tab{
+            margin-right: -2px;
+        }
+    }
+    @media (min-width:340px) and  (max-width:350px) {
+        #review_images{
+            margin: 0 16px 0 20px !important;
+        }
+        .image_popups_list a div img{
+            width: 65px !important;
+        }
+        .btn-view2{
+            margin-right: -6px !important;
+        }
+        .image_popups_list .for-image-border::before {
+            left: -2px;
+        }
+        .image_popups_list .for-image-border::after {
+            left: 1px;
+        }
+        .questions_tab, .reviews_tab{
+            margin-right: -2px;
+        }
+    }
+    @media (min-width:351px) and  (max-width:374px) {
+        #review_images{
+            margin: 0 16px 0 28px !important;
+        }
+        .image_popups_list a div img{
+            width: 65px !important;
+        }
+        .btn-view2{
+            margin-right: -6px !important;
+        }
+        .image_popups_list .for-image-border::before {
+            left: -2px;
+        }
+        .image_popups_list .for-image-border::after {
+            left: 1px;
+        }
+    }
 </style>
 <div id="main-body">
     <div class="tt_logix_reviews">
@@ -1619,9 +1762,9 @@ color:black;
                         @if(count($review->medias) > 0)
                             @foreach($review->medias as $key => $media)
                                 @if($counter <= 7)
-                                       <a href="javascript:void(0)" title="My Watch" data-value="{{$media->id}}" data-target="myPopup" class="btn-view @if($counter == 3 || $counter == 7) for-image-hidden @endif">
+                                       <a href="javascript:void(0)" title="My Watch" data-value="{{$media->id}}" data-target="myPopup" class="btn-view btn-view2 @if($counter == 3 || $counter == 7) for-image-hidden @endif">
                                            <div class="@if($counter == 7) for-image-border @endif">
-                                               <img src="{{asset('review-images'.'/'.$media->review_media)}}" width="70"  height="55" alt="Picture">
+                                               <img src="{{asset('review-images'.'/'.$media->review_media)}}" class="for-image" width="70"  height="55" alt="Picture">
                                            </div>
                                        </a>
                                     @php $counter += 1; @endphp

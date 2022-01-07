@@ -519,7 +519,7 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <div class="card">
+                <div class="card table-responsive">
                     @if (count($reviews) > 0)
                         <table class="table table-hover">
                             <thead class="border-0">
