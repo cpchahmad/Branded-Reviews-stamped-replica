@@ -34,6 +34,9 @@
             #reportrange{
                 padding: 8px 4px !important;
             }
+            .for-product-detail3{
+                text-align: center !important;
+            }
         }
     </style>
 </head>

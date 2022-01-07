@@ -242,9 +242,6 @@
             .for-product-detail2 span{
                 justify-content: center !important;
             }
-            .for-product-detail3{
-                text-align: center !important;
-            }
         }
 
     </style>
