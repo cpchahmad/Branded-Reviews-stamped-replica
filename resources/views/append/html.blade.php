@@ -2145,7 +2145,7 @@ color:black;
                                         </div>
                                     </div>
                                 @endif
-                                <div class="review_footer" style="text-align: right; padding-bottom: 0%;">
+                                <div class="review_footer" style="text-align: right; padding-bottom: 2%;">
                                     {{--                                    <div class="share_review">--}}
                                     {{--                                        <p>--}}
                                     {{--                                            <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook-q?question_id={{$question->id}}&display=popup" target="_blank">--}}
