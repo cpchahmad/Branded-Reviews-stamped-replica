@@ -41,6 +41,12 @@
                 max-width: 275px;
                 margin-right: 22px;
             }
+            .for-photos{
+                text-align: center;
+            }
+            #add-image{
+                margin-top: 5px;
+            }
         }
     </style>
 </head>

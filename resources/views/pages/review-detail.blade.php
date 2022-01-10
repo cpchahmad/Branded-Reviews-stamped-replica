@@ -671,7 +671,7 @@
                         </div>
                         <form action="{{route('update.photos')}}" method="POST" enctype="multipart/form-data">
                             @sessionToken
-                        <div class="row mt-2">
+                        <div class="row for-photos mt-2">
                                 <input type="hidden" value="{{$review->id}}" name="review_id">
                             @foreach($review->medias as $media)
                                 <div class="col-md-4 mt-1 parent-div">
