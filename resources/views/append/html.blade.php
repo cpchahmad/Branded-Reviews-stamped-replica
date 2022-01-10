@@ -322,6 +322,11 @@
             padding: 10px 34px !important;
         }
     }
+    @media (min-width:768px) and  (max-width:810px) {
+        .question_review_buttons button{
+            padding: 10px 26px; !important;
+        }
+    }
 
     @media (min-width:1046px) and  (max-width:1069px) {
         .review_progress{
