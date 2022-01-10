@@ -56,6 +56,9 @@
             .products-reviews1{
                 padding-left: 0;
             }
+            .product-detail-card{
+                border-right: 0;
+            }
         }
     </style>
 </head>

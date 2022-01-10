@@ -140,7 +140,7 @@
         </div>
         <div class="row">
             <div class="col-12 mt-2 mb-4">
-                <div class="card">
+                <div class="card product-detail-card">
                     <ul class="nav nav-tabs" id="myTab" role="tablist" style="background-color: #F5F6F7">
                         <li class="nav-item">
                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#countdown" role="tab" aria-controls="home" aria-selected="true">Reviews</a>
