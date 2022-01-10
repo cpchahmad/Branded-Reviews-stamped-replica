@@ -1606,7 +1606,7 @@ color:black;
             margin-right: -2px;
         }
     }
-    @media (min-width:810px) and  (max-width:1074px) {
+    @media (min-width:811px) and  (max-width:1074px) {
         .question_review_buttons{
             width: 52%;
         }
