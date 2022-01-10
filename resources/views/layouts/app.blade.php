@@ -50,6 +50,9 @@
             .form-check-input{
                 position: unset;
             }
+            .products-reviews{
+                padding-right: 0;
+            }
         }
     </style>
 </head>
