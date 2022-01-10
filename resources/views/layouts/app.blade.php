@@ -64,6 +64,9 @@
             .table-responsive {
                 width: 900px !important;
             }
+            #email_title_desc{
+                min-width: 138px;
+            }
         }
     </style>
 </head>
