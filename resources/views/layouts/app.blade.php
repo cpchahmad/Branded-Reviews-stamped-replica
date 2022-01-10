@@ -53,6 +53,9 @@
             .products-reviews{
                 padding-right: 0;
             }
+            .products-reviews1{
+                padding-left: 0;
+            }
         }
     </style>
 </head>

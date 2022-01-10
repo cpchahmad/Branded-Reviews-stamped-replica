@@ -11,7 +11,7 @@
             <div class="col-6 products-reviews">
                 <h3>Products</h3>
             </div>
-            <div class="col-6 text-right">
+            <div class="col-6 products-reviews1 text-right">
                 <a href="{{route('sync.products')}}" type="button" class="btn btn-primary">Sync Products</a>
             </div>
             <div class="col-md-12 mt-2">
