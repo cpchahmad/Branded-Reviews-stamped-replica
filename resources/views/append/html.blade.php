@@ -319,7 +319,7 @@
             max-width: 350px;
         }
         .question_review_buttons button{
-            padding: 10px 40px !important;
+            padding: 10px 34px !important;
         }
     }
 
