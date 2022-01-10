@@ -37,6 +37,10 @@
             .for-product-detail3{
                 text-align: center !important;
             }
+            .daterangepicker{
+                max-width: 275px;
+                margin-right: 22px;
+            }
         }
     </style>
 </head>

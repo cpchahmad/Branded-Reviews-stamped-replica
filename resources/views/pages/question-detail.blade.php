@@ -187,7 +187,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="card border-light border-0 text-indigo shadow-sm">
-                    <div class="card-header for-product-detail3 bg-white">
+                    <div class="card-header bg-white">
                         <div style="display: flex;justify-content: space-between;"><h6>Customer overview</h6>
 {{--                            <img src="{{asset('empty1.jpg')}}" style="border-radius: 50%;" width="40px" height="40px">--}}
                         </div>
@@ -199,7 +199,7 @@
                     </div>
                 </div>
                 <div class="card mt-2 border-light border-0 text-indigo shadow-sm">
-                    <div class="card-header bg-white">
+                    <div class="card-header for-product-detail3 bg-white">
                         <div><h6>Verify Review</h6></div>
                         <br>
                         <a href="{{route('verify.question',$question->id)}}"type="button"  class="btn btn-secondary for-change">@if($question->verify_status == 'verify')Verified @elseif($question->verify_status == 'rejected') Verify @else Verify  @endif</a>
