@@ -62,6 +62,9 @@
             .navbar-brand{
                 width: auto;
             }
+            .products-page{
+                display: unset;
+            }
         }
         @media screen and (max-width: 1000px) {
             .table-responsive {

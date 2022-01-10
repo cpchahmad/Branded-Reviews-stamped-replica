@@ -17,7 +17,7 @@
                 <div class="form-group">
                     <form action="{{route('products.filter')}}" method="GET">
                         @sessionToken
-                        <div class="input-group">
+                        <div class="input-group products-page">
                             <button type="submit" class="btn btn-primary mr-1 pl-4 pr-4">Filter</button>
                             @if(isset($product_filter))
                                 <button type="button" class="btn btn-secondary clear_filter_data mr-1 pl-4 pr-4">Clear</button>
