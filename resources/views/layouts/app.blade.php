@@ -63,7 +63,7 @@
                 width: auto;
             }
             .products-page{
-                display: unset;
+                display: flex !important;
             }
         }
         @media screen and (max-width: 1000px) {
@@ -75,6 +75,9 @@
             }
             .navbar-brand{
                 width: auto;
+            }
+            .product-detail-card{
+                border-right: 0;
             }
         }
     </style>
