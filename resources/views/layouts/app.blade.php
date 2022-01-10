@@ -60,6 +60,11 @@
                 border-right: 0;
             }
         }
+        @media screen and (max-width: 1200px) {
+            .table-responsive {
+                width: 900px !important;
+            }
+        }
     </style>
 </head>
 
