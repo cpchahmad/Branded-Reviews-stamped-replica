@@ -1606,6 +1606,11 @@ color:black;
             margin-right: -2px;
         }
     }
+    @media (min-width:810px) and  (max-width:1074px) {
+        .question_review_buttons{
+            width: 52%;
+        }
+    }
     @media (min-width:340px) and  (max-width:350px) {
         #review_images{
             margin: 0 16px 0 20px !important;
