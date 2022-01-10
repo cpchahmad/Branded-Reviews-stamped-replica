@@ -7,7 +7,7 @@
     </head>
     <div class="col-lg-12 col-md-12 pl-4 pt-3 pr-4">
         <div class="row">
-            <div class="col-6">
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <h3>Display Settings</h3>
             </div>
         </div>
