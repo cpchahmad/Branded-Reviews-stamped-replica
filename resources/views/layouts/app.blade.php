@@ -24,10 +24,10 @@
             text-align: center;
             border-radius: 50%;
         }
-        .table-responsive{
-            width: 1000px !important;
-        }
         @media screen and (max-width: 767px) {
+            .table-responsive{
+                width: 1000px !important;
+            }
             .input-group{
                 display: block !important;
             }
