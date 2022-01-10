@@ -60,7 +60,7 @@
                 border-right: 0;
             }
         }
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width: 1000px) {
             .table-responsive {
                 width: 900px !important;
             }
