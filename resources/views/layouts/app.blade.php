@@ -59,6 +59,9 @@
             .product-detail-card{
                 border-right: 0;
             }
+            .navbar-brand{
+                width: auto;
+            }
         }
         @media screen and (max-width: 1000px) {
             .table-responsive {
@@ -66,6 +69,9 @@
             }
             #email_title_desc{
                 min-width: 138px;
+            }
+            .navbar-brand{
+                width: auto;
             }
         }
     </style>
