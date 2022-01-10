@@ -324,7 +324,7 @@
     }
     @media (min-width:768px) and  (max-width:810px) {
         .question_review_buttons button{
-            padding: 10px 26px; !important;
+            padding: 10px 26px !important;
         }
     }
 
