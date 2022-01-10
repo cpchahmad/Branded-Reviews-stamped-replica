@@ -47,6 +47,9 @@
             #add-image{
                 margin-top: 5px;
             }
+            .form-check-input{
+                position: unset;
+            }
         }
     </style>
 </head>
