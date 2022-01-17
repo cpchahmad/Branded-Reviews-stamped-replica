@@ -327,7 +327,6 @@
             padding: 10px 26px !important;
         }
     }
-
     @media (min-width:1046px) and  (max-width:1069px) {
         .review_progress{
             max-width: 300px;
@@ -357,7 +356,20 @@
             padding: 10px 40px !important;
         }
     }
-
+    @media (min-width:1069px) and  (max-width:1075px) {
+        .image_popups_list{
+        margin-top: unset;
+        }
+        .question_review_buttons{
+            width: 100% !important;
+        }
+        #write_a_review_btn{
+            float: right;
+        }
+        #ask_a_question_btn{
+            float: right;
+        }
+    }
     @media (min-width:1075px) and  (max-width:1158px) {
         .image_popups_list{
             width: 30% !important;
@@ -366,7 +378,6 @@
             width: 18% !important;
         }
     }
-
     @media (max-width:767px) {
 
         .image_popups_list{
