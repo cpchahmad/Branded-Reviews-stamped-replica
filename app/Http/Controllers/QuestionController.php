@@ -249,4 +249,30 @@ class QuestionController extends Controller
             ]);
         }
     }
+    public function QuestionsFilter(Request $request){
+        $shop = User::where('name',$request->shop_name)->first();
+        if ($request->filter_value == 'recent' ) {
+            $questions_pagination  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->get();
+            $questions = view('append.questions')->with([
+                'questions_publish' => $questions_pagination,
+            ])->render();
+        }
+        if ($request->filter_value == 'helpful' ) {
+            $questions_pagination  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->orderBy('likes','desc')->get();
+            $questions = view('append.questions')->with([
+                'questions_publish' => $questions_pagination,
+            ])->render();
+        }
+
+        if ($questions_pagination != null){
+            return response([
+                'questions'=>$questions,
+            ]);
+        }else{
+            return response([
+                'questions'=>'no questions',
+            ]);
+        }
+
+    }
 }

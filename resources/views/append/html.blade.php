@@ -1664,9 +1664,6 @@ color:black;
             left: 1px;
         }
     }
-    .question_review_buttons2{
-        margin-top: 0 !important;
-    }
 </style>
 <div id="main-body">
     <div class="tt_logix_reviews">
@@ -1893,7 +1890,7 @@ color:black;
                     </form>
                 </div>
                 <div class="dropdown_review">
-                    <div class="question_review_buttons question_review_buttons2" style="padding:0;">
+                    <div class="question_review_buttons" style="padding:0; margin-top: 0;">
                         <button id="clear_review_filter" style="float:left; display:none;"><i class="fas fa-times"></i> Clear Filter</button>
                     </div>
                     <div class="input-container">
@@ -2221,17 +2218,13 @@ color:black;
                         <i class="fas fa-search"></i>
                         <input type="search" id="question_search" placeholder="Search Questions">
                     </div>
-                    <div class="question_review_buttons" style="padding:0px;">
+                    <div class="question_review_buttons" style="padding:0;">
                         <button id="clear_filter" style="float:left; display:none;"><i class="fas fa-times"></i> Clear Filter</button>
                     </div>
 
-                    <select name="sort_review" style="display:none;" id="sort_question">
-                        <option value="volvo">Sort</option>
-                        <option value="saab">With Photos</option>
-                        <option value="opel">Most Recent</option>
-                        <option value="audi">Hightest Rating</option>
-                        <option value="audi">lowest Rating</option>
-                        <option value="audi">Most Helpful</option>
+                    <select name="sort_questions" style="" id="sort_question">
+                        <option value="recent">Most Recent</option>
+                        <option value="helpful">Most Helpful</option>
                     </select>
 
                 </div>

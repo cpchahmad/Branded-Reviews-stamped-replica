@@ -92,6 +92,7 @@ Route::group(['middleware' => ['verify.shopify']], function () {
 
     //Filter Questions
     Route::get('filter-questions',  [App\Http\Controllers\QuestionController::class, 'FilterQuestions'])->name('filter.questions');
+    Route::get('questions-filter',  [App\Http\Controllers\QuestionController::class, 'QuestionsFilter'])->name('questions.filter');
 
     // Share facebook
     Route::get('on-facebook',  [App\Http\Controllers\AdminController::class, 'ShareFacebook'])->name('on.facebook');
