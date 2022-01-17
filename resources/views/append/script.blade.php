@@ -608,7 +608,7 @@ $('#user_questions').html(data.questions);
 } else {
 console.log('there are no questions for this filter')
 }
-
+$('.loader').css('display','none');
 $('#clear_filter').css('display', 'block');
 $('#question_pagination').css('display', 'none');
 }
@@ -897,7 +897,6 @@ console.log('Some thing went Wrong!');
 }
 });
 });
-
 }
 };
 ppTyInitialise();

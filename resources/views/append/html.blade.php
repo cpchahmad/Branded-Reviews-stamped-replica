@@ -2221,12 +2221,12 @@ color:black;
                     <div class="question_review_buttons" style="padding:0;">
                         <button id="clear_filter" style="float:left; display:none;"><i class="fas fa-times"></i> Clear Filter</button>
                     </div>
-
-                    <select name="sort_questions" style="" id="sort_question">
-                        <option value="recent">Most Recent</option>
-                        <option value="helpful">Most Helpful</option>
-                    </select>
-
+                    <div class="input-container">
+                        <select name="sort_questions" style="" id="sort_question">
+                            <option value="recent">Most Recent</option>
+                            <option value="helpful">Most Helpful</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="loader" style="display: none;">
                     <div class="loader-active" style="width: fit-content;margin: 0 auto;">Loading...</div>
