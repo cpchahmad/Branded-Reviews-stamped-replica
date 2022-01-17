@@ -1890,7 +1890,7 @@ color:black;
                     </form>
                 </div>
                 <div class="dropdown_review">
-                    <div class="question_review_buttons" style="padding:0px;">
+                    <div class="{{--question_review_buttons--}}" style="padding:0;">
                         <button id="clear_review_filter" style="float:left; display:none;"><i class="fas fa-times"></i> Clear Filter</button>
                     </div>
                     <div class="input-container">
