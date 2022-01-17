@@ -1664,6 +1664,9 @@ color:black;
             left: 1px;
         }
     }
+    .for-filter{
+        margin-top: 104px;
+    }
 </style>
 <div id="main-body">
     <div class="tt_logix_reviews">
@@ -2212,22 +2215,22 @@ color:black;
                         <input type="submit" value="Submit">
                     </form>
                 </div>
+                    <div class="dropdown_review">
+                        <div class="search_input">
+                            <i class="fas fa-search"></i>
+                            <input type="search" id="question_search" placeholder="Search Questions">
+                        </div>
+                        <div class="input-container">
+                            <select name="sort_questions" class="stamped-filter" id="sort_question">
+                                <option value="recent">Most Recent</option>
+                                <option value="helpful">Most Helpful</option>
+                            </select>
+                        </div>
+                        <div class="question_review_buttons" style="padding:0;">
+                            <button id="clear_filter" style="float:left; display:none;"><i class="fas fa-times"></i> Clear Filter</button>
+                        </div>
+                    </div>
 
-                <div class="dropdown_review" @if($total_question == 0) style="display: none;" @endif id="search_question">
-                    <div class="search_input">
-                        <i class="fas fa-search"></i>
-                        <input type="search" id="question_search" placeholder="Search Questions">
-                    </div>
-                    <div class="question_review_buttons" style="padding:0;">
-                        <button id="clear_filter" style="float:left; display:none;"><i class="fas fa-times"></i> Clear Filter</button>
-                    </div>
-                    <div class="input-container">
-                        <select name="sort_questions" style="" id="sort_question">
-                            <option value="recent">Most Recent</option>
-                            <option value="helpful">Most Helpful</option>
-                        </select>
-                    </div>
-                </div>
                 <div class="loader" style="display: none;">
                     <div class="loader-active" style="width: fit-content;margin: 0 auto;">Loading...</div>
                 </div>

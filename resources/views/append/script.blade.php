@@ -610,6 +610,8 @@ console.log('there are no questions for this filter')
 }
 $('.loader').css('display','none');
 $('#clear_filter').css('display', 'block');
+$('#user_questions').removeClass('for-filter');
+$('#user_questions').addClass('for-filter');
 $('#question_pagination').css('display', 'none');
 }
 });
@@ -750,6 +752,8 @@ console.log('there are no questions for this filter')
 }
 
 $('#clear_filter').css('display', 'block');
+$('#user_questions').removeClass('for-filter');
+$('#user_questions').addClass('for-filter');
 $('#question_pagination').css('display', 'none');
 }
 });
@@ -759,6 +763,7 @@ $('#question_pagination').css('display', 'none');
 $(document).on("click", "#clear_filter", function() {
 
 $(this).css('display', 'none');
+$('#user_questions').removeClass('for-filter');
 $('#question_search').val('');
 $.ajax({
 url: base_url + "get-data?product_id=" + id + "&shop_name=" + name,
@@ -897,6 +902,7 @@ console.log('Some thing went Wrong!');
 }
 });
 });
+
 }
 };
 ppTyInitialise();
