@@ -712,7 +712,7 @@
     }
 
     .user_reviews{
-        padding: 52px 0 0 0;
+        padding: 54px 0 0 0;
         /* margin-top: 75px; */
     }
     .review_1,.review_2{
@@ -720,6 +720,7 @@
     }
     .review_1_header{
         padding: 25px 0 10px 0;
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -888,6 +889,7 @@
         margin-top: 16px;
         border: #d1d1d1 1px solid;
         padding-left: 6px;
+        float: left;
         width: 40%;
     }
     .questions_tab_content .search_input input{
@@ -1665,7 +1667,7 @@ color:black;
         }
     }
     .for-filter{
-        margin-top: 104px;
+        padding-top: 104px;
     }
 </style>
 <div id="main-body">
@@ -2220,7 +2222,7 @@ color:black;
                             <i class="fas fa-search"></i>
                             <input type="search" id="question_search" placeholder="Search Questions">
                         </div>
-                        <div class="input-container">
+                        <div class="input-container" style="margin-top: 16px;">
                             <select name="sort_questions" class="stamped-filter" id="sort_question">
                                 <option value="recent">Most Recent</option>
                                 <option value="helpful">Most Helpful</option>
@@ -2231,11 +2233,10 @@ color:black;
                         </div>
                     </div>
 
-                <div class="loader" style="display: none;">
-                    <div class="loader-active" style="width: fit-content;margin: 0 auto;">Loading...</div>
-                </div>
                 <div class="user_reviews" id="user_questions">
-
+                    <div class="loader" style="display: none;">
+                        <div class="loader-active" style="width: fit-content;margin: 0 auto;">Loading...</div>
+                    </div>
                     @if (count($questions_publish) > 0)
                         @foreach($questions_publish as $question)
                             @php
