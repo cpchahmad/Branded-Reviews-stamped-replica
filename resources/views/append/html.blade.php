@@ -358,7 +358,7 @@
     }
     @media (min-width:1069px) and  (max-width:1075px) {
         .image_popups_list{
-        margin-top: unset;
+        margin-top: unset !important;
         }
         .question_review_buttons{
             width: 100% !important;
