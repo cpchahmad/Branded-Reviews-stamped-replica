@@ -79,13 +79,13 @@
     }
 
     .replied_text p{
-        margin-top: 0%;
+        margin-top: 0;
         line-height: unset;
     }
     .tt_logix_reviews_inner{
         display: flex;
         flex-wrap: wrap;
-        line-height: 0px;
+        line-height: 0;
     }
     .question_review_buttons button:hover{
         box-shadow: unset;
@@ -93,8 +93,7 @@
     @media (max-width:425px) {
         .tt_logix_reviews_inner{
             text-align: center;
-            line-height: 0px;
-
+            line-height: 0;
         }
     }
     .tt_logix_reviews_r_no{
@@ -488,10 +487,10 @@
         .review_1,.review_2{
             /*padding: 3%;*/
         }
-        .user_info{
-            width: 56% !important;
-            padding: 0 0 !important;
-        }
+        /*.user_info{*/
+        /*    width: 56% !important;*/
+        /*    padding: 0 0 !important;*/
+        /*}*/
         .questions_tab, .reviews_tab{
             padding: 4px 11px !important;
         }
