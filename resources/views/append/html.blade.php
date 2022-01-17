@@ -1664,6 +1664,9 @@ color:black;
             left: 1px;
         }
     }
+    .question_review_buttons2{
+        margin-top: 0 !important;
+    }
 </style>
 <div id="main-body">
     <div class="tt_logix_reviews">
@@ -1890,7 +1893,7 @@ color:black;
                     </form>
                 </div>
                 <div class="dropdown_review">
-                    <div class="question_review_buttons " style="padding:0;">
+                    <div class="question_review_buttons question_review_buttons2" style="padding:0;">
                         <button id="clear_review_filter" style="float:left; display:none;"><i class="fas fa-times"></i> Clear Filter</button>
                     </div>
                     <div class="input-container">
