@@ -885,7 +885,7 @@
         padding: 0;
     }
     .questions_tab_content .search_input{
-        margin-top: 20px;
+        margin-top: 16px;
         border: #d1d1d1 1px solid;
         padding-left: 6px;
         width: 40%;
