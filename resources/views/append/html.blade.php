@@ -427,7 +427,7 @@
             /*width: 20% !important;*/
         }
         .review_progress{
-            padding: 5px 18px 14px 18px !important;
+            padding: 5px 18px 20px 18px !important;
         }
         /*.user_info{*/
         /*    width: 60% !important;*/
@@ -930,13 +930,15 @@
     }
     .ask_a_question input[type=submit] {
         float: right;
-        @if(isset($display))
-        background-color: {{$display->tabs_background}};
-        color: {{$display->button_text}};
-        @else
-         background-color: #0c0c0c;
+{{--        @if(isset($display))--}}
+{{--        background-color: {{$display->tabs_background}};--}}
+{{--        color: {{$display->button_text}};--}}
+{{--        @else--}}
+{{--         background-color: #0c0c0c;--}}
+{{--        color: white;--}}
+{{--        @endif--}}
+        background-color: black;
         color: white;
-        @endif
         padding: 16px 28px;
         border: none;
         font-size: 18px;
@@ -946,15 +948,15 @@
         cursor: pointer;
         margin-top: 1%;
     }
-    .ask_a_question input[type=submit]:hover {
-        /*background-color: #131313;*/
-        background-color: #f8f9fa;
-        @if(isset($display))
-        color: {{$display->button_text}};
-    @else
-    color:black;
-    @endif
-    }
+    {{--.ask_a_question input[type=submit]:hover {--}}
+    {{--    /*background-color: #131313;*/--}}
+    {{--    background-color: #f8f9fa;--}}
+    {{--    @if(isset($display))--}}
+    {{--    color: {{$display->button_text}};--}}
+    {{--@else--}}
+    {{--color:black;--}}
+    {{--@endif--}}
+    {{--}--}}
 
     .facebook{
         text-decoration:none;
@@ -1009,13 +1011,15 @@
     }
     .write_a_review input[type=submit] {
         float: right;
-        @if(isset($display))
-        background-color: {{$display->tabs_background}};
-        color: {{$display->button_text}};
-        @else
-         background-color: #0c0c0c;
+{{--        @if(isset($display))--}}
+{{--        background-color: {{$display->tabs_background}};--}}
+{{--        color: {{$display->button_text}};--}}
+{{--        @else--}}
+{{--         background-color: #0c0c0c;--}}
+{{--        color: white;--}}
+{{--        @endif--}}
+        background-color : black;
         color: white;
-        @endif
         padding: 16px 28px;
         border: none;
         font-size: 18px;
@@ -1024,15 +1028,15 @@
         border-radius: 28px;
         cursor: pointer;
     }
-    .write_a_review input[type=submit]:hover {
-        /*background-color: #131313;*/
-        background-color: #f8f9fa;
-        @if(isset($display))
-        color: {{$display->button_text}};
-        @else
-color:black;
-    @endif
-    }
+{{--    .write_a_review input[type=submit]:hover {--}}
+{{--        /*background-color: #131313;*/--}}
+{{--        background-color: #f8f9fa;--}}
+{{--        @if(isset($display))--}}
+{{--        color: {{$display->button_text}};--}}
+{{--        @else--}}
+{{--color:black;--}}
+{{--    @endif--}}
+{{--    }--}}
     .rating_on_review ul{
         margin-top: 10px;
         margin-bottom: 15px;
@@ -1179,6 +1183,7 @@ color:black;
         vertical-align: middle;
         max-width: 53%;
         width:100%;
+        padding-left: 2%;
     }
      .item .image-content div,
     .item .image-content p,
@@ -1258,7 +1263,7 @@ color:black;
     }
      .item .image-content img{
         height: 100%;
-         width: 126px;
+         /*width: 126px;*/
     }
 
     .stamped-messages .stamped-thank-you {
@@ -1674,9 +1679,82 @@ color:black;
             left: 1px;
         }
     }
+    @media (min-width:320px) and  (max-width:350px) {
+        .user_info{
+            min-width: 61% !important;
+        }
+    }
+    @media (min-width:351px) and  (max-width:375px) {
+        .user_info{
+            min-width: 63% !important;
+        }
+    }
+    @media (min-width:376px) and  (max-width:425px) {
+        .user_info{
+            min-width: 65% !important;
+        }
+    }
+    @media (min-width:426px) and  (max-width:470px) {
+        .user_info{
+            min-width: 67% !important;
+        }
+    }
+    @media (min-width:471px) and  (max-width:520px) {
+        .user_info{
+            min-width: 68% !important;
+        }
+    }
+    @media (min-width:521px) and  (max-width:580px) {
+        .user_info{
+            min-width: 69% !important;
+        }
+    }
+
+    @media (min-width:581px) and  (max-width:645px) {
+        .user_info{
+            min-width: 71% !important;
+        }
+    }
+    @media (min-width:646px) and  (max-width:725px) {
+        .user_info{
+            min-width: 72% !important;
+        }
+    }
+    @media (min-width:726px) and  (max-width:767px) {
+        .user_info{
+            min-width: 72% !important;
+        }
+    }
+    @media (min-width:1000px) and  (max-width:1300px) {
+        .item .slide-image img{
+            max-width: 100%;
+            min-width: 100%;
+        }
+    }
+
     .for-filter{
         padding-top: 104px;
     }
+    .question-area::-webkit-input-placeholder {
+        font-family: 'myFont', Arial, Helvetica, sans-serif;
+        font-size: small;
+    }
+
+    .question-area:-ms-input-placeholder {
+        font-family: 'myFont', Arial, Helvetica, sans-serif;
+        font-size: small;
+    }
+
+    .question-area:-moz-placeholder {
+        font-family: 'myFont', Arial, Helvetica, sans-serif;
+        font-size: small;
+    }
+
+    .question-area::-moz-placeholder {
+        font-family: 'myFont', Arial, Helvetica, sans-serif;
+        font-size: small;
+    }
+
 </style>
 <div id="main-body">
     <div class="tt_logix_reviews">
@@ -1868,12 +1946,12 @@ color:black;
                            <div>
                                <div class="first-lable" style="float: left">
                                    <label for="name">Name</label>
-                                   <input type="text" id="name" required name="name" placeholder="Your name..">
+                                   <input type="text" id="name" required name="name" placeholder="Enter your name">
                                </div>
 
                                <div class="first-lable">
                                    <label for="email">Email</label>
-                                   <input type="text" required id="email" name="email" placeholder="Your email..">
+                                   <input type="text" required id="email" name="email" placeholder="john.smith@example.com">
                                </div>
                            </div>
                         <label for="rating">Rating</label>
@@ -2210,20 +2288,23 @@ color:black;
                         <div>
                            <div class="first-lable" style="float:left;">
                                <label for="name">Name</label>
-                               <input type="text" id="name" required name="name" placeholder="Your name..">
+                               <input type="text" id="name" required name="name" placeholder="Enter your name">
                            </div>
                             <div class="first-lable">
                                 <label for="email">Email</label>
-                                <input type="text" required id="email" name="email" placeholder="Your email..">
+                                <input type="text" required id="email" name="email" placeholder="john.smith@example.com">
                             </div>
                         </div>
                         <label for="question">Question</label>
-                        <textarea required id="subject" rows="10" name="subject" required placeholder="Type Your Question ...."></textarea>
+                        <textarea id="subject" rows="10" class="question-area" name="subject" required placeholder="Write your Question here"></textarea>
                         <input type="hidden" class="product_id" value="" name="product_id">
                         <input type="hidden" id="shop_name" class="shop_name" value="" name="shop_name">
 
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Submit Question">
                     </form>
+                </div>
+                <div class="loader" style="display: none;">
+                    <div class="loader-active" style="width: fit-content;margin: 0 auto;">Loading...</div>
                 </div>
                     <div class="dropdown_review">
                         <div class="search_input">
@@ -2241,10 +2322,8 @@ color:black;
                         </div>
                     </div>
 
+
                 <div class="user_reviews" id="user_questions">
-                    <div class="loader" style="display: none;">
-                        <div class="loader-active" style="width: fit-content;margin: 0 auto;">Loading...</div>
-                    </div>
                     @if (count($questions_publish) > 0)
                         @foreach($questions_publish as $question)
                             @php
@@ -2624,7 +2703,7 @@ color:black;
         border: 1px solid #ececec;
         padding: 1%;
         height: 110px !important;
-        width: 29%;
+        /*width: 29%;*/
     }
     .popup-image2:hover {
         border: 1px solid black;
@@ -2640,7 +2719,7 @@ color:black;
             height: 100%;
         }
         .item .slide-image img{
-            max-width: 98% !important;
+            max-width: 100% !important;
             min-width: 0; !important;
         }
         .for-overlay{
@@ -2652,9 +2731,24 @@ color:black;
         }
         .fas-times{
             background: #D9D6D3 !important;
+            width: 44px;
+        }
+        .fas-times3::before {
+            margin-left: 10px;
+            color: black;
+            font-size: 40px;
         }
     }
-
+    @media (min-width:571px) and  (max-width:1200px) {
+        .fas-times{
+            background: white !important;
+        }
+    }
+    @media (min-width:680px) and  (max-width:767px) {
+        .search_input{
+            max-width: 72%;
+        }
+    }
     .popup-header {
         text-transform: uppercase;
         font-size: 18px;
@@ -2842,7 +2936,7 @@ color:black;
 {{--                <span class="icon-cross"></span>--}}
 {{--                <span class="visually-hidden">Close</span>--}}
 {{--            </button>--}}
-            <i class="fal fa-times for-overlay fas-times"  style="font-size: 43px;"></i>
+            <i class="fal fa-times for-overlay fas-times fas-times3"  style="font-size: 43px;"></i>
         </div>
         {{--            <div style="position: absolute;  bottom: 280px; left: 0;">--}}
         {{--                <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">--}}

@@ -44,7 +44,7 @@
                 <hr>
                 <div class="product-title" style="width: fit-content;">
                     <a href="javascript:void(0)" style="text-decoration: none; color: black;" data-value="{{$review->id}}" class='popup-image-link'>
-                     <div style="width: 122px;"><img class="popup-image2" src="{{$product->featured_image}}"></div>
+                     <div><img class="popup-image2" src="{{$product->featured_image}}"></div>
                     <div style="width: 122px; text-align: center;"><p style="margin-top: 0">{{$product->title}}</p></div>
                     </a>
                 </div>
