@@ -260,7 +260,7 @@
       .image_popups_list a:nth-child(even) div{
         background-image: url('https://cdn.shopify.com/s/files/1/0606/5366/6521/files/img2.jpg?v=1636109386');
       } */
-    @media (max-width:640px) {
+    @media (max-width:520px) {
        #review_images{
            max-width: 300px;
            margin: 0 auto;
@@ -284,6 +284,7 @@
         }
         .image_popups_list{
             width: 62% !important;
+            max-width: 364px;
         }
         .question_review_buttons{
             width: 28% !important;
@@ -466,6 +467,7 @@
         .base_reviews2{
             margin-top: 20px !important;
             margin-bottom: 30px !important;
+            text-align: center;
         }
         .write_a_review form , .ask_a_question form{
             padding: 0 18px;
@@ -1173,7 +1175,7 @@
         vertical-align: middle;
     }
     .item .slide-image img{
-        max-width: 362px;
+        max-width: 100%;
         min-width: 362px;
         /*height: 440px;*/
         height: auto;
@@ -1196,6 +1198,7 @@
         .item .slide-image{
             max-width: 100%;
             padding: 0 10px;
+            width: 100%;
         }
          .item .image-content{
             max-width: 100%;
@@ -1766,7 +1769,7 @@
                                    <span class="stars-container stars-{{($review_value / 5) * 100}}" style="font-size: 30px;">★★★★★</span>
                          </div>
                 </h1>
-                <p class="base_reviews base_reviews2" style="text-align: center;">Based on <span id="base_reviews">{{$total_reviews}}</span> Reviews</p>
+                <p class="base_reviews base_reviews2">Based on <span id="base_reviews">{{$total_reviews}}</span> Reviews</p>
             </div>
             <div class="review_progress">
                 <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
@@ -2680,7 +2683,7 @@
         -webkit-border-radius: 5px;
         border-radius: 5px;
         width: 65%;
-        height: 100%;
+        height: 94%;
         position: fixed;
         box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.09), 0px 11px 12px 7px rgba(0, 0, 0, 0.02);
         -moz-transition: all 120ms;
@@ -2716,19 +2719,20 @@
         .popup {
             width: 94%;
             top: 50%;
-            height: 100%;
+            height: 94%;
         }
         .item .slide-image img{
             max-width: 100% !important;
             min-width: 0; !important;
+            width: 100%;
         }
         .for-overlay{
             color: white;
         }
-        .fas-times2{
-            margin-top: 2% !important;
-            margin-right: 5% !important;
-        }
+        /*.fas-times2{*/
+        /*    margin-top: 2% !important;*/
+        /*    margin-right: 5% !important;*/
+        /*}*/
         .fas-times{
             background: #D9D6D3 !important;
             width: 44px;
@@ -2739,7 +2743,12 @@
             font-size: 40px;
         }
     }
-    @media (min-width:571px) and  (max-width:1200px) {
+    /*@media (min-width:768px) and  (max-width:1200px) {*/
+    /*    .fas-times{*/
+    /*        background: white !important;*/
+    /*    }*/
+    /*}*/
+    @media (min-width:768px) and  (max-width:1200px) {
         .fas-times{
             background: white !important;
         }
@@ -2747,6 +2756,39 @@
     @media (min-width:680px) and  (max-width:767px) {
         .search_input{
             max-width: 72%;
+        }
+    }
+    @media (min-width:917px) and  (max-width:1074px) {
+        .tt_logix_reviews_r_no{
+            width: 25%;
+        }
+        #review_images {
+            max-width: 314px;
+        }
+        .image_popups_list{
+            padding: 0 0 0 18px !important;
+            margin-top: 0 !important;
+        }
+        .question_review_buttons{
+            width: 100%;
+        }
+    }
+    @media (min-width:520px) and  (max-width:588px) {
+        .tt_logix_reviews_r_no {
+            width: 100%;
+            margin: unset !important;
+            max-width: 235px !important;
+        }
+        .image_popups_list {
+            width: 100% !important;
+            max-width: 300px;
+        }
+        .question_review_buttons {
+            width: 100% !important;
+        }
+        .question_review_buttons button {
+            width: unset;
+            float: right !important;
         }
     }
     .popup-header {
@@ -2924,14 +2966,21 @@
         z-index: 9999;
         cursor: pointer;
     }
-
+    .fas-times2{
+        top: 0; right: 0;
+    }
+    @media  (max-width:768px) {
+        .fas-times2{
+            top: 9px; right: 13px;
+        }
+    }
 </style>
 
 <div class="container">
     <div id="myPopup" class="popup">
         <div class="item" id="item">
         </div>
-        <div class="fas-times2" style="position: absolute; top: 0; right: 0;margin-right: 1%;">
+        <div class="fas-times2" style="position: absolute;">
 {{--            <button type="button" @if(isset($display)) style="background-color: {{$display->circle_background}}" @endif class="btn-close for-overlay">--}}
 {{--                <span class="icon-cross"></span>--}}
 {{--                <span class="visually-hidden">Close</span>--}}
