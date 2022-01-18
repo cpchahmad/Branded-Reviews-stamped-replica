@@ -491,6 +491,15 @@
         /*    width: 56% !important;*/
         /*    padding: 0 0 !important;*/
         /*}*/
+        /*.review_date{*/
+        /*    width: calc(69% - 60px) !important;*/
+        /*}*/
+        /*.review_1_header{*/
+        /*    justify-content: flex-start !important;*/
+        /*}*/
+        /*.user_info{*/
+        /*    width: auto !important;*/
+        /*}*/
         .questions_tab, .reviews_tab{
             padding: 4px 11px !important;
         }
@@ -2642,7 +2651,7 @@ color:black;
             margin-right: 5% !important;
         }
         .fas-times{
-            background: grey !important;
+            background: #D9D6D3 !important;
         }
     }
 
