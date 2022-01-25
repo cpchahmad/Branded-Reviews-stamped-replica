@@ -2989,13 +2989,13 @@
         </div>
     </div>
     <div style="position: absolute;  bottom: 280px; left: 13%;">
-        <button type="button" style="color: #eee; font-size: 30px;" class="btn-close previous-button btn-view">
+        <button type="button" style="color: #eee; font-size: 30px;" class="btn-close previous-button">
             <span class="far fa-chevron-left"></span>
             <span class="visually-hidden">Close</span>
         </button>
     </div>
     <div style="position: absolute;  bottom: 280px; right: 13%;">
-        <button type="button" style="color: #eee; font-size: 30px;" class="btn-close next-button btn-view">
+        <button type="button" style="color: #eee; font-size: 30px;" class="btn-close next-button">
             <span class="far fa-chevron-right"></span>
         </button>
     </div>
