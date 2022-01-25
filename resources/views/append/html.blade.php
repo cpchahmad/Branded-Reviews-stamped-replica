@@ -1188,9 +1188,9 @@
         padding-left: 2%;
     }
      .item .image-content div,
-    .item .image-content p,
-    .item .image-content h3,
-    . .item .image-content h4
+     .item .image-content p,
+     .item .image-content h3,
+    .item .image-content h4
     {
         margin: 12px 0 0 0;
     }
@@ -2987,17 +2987,17 @@
 {{--            </button>--}}
             <i class="fal fa-times for-overlay fas-times fas-times3"  style="font-size: 43px;"></i>
         </div>
-        {{--            <div style="position: absolute;  bottom: 280px; left: 0;">--}}
-        {{--                <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">--}}
-        {{--                    <span class="far fa-chevron-left"></span>--}}
-        {{--                    <span class="visually-hidden">Close</span>--}}
-        {{--                </button>--}}
-        {{--            </div>--}}
-        {{--            <div style="position: absolute;  bottom: 280px; right: 0;">--}}
-        {{--                <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">--}}
-        {{--                    <span class="far fa-chevron-right"></span>--}}
-        {{--                </button>--}}
-        {{--            </div>--}}
+                    <div style="position: absolute;  bottom: 280px; left: 0;">
+                        <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">
+                            <span class="far fa-chevron-left"></span>
+                            <span class="visually-hidden">Close</span>
+                        </button>
+                    </div>
+                    <div style="position: absolute;  bottom: 280px; right: 0;">
+                        <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">
+                            <span class="far fa-chevron-right"></span>
+                        </button>
+                    </div>
     </div>
 </div>
 
