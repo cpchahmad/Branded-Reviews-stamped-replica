@@ -100,6 +100,10 @@ $('.stamped-question').append("<li class='question_page'><a href='#search_questi
 });
 
 $(document).on("click", ".btn-view", function() {
+$('.btn-view').removeClass('for-previous');
+$('.btn-view').removeClass('for-next');
+$(this).prev().addClass("for-previous");
+$(this).next().addClass("for-next");
 var image_id = $(this).data('value');
 $.ajax({
 url: base_url + "get-popup?image_id=" + image_id,
@@ -114,6 +118,23 @@ event.preventDefault();
 var target = $(this).data('target');
 //         $('#' + target).toggleClass('hide');
 });
+
+$(document).on("click", ".next-button", function() {
+var image_id = $('.for-next').data('value');
+$.ajax({
+url: base_url + "get-popup?image_id=" + image_id,
+type: 'GET',
+success: function(data) {
+$('#item').html(data.popup);
+}
+});
+$('.container').css('display', 'block');
+event.preventDefault();
+
+var target = $(this).data('target');
+//         $('#' + target).toggleClass('hide');
+});
+
 $(document).on("click", ".for-overlay", function() {
 $('.container').css('display','none');
 });

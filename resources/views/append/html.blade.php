@@ -2829,7 +2829,7 @@
         margin: 0;
         border: 0;
         padding: 0;
-        background: blue;
+        background: unset;
         border-radius: 50%;
         width: 40px;
         height: 40px;
@@ -2987,17 +2987,17 @@
 {{--            </button>--}}
             <i class="fal fa-times for-overlay fas-times fas-times3"  style="font-size: 43px;"></i>
         </div>
-                    <div style="position: absolute;  bottom: 280px; left: 0;">
-                        <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">
-                            <span class="far fa-chevron-left"></span>
-                            <span class="visually-hidden">Close</span>
-                        </button>
-                    </div>
-                    <div style="position: absolute;  bottom: 280px; right: 0;">
-                        <button type="button" style="color: white; font-size: large;" class="btn-close btn-view">
-                            <span class="far fa-chevron-right"></span>
-                        </button>
-                    </div>
+    </div>
+    <div style="position: absolute;  bottom: 280px; left: 13%;">
+        <button type="button" style="color: #eee; font-size: 30px;" class="btn-close previous-button btn-view">
+            <span class="far fa-chevron-left"></span>
+            <span class="visually-hidden">Close</span>
+        </button>
+    </div>
+    <div style="position: absolute;  bottom: 280px; right: 13%;">
+        <button type="button" style="color: #eee; font-size: 30px;" class="btn-close next-button btn-view">
+            <span class="far fa-chevron-right"></span>
+        </button>
     </div>
 </div>
 
