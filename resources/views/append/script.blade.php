@@ -121,6 +121,7 @@ var target = $(this).data('target');
 
 $(document).on("click", ".next-button", function() {
 var image_id = $('.for-next').data('value');
+console.log(image_id);
 $.ajax({
 url: base_url + "get-popup?image_id=" + image_id,
 type: 'GET',
