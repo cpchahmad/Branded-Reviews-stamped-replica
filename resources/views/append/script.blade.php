@@ -144,12 +144,16 @@ var target = $(this).data('target');
 
 $(document).on("click", ".previous-button", function() {
 var image_id = $(this).attr('id');
-console.log(image_id);
 $.ajax({
 url: base_url + "get-popup?image_id=" + image_id,
 type: 'GET',
 success: function(data) {
 $('#item').html(data.popup);
+var element = $("#review_images").find("[data-value='" + image_id + "']");
+var prv_id = element.prev().attr('data-value');
+var next_id = element.next().attr('data-value');
+$('.next-button').attr('id',next_id);
+$('.previous-button').attr('id',prv_id);
 }
 });
 $('.container').css('display', 'block');
