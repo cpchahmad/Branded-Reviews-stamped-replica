@@ -2715,9 +2715,9 @@
         text-decoration: underline !important;
     }
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         .popup {
-            width: 94%;
+            width: 90%;
             top: 50%;
             height: 94%;
         }
@@ -2969,11 +2969,115 @@
     .fas-times2{
         top: 0; right: 0;
     }
-    @media  (max-width:768px) {
+
+    .left-arrow{
+        position: absolute;
+        /*bottom: 50%;*/
+        top: 50%;
+        left: 13%;
+    }
+    .right-arrow{
+        position: absolute;
+        /*bottom: 50%;*/
+        top: 50%;
+        right: 13%;
+    }
+    .arrow1{
+        display: none;
+    }
+    @media  (max-width:767px) {
         .fas-times2{
             top: 9px; right: 13px;
         }
+        .left-arrow{
+            position: absolute;
+            left: 7%;
+            z-index: 9999;
+        }
+        .right-arrow{
+            position: absolute;
+            right: 6%;
+            z-index: 9999;
+        }
+        .popup {
+            top: 48%;
+            height: 90%;
+        }
+        .arrow1{
+            display: block;
+        }
+        .arrow2{
+            display: none;
+        }
     }
+
+    @media (max-width:375px) {
+        .left-arrow{
+            top: 12%;
+            left: 4%;
+        }
+        .right-arrow{
+            top: 12%;
+            right: 2%;
+        }
+    }
+    @media (min-width:376px) and  (max-width:500px) {
+        .left-arrow{
+            top: 16%;
+            left: 4%;
+        }
+        .right-arrow{
+            top: 16%;
+            right: 2%;
+        }
+    }
+    @media (min-width:501px) and  (max-width:600px) {
+        .left-arrow{
+            top: 18%;
+            left: 4%;
+        }
+        .right-arrow{
+            top: 18%;
+            right: 2%;
+        }
+    }
+    @media (min-width:601px) and  (max-width:700px) {
+        .left-arrow{
+            top: 22%;
+            left: 4%;
+        }
+        .right-arrow{
+            top: 22%;
+            right: 2%;
+        }
+    }
+    @media (min-width:701px) and  (max-width:767px) {
+        .left-arrow{
+            top: 24%;
+            left: 4%;
+        }
+        .right-arrow{
+            top: 24%;
+            right: 2%;
+        }
+    }
+    @media (min-width:768px) and  (max-width:1200px) {
+        .popup {
+            width: 85%;
+            top: 50%;
+            height: 94%;
+        }
+        .left-arrow{
+            top: 40% ;
+            left: 2% ;
+        }
+        .right-arrow{
+            top: 40% ;
+            right: 2% ;
+        }
+    }
+
+
 </style>
 
 <div class="container">
@@ -2987,17 +3091,32 @@
 {{--            </button>--}}
             <i class="fal fa-times for-overlay fas-times fas-times3"  style="font-size: 43px;"></i>
         </div>
+        <div class="arrow1">
+            <div class="left-arrow">
+                <button type="button" style="color: #eee; font-size: 30px;" class="btn-close previous-button">
+                    <span class="far fa-chevron-left"></span>
+                    <span class="visually-hidden">Close</span>
+                </button>
+            </div>
+            <div class="right-arrow">
+                <button type="button" style="color: #eee; font-size: 30px;" class="btn-close next-button">
+                    <span class="far fa-chevron-right"></span>
+                </button>
+            </div>
+        </div>
     </div>
-    <div style="position: absolute;  bottom: 280px; left: 13%;">
-        <button type="button" style="color: #eee; font-size: 30px;" class="btn-close previous-button">
-            <span class="far fa-chevron-left"></span>
-            <span class="visually-hidden">Close</span>
-        </button>
-    </div>
-    <div style="position: absolute;  bottom: 280px; right: 13%;">
-        <button type="button" style="color: #eee; font-size: 30px;" class="btn-close next-button">
-            <span class="far fa-chevron-right"></span>
-        </button>
+    <div class="arrow2">
+        <div class="left-arrow">
+            <button type="button" style="color: #eee; font-size: 30px;" class="btn-close previous-button">
+                <span class="far fa-chevron-left"></span>
+                <span class="visually-hidden">Close</span>
+            </button>
+        </div>
+        <div class="right-arrow">
+            <button type="button" style="color: #eee; font-size: 30px;" class="btn-close next-button">
+                <span class="far fa-chevron-right"></span>
+            </button>
+        </div>
     </div>
 </div>
 
