@@ -213,6 +213,8 @@ class ReviewController extends Controller
         $review->save();
         $productcontroller = new ProductController();
         $productcontroller->AddUpdateMetafield($review->product_id,$shop);
+        $product_meta = $shop->api()->rest('GET', '/admin/products/'.$review->product_id.'/metafields.json');
+        dd($product_meta);
         return Redirect::tokenRedirect('review.view', ['id' => $review->id,'notice' => 'Review Updated Successfully']);
     }
     public function ReviewAddPhoto(Request $request){
