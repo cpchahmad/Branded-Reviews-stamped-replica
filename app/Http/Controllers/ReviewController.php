@@ -229,17 +229,12 @@ class ReviewController extends Controller
         return Redirect::tokenRedirect('review.view', ['id' => $request->review_id,'notice' => 'Photo added Successfully']);
     }
     public function UpdatePhotos(Request $request){
-        $photos = ReviewMedia::where('review_id',$request->review_id)->get();
         $photo_ids = [];
         if ($request->photo_id != null) {
-            foreach ($photos as $photo) {
                 foreach ($request->photo_id as $id) {
-                    if ($photo->id != $id) {
-                        array_push($photo_ids, $photo->id);
-                    }
+                        array_push($photo_ids, $id);
                 }
-            }
-            $photos_update = ReviewMedia::whereIn('id', $photo_ids)->delete();
+            $photos_update = ReviewMedia::where('review_id',$request->review_id)->whereNotIn('id', $photo_ids)->delete();
         }
         return Redirect::tokenRedirect('review.view', ['id' => $request->review_id,'notice' => 'Photos updated Successfully']);
     }
