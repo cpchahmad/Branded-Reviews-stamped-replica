@@ -758,7 +758,7 @@
         <hr style="margin: 1rem;">
         <div class="row mb-4">
             <div class="col-md-12 text-right">
-                <a href="{{route('review.delete',$review->id)}}"type="button"  class="btn btn-danger">Delete</a>
+                <a href="{{route('review.delete',$review->id)}}" type="button"  class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>

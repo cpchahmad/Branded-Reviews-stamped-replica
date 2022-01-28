@@ -199,6 +199,7 @@ class ReviewController extends Controller
 
     }
     public function ReviewUpdate(Request $request){
+        $shop = Auth::user();
         $review = Review::where('id',$request->review_id)->first();
         $review->review_rating = $request->review_rating;
         $review->review_title = $request->review_title;
@@ -210,6 +211,8 @@ class ReviewController extends Controller
         $review->real_fake = 'fake';
         $review->created_at = $request->created_at;
         $review->save();
+        $productcontroller = new ProductController();
+        $productcontroller->AddUpdateMetafield($review->product_id,$shop);
         return Redirect::tokenRedirect('review.view', ['id' => $review->id,'notice' => 'Review Updated Successfully']);
     }
     public function ReviewAddPhoto(Request $request){
@@ -261,9 +264,14 @@ class ReviewController extends Controller
         return Redirect::tokenRedirect('review.view', ['id' => $reply->review_id,'notice' => 'Deleted Successfully']);
     }
     public function ReviewDelete($id){
+        $shop = Auth::user();
         $review = Review::where('id',$id)->first();
         $review->status = 'rejected';
         $review->save();
+        $productcontroller = new ProductController();
+        $productcontroller->AddUpdateMetafield($review->product_id,$shop);
+        $check_meta = $shop->api()->rest('GET', '/admin/products/'.$review->product_id.'/metafields.json');
+        dd($check_meta);
         return Redirect::tokenRedirect('review.request', ['notice' => 'Review Rejected  Successfully']);
     }
 //    public function AppendReviews(Request $request){
