@@ -75,6 +75,52 @@ class ProductController extends Controller
         $p->status = $product->status;
         $p->published_at = $product->published_at;
         $p->save();
+        $this->AddUpdateMetafield($product->id,$shop);
+    }
+    public function AddUpdateMetafield($product_id,$shop){
+        $check_meta = $shop->api()->rest('GET', '/admin/products/'.$product_id.'/metafields.json');
+        $check_meta = json_decode(json_encode($check_meta['body']['container']['metafields']));
+        $product = Product::where('shopify_id',$product_id)->first();
+        $reviews = Review::where('shop_id',$shop->id)->where('product_id',$product_id)->get();
+        $total = count($reviews);
+        $values = [
+            'product_id'=> $product_id,
+            'total_reviews'=>$total,
+        ];
+        if ($check_meta != null){
+            $product_meta = $shop->api()->rest('put', '/admin/metafields/'.$check_meta[0]->id.'.json', [
+                "metafield" => [
+                    "key" => 'reviews',
+                    "value" => json_encode($values),
+                    "value_type" => "json_string",
+                    "namespace" => "product_reviews",
+                ]
+            ]);
+            $product_meta = json_decode(json_encode($product_meta['body']['container']['metafield']));
+            dd($product_meta);
+            $product->metafield_id = $product_meta->id;
+            $product->save();
+        }else{
+            $product_meta = $shop->api()->rest('put', '/admin/orders/'.$product_id.'.json', [
+                'product' => [
+                    "metafields" =>
+                        array(
+                            0 =>
+                                array(
+                                    "key" => 'reviews',
+                                    "value" => json_encode($values),
+                                    "value_type" => "json_string",
+                                    "namespace" => "product_reviews",
+                                ),
+                        ),
+                ]
+            ]);
+            $product_meta = $shop->api()->rest('GET', '/admin/products/'.$product_id.'/metafields.json');
+            $product_meta = json_decode(json_encode($product_meta['body']['container']['metafields']));
+            dd($product_meta);
+            $product->metafield_id = $product_meta[0]->id;
+            $product->save();
+        }
     }
     public function FakeStats(Request $request){
         $shop = Auth::user();

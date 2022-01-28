@@ -27,6 +27,7 @@ class CreateProductsTable extends Migration
             $table->text('options')->nullable();
             $table->text('status')->nullable();
             $table->string('published_at')->nullable();
+            $table->bigInteger('metafield_id')->nullable();
             $table->timestamps();
         });
     }
