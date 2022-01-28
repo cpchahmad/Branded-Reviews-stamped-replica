@@ -175,8 +175,6 @@ class ReviewController extends Controller
 
         $productcontroller = new ProductController();
         $productcontroller->AddUpdateMetafield($request->product_id,$shop);
-        $check_meta = $shop->api()->rest('GET', '/admin/products/'.$request->product_id.'/metafields.json');
-        dd($check_meta);
         $facebook_share_link = 'https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook?review_id='.$review->id.'&display=popup';
         $twitter_share_link = 'https://twitter.com/intent/tweet?url=https://phpstack-176572-2275881.cloudwaysapps.com/on-twitter?review_id='.$review->id;
         if ($request->hasFile('image')) {
