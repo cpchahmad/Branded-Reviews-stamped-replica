@@ -372,10 +372,17 @@
     }
     @media (min-width:1075px) and  (max-width:1158px) {
         .image_popups_list{
-            width: 30% !important;
+            width: 32% !important;
         }
         .question_review_buttons{
-            width: 18% !important;
+            width: 100% !important;
+            margin-top: 2%;
+        }
+        .question_review_buttons button{
+         padding: 10px 24px;
+        }
+        .tt_logix_reviews{
+            padding: 5%;
         }
     }
     @media (max-width:767px) {
@@ -612,7 +619,7 @@
             width: 21%;
         }
         .review_progress{
-            width: 26%;
+            width: 32%;
         }
         .image_popups_list{
             width: 28%;
