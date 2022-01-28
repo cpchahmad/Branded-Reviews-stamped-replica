@@ -270,8 +270,6 @@ class ReviewController extends Controller
         $review->save();
         $productcontroller = new ProductController();
         $productcontroller->AddUpdateMetafield($review->product_id,$shop);
-        $check_meta = $shop->api()->rest('GET', '/admin/products/'.$review->product_id.'/metafields.json');
-        dd($check_meta);
         return Redirect::tokenRedirect('review.request', ['notice' => 'Review Rejected  Successfully']);
     }
 //    public function AppendReviews(Request $request){

@@ -81,7 +81,7 @@ class ProductController extends Controller
         $check_meta = $shop->api()->rest('GET', '/admin/products/'.$product_id.'/metafields.json');
         $check_meta = json_decode(json_encode($check_meta['body']['container']['metafields']));
         $product = Product::where('shopify_id',$product_id)->first();
-        $reviews = Review::where('shop_id',$shop->id)->where('product_id',$product_id)->get();
+        $reviews = Review::where('shop_id',$shop->id)->where('product_id',$product_id)->whereNotIn('status',['rejected'])->get();
         $total = count($reviews);
         $values = [
             'product_id'=> $product_id,
