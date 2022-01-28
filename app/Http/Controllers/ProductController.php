@@ -87,6 +87,7 @@ class ProductController extends Controller
         }else{
             $product_rating = 0;
         }
+        $product_rating = number_format($product_rating,1);
         $total = count($reviews);
         $values = [
             'average_rating'=> $product_rating,
