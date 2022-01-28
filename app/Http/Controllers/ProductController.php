@@ -87,6 +87,7 @@ class ProductController extends Controller
             'product_id'=> $product_id,
             'total_reviews'=>$total,
         ];
+
         if ($check_meta != null){
             $product_meta = $shop->api()->rest('put', '/admin/metafields/'.$check_meta[0]->id.'.json', [
                 "metafield" => [
@@ -97,11 +98,10 @@ class ProductController extends Controller
                 ]
             ]);
             $product_meta = json_decode(json_encode($product_meta['body']['container']['metafield']));
-            dd($product_meta);
             $product->metafield_id = $product_meta->id;
             $product->save();
         }else{
-            $product_meta = $shop->api()->rest('put', '/admin/orders/'.$product_id.'.json', [
+            $product_meta = $shop->api()->rest('put', '/admin/products/'.$product_id.'.json', [
                 'product' => [
                     "metafields" =>
                         array(
@@ -117,7 +117,6 @@ class ProductController extends Controller
             ]);
             $product_meta = $shop->api()->rest('GET', '/admin/products/'.$product_id.'/metafields.json');
             $product_meta = json_decode(json_encode($product_meta['body']['container']['metafields']));
-            dd($product_meta);
             $product->metafield_id = $product_meta[0]->id;
             $product->save();
         }
