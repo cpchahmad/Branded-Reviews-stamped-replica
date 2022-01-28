@@ -82,16 +82,31 @@ class ProductController extends Controller
         $check_meta = json_decode(json_encode($check_meta['body']['container']['metafields']));
         $product = Product::where('shopify_id',$product_id)->first();
         $reviews = Review::where('shop_id',$shop->id)->where('product_id',$product_id)->whereNotIn('status',['rejected'])->get();
+        $total = count($reviews);
+        $five_star = Review::where('shop_id',$shop->id)->where('product_id',$product_id)->whereNotIn('status',['rejected'])->where('review_rating',5)->get();
+        $five_star = count($five_star);
+        $four_star = Review::where('shop_id',$shop->id)->where('product_id',$product_id)->whereNotIn('status',['rejected'])->where('review_rating',4)->get();
+        $four_star = count($four_star);
+        $three_star = Review::where('shop_id',$shop->id)->where('product_id',$product_id)->whereNotIn('status',['rejected'])->where('review_rating',3)->get();
+        $three_star = count($three_star);
+        $two_star = Review::where('shop_id',$shop->id)->where('product_id',$product_id)->whereNotIn('status',['rejected'])->where('review_rating',2)->get();
+        $two_star = count($two_star);
+        $one_star = Review::where('shop_id',$shop->id)->where('product_id',$product_id)->whereNotIn('status',['rejected'])->where('review_rating',1)->get();
+        $one_star = count($one_star);
         if (count($product->product_reviews) > 0){
             $product_rating = ($product->product_reviews->sum('review_rating')) / (count($product->product_reviews));
         }else{
             $product_rating = 0;
         }
         $product_rating = number_format($product_rating,1);
-        $total = count($reviews);
         $values = [
             'average_rating'=> $product_rating,
             'total_reviews'=>$total,
+            'five_star'=>$five_star,
+            'four_star'=>$four_star,
+            'three_star'=>$three_star,
+            'two_star'=>$two_star,
+            'one_star'=>$one_star,
         ];
 
         if ($check_meta != null){
