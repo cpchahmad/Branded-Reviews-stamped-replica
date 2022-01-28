@@ -370,7 +370,7 @@
             float: right;
         }
     }
-    @media (min-width:1075px) and  (max-width:1158px) {
+    @media (min-width:1075px) and  (max-width:1300px) {
         .image_popups_list{
             width: 32% !important;
         }
