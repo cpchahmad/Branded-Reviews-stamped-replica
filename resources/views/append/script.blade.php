@@ -265,6 +265,7 @@ $('.loader').css('display','none');
 $("#br_reviews_widget_wrapper").html(data.html);
 $(document).find('.stamped-pagination').empty();
 var total = $(data.paginate['links']).length;
+index_value = data.paginate['current_page'];
 var previous_url = data.paginate['prev_page_url'] + '&shop_name=' + name + '&product_id=' + id;
 var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
 $(data.paginate['links']).each(function(index) {
