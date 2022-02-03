@@ -146,7 +146,7 @@ class AdminController extends Controller
         $questions_publish  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->get();
 //        if ($page_load =='yes' || isset($request->status) && $request->status == 'questions'){
 //        Paginator::setPageName('questions_page');
-        $questions_pagination  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->paginate(5);
+        $questions_pagination  = Question::where('shop_id',$shop->id)->where('product_id',$request->product_id)->where('status','publish')->latest()->get();
 //        }
         $total_question = count($questions_publish);
         $display_setting = ThemeSetting::where('shop_id',$shop->id)->first();
