@@ -48,9 +48,9 @@ $('.stamped-pagination').empty();
 var total = $(data.paginate['links']).length;
 var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
 $(data.paginate['links']).each(function(index) {
-//                    if (index === 0) {
-//                        $('.stamped-pagination').append("<li class='previous'><a href='javascript:void(0)' id='previous' data-page='' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
-//                   	}
+if (index === 0) {
+$('.stamped-pagination').append("<li class='previous'><a href='javascript:void(0)' id='previous' data-page='' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
+}
 if (index != 0) {
 if (index != total - 1) {
 if (total != 3) {
@@ -62,11 +62,11 @@ $('.stamped-pagination').append("<li class='page'><a href='#user_reviews' data-i
 }
 }
 }
-//           			 if (index === total - 1) {
+if (index === total - 1) {
 
-//                      $('.stamped-pagination').append("<li class='next'><a href='javascript:void(0)' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
+$('.stamped-pagination').append("<li class='next'><a href='javascript:void(0)' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
 
-//                   	}
+}
 }
 });
 
@@ -266,9 +266,9 @@ $(document).find('.stamped-pagination').empty();
 var total = $(data.paginate['links']).length;
 var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
 $(data.paginate['links']).each(function(index) {
-//                    if (index === 0) {
-//                        $('.stamped-pagination').append("<li class='previous'><a href='javascript:void(0)' id='previous' data-page='' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
-//                   	}
+if (index === 0) {
+$('.stamped-pagination').append("<li class='previous'><a href='javascript:void(0)' id='previous' data-page='' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
+}
 if (index != 0) {
 if (index != total - 1) {
 if (total != 3) {
@@ -280,11 +280,11 @@ $('.stamped-pagination').append("<li class='page'><a href='#user_reviews' data-i
 }
 }
 }
-//           			 if (index === total - 1) {
+if (index === total - 1) {
 
-//                      $('.stamped-pagination').append("<li class='next'><a href='javascript:void(0)' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
+$('.stamped-pagination').append("<li class='next'><a href='javascript:void(0)' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
 
-//                   	}
+}
 
 }
 
