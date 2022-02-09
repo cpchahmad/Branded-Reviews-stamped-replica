@@ -1798,7 +1798,7 @@
                         </div>
                     </div>
                     <div class="side left" style="margin-top: 8px;">
-                        <div id="five_star">&ensp;({{$five_star}})</div>
+                        <div id="five_star">&ensp;&ensp;({{$five_star}})</div>
                     </div>
                 </div>
                 </a>
@@ -1817,7 +1817,7 @@
                         </div>
                     </div>
                     <div class="side left">
-                        <div id="four_star">&ensp;({{$four_star}})</div>
+                        <div id="four_star">&ensp;&ensp;({{$four_star}})</div>
                     </div>
                 </div>
                 </a>
@@ -1836,7 +1836,7 @@
                         </div>
                     </div>
                     <div class="side left">
-                        <div id="three_star">&ensp;({{$three_star}})</div>
+                        <div id="three_star">&ensp;&ensp;({{$three_star}})</div>
                     </div>
                 </div>
                     </a>
@@ -1855,7 +1855,7 @@
                         </div>
                     </div>
                     <div class="side left">
-                        <div id="two_star">&ensp;({{$two_star}})</div>
+                        <div id="two_star">&ensp;&ensp;({{$two_star}})</div>
                     </div>
                 </div>
                 </a>
@@ -1874,7 +1874,7 @@
                         </div>
                     </div>
                     <div class="side left">
-                        <div id="one_star">&ensp;({{$one_star}})</div>
+                        <div id="one_star">&ensp;&ensp;({{$one_star}})</div>
                     </div>
                 </div>
                 </a>
@@ -2706,9 +2706,9 @@
         color: #5E5E5E;
         overflow: scroll;
     }
-    .popup::-webkit-scrollbar {
-        display: none;
-    }
+    /*.popup::-webkit-scrollbar {*/
+    /*    display: none;*/
+    /*}*/
     .popup {
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
@@ -3098,7 +3098,9 @@
             right: 2% ;
         }
     }
-
+    #review_pagination .stamped-reviews-ul li a:hover{
+        color: #adb5bd;
+    }
 
 </style>
 

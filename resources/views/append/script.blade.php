@@ -49,7 +49,7 @@ var total = $(data.paginate['links']).length;
 var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
 $(data.paginate['links']).each(function(index) {
 if (index === 0) {
-$('.stamped-pagination').append("<li class='previous'><a href='javascript:void(0)' id='previous' data-page='' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
+$('.stamped-pagination').append("<li class='previous'><a href='#user_reviews' id='previous' data-page='' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
 }
 if (index != 0) {
 if (index != total - 1) {
@@ -64,7 +64,7 @@ $('.stamped-pagination').append("<li class='page'><a href='#user_reviews' data-i
 }
 if (index === total - 1) {
 
-$('.stamped-pagination').append("<li class='next'><a href='javascript:void(0)' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
+$('.stamped-pagination').append("<li class='next'><a href='#user_reviews' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
 
 }
 }
@@ -270,7 +270,7 @@ var previous_url = data.paginate['prev_page_url'] + '&shop_name=' + name + '&pro
 var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
 $(data.paginate['links']).each(function(index) {
 if (index === 0) {
-$('.stamped-pagination').append("<li class='previous'><a href='javascript:void(0)' id='previous' data-page='" + previous_url + "' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
+$('.stamped-pagination').append("<li class='previous'><a href='#user_reviews' id='previous' data-page='" + previous_url + "' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
 }
 if (index != 0) {
 if (index != total - 1) {
@@ -285,7 +285,7 @@ $('.stamped-pagination').append("<li class='page'><a href='#user_reviews' data-i
 }
 if (index === total - 1) {
 
-$('.stamped-pagination').append("<li class='next'><a href='javascript:void(0)' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
+$('.stamped-pagination').append("<li class='next'><a href='#user_reviews' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
 
 }
 
@@ -364,7 +364,7 @@ var previous_url = data.paginate['prev_page_url'] + '&shop_name=' + name + '&pro
 var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
 $(data.paginate['links']).each(function(index) {
 if (index === 0) {
-$('.stamped-pagination').append("<li class='previous'><a href='javascript:void(0)' id='previous' data-page='" + previous_url + "' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
+$('.stamped-pagination').append("<li class='previous'><a href='#user_reviews' id='previous' data-page='" + previous_url + "' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
 }
 if (index != 0) {
 if (index != total - 1) {
@@ -379,7 +379,7 @@ $('.stamped-pagination').append("<li class='page'><a href='#user_reviews' data-i
 }
 if (index === total - 1) {
 
-$('.stamped-pagination').append("<li class='next'><a href='javascript:void(0)' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
+$('.stamped-pagination').append("<li class='next'><a href='#user_reviews' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
 
 }
 }
@@ -734,7 +734,7 @@ var previous_url = data.paginate['prev_page_url'] + '&shop_name=' + name + '&pro
 var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
 $(data.paginate['links']).each(function(index) {
 if (index === 0) {
-$('.stamped-pagination').append("<li class='previous'><a href='javascript:void(0)' id='previous' data-page='" + previous_url + "' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
+$('.stamped-pagination').append("<li class='previous'><a href='#user_reviews' id='previous' data-page='" + previous_url + "' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
 }
 if (index != 0) {
 if (index != total - 1) {
@@ -749,7 +749,7 @@ $('.stamped-pagination').append("<li class='page'><a href='#user_reviews' data-p
 }
 if (index === total - 1) {
 
-$('.stamped-pagination').append("<li class='next'><a href='javascript:void(0)' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
+$('.stamped-pagination').append("<li class='next'><a href='#user_reviews' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
 
 }
 
@@ -833,7 +833,7 @@ var previous_url = data.paginate['prev_page_url'] + '&shop_name=' + name + '&pro
 var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
 $(data.paginate['links']).each(function(index) {
 if (index === 0) {
-$('.stamped-pagination').append("<li class='previous'><a href='javascript:void(0)' id='previous' data-page='" + previous_url + "' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
+$('.stamped-pagination').append("<li class='previous'><a href='#user_reviews' id='previous' data-page='" + previous_url + "' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
 }
 if (index != 0) {
 if (index != total - 1) {
@@ -848,7 +848,7 @@ $('.stamped-pagination').append("<li class='page'><a href='#user_reviews' data-p
 }
 if (index === total - 1) {
 
-$('.stamped-pagination').append("<li class='next'><a href='javascript:void(0)' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
+$('.stamped-pagination').append("<li class='next'><a href='#user_reviews' id='next' data-page='"+next_url+"' class='paginate_link' aria-label='Next page'>&gt;</a></li>");
 
 }
 
