@@ -138,13 +138,11 @@
         font-weight: bold;
         vertical-align: middle;
     }
-
     .review_progress{
-        width: 25%;
+        width: 26%;
         padding: 5px 10px 5px 24px;
         border-right: 1px #cecece solid;
     }
-
     .review_progress:hover .review_progress_1{
         opacity: .5;
     }
@@ -569,7 +567,7 @@
         }
     }
     .question_review_buttons{
-        width: 25%;
+        width: 24%;
     }
     .question_content{
         padding: 2px 2px !important;
@@ -578,7 +576,7 @@
         margin-top: 0;
     }
     .question_review_buttons button{
-        padding: 10px;
+        padding: 9px;
         margin: 6px 0 6px 8px;
         cursor: pointer;
         float: right;
