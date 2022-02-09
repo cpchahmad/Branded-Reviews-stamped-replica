@@ -6,6 +6,7 @@
 </head>
 <style>
     @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
+    /*@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");*/
     @font-face {
         font-family: 'helvetica';
         src: url('{{ asset('Helvetica-Font/Helvetica.ttf')}}');
@@ -98,7 +99,7 @@
     }
     .tt_logix_reviews_r_no{
         border-right: 1px #cecece solid;
-        width: 19%;
+        width: 23%;
     }
     .tt_logix_reviews_r_no h1{
         display: flex;
@@ -139,7 +140,7 @@
     }
 
     .review_progress{
-        width: 27%;
+        width: 25%;
         padding: 5px 10px 5px 24px;
         border-right: 1px #cecece solid;
     }
@@ -313,10 +314,10 @@
 
     @media (min-width:811px) and  (max-width:1046px) {
         .review_progress{
-            max-width: 300px;
+            max-width: 280px;
         }
         #review_images{
-            max-width: 350px;
+            max-width: 312px;
         }
         .question_review_buttons button{
             padding: 10px 34px !important;
@@ -568,7 +569,7 @@
         }
     }
     .question_review_buttons{
-        width: 26%;
+        width: 25%;
     }
     .question_content{
         padding: 2px 2px !important;
@@ -593,7 +594,7 @@
 
     @media only screen and (min-device-width: 768px) and (max-device-width: 1074px) {
         .tt_logix_reviews_r_no{
-            width: 31%;
+            width: 35%;
         }
         .tt_logix_reviews{
             padding: 5%;
@@ -616,7 +617,7 @@
     }
     @media only screen and (min-device-width: 1075px) and (max-device-width: 1117px) {
         .tt_logix_reviews_r_no{
-            width: 21%;
+            width: 26%;
         }
         .review_progress{
             width: 32%;
@@ -628,7 +629,14 @@
             width: 25%;
         }
     }
-
+    @media only screen and (min-device-width: 1118px) and (max-device-width: 1300px) {
+        .tt_logix_reviews_r_no{
+            width: 24%;
+        }
+        .review_progress{
+        width: 30%;
+        }
+    }
     @media (max-width:767px) {
         .question_review_buttons{
             width: 95%;
@@ -1445,7 +1453,27 @@
         position: absolute;
         top: 0;
         left: 0;
+        /*content: '\f005\f005\f005\f005\f005';*/
+        /*font-family: FontAwesome;*/
         content: '★★★★★';
+        color: white;
+        /*color: #ffd200;*/
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #ffd200;
+        /*color: lightgray;*/
+    }
+    .stars-container1{
+        position: relative;
+        display: inline-block;
+        color: transparent;
+    }
+    .stars-container1:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        /*content: '\f005\f005\f005\f005\f005';*/
+        /*font-family: FontAwesome;*/
+        content: '★ ★ ★ ★ ★';
         color: white;
         /*color: #ffd200;*/
         -webkit-text-stroke-width: 1px;
@@ -1457,7 +1485,19 @@
         position: absolute;
         top: 0;
         left: 0;
+        /*content: '\f005\f005\f005\f005\f005';*/
+        /*font-family: FontAwesome;*/
         content: '★★★★★';
+        color: gold;
+        overflow: hidden;
+    }
+    .stars-container1:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        /*content: '\f005\f005\f005\f005\f005';*/
+        /*font-family: FontAwesome;*/
+        content: '★ ★ ★ ★ ★';
         color: gold;
         overflow: hidden;
     }
@@ -1777,7 +1817,7 @@
                 <h1>
                     <span id="total_rating" style="margin: 0; margin-right: 5%; margin-top: 1%;">{{$total_rating}}</span>
                          <div class="col-md-6" style="overflow: hidden;">
-                                   <span class="stars-container stars-{{($review_value / 5) * 100}}" style="font-size: 30px;">★★★★★</span>
+                                   <span class="stars-container1 stars-{{($review_value / 5) * 100}}" style="font-size: 30px;line-height: 28px;">★ ★ ★ ★ ★</span>
                          </div>
                 </h1>
                 <p class="base_reviews base_reviews2">Based on <span id="base_reviews">{{$total_reviews}}</span> Reviews</p>
@@ -2706,9 +2746,9 @@
         color: #5E5E5E;
         overflow: scroll;
     }
-    /*.popup::-webkit-scrollbar {*/
-    /*    display: none;*/
-    /*}*/
+    .popup::-webkit-scrollbar {
+        display: none;
+    }
     .popup {
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
@@ -2782,7 +2822,7 @@
     }
     @media (min-width:917px) and  (max-width:1074px) {
         .tt_logix_reviews_r_no{
-            width: 25%;
+            width: 28%;
         }
         #review_images {
             max-width: 314px;
