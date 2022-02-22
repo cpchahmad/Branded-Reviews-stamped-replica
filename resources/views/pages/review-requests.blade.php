@@ -419,31 +419,24 @@
         .stars-95:after {
             width: 95%;
         }
-
         .stars-96:after {
             width: 96%;
         }
-
         .stars-97:after {
             width: 97%;
         }
-
         .stars-98:after {
             width: 98%;
         }
-
         .stars-99:after {
             width: 99%;
         }
-
         .stars-100:after {
             width: 100%;
         }
-
         .daterangepicker .right {
             color: inherit !important;
         }
-
         .daterangepicker {
             width: 341px !important;
         }
@@ -464,7 +457,7 @@
                             <button type="button" class="btn btn-secondary clear_filter_data mr-1 pl-4 pr-4">Clear
                             </button>
                         @endif
-                        <div id="reportrange" style="background: #fff; cursor: pointer; padding: 0px 4px; border: 1px solid #ccc;">
+                        <div id="reportrange" style="background: #fff; cursor: pointer; padding: 0 4px; border: 1px solid #ccc;">
                             <i class="fa fa-calendar"></i>&nbsp;
                             <span>@if(isset($date_range)) {{$date_range}} @endif</span> <i class="fa fa-caret-down"></i>
                         </div>
