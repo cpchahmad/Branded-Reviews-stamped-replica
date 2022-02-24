@@ -1191,10 +1191,11 @@
         display: inline-block;
         max-width: 50%;
         vertical-align: middle;
+        margin-top: 5px;
     }
-    @media (min-width:769px) and  (max-width:1074px) {
+    @media (max-width:768px) {
         .item .slide-image{
-            margin-top: 5px;
+            margin-top: 0;
         }
     }
     .item .slide-image img{
