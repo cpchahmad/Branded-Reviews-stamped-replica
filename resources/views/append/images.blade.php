@@ -6,7 +6,7 @@
     @if(count($review->medias) > 0)
     @foreach($review->medias as $key => $media)
     @if($counter <= 7)
-        <a href="javascript:void(0)" title="My Watch" class="btn-view">
+        <a href="javascript:void(0)" title="Picture" class="btn-view">
             <div>
                     <img src="{{asset('review-images'.'/'.$media->review_media)}}" width="70"  height="55" alt="Picture">
             </div>

@@ -536,7 +536,7 @@
             margin-bottom: 8px !important;
         }
         .item .image-content .product-details .review_date{
-            margin-top: 5% !important;
+            margin-top: 2% !important;
         }
         .item .image-content .product-details{
             margin-top: 8% !important;
@@ -549,6 +549,11 @@
         }
         .review-padding{
             padding: 42% 0 0 0 !important;
+        }
+    }
+    @media only screen and (min-device-width: 769px) and (max-device-width: 1074px) {
+        .item .image-content .product-details .review_date{
+            margin-top: 0;
         }
     }
     @media (max-width:400px) {
@@ -1210,7 +1215,7 @@
     @media (max-width:767px) {
         .item .slide-image{
             max-width: 100%;
-            padding: 0 10px;
+            /*padding: 0 10px;*/
             width: 100%;
         }
          .item .image-content{
@@ -1926,7 +1931,7 @@
                         @if(count($review->medias) > 0)
                             @foreach($review->medias as $key => $media)
                                 @if($counter <= 7)
-                                       <a href="javascript:void(0)" title="My Watch" data-value="{{$media->id}}" data-target="myPopup" class="btn-view btn-view2 @if($counter == 3 || $counter == 7) for-image-hidden @endif">
+                                       <a href="javascript:void(0)" title="Picture" data-value="{{$media->id}}" data-target="myPopup" class="btn-view btn-view2 @if($counter == 3 || $counter == 7) for-image-hidden @endif">
                                            <div class="@if($counter == 7) for-image-border @endif">
                                                <img src="{{asset('review-images'.'/'.$media->review_media)}}" class="for-image" width="70"  height="55" alt="Picture">
                                            </div>
@@ -3047,7 +3052,7 @@
     }
     @media  (max-width:767px) {
         .fas-times2{
-            top: 9px; right: 13px;
+            top: 6px; right: -20px;
         }
         .left-arrow{
             position: absolute;
@@ -3062,6 +3067,7 @@
         .popup {
             top: 48%;
             height: 90%;
+            padding: 0;
         }
         .arrow1{
             display: block;
@@ -3074,51 +3080,51 @@
     @media (max-width:375px) {
         .left-arrow{
             top: 12%;
-            left: 4%;
+            left: 1%;
         }
         .right-arrow{
             top: 12%;
-            right: 2%;
+            right: 1%;
         }
     }
     @media (min-width:376px) and  (max-width:500px) {
         .left-arrow{
             top: 16%;
-            left: 4%;
+            left: 1%;
         }
         .right-arrow{
             top: 16%;
-            right: 2%;
+            right: 1%;
         }
     }
     @media (min-width:501px) and  (max-width:600px) {
         .left-arrow{
             top: 18%;
-            left: 4%;
+            left: 1%;
         }
         .right-arrow{
             top: 18%;
-            right: 2%;
+            right: 1%;
         }
     }
     @media (min-width:601px) and  (max-width:700px) {
         .left-arrow{
             top: 22%;
-            left: 4%;
+            left: 1%;
         }
         .right-arrow{
             top: 22%;
-            right: 2%;
+            right: 1%;
         }
     }
     @media (min-width:701px) and  (max-width:767px) {
         .left-arrow{
             top: 24%;
-            left: 4%;
+            left: 1%;
         }
         .right-arrow{
             top: 24%;
-            right: 4%;
+            right: 1%;
         }
     }
     @media (min-width:768px) and  (max-width:1200px) {
