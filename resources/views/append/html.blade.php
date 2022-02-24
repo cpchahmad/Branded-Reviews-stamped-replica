@@ -1191,6 +1191,7 @@
         display: inline-block;
         max-width: 50%;
         vertical-align: middle;
+
     }
     .item .slide-image img{
         max-width: 100%;
@@ -1905,11 +1906,11 @@
                 <a href="javascript:void(0)" style="text-decoration: none; color: unset;">
                 <div class="review_progress_1" data-value="1" data-status="{{$status}}">
                     <div class="side">
-                            <span class="fa fa-star"></span>
-                            <span class="far fa-star"></span>
-                            <span class="far fa-star"></span>
-                            <span class="far fa-star"></span>
-                            <span class="far fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="far fa-star"></span>
+                        <span class="far fa-star"></span>
+                        <span class="far fa-star"></span>
+                        <span class="far fa-star"></span>
                     </div>
                     <div class="middle">
                         <div class="bar-container">
