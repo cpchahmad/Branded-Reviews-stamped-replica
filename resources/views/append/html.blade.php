@@ -58,7 +58,7 @@
         display:block !important;
     }
     #main-body h3{
-        font-weight: 700;
+        font-weight: 900;
         margin-bottom: 1px;
         margin-top: 0;
     }
@@ -762,7 +762,7 @@
         margin-right: 8px;
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: 51%;
         font-size: 16px;
         color: white;
         transform: translate(-50%, -50%);
