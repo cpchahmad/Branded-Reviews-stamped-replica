@@ -1191,7 +1191,12 @@
         display: inline-block;
         max-width: 50%;
         vertical-align: middle;
-
+        margin-top: 5px;
+    }
+    @media (min-width:769px) and  (max-width:1074px) {
+        .item .slide-image{
+            margin-top: 5px;
+        }
     }
     .item .slide-image img{
         max-width: 100%;
