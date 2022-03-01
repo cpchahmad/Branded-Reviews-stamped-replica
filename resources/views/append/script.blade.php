@@ -735,6 +735,7 @@ var total = $(data.paginate['links']).length;
 var previous_url = data.paginate['prev_page_url'] + '&shop_name=' + name + '&product_id=' + id;
 var next_url = data.paginate['next_page_url'] + '&shop_name=' + name + '&product_id=' + id;
 $(data.paginate['links']).each(function(index) {
+if(total > 3){
 if (index === 0) {
 $('.stamped-pagination').append("<li class='previous'><a href='#user_reviews' id='previous' data-page='" + previous_url + "' class='paginate_link' aria-label='Previous page'>&lt;</a></li>");
 }
@@ -756,7 +757,7 @@ $('.stamped-pagination').append("<li class='next'><a href='#user_reviews' id='ne
 }
 
 }
-
+}
 });
 
 $('.stamped-question').empty();
