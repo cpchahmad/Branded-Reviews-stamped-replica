@@ -3,6 +3,9 @@
 {{--    <link rel="stylesheet" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/mdb5/3.10.1/compiled.min.css">--}}
     <link rel="stylesheet" href="{{ asset('flags.css')}}">
     <link href="http://fonts.cdnfonts.com/css/stamp" rel="stylesheet">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 </head>
 <style>
     @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
@@ -2094,6 +2097,7 @@
                                             </div>
                                             <div class="sheild-badge">
                                                 @if($review->verify_status == 'verified')
+{{--                                                    <i class="fas fa-shield-check"></i>--}}
                                                     <i class="fa-solid fa-shield-check"></i>
                                                 @endif
                                             </div>
