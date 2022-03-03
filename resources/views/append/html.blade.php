@@ -2094,7 +2094,7 @@
                                             </div>
                                             <div class="sheild-badge">
                                                 @if($review->verify_status == 'verified')
-                                                    <i class="fas fa-shield-check"></i>
+                                                    <i class="fa-solid fa-shield-check"></i>
                                                 @endif
                                             </div>
                                         </div>
