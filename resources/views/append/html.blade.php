@@ -3098,6 +3098,7 @@
             top: 15%;
             left: 1%;
         }
+
         .right-arrow{
             top: 15%;
             right: 1%;
