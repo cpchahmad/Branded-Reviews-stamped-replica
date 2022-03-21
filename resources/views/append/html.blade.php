@@ -3,9 +3,6 @@
 {{--    <link rel="stylesheet" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/mdb5/3.10.1/compiled.min.css">--}}
     <link rel="stylesheet" href="{{ asset('flags.css')}}">
     <link href="http://fonts.cdnfonts.com/css/stamp" rel="stylesheet">
-
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 </head>
 <style>
     @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
@@ -515,8 +512,8 @@
             padding: 4px 11px !important;
         }
         .sheild-badge{
-            right: -5px !important;
-            bottom: -9px !important;
+            right: -6px !important;
+            bottom: -10px !important;
         }
         /*.review-stars{*/
         /*    margin-left: -37%;*/
@@ -1369,9 +1366,9 @@
 
     .sheild-badge{
         position: absolute;
-        right: -4px;
-        bottom: -8px;
-        font-size: 18px;
+        right: -5px;
+        bottom: -9px;
+        font-size: 17px;
         @if(isset($display))
         color: {{$display->verify_color}};
     @else
@@ -1827,9 +1824,9 @@
         <div class="tt_logix_reviews_inner">
             <div class="tt_logix_reviews_r_no">
                 <h1>
-                    <span id="total_rating" style="margin: 0; margin-right: 5%; margin-top: 1%;">{{$total_rating}}</span>
+                    <span id="total_rating" style="margin: 0; margin-right: 4%; margin-top: 1%;">{{$total_rating}}</span>
                          <div class="col-md-6" style="overflow: hidden;">
-                                   <span class="stars-container1 stars-{{($review_value / 5) * 100}}" style="font-size: 30px;line-height: 28px;">★ ★ ★ ★ ★</span>
+                                   <span class="stars-container1 stars-{{($review_value / 5) * 100}}" style="font-size: 26px;line-height: 28px;">★ ★ ★ ★ ★</span>
                          </div>
                 </h1>
                 <p class="base_reviews base_reviews2">Based on <span id="base_reviews">{{$total_reviews}}</span> Reviews</p>
@@ -2097,8 +2094,7 @@
                                             </div>
                                             <div class="sheild-badge">
                                                 @if($review->verify_status == 'verified')
-{{--                                                    <i class="fas fa-shield-check"></i>--}}
-                                                    <i class="fa-solid fa-shield-check"></i>
+                                                    <i class="fas fa-shield-check"></i>
                                                 @endif
                                             </div>
                                         </div>
@@ -3089,21 +3085,21 @@
 
     @media (max-width:375px) {
         .left-arrow{
-            top: 12%;
+            top: 24%;
             left: 1%;
         }
         .right-arrow{
-            top: 12%;
+            top: 24%;
             right: 1%;
         }
     }
     @media (min-width:376px) and  (max-width:500px) {
         .left-arrow{
-            top: 16%;
+            top: 15%;
             left: 1%;
         }
         .right-arrow{
-            top: 16%;
+            top: 15%;
             right: 1%;
         }
     }
@@ -3155,6 +3151,12 @@
     #review_pagination .stamped-reviews-ul li a:hover{
         color: #adb5bd;
     }
+
+
+
+
+
+
 
 </style>
 
