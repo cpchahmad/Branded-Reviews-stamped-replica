@@ -2005,7 +2005,8 @@
             <div id="reviews_tab_content" class="reviews_tab_content tabs">
                 <div class="write_a_review">
 {{--                       <form id="review" action="https://stamped.test/review-submit" method="POST">--}}
-                    <form id="review" action="https://phpstack-176572-2275881.cloudwaysapps.com/review-submit" method="POST">
+{{--                    <form id="review" action="https://phpstack-176572-2275881.cloudwaysapps.com/review-submit" method="POST">--}}
+                    <form id="review" action="https://phpstack-772196-2624032.cloudwaysapps.com/review-submit" method="POST">
                            <div>
                                <div class="first-lable" style="float: left">
                                    <label for="name">Name</label>
@@ -2143,7 +2144,7 @@
                                 <div class="review_footer">
                                     <div class="share_review">
                                         <p>
-                                            <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook?review_id={{$review->id}}&display=popup" target="_blank">
+                                            <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-772196-2624032.cloudwaysapps.com/on-facebook?review_id={{$review->id}}&display=popup" target="_blank">
                                                 <i class="fas fa-share-square"></i>
                                                 Share
                                             </a>
@@ -2274,7 +2275,8 @@
                                 <div class="review_footer">
                                     <div class="share_review">
                                         <p>
-                                            <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook?review_id={{$review->id}}&display=popup" target="_blank">
+{{--                                            <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook?review_id={{$review->id}}&display=popup" target="_blank">--}}
+                                            <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-772196-2624032.cloudwaysapps.com/on-facebook?review_id={{$review->id}}&display=popup" target="_blank">
                                                 <i class="fas fa-share-square"></i>
                                                 Share
                                             </a>
@@ -2347,7 +2349,8 @@
 
                 <div class="ask_a_question">
 {{--                     <form id="question" action="https://stamped.test/question-submit" method="POST">--}}
-                    <form id="question" action="https://phpstack-176572-2275881.cloudwaysapps.com/question-submit" method="POST">
+{{--                    <form id="question" action="https://phpstack-176572-2275881.cloudwaysapps.com/question-submit" method="POST">--}}
+                    <form id="question" action="https://phpstack-772196-2624032.cloudwaysapps.com/question-submit" method="POST">
                         <div>
                            <div class="first-lable" style="float:left;">
                                <label for="name">Name</label>

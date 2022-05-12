@@ -144,6 +144,9 @@ class ReviewController extends Controller
         }
     }
     public function ReviewSubmit(Request $request){
+
+
+
         $shop = User::where('name',$request->shop_name)->first();
         $review = new Review();
         $review->product_id = $request->product_id;
