@@ -514,6 +514,7 @@ class ReviewController extends Controller
         $image = ReviewMedia::where('id',$request->image_id)->first();
         $review = Review::where('id',$image->review_id)->first();
         $product = Product::where('shopify_id',$review->product_id)->first();
+
         $popup = view('append.popup')->with([
             'review'=>$review,
             'image'=>$image,

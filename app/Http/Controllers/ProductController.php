@@ -93,9 +93,14 @@ class ProductController extends Controller
         $two_star = count($two_star);
         $one_star = Review::where('shop_id',$shop->id)->where('product_id',$product_id)->whereNotIn('status',['rejected'])->where('review_rating',1)->get();
         $one_star = count($one_star);
-        if (count($product->product_reviews) > 0){
-            $product_rating = ($product->product_reviews->sum('review_rating')) / (count($product->product_reviews));
-        }else{
+        if(isset($product->product_reviews)) {
+            if (count($product->product_reviews) > 0) {
+                $product_rating = ($product->product_reviews->sum('review_rating')) / (count($product->product_reviews));
+            } else {
+                $product_rating = 0;
+            }
+        }
+        else{
             $product_rating = 0;
         }
         $product_rating = number_format($product_rating,1);
@@ -118,7 +123,11 @@ class ProductController extends Controller
                     "namespace" => "product_reviews",
                 ]
             ]);
+
+
             $product_meta = json_decode(json_encode($product_meta['body']['container']['metafield']));
+
+            return $product_meta;
             $product->metafield_id = $product_meta->id;
             $product->save();
         }else{
@@ -138,6 +147,7 @@ class ProductController extends Controller
             ]);
             $product_meta = $shop->api()->rest('GET', '/admin/products/'.$product_id.'/metafields.json');
             $product_meta = json_decode(json_encode($product_meta['body']['container']['metafields']));
+
             $product->metafield_id = $product_meta[0]->id;
             $product->save();
         }

@@ -48,13 +48,20 @@
                 </div>
             @endif
 {{--            <div class="product-title" style="width: fit-content;">--}}
+
+
             <div class="product-title" style="width: 50%;">
                 <a href="javascript:void(0)" style="text-decoration: none; color: black;" data-value="{{$review->id}}"
                    class='popup-image-link'>
 {{--                    <div><img class="popup-image2" src="{{$product->featured_image}}"></div>--}}
-                    <div><img class="popup-image2" style="width: 100%;height: auto !important;" src="{{$product->featured_image}}"></div>
+
+                    @if(isset($product))
+                    <div><img class="popup-image2" style="width: 100%;height: auto !important;" src="@if($product->featured_image){{$product->featured_image}} @endif"></div>
+                    @endif
 {{--                    <div style="width: 122px; text-align: center;"><p style="margin-top: 0">{{$product->title}}</p>--}}
-                    <div style=""><p style="margin-top: 0">{{$product->title}}</p>
+                    @if(isset($product))
+                    <div style=""><p style="margin-top: 0">@if($product->title){{$product->title}} @endif</p>
+                        @endif
 
                     </div>
                 </a>

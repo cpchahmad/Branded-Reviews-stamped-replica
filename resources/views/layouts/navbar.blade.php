@@ -14,7 +14,7 @@
                         <a class="nav-link" href="{{route('home')}}">Dashboard<span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item active {{ request()->is('products') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{route('getwebbhook')}}">Products<span class="sr-only"></span></a>
+                        <a class="nav-link" href="{{route('products')}}">Products<span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item active {{ request()->is('review-request') ? 'active' : '' }}">
                         <a class="nav-link" href="{{route('review.request')}}">Reviews</a>

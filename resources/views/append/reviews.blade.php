@@ -76,6 +76,7 @@
                 </div>
                 <div class="review_content">
                     <span>{{$review->review_title}}</span>
+
                     <p>{{$review->experience}}</p>
                 </div>
                 <div class="review_footer">
@@ -210,7 +211,7 @@
                     </div>
                     <div class="review_content">
                         <span>{{$review->review_title}}</span>
-                        <p>{{$review->experience}}</p>
+                        <p style="margin-top: 13px !important;">{{$review->experience}}</p>
                     </div>
                     <div class="review_footer">
                         <div class="share_review">

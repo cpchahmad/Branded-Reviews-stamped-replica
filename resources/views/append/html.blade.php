@@ -3048,13 +3048,15 @@
         position: absolute;
         /*bottom: 50%;*/
         top: 50%;
-        left: 14%;
+        /*left: 14%;*/
+        left: 8%;
     }
     .right-arrow{
         position: absolute;
         /*bottom: 50%;*/
         top: 50%;
-        right: 14%;
+        /*right: 14%;*/
+        right: 8%;
     }
     .arrow1{
         display: none;
