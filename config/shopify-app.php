@@ -322,7 +322,8 @@ return [
     'webhooks' => [
         [
             'topic' => 'PRODUCTS_CREATE',
-            'address' => 'https://phpstack-176572-2275881.cloudwaysapps.com/webhook/products-create'
+//            'address' => 'https://phpstack-176572-2275881.cloudwaysapps.com/webhook/products-create'
+            'address' => 'https://phpstack-772196-2624032.cloudwaysapps.com/webhook/products-create'
         ]
 
     ],
@@ -338,7 +339,8 @@ return [
 
     'scripttags' => [
         [
-            'src' => env('script_tags', 'https://phpstack-176572-2275881.cloudwaysapps.com/script-js'),
+//            'src' => env('script_tags', 'https://phpstack-176572-2275881.cloudwaysapps.com/script-js'),
+            'src' => env('script_tags', 'https://phpstack-772196-2624032.cloudwaysapps.com/script-js'),
             'event' => env('SHOPIFY_SCRIPTTAG_1_EVENT', 'onload'),
             'display_scope' => env('SHOPIFY_SCRIPTTAG_1_DISPLAY_SCOPE', 'online_store')
         ],
