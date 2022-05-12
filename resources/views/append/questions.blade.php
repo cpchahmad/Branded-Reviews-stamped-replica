@@ -16,6 +16,7 @@
                     $acronym = strtoupper($acronym);
                 }
         @endphp
+
  <div class="review_1">
     <div class="review_1_header">
         <div class="user_pic" id="user_pic">
