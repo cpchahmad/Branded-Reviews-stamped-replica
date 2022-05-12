@@ -57,6 +57,19 @@ Route::group(['middleware' => ['verify.shopify']], function () {
     Route::get('settings', [App\Http\Controllers\AdminController::class, 'ThemeSettings'])->name('settings');
     Route::any('setting-save', [App\Http\Controllers\AdminController::class, 'SettingSave'])->name('setting.save');
 
+
+
+    Route::get('/testing', function() {
+
+        $shop = \Illuminate\Support\Facades\Auth::user();
+
+
+
+
+        $response = $shop->api()->rest('GET', '/admin/script_tags.json');
+
+        dd($response);
+    })->name('getwebbhook');
 });
 
     //Review Submit
