@@ -922,7 +922,7 @@
     }
     .questions_tab_content .search_input input{
         border: none;
-        padding: 10px 6px;
+        /*padding: 10px 6px;*/
         width:90%;
         -webkit-box-shadow: none;
     }
@@ -2139,7 +2139,7 @@
                                 </div>
                                 <div class="review_content">
                                     <span>{{$review->review_title}}</span>
-                                    <p>{{$review->experience}}</p>
+                                    <p style="margin-top: 13px">{{$review->experience}}</p>
                                 </div>
                                 <div class="review_footer">
                                     <div class="share_review">
@@ -2270,7 +2270,7 @@
                                 </div>
                                 <div class="review_content">
                                     <span>{{$review->review_title}}</span>
-                                    <p>{{$review->experience}}</p>
+                                    <p style="margin-top: 13px">{{$review->experience}}</p>
                                 </div>
                                 <div class="review_footer">
                                     <div class="share_review">
@@ -2375,7 +2375,7 @@
                     <div class="dropdown_review">
                         <div class="search_input">
                             <i class="fas fa-search"></i>
-                            <input type="search" id="question_search" placeholder="Search Questions">
+                            <input style="display: inline-block" type="search" id="question_search" placeholder="Search Questions">
                         </div>
                         <div class="input-container" style="margin-top: 16px;">
                             <select name="sort_questions" class="stamped-filter" id="sort_question">
