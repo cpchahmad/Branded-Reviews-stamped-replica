@@ -764,7 +764,8 @@
         vertical-align: middle;
     }
     .user_pic .user_pic_inner{
-        margin-right: 8px;
+        /*margin-right: 8px;*/
+
         position: absolute;
         top: 50%;
         left: 51%;
@@ -1816,6 +1817,11 @@
     .question-area::-moz-placeholder {
         font-family: 'myFont', Arial, Helvetica, sans-serif;
         font-size: small;
+    }
+
+
+    .review_progress_1.active {
+        display: flex !important;
     }
 
 </style>
