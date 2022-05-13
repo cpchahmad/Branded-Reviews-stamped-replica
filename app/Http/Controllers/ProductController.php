@@ -115,7 +115,7 @@ class ProductController extends Controller
             'one_star'=>$one_star,
         ];
 
-        if ($check_meta != null && !empty($check_meta) && $check_meta!=''){
+        if ($check_meta != null || !empty($check_meta) || $check_meta!=''){
             $product_meta = $shop->api()->rest('put', '/admin/metafields/'.$check_meta[0]->id.'.json', [
                 "metafield" => [
                     "key" => 'reviews',
@@ -126,12 +126,11 @@ class ProductController extends Controller
             ]);
 
 
-//        if($product_meta['error']!=true) {
-            if(isset($product_meta['body']['metafield'])){
-            $product_meta = json_decode(json_encode($product_meta['body']['metafield']));
+            if(isset($product_meta['body']['metafield'])) {
+                $product_meta = json_decode(json_encode($product_meta['body']['metafield']));
                 $product->metafield_id = $product_meta->id;
                 $product->save();
-}
+            }
             else{
                 $product_meta = $shop->api()->rest('put', '/admin/products/'.$product_id.'.json', [
                     'product' => [
@@ -155,7 +154,7 @@ class ProductController extends Controller
             }
 
 
-//        }
+
 
         }else{
 
