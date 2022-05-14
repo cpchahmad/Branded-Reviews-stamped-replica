@@ -25,10 +25,10 @@
                 </div>
             </div>
 
-            <h3 style="margin-top: 0; margin-bottom: 1%; font-weight: bold;">{{$review->review_title}}</h3>
+            <h3 style="margin-top: 0; margin-bottom: 1%; font-weight: bold;font-size: 18px">{{$review->review_title}}</h3>
             <p style="margin: 0">{{$review->experience}}</p>
             @if($review->review_reply != null)
-                <h4 style="margin: 0; font-weight: bold;border-top: 1px solid #eee; padding-top: 15px; margin-top: 15px;">Reply:</h4>
+                <h4 style="margin: 0; font-weight: bold;border-top: 1px solid #eee; padding-top: 15px; margin-top: 15px;font-size: unset">Reply:</h4>
                 <div>
                     <p style="margin: 0">{{$review->review_reply->message}}</p>
                     <div class="like_dislike ">

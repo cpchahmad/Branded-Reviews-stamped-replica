@@ -1260,6 +1260,7 @@
         text-align: right;
     }
     .item .image-content .product-details .like_dislike{
+        /*display: inline-block;*/
         display: inline-block;
         text-align: right;
         width: 100%;
@@ -1824,6 +1825,66 @@
         display: flex !important;
     }
 
+
+    /*.clearfix{*/
+
+    /*    display: none !important;*/
+    /*}*/
+
+    /*.container.main.content.product-name--1-year-warranty {*/
+
+    /*    margin-top: 0px !important;*/
+    /*    max-width: unset;*/
+    /*}*/
+
+    .flickity-viewport{
+
+        display: none;
+    }
+
+    .container.main.content{
+     margin-top: 0px !important;
+        max-width: unset !important;
+        display: none !important;
+
+    }
+
+    .container{
+        max-width: unset !important;
+    }
+
+#write_a_review_btn,#ask_a_question_btn {
+
+    min-height: unset !important;
+    height: unset !important;
+    line-height: unset !important;
+    vertical-align: unset !important;
+     font-weight: unset !important;
+     font-style: normal;
+    font-size: 12px !important;
+     text-transform: unset !important;
+     letter-spacing: unset !important;
+     display: unset !important;
+     display: unset !important;
+    display: unset !important;
+    display: unset !important;
+     display: unset !important;
+     -webkit-align-items: unset !important;
+    -moz-align-items: unset !important;
+    -ms-align-items: unset !important;
+    -moz-justify-content: unset !important;
+    -ms-justify-content: unset !important;
+     justify-content: unset !important;
+    -ms-flex-pack: unset !important;
+     transition: unset !important;
+     -webkit-appearance: unset !important;
+     -webkit-font-smoothing: unset !important;
+    -moz-osx-font-smoothing: unset !important;
+    font-smoothing: unset !important;
+     border-radius: unset !important;
+
+
+}
 </style>
 <div id="main-body">
     <div class="tt_logix_reviews">
@@ -3054,15 +3115,15 @@
         position: absolute;
         /*bottom: 50%;*/
         top: 50%;
-        /*left: 14%;*/
-        left: 8%;
+        left: 14%;
+        /*left: 8%;*/
     }
     .right-arrow{
         position: absolute;
         /*bottom: 50%;*/
         top: 50%;
-        /*right: 14%;*/
-        right: 8%;
+        right: 14%;
+        /*right: 8%;*/
     }
     .arrow1{
         display: none;
