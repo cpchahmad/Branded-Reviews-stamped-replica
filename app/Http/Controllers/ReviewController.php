@@ -179,9 +179,9 @@ class ReviewController extends Controller
         $productcontroller = new ProductController();
         $productcontroller->AddUpdateMetafield($request->product_id,$shop);
 //        $facebook_share_link = 'https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook?review_id='.$review->id.'&display=popup';
-        $facebook_share_link = 'https://www.facebook.com/sharer/sharer.php?u=https://phpstack-772196-2624032.cloudwaysapps.com/on-facebook?review_id='.$review->id.'&display=popup';
+        $facebook_share_link = 'https://www.facebook.com/sharer/sharer.php?u='.env('APP_URL').'on-facebook?review_id='.$review->id.'&display=popup';
 //        $twitter_share_link = 'https://twitter.com/intent/tweet?url=https://phpstack-176572-2275881.cloudwaysapps.com/on-twitter?review_id='.$review->id;
-        $twitter_share_link = 'https://twitter.com/intent/tweet?url=https://phpstack-772196-2624032.cloudwaysapps.com/on-twitter?review_id='.$review->id;
+        $twitter_share_link = 'https://twitter.com/intent/tweet?url='.env('APP_URL').'on-twitter?review_id='.$review->id;
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $destinationPath = 'review-images/';

@@ -55,7 +55,7 @@
         <div class="share_review">
             <p>
 {{--                <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-176572-2275881.cloudwaysapps.com/on-facebook-q?question_id={{$question->id}}&display=popup" target="_blank">--}}
-                <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u=https://phpstack-772196-2624032.cloudwaysapps.com/on-facebook-q?question_id={{$question->id}}&display=popup" target="_blank">
+                <a id="share_towards" href="https://www.facebook.com/sharer/sharer.php?u={{env('APP_URL')}}on-facebook-q?question_id={{$question->id}}&display=popup" target="_blank">
                     <i class="fas fa-share-square"></i>
                     Share
                 </a>
